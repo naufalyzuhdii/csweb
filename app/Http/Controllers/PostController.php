@@ -57,4 +57,35 @@ class PostController extends Controller
         $product->delete();
         return ["Product Deleted"];
     }
+
+    public function post_thread(Request $request){
+        $rules = [
+            'title' => 'required|unique:threads',
+            'price' => 'required'
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if($validator->fails()){
+            return back()->withErrors($validator);
+        }
+        $thread = new Thread();
+        $thread->title = $request->title;
+        $thread->price = $request->price;
+
+        $thread->save();
+        return ["Post Thread Success!"];
+    }
+    public function update_thread(Request $request){
+        $thread = Thread::find($request->id);
+        $thread->title = $request->title!=null?$request->title : $thread->title;
+        $thread->price = $request->price!=null?$request->price : $thread->price;
+
+        $thread->save();
+        return ["Thread Updated"];
+    }
+    public function delete_thread($id){
+        $thread = Thread::find($id);
+
+        $thread->delete();
+        return ["Thread Deleted"];
+    }
 }
