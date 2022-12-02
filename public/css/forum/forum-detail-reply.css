@@ -1,0 +1,15 @@
+.forum-detail-reply {
+    width: 100%;
+    min-height: 100vh;
+    max-height: fit-content;
+}
+
+.forum-detail-reply-wrapper {
+    padding: 10rem 35rem;
+    width: 100%;
+}
+
+.your-reply-wrapper {
+    width: 100%;
+    background-color: var(--light-grey-color2);
+}
