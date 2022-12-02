@@ -4,30 +4,106 @@
 @section ('content')
 <section class="forum-detail-reply">
     <div class="forum-detail-reply-wrapper">
-        <div class="your-reply-wrapper">
+        {{-- ASKING FORUM --}}
+        <div class="askers-forum">
+            <div class="askers-forum-images-wrapper">
+                <div class="askers-forum-images">
+                    <img src="{{asset('images/course/talent-1.jpg')}}">
+                </div>
+            </div>
+            <div class="askers-forum-content-wrapper">
+                <div class="askers-name">
+                    <h2>Jason Petot</h2>
+                </div>
+                <div class="askers-forum-title">
+                    <h2>Mau tanya tentang HMTL ?</h2>
+                </div>
+                <div class="askers-forum-description">
+                    <p>Saya bingung niehhhhh aduhhh</p>
+                </div>
+                <div class="askers-forum-reaction">
+                    <div class="replies-wrapper">
+                        <i class="fa-solid fa-reply"></i>
+                        <span>10</span>
+                        <h4>Replies</h4>
+                    </div>
+                    <div class="viewer-wrapper">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>400</span>
+                        <h4>Viewers</h4>
+                    </div>
+                    <div class="time-wrapper">
+                        <h4>30m ago</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- ASKING FORUM --}}
+
+        {{-- YOUR REPLY FORUM --}}
+        <div class="your-reply-forum">
             <div class="your-profile-image-wrapper">
                 <div class="your-profile-image">
                     <img src="{{asset('images/thread/jason.jpg')}}">
                 </div>
-                <div class="your-profile-askers-name">
+                <div class="your-profile-reply-name">
                     <h2>Udin Sudrajat</h2>
                 </div>
             </div>
-            <form action="#" class="forum-form">
-                <div class="your-forum-description-reply">
-                    <label for="forum-description">Description</label>
-                    <textarea id="your-forum-description-reply" name="your-forum-description-reply-content"
-                        placeholder="Type your description...">
+            <form action="#" class="your-forum-form">
+                <div class="your-forum-reply-answer">
+                    <label for="your-forum-reply-answer">Answer</label>
+                    <textarea id="your-forum-reply-answer" name="your-forum-reply-answer-content"
+                        placeholder="Type your answer...">
                     </textarea>
                 </div>
-                <button class="post-btn">
-                    Post
+                <button class="reply-btn">
+                    Reply
                 </button>
             </form>
         </div>
+        {{-- YOUR REPLY FORUM --}}
+        {{-- OTHERS REPLY WRAPPER --}}
         <div class="others-reply-wrapper">
+            <div class="other-reply-header">
+                <h2>Others replies</h2>
+            </div>
 
+            <div class="askers-forum">
+                <div class="askers-forum-images-wrapper">
+                    <div class="askers-forum-images">
+                        <img src="{{asset('images/course/talent-1.jpg')}}">
+                    </div>
+                </div>
+                <div class="askers-forum-content-wrapper">
+                    <div class="askers-name">
+                        <h2>Jason Petot</h2>
+                    </div>
+                    <div class="askers-forum-title">
+                        <h2>Mau tanya tentang HMTL ?</h2>
+                    </div>
+                    <div class="askers-forum-description">
+                        <p>Saya bingung niehhhhh aduhhh</p>
+                    </div>
+                    <div class="askers-forum-reaction">
+                        <div class="replies-wrapper">
+                            <i class="fa-solid fa-reply"></i>
+                            <span>10</span>
+                            <h4>Replies</h4>
+                        </div>
+                        <div class="viewer-wrapper">
+                            <i class="fa-solid fa-eye"></i>
+                            <span>400</span>
+                            <h4>Viewers</h4>
+                        </div>
+                        <div class="time-wrapper">
+                            <h4>30m ago</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        {{-- OTHERS REPLY WRAPPER --}}
     </div>
 </section>
 
