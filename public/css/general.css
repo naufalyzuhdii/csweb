@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    background-color: var(--thirdcolor);
+    font-family: "Baloo 2", serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primarycolor: #368fdc;
+    --secondarycolor: #d3e0f1;
+    --deepblue: #2c61af;
+    --thirdcolor: #ececec;
+    --blue2: rgb(63, 157, 245);
+    --white-color: #fff;
+    --grey-color: #555;
+    --light-grey-color: #777;
+    --light-grey-color2: rgb(209, 209, 209);
+    --orange: #df9627;
+}
+
+/* font-family: 'Baloo 2', cursive;
+font-family: 'PT Serif', serif;
+font-family: 'Roboto', sans-serif; */

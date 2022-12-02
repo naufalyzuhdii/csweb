@@ -1,0 +1,593 @@
+/* Section Home Guest */
+
+.home-guest {
+    width: 100%;
+    height: 100vh;
+    background: url("/images/home/home-banner.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.home-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url("/images/home/home-vector.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes dissolve {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.home-banner-text {
+    position: absolute;
+    width: 50%;
+    height: 65%;
+    bottom: 0;
+    left: 0;
+    padding: 0 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-text-greeting {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    color: var(--white-color);
+    visibility: hidden;
+    opacity: 0;
+    animation: dissolve 0.5s 1s forwards;
+}
+
+.home-banner-heading {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    font-size: 8rem;
+    font-weight: 900;
+    color: var(--white-color);
+    letter-spacing: 0.6rem;
+    visibility: hidden;
+    opacity: 0;
+    animation: dissolve 1s 1.5s forwards;
+}
+
+.home-text-paragraph {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    font-size: 2rem;
+    margin-top: 1rem;
+    letter-spacing: 0.2rem;
+    color: var(--white-color);
+    visibility: hidden;
+    opacity: 0;
+    animation: dissolve 1.5s 2s forwards;
+}
+
+/* End Of Section Home Guest */
+
+/* Section Course Guest */
+
+.course-guest {
+    width: 100%;
+    height: 100vh;
+    background: url("/images/course/asset-bg.png") no-repeat;
+    background-size: cover;
+}
+
+.course-wrapper {
+    padding: 10rem 20rem;
+}
+
+.coure-guest-header {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.course-guest-heading {
+    font-family: "Roboto";
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 0.3rem;
+    word-spacing: 0.6rem;
+    color: var(--primarycolor);
+}
+
+.course-guest-paragraph {
+    font-family: "Roboto";
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    margin-top: 2rem;
+    color: var(--primarycolor);
+    font-weight: 500;
+}
+
+.course-content {
+    position: relative;
+    width: 100%;
+    height: 60%;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+#swiperWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#card-slide {
+    width: 35rem;
+    height: 45rem;
+    border-radius: 2rem;
+    transition: background-color 0.5s;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 200;
+    cursor: pointer;
+}
+
+#card-slide:hover {
+    /* box-shadow: 0.2rem 0.4rem 1rem var(--light-grey-color); */
+    background-color: rgb(209, 209, 209);
+}
+
+.course-card-image {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.course-card-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2rem 2rem 0 0;
+}
+
+.course-text-content {
+    width: 100%;
+    height: 50%;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.course-title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: black;
+}
+.course-category {
+    width: max-content;
+    height: max-content;
+    color: #df9627;
+    background-color: transparent;
+    border: 1px solid #df9627;
+    border-radius: 10rem;
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.course-author {
+    font-size: 1.5rem;
+    color: var(--light-grey-color);
+}
+
+.course-rating {
+    display: flex;
+    align-items: center;
+}
+
+.course-rating i {
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    color: #df9627;
+}
+
+.course-rating h4 {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    color: #df9627;
+    font-weight: 800;
+}
+
+.course-price {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    color: var(--primarycolor);
+    text-shadow: 0.1rem 0.1rem 0.2rem rgb(71, 71, 71, 0.5);
+}
+
+#swiper-btn-next {
+    position: absolute;
+    right: -8rem;
+    color: black;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+#swiper-btn-next:hover {
+    color: white;
+    background-color: black;
+}
+
+#swiper-btn-prev {
+    left: -8rem;
+    position: absolute;
+    color: black;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+#swiper-btn-prev:hover {
+    color: white;
+    background-color: black;
+}
+
+/* End Of Section Course Guest */
+
+/* Section Explanation */
+.explanation {
+    width: 100%;
+    height: 100vh;
+}
+
+.explanation-wrapper {
+    width: 100%;
+    padding: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.explanation-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.explanation-heading {
+    font-family: "Roboto";
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: 0.3rem;
+    color: var(--primarycolor);
+}
+
+.explanation-description {
+    font-family: "Baloo 2", serif;
+    font-size: 1.8rem;
+    font-weight: 200;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.2rem;
+    margin: 3rem 0 5rem 0;
+}
+
+.role-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-role {
+    width: 50rem;
+    height: 45rem;
+    padding: 5rem 3rem;
+    border-radius: 5rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-role:nth-child(2) {
+    background-color: var(--primarycolor);
+}
+
+.card-role-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-role-heading h2 {
+    font-size: 3rem;
+    color: var(--primarycolor);
+}
+
+.icon-card {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-card img {
+    width: 100%;
+    object-fit: cover;
+    padding: 1rem;
+}
+
+.card-list li {
+    height: fit-content;
+    font-size: 1.8rem;
+    text-align: justify;
+    margin: 1.5rem 0;
+}
+
+.card-list li i {
+    font-size: 0.8rem;
+    margin-right: 2%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.card-role:nth-child(2) .card-role-heading h2 {
+    color: var(--white-color);
+    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+.card-role:nth-child(2) .card-list {
+    color: white;
+}
+
+.card-list {
+    height: 100%;
+}
+/* End Of Section Explanation */
+/* Categories */
+
+.categories {
+    width: 100%;
+    height: 100vh;
+}
+
+.categories-wrapper {
+    padding: 10rem;
+}
+
+.categories-header {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.categories-heading {
+    font-family: "Roboto";
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 0.3rem;
+    word-spacing: 0.6rem;
+    color: var(--primarycolor);
+}
+
+.categories-text {
+    font-family: "Roboto";
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    margin-top: 2rem;
+    color: var(--primarycolor);
+    font-weight: 500;
+}
+
+.categories-cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+}
+
+.categories-card {
+    position: relative;
+    width: 30rem;
+    height: 30rem;
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 2rem;
+    transition: box-shadow 0.5s;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0.8rem 0.8rem 1rem rgba(85, 82, 82);
+    cursor: pointer;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.categories-card:hover {
+    transform: scale(1.03);
+    box-shadow: none;
+}
+.categories-card:hover .categories-bg:after {
+    background-color: black;
+    opacity: 0.7;
+}
+
+.categories-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+.categories-bg::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    background-color: var(--light-grey-color);
+    opacity: 0.5;
+    transition: background-color 0.5s, opacity 0.5s;
+}
+
+.categories-content {
+    position: absolute;
+    width: 25rem;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.categories-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categories-icon img {
+    object-fit: cover;
+}
+
+.categories-title {
+    width: 100%;
+    color: var(--white-color);
+    font-size: 2.8rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.2rem;
+    font-weight: 500;
+}
+
+/* End Of Categories */
+
+/* Ask Need Content */
+
+.ask-need {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 20rem;
+}
+
+.ask-need-bg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(/images/course/rectangle-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ask-need-bg::before {
+    position: absolute;
+    content: "";
+    width: 85%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10rem;
+    background-color: var(--white-color);
+    z-index: -1;
+}
+
+.ask-need-wrapper {
+    position: relative;
+    width: 85%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8rem;
+}
+
+.ask-need-content {
+    position: absolute;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10rem;
+}
+
+.ask-need-content .text-content {
+    font-size: 5rem;
+    color: var(--primarycolor);
+    font-weight: 500;
+}
+
+.ask-need-content .paragraph-content {
+    font-size: 3rem;
+    color: var(--primarycolor);
+    font-weight: 100;
+    margin: 2rem 0 5rem 0;
+}
+
+.ask-need-btn {
+    width: 40%;
+    height: 6rem;
+    background: linear-gradient(to left, #2a7ee0, #76b5ff);
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0.1rem 0.2rem 0.3rem rgba(0, 0, 0, 0.5);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.ask-need-btn:hover {
+    transform: scale(1.03);
+}
+
+.ask-need-btn-link {
+    color: var(--white-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    text-shadow: 0.1rem 0.2rem 0.2rem var(--light-grey-color);
+}
+
+/* End Of Ask Need Content */
