@@ -6,6 +6,7 @@
 @section('content')
 <section class="topic-course-detail">
     <div class="topic-course-detail-wrapper">
+        {{-- TOPIC COURSE DETAIL HEADER --}}
         <div class="topic-course-detail-header">
             <div class="header-left">
                 <div class="topic-course-detail-image">
@@ -42,6 +43,9 @@
             </div>
 
         </div>
+        {{-- TOPIC COURSE DETAIL HEADER --}}
+
+        {{-- TOPIC COURSE DETAIL CONTENT --}}
         <div class="topic-course-detail-content">
             <div class="topic-course-detail-content-description">
                 <h2>Description</h2>
@@ -136,7 +140,9 @@
                 </div>
             </div>
         </div>
+        {{-- TOPIC COURSE DETAIL CONTENT --}}
 
+        {{-- TOPIC COURSE DETAIL FORUM --}}
         <div class="topic-course-detail-forum">
             <div class="topic-course-detail-forum-wrapper">
                 <div class="forum-header">
@@ -171,7 +177,7 @@
                     <div class="forum">
                         <div class="forum-images-wrapper">
                             <div class="forum-images">
-                                <img src="{{asset('images/thread/jason.jpg')}}">
+                                <img src="{{asset('images/course/talent-1.jpg')}}">
                             </div>
                         </div>
                         <div class="forum-content-wrapper">
@@ -285,7 +291,10 @@
                 </div>
             </div>
         </div>
+        {{-- TOPIC COURSE DETAIL FORUM --}}
 
+
+        {{-- ANOTHER TOPIC COURSE --}}
         <div class="another-topic-course">
             <div class="another-topic-course-header">
                 <h2>Another topic you can learn</h2>
@@ -373,6 +382,7 @@
                 </a>
             </div>
         </div>
+        {{-- ANOTHER TOPIC COURSE --}}
     </div>
 </section>
 
