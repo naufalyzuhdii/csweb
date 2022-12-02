@@ -16,12 +16,13 @@
             <div class="signin-text">
                 <h3>Sign In</h3>
             </div>
-            <form action="#" class="signin-form">
+            <form action="/signin" class="signin-form" method="POST">
+                @csrf
                 <div class="email-signin auth">
                     <label for="Email">
                         Email
                     </label>
-                    <input type="email" name="email" placeholder="Enter your email">
+                    <input type="email" name="email" placeholder="Enter your email" value="{{ Cookie::get('mycookie') != null ? Cookie::get('mycookie') : '' }}">
                 </div>
                 <div class="password-signin auth">
                     <label for="Password">Password</label>
@@ -32,7 +33,7 @@
                 </div>
                 <div class="rememberme-group">
                     <div class="rememberme">
-                        <input type="checkbox" name="rememberme">
+                        <input type="checkbox" name="rememberme" id="remember" {{ Cookie::get('mycookie') != null ? 'checked' : '' }} checked="checked">
                         <label for="RememberMe">Remember Me</label>
                     </div>
                     <a href="#" class="forgot-password-link">Forgot Password? </a>

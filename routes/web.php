@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ForumController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\GeneralController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +24,11 @@ Route::get('/', function () {
 });
 
 // Auth Guest
-Route::get('/view/signin_page', [\App\Http\Controllers\AuthController::class, 'view_signIn']);
-Route::get('/view/signup_page', [\App\Http\Controllers\AuthController::class, 'view_signUp']);
-Route::get('/view/talent-profile', [\App\Http\Controllers\AuthController::class, 'view_talent_profile']);
+Route::get('/view/signin_page', [AuthController::class, 'view_signIn']);
+Route::post('/signin', [AuthController::class, 'signin']);
+Route::get('/view/signup_page', [AuthController::class, 'view_signUp']);
+Route::post('/signup', [AuthController::class, 'signup']);
+Route::get('/view/talent-profile', [AuthController::class, 'view_talent_profile']);
 
 
 // Categories Course

@@ -7,9 +7,15 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
+    public function view_signUp(){
+        return view ('auth.signUp');
+    }
+
     public function signup(Request $request){
         $validator = validator($request->all());
         if($validator->fails()){
@@ -22,9 +28,14 @@ class AuthController extends Controller
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
-            'phone' => $request['phone']
+            'phone' => $request['phone'],
+            'dob' => $request['dob']
         ]);
         return ["Sign Up Success!"];
+    }
+
+    public function view_signIn(){
+        return view('auth.signIn');
     }
 
     public function signin(Request $request){
@@ -32,6 +43,12 @@ class AuthController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required']
         ]);
+        if($request->remember){
+            Cookie::queue('mycookie', $request->email, 15);
+        }
+        else{
+            Cookie::queue(Cookie::forget('mycookie'));
+        }
         $user_data = array(
             'email' => $request->get('email'),
             'password' => $request->get('password')
