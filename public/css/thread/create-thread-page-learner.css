@@ -1,0 +1,276 @@
+.create-thread-page-learner {
+    width: 100%;
+    height: fit-content;
+    padding: 10rem 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.thread-page-learner-header {
+    width: 100%;
+}
+
+.thread-page-learner-header h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+}
+
+.create-thread-page-learner-wrapper {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    background-color: var(--light-grey-color2);
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+/* Profile Learner */
+
+.profile-learner {
+    position: relative;
+    width: 20%;
+    height: 30rem;
+}
+
+.profile-learner-wrapper {
+    position: absolute;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile-learner-image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-learner-image {
+    width: 20rem;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile-learner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.profile-learner-role-wrapper {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+.profile-learner-role {
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    color: var(--primarycolor);
+}
+
+/* Profile Learner */
+
+/* Learner Thread Content */
+
+.learner-thread-content {
+    width: 80%;
+    padding: 2rem;
+    padding-right: 5rem;
+    height: fit-content;
+}
+
+.learner-thread-name h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.learner-thread-content form {
+    width: 100%;
+    height: fit-content;
+}
+
+.learner-thread-job-title {
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.learner-thread-job-title h3 {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.learner-thread-job-title input {
+    width: 100%;
+    height: 50%;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.learner-thread-category-wrapper {
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.learner-thread-category-wrapper > div {
+    width: 25rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.learner-thread-category-wrapper > div > h3 {
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.learner-thread-category-wrapper > div > input {
+    width: 100%;
+    height: 50%;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.learner-thread-description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.learner-thread-description > h3 {
+    height: 3.5rem;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.learner-thread-description textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 10rem;
+    max-height: 15rem;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.learner-offered-things {
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.learner-offered-things > div {
+    width: 25rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.learner-offered-things > div > h3 {
+    font-size: 1.8rem;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.learner-offered-things > div > input {
+    width: 100%;
+    height: 50%;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.learner-offered-things .offered-price .price {
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.learner-offered-things .offered-price .price span {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    background-color: rgb(168, 167, 167);
+    font-size: 1.5rem;
+    border-radius: 1rem 0 0 1rem;
+}
+.learner-offered-things .offered-price .price input {
+    width: 85%;
+    height: 100%;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    border-radius: 0 1rem 1rem 0;
+}
+
+.learner-offered-things > div:nth-child(3) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.post-thread-btn {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    margin-top: 5rem;
+}
+
+.post-thread-btn button {
+    position: absolute;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-color: var(--primarycolor);
+    color: white;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+/* Learner Thread Content */

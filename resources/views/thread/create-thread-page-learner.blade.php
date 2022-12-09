@@ -6,16 +6,21 @@
 @section('content')
 
 <section class="create-thread-page-learner">
+    <div class="thread-page-learner-header">
+        <h1>Create your thread</h1>
+    </div>
     <div class="create-thread-page-learner-wrapper">
         <div class="profile-learner">
-            <div class="profile-learner-image-wrapper">
-                <div class="profile-learner-image">
-                    <img src="{{asset('images/thread/jason.jpg')}}" alt="">
+            <div class="profile-learner-wrapper">
+                <div class="profile-learner-image-wrapper">
+                    <div class="profile-learner-image">
+                        <img src="{{asset('images/thread/jason.jpg')}}" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="profile-learner-role-wrapper">
-                <div class="profile-learner-role">
-                    <h2>Learner</h2>
+                <div class="profile-learner-role-wrapper">
+                    <div class="profile-learner-role">
+                        <h2>Learner</h2>
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,6 +59,13 @@
                         <input type="text" name="offered-duration">
                     </div>
                     <div class="offered-price">
+                        <h3>Offered Price</h3>
+                        <div class="price">
+                            <span>Rp.</span>
+                            <input type="number">
+                        </div>
+                    </div>
+                    <div class="empty">
                         <h3>Offered Price</h3>
                         <input type="number">
                     </div>
