@@ -84,6 +84,7 @@
                     <i class="fa-solid fa-user"></i>
                 </a>
                 <ul>
+                    <h2>Hi, Jason!</h2>
                     <h3>You signed in as <b>learner</b></h3>
                     <li id="switch-roles">
                         <h3>Switch role</h3>

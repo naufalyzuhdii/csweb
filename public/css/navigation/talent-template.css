@@ -277,6 +277,9 @@ ul ul ul {
     align-items: center;
     z-index: 100;
 }
+.profile-navbar > ul > h2 {
+    text-align: center;
+}
 
 .profile-navbar > ul > li {
     width: 100%;
