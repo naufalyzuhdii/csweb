@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=PT+Serif:wght@400;700&family=Roboto:wght@300;500&display=swap"
         rel="stylesheet">
     <link href="{{ asset('css/general.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/template.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/navigation/learner-template.css') }}" rel="stylesheet">
 
     <title>CS</title>
 </head>
@@ -24,6 +24,7 @@
             <a href="/" class="logo">
                 <img src="{{asset('images/header/logo-white.png')}}">
             </a>
+
             <div class="categories-navbar">
                 <ul class="main-navigation">
                     <li>
@@ -72,20 +73,33 @@
                 <a href="/view/cart"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
 
-
-
-            <div class="nav-auth">
-                <a href="/view/signin_page" class="auth-btn">
-                    <div class="auth-links">
-                        Sign In
-                    </div>
-                </a>
-                <a href="/view/signup_page" class="auth-btn">
-                    <div class="auth-links">
-                        Sign Up
-                    </div>
+            <div class="progress-navbar">
+                <a href="#your-progress" id="progress-navbar-links">
+                    <i class="fa-regular fa-note-sticky"></i>
                 </a>
             </div>
+
+            <div class="profile-navbar">
+                <a href="#profile" class="profile-navbar-links">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                <ul>
+                    <h3>You signed in as <b>learner</b></h3>
+                    <li id="switch-roles">
+                        <h3>Switch role</h3>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+
+                    </li>
+                    <li><a href="#yourprofile">Your profile</a></li>
+                    <li>
+                        <a href="#signout">Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
 
     </section>

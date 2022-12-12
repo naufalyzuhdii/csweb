@@ -31,6 +31,13 @@ class CourseController extends Controller
         return view('categories.topic-course-detail');
     }
 
+    public function view_talent_profile()
+
+    {
+        return view('course.talent-profile-course');
+    }
+}
+
     // CONTROLL FUNCTION
 
     public function get_all(){

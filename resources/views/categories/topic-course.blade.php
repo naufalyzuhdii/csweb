@@ -1,4 +1,4 @@
-@extends('template')
+@extends('navigation.guest-template')
 <link rel="stylesheet" href="{{asset('css/categories/topic-course.css')}}">
 
 

@@ -1,4 +1,4 @@
-@extends('template')
+@extends('navigation.learner-template')
 <link rel="stylesheet" href="{{asset('css/auth/talent-profile-course.css')}}">
 @section('content')
 
