@@ -56,9 +56,6 @@ class AuthController extends Controller
             'email' => $request->get('email'),
             'password' => $request->get('password')
         );
-        if (Auth::attempt($user_data)) {
-            return ["Sign In learner Success!"];
-        } else {
         if(Auth::attempt($user_data)){
             return redirect()->route('course');
         }

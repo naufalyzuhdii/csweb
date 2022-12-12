@@ -32,11 +32,9 @@ class CourseController extends Controller
     }
 
     public function view_talent_profile()
-
     {
         return view('course.talent-profile-course');
     }
-}
 
     // CONTROLL FUNCTION
 
