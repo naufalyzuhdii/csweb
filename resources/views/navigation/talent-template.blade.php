@@ -90,7 +90,7 @@
                     <i class="fa-solid fa-user"></i>
                 </a>
                 <ul>
-                    <h2>Hi, Udin Petot!</h2>
+                    <h2>Hi, {{ old('name', Auth::user()->name) }}</h2>
                     <h3>You signed in as <b>talent</b></h3>
                     <li id="switch-roles">
                         <h3>Switch role</h3>
@@ -113,9 +113,6 @@
     {{-- End Of Section Header --}}
 
     @yield('content')
-
-
-
 
     {{-- Section Footer --}}
     <section class="footer">

@@ -33,7 +33,7 @@ class AuthController extends Controller
             'phone' => $request['phone'],
             'dob' => $request['dob']
         ]);
-        return redirect()->route('learner_home');
+        return redirect()->route('signin');
     }
 
     public function view_signIn()
@@ -49,24 +49,28 @@ class AuthController extends Controller
         ]);
         if ($request->remember) {
             Cookie::queue('mycookie', $request->email, 15);
-        } 
-        else {
+        } else {
             Cookie::queue(Cookie::forget('mycookie'));
         }
-        if(Auth::attempt($credentials, true)){
-            Session::put('mysession', Auth::user()->name);
-            if(Auth::user()->role == 'learner') return redirect('learner_home');
-            else if(Auth::user()->role == 'talent') return redirect('talent_home');
-            return redirect('/');
+        $user_data = array(
+            'email' => $request->get('email'),
+            'password' => $request->get('password')
+        );
+        if(Auth::attempt($user_data)){
+            return redirect()->route('learner_home');
         }
-        return back()->withErrors("Not Registered", "signIn");
+        else{
+            return back()->withErrors("Not Registered", "signIn");
+        }
     }
 
     public function signout()
     {
         Auth::logout();
-        return redirect()->route('signin');
+        return ["Sign Out Success!"];
     }
+
+
 
     public function view_learner_home()
     {
