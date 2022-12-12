@@ -33,7 +33,7 @@ class AuthController extends Controller
             'phone' => $request['phone'],
             'dob' => $request['dob']
         ]);
-        return ["Sign Up Success!"];
+        return redirect()->route('signin');
     }
 
     public function view_signIn()
@@ -59,6 +59,10 @@ class AuthController extends Controller
         if (Auth::attempt($user_data)) {
             return ["Sign In learner Success!"];
         } else {
+        if(Auth::attempt($user_data)){
+            return redirect()->route('course');
+        }
+        else{
             return ["Sign in Error!"];
         }
     }

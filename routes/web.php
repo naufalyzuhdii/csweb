@@ -25,6 +25,7 @@ Route::get('/', function () {
     ');
 });
 
+
 //--Learner Home
 Route::get('/view/learner-home', [AuthController::class, 'view_learner_home']);
 
@@ -36,17 +37,29 @@ Route::get('/view/talent-home', [AuthController::class, 'view_talent_home']);
 
 // Auth Guest CALVIN KURNIAWAN
 Route::get('/view/signin_page', [AuthController::class, 'view_signIn']);
+
+// Auth
+Route::get('/view/signin_page', [AuthController::class, 'view_signIn'])->name('signin');
 Route::post('/signin', [AuthController::class, 'signin']);
 Route::get('/view/signup_page', [AuthController::class, 'view_signUp']);
 Route::post('/signup', [AuthController::class, 'signup']);
 
 
 // Categories Course
+
 Route::get('/view/course', [CourseController::class, 'view_course']);
 Route::get('/view/sub-course', [CourseController::class, 'view_sub_course']);
 Route::get('/view/topic-course', [CourseController::class, 'view_topic_course']);
 Route::get('/view/topic-course-detail', [CourseController::class, 'view_topic_course_detail']);
 Route::get('/view/talent-profile', [CourseController::class, 'view_talent_profile']);
+
+Route::get('/view/course', [CourseController::class, 'view_course'])->name('course');
+Route::get('/view/sub-course', [CourseController::class, 'view_sub_course']);
+Route::get('/view/topic-course', [CourseController::class, 'view_topic_course']);
+Route::get('/view/topic-course-detail', [CourseController::class, 'view_topic_course_detail']);
+Route::get('/getcourse', [CourseController::class, 'get_all']);
+Route::post('/postcourse', [CourseController::class, 'post_course']);
+
 
 
 
