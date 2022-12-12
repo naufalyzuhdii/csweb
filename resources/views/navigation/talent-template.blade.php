@@ -90,6 +90,7 @@
                     <i class="fa-solid fa-user"></i>
                 </a>
                 <ul>
+                    <h2>Hi, Udin Petot!</h2>
                     <h3>You signed in as <b>talent</b></h3>
                     <li id="switch-roles">
                         <h3>Switch role</h3>

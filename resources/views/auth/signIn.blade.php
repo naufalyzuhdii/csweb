@@ -1,4 +1,4 @@
-@extends('template')
+@extends('navigation.guest-template')
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/auth/signin.css') }}">
