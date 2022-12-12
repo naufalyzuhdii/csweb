@@ -9,14 +9,24 @@ use Illuminate\Support\Facades\Validator;
 
 class ThreadController extends Controller
 {
-    public function view_thread()
+    public function view_thread_learner()
     {
-        return view('thread.thread');
+        return view('thread.thread-learner');
+    }
+
+    public function view_thread_talent()
+    {
+        return view('thread.thread-talent');
     }
 
     public function view_create_thread_page_learner()
     {
         return view('thread.create-thread-page-learner');
+    }
+
+    public function view_create_thread_page_talent()
+    {
+        return view('thread.create-thread-page-talent');
     }
 
     public function post_thread(Request $request)
@@ -52,7 +62,7 @@ class ThreadController extends Controller
         $thread->description = $request->description != null ? $request->description : $thread->description;
         $thread->duration = $request->duration != null ? $request->duration : $thread->duration;
         $thread->price = $request->price != null ? $request->price : $thread->price;
-        $thread->category_id = $request->category!=null?$request->category : $thread->category_id;
+        $thread->category_id = $request->category != null ? $request->category : $thread->category_id;
 
         $thread->save();
         return ["Thread Updated"];

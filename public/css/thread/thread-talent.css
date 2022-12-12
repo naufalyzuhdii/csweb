@@ -1,0 +1,456 @@
+.thread {
+    width: 100%;
+    height: fit-content;
+}
+
+.thread-wrapper {
+    padding: 10rem 25rem;
+    display: flex;
+}
+
+/* THREAD FILTER */
+
+.thread-filter {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.thread-filter-header {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.thread-filter-header h2 {
+    font-family: "Roboto", sans-serif;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.3rem;
+}
+
+.thread-filter-content {
+    width: 100%;
+    height: fit-content;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.categories-links-wrapper {
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.categories-links-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+}
+.categories-links-title:hover {
+    background-color: var(--light-grey-color2);
+}
+
+.change #arrow-links {
+    transform: rotate(90deg);
+}
+
+.categories-links-title i {
+    font-size: 1.3rem;
+    margin-right: 2rem;
+    transition: 0.3s transform;
+}
+
+.categories-links-title a {
+    font-size: 1.8rem;
+    color: black;
+}
+
+.categories-links-content {
+    width: 100%;
+    display: none;
+}
+
+.active .categories-links-content {
+    display: block;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+.categories-links-content a {
+    width: 90%;
+    font-size: 1.8rem;
+    color: var(--light-grey-color);
+}
+
+.categories-links-content a:hover {
+    background-color: var(--light-grey-color2);
+}
+
+.thread-filter-role {
+    width: 100%;
+    height: fit-content;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.role-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.role-links a {
+    font-size: 2rem;
+    color: black;
+    pointer-events: none;
+}
+
+.role-links input {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 2rem;
+}
+
+/* THREAD FILTER */
+
+/* THREAD CONTENT */
+
+.thread-content {
+    width: 75%;
+    height: fit-content;
+}
+
+.create-thread-btn-wrapper {
+    position: relative;
+    width: 100%;
+    background-color: blue;
+}
+.create-thread-btn {
+    position: absolute;
+    width: 20rem;
+    background-color: var(--primarycolor);
+    border-radius: 1rem;
+    right: 0;
+}
+
+.create-thread-btn a {
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thread-content-wrapper {
+    margin-top: 5rem;
+    padding: 3rem 0 3rem 3rem;
+}
+
+/* --Thread Learner */
+
+.thread-content-learner-wrapper {
+    width: 100%;
+    height: 20rem;
+    background-color: var(--light-grey-color2);
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+}
+
+.thread-content-learner-valid-wrapper {
+    position: relative;
+}
+
+.thread-content-learner-valid {
+    position: absolute;
+    padding: 0.5rem;
+    right: 0;
+}
+
+.thread-content-learner-valid h3 {
+    font-size: 1.3rem;
+    padding: 1rem;
+    color: black;
+}
+
+.thread-content-learner-main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-learner {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profile-learner-image-wrapper {
+    width: 60%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-learner-image {
+    width: 20rem;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile-learner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.profile-learner-role-wrapper {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-learner-role {
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    color: var(--primarycolor);
+}
+
+.learner-thread-content {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.learner-thread-name {
+    width: fit-content;
+}
+.learner-thread-name h2 {
+    font-size: 2.5rem;
+    color: black;
+}
+
+.learner-thread-description {
+    width: 100%;
+}
+
+.learner-thread-description h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: black;
+}
+
+.learner-thread-description p {
+    font-size: 1.6rem;
+    color: black;
+}
+
+.learner-thread-offer h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: black;
+}
+
+.learner-thread-offer-detail {
+    display: flex;
+}
+
+.learner-thread-offer-detail h4 {
+    width: 20rem;
+    font-weight: 100;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.learner-thread-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+}
+
+.learner-thread-bottom-content > div {
+    width: fit-content;
+    margin: 1rem 2rem 0 0;
+}
+
+.learner-thread-bottom-content > div h4 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: black;
+}
+
+.learner-thread-bottom-content > div h4 span {
+    font-weight: 900;
+}
+
+/* --Thread Learner */
+
+/*  --Thread Talent */
+.thread-content-talent-wrapper {
+    width: 100%;
+    height: 20rem;
+    background-color: var(--primarycolor);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.thread-content-talent-main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-talent {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profile-talent-image-wrapper {
+    width: 60%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-talent-image {
+    width: 20rem;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile-talent-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.profile-talent-role-wrapper {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-talent-role {
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    color: var(--primarycolor);
+}
+
+.talent-thread-content {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.talent-thread-name {
+    width: fit-content;
+}
+.talent-thread-name h2 {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.talent-thread-description {
+    width: 100%;
+}
+
+.talent-thread-description h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.talent-thread-description p {
+    font-size: 1.6rem;
+    color: white;
+}
+
+.talent-thread-offer h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.talent-thread-offer-detail {
+    display: flex;
+}
+
+.talent-thread-offer-detail h4 {
+    width: 20rem;
+    font-weight: 100;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.talent-thread-bottom-content {
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.talent-thread-bottom-content h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+}
+
+.talent-thread-bottom-content p {
+    font-size: 1.5rem;
+    color: white;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.talent-thread-bottom-content p i {
+    color: var(--orange);
+}
+
+.talent-thread-bottom-content p span {
+    font-size: 1.5rem;
+}
+#rating {
+    color: orange;
+}
+
+/*  --Thread Talent */
+/* THREAD CONTENT */

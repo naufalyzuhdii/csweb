@@ -59,7 +59,7 @@
             </div>
 
             <div class="thread-navbar">
-                <a href="/view/thread" class="thread-links">Thread</a>
+                <a href="/view/thread-talent" class="thread-links">Thread</a>
             </div>
 
             <div class="search-navbar">
