@@ -31,7 +31,7 @@ class AuthController extends Controller
             'phone' => $request['phone'],
             'dob' => $request['dob']
         ]);
-        return ["Sign Up Success!"];
+        return redirect()->route('signin');
     }
 
     public function view_signIn(){
@@ -54,7 +54,7 @@ class AuthController extends Controller
             'password' => $request->get('password')
         );
         if(Auth::attempt($user_data)){
-            return ["Sign In learner Success!"];
+            return redirect()->route('course');
         }
         else{
             return ["Sign in Error!"];

@@ -16,7 +16,8 @@
             <div class="signin-text">
                 <h3>Sign In</h3>
             </div>
-            <form action="#" class="signin-form">
+            <form action="/signin" class="signin-form" method="POST">
+                @csrf
                 <div class="email-signin auth">
                     <label for="Email">
                         Email

@@ -23,8 +23,8 @@ Route::get('/', function () {
     ');
 });
 
-// Auth Guest CALVIN KURNIAWAN
-Route::get('/view/signin_page', [AuthController::class, 'view_signIn']);
+// Auth
+Route::get('/view/signin_page', [AuthController::class, 'view_signIn'])->name('signin');
 Route::post('/signin', [AuthController::class, 'signin']);
 Route::get('/view/signup_page', [AuthController::class, 'view_signUp']);
 Route::post('/signup', [AuthController::class, 'signup']);
@@ -32,10 +32,12 @@ Route::get('/view/talent-profile', [AuthController::class, 'view_talent_profile'
 
 
 // Categories Course
-Route::get('/view/course', [\App\Http\Controllers\CourseController::class, 'view_course']);
-Route::get('/view/sub-course', [\App\Http\Controllers\CourseController::class, 'view_sub_course']);
-Route::get('/view/topic-course', [\App\Http\Controllers\CourseController::class, 'view_topic_course']);
-Route::get('/view/topic-course-detail', [\App\Http\Controllers\CourseController::class, 'view_topic_course_detail']);
+Route::get('/view/course', [CourseController::class, 'view_course'])->name('course');
+Route::get('/view/sub-course', [CourseController::class, 'view_sub_course']);
+Route::get('/view/topic-course', [CourseController::class, 'view_topic_course']);
+Route::get('/view/topic-course-detail', [CourseController::class, 'view_topic_course_detail']);
+Route::get('/getcourse', [CourseController::class, 'get_all']);
+Route::post('/postcourse', [CourseController::class, 'post_course']);
 
 
 // General

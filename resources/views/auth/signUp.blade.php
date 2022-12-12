@@ -16,7 +16,8 @@
             <div class="signup-text">
                 <h3>Sign Up</h3>
             </div>
-            <form action="#" class="signup-form">
+            <form action="/signup" class="signup-form" method="POST">
+                @csrf
                 <div class="signup-content">
                     <div class="name-signup auth">
                         <label for="Name">Your Name</label>
