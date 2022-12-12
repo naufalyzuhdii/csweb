@@ -33,7 +33,7 @@ class AuthController extends Controller
             'phone' => $request['phone'],
             'dob' => $request['dob']
         ]);
-        return redirect()->route('signin');
+        return redirect()->route('learner_home');
     }
 
     public function view_signIn()
@@ -57,7 +57,7 @@ class AuthController extends Controller
             'password' => $request->get('password')
         );
         if(Auth::attempt($user_data)){
-            return redirect()->route('course');
+            return redirect()->route('learner_home');
         }
         else{
             return ["Sign in Error!"];
@@ -67,10 +67,8 @@ class AuthController extends Controller
     public function signout()
     {
         Auth::logout();
-        return ["Sign Out Success!"];
+        return redirect()->route('signin');
     }
-
-
 
     public function view_learner_home()
     {

@@ -27,12 +27,12 @@ Route::get('/', function () {
 
 
 //--Learner Home
-Route::get('/view/learner-home', [AuthController::class, 'view_learner_home']);
+Route::get('/view/learner-home', [AuthController::class, 'view_learner_home'])->name('learner_home');
 
 
 
 //--Talent Home
-Route::get('/view/talent-home', [AuthController::class, 'view_talent_home']);
+Route::get('/view/talent-home', [AuthController::class, 'view_talent_home'])->name('talent_home');
 
 
 // Auth Guest CALVIN KURNIAWAN
