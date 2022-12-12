@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Thread;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
 
 class ThreadController extends Controller
 {
@@ -14,13 +17,8 @@ class ThreadController extends Controller
     public function view_create_thread_page_learner()
     {
         return view('thread.create-thread-page-learner');
+    }
 
-use App\Models\Thread;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
-class ThreadController extends Controller
-{
     public function post_thread(Request $request)
     {
         $rules = [
