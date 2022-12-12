@@ -49,19 +49,17 @@ class AuthController extends Controller
         ]);
         if ($request->remember) {
             Cookie::queue('mycookie', $request->email, 15);
-        } else {
+        } 
+        else {
             Cookie::queue(Cookie::forget('mycookie'));
         }
-        $user_data = array(
-            'email' => $request->get('email'),
-            'password' => $request->get('password')
-        );
-        if(Auth::attempt($user_data)){
-            return redirect()->route('learner_home');
+        if(Auth::attempt($credentials, true)){
+            Session::put('mysession', Auth::user()->name);
+            if(Auth::user()->role == 'learner') return redirect('learner_home');
+            else if(Auth::user()->role == 'talent') return redirect('talent_home');
+            return redirect('/');
         }
-        else{
-            return ["Sign in Error!"];
-        }
+        return back()->withErrors("Not Registered", "signIn");
     }
 
     public function signout()
