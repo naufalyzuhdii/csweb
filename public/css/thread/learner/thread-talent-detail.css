@@ -42,6 +42,9 @@
 /* Thread Content Heading */
 
 /* Thread Content Header */
+
+.thread-content-header {
+}
 .thread-content-talent-wrapper {
     width: 100%;
     height: 20rem;
@@ -124,8 +127,8 @@
 }
 
 .talent-thread-description h4 {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.8rem;
+    font-weight: 500;
     color: white;
 }
 
@@ -135,7 +138,7 @@
 }
 
 .talent-thread-offer h4 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
     color: white;
 }
@@ -147,7 +150,7 @@
 .talent-thread-offer-detail h4 {
     width: 20rem;
     font-weight: 100;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: white;
 }
 
@@ -164,14 +167,14 @@
     flex-direction: column;
 }
 .review-wrapper h4 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 500;
     color: white;
 }
 .review-wrapper p {
     width: 15rem;
     display: flex;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: white;
     text-align: left;
     align-items: center;
@@ -186,7 +189,7 @@
 }
 
 .talent-thread-bottom-content p span {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 #rating {
     color: orange;
@@ -215,12 +218,140 @@
 .chat-btn-wrapper h3 {
     font-family: "Baloo 2", cursive;
     color: var(--primarycolor);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 /* Thread Content Header */
 
-
 /* Thread Content Main  */
+.thread-content-main {
+    width: 100%;
+    height: fit-content;
+}
 
+.thread-content-main-wrapper {
+    background-color: var(--primarycolor);
+    padding: 3rem 4rem;
+}
 
-/* Thread Content Main  */
+/* ----Thread Content Description */
+
+.thread-content-description {
+    width: 100%;
+}
+.thread-content-description h4 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: white;
+}
+
+.thread-content-description p {
+    font-size: 1.6rem;
+    color: white;
+}
+/* ----Thread Content Description */
+
+/* ----Thread Content Package */
+.thread-content-package {
+    width: 100%;
+    margin: 2rem 0;
+}
+.thread-content-package > h4 {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 900;
+}
+
+.package-wrapper {
+    width: 100%;
+    padding: 0 2rem;
+    margin: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.myPackage {
+    width: 30rem;
+    height: 35rem;
+    border: 1px solid white;
+    border-radius: 3rem;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.package-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.package-title h2 {
+    font-family: "Baloo 2", cursive;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 900;
+}
+
+.package-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.package-description p {
+    font-family: "Baloo 2", cursive;
+    font-size: 1.6rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    align-items: center;
+}
+
+.package-list {
+    margin-bottom: 2rem;
+}
+
+.package-list ul {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.package-list ul li {
+    width: 100%;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.package-list ul li h4 {
+    font-family: "Baloo 2", cursive;
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 100;
+}
+
+.package-price {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.package-price h3 {
+    font-family: "Baloo 2", cursive;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 900;
+}
+/* ----Thread Content Package */
+/* Thread Content Main  */ ;
