@@ -47,15 +47,17 @@ ul li {
     width: 100%;
     font-weight: 500;
     font-size: 1.8rem;
-    color: var(--white-color);
+    color: var(--deepblue);
     cursor: pointer;
 }
 
 .categories-links {
+    font-size: 1.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: var(--white-color);
 }
 
 .categories-links:hover,
@@ -65,7 +67,7 @@ ul li {
 
 li ul {
     display: none;
-    background-color: rgba(110, 189, 241, 0.7);
+    background-color: var(--secondarycolor);
     border-radius: 0.5rem;
 }
 

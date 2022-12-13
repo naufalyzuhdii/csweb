@@ -1,0 +1,226 @@
+.thread-talent-detail {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+}
+
+.thread-talent-detail-wrapper {
+    width: 100%;
+    padding: 10rem 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.thread-content {
+    width: 75%;
+    height: fit-content;
+}
+
+/* Thread Content Heading */
+.thread-content-heading {
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+.thread-content-heading h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.thread-content-heading h1 span {
+    color: var(--primarycolor);
+}
+.thread-content-heading p {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+/* Thread Content Heading */
+
+/* Thread Content Header */
+.thread-content-talent-wrapper {
+    width: 100%;
+    height: 20rem;
+    background-color: var(--primarycolor);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.thread-content-talent-main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-talent {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profile-talent-image-wrapper {
+    width: 60%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-talent-image {
+    width: 20rem;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile-talent-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.profile-talent-role-wrapper {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-talent-role {
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    color: var(--primarycolor);
+}
+
+.talent-thread-content {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.talent-thread-name {
+    width: fit-content;
+}
+.talent-thread-name h2 {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.talent-thread-description {
+    width: 100%;
+}
+
+.talent-thread-description h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.talent-thread-description p {
+    font-size: 1.6rem;
+    color: white;
+}
+
+.talent-thread-offer h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.talent-thread-offer-detail {
+    display: flex;
+}
+
+.talent-thread-offer-detail h4 {
+    width: 20rem;
+    font-weight: 100;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.talent-thread-bottom-content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.review-wrapper h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+}
+.review-wrapper p {
+    width: 15rem;
+    display: flex;
+    font-size: 1.5rem;
+    color: white;
+    text-align: left;
+    align-items: center;
+}
+
+.review-wrapper p span {
+    margin: 0 0.5rem;
+}
+
+.review-wrapper p i {
+    color: var(--orange);
+}
+
+.talent-thread-bottom-content p span {
+    font-size: 1.5rem;
+}
+#rating {
+    color: orange;
+}
+
+.chat-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 15rem;
+    height: 5rem;
+    background-color: white;
+    border: none;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.chat-btn:hover {
+    transform: scale(1.02);
+}
+
+.chat-btn-wrapper h3 {
+    font-family: "Baloo 2", cursive;
+    color: var(--primarycolor);
+    font-size: 1.8rem;
+}
+/* Thread Content Header */
+
+
+/* Thread Content Main  */
+
+
+/* Thread Content Main  */

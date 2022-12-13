@@ -31,6 +31,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 /* DROPDOWN */
@@ -42,19 +43,27 @@ ul li {
     display: block;
     position: relative;
 }
-.main-navigation li > a {
+
+.main-navigation li ul li:hover {
+    background-color: white;
+    border-radius: 0.5rem;
+}
+
+ul li > a {
     width: 100%;
     font-weight: 500;
     font-size: 1.8rem;
-    color: var(--white-color);
+    color: var(--deepblue);
     cursor: pointer;
 }
 
 .categories-links {
+    font-size: 1.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: var(--white-color);
 }
 
 .categories-links:hover,
@@ -64,7 +73,7 @@ ul li {
 
 li ul {
     display: none;
-    background-color: rgba(110, 189, 241, 0.7);
+    background-color: var(--secondarycolor);
     border-radius: 0.5rem;
 }
 
@@ -102,6 +111,7 @@ ul ul ul {
 
 /* THREAD */
 .thread-navbar {
+    position: relative;
     width: 15%;
     height: 100%;
     display: flex;
@@ -110,12 +120,45 @@ ul ul ul {
     text-align: center;
 }
 
+.thread-navbar:hover ul {
+    display: block;
+}
+
 .thread-links {
     width: 100%;
     font-weight: 500;
     font-size: 1.8rem;
     color: var(--white-color);
     cursor: pointer;
+}
+
+.thread-navbar ul {
+    position: absolute;
+    height: fit-content;
+    bottom: -60%;
+    background-color: var(--secondarycolor);
+    width: 90%;
+    border-radius: 0.5rem;
+    display: none;
+    z-index: 200;
+}
+
+.thread-navbar ul li {
+    width: 100%;
+    text-align: left;
+}
+
+.thread-navbar ul li a {
+    width: 100%;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--deepblue);
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.thread-navbar ul li a:hover {
+    background-color: var(--white-color);
 }
 
 /* THREAD */

@@ -15,6 +15,14 @@
     font-size: 2rem;
     font-family: "Roboto", sans-serif;
     letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+
+.thread-page-talent-header p {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
 }
 
 .create-thread-page-talent-wrapper {
@@ -124,8 +132,8 @@
     width: 100%;
     max-width: 100%;
     min-width: 100%;
-    min-height: 10rem;
-    max-height: 15rem;
+    min-height: 12rem;
+    max-height: 12rem;
     font-size: 1.5rem;
     padding: 0.8rem;
     border-radius: 1rem;
@@ -220,7 +228,7 @@
     position: absolute;
     background-color: var(--light-grey-color2);
     width: 50rem;
-    height: 55rem;
+    height: fit-content;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -287,8 +295,8 @@
 .package-description textarea {
     min-width: 100%;
     max-width: 100%;
-    min-height: 5rem;
-    max-height: 10rem;
+    min-height: 8rem;
+    max-height: 8rem;
     border-radius: 0.5rem;
     border: none;
     padding: 0.8rem;

@@ -6,6 +6,8 @@
 .thread-wrapper {
     padding: 10rem 25rem;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* THREAD FILTER */
@@ -133,6 +135,27 @@
     height: fit-content;
 }
 
+.thread-content-heading {
+    margin-bottom: 5rem;
+}
+
+.thread-content-heading h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.thread-content-heading h1 span {
+    color: var(--primarycolor);
+}
+.thread-content-heading p {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+
 .create-thread-btn-wrapper {
     position: relative;
     width: 100%;
@@ -156,8 +179,7 @@
 }
 
 .thread-content-wrapper {
-    margin-top: 5rem;
-    padding: 3rem 0 3rem 3rem;
+    margin-top: 10rem;
 }
 
 /* --Thread Learner */
@@ -277,14 +299,16 @@
 }
 
 .learner-thread-offer-detail {
+    width: 100%;
     display: flex;
 }
 
 .learner-thread-offer-detail h4 {
-    width: 20rem;
+    width: fit-content;
     font-weight: 100;
     font-size: 1.5rem;
     color: black;
+    margin-right: 10%;
 }
 
 .learner-thread-bottom-content {

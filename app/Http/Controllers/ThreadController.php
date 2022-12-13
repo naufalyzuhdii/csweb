@@ -9,25 +9,40 @@ use Illuminate\Support\Facades\Validator;
 
 class ThreadController extends Controller
 {
+    // LEARNER
     public function view_thread_learner()
     {
-        return view('thread.thread-learner');
+        return view('thread.learner.thread-learner');
     }
+    public function view_create_thread_page_learner()
+    {
+        return view('thread.learner.create-thread-page-learner');
+    }
+    public function view_find_freelancers_talents()
+    {
+        return view('thread.learner.find-freelancers-talent');
+    }
+    public function view_thread_talent_detail()
+    {
+        return view('thread.learner.thread-talent-detail');
+    }
+
+
+    // TALENT
 
     public function view_thread_talent()
     {
-        return view('thread.thread-talent');
-    }
-
-    public function view_create_thread_page_learner()
-    {
-        return view('thread.create-thread-page-learner');
+        return view('thread.talent.thread-talent');
     }
 
     public function view_create_thread_page_talent()
     {
-        return view('thread.create-thread-page-talent');
+        return view('thread.talent.create-thread-page-talent');
     }
+
+
+
+
 
     public function post_thread(Request $request)
     {
