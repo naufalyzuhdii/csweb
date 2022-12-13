@@ -1,5 +1,5 @@
 @extends('navigation.talent-template')
-<link rel="stylesheet" href="{{asset('/css/thread/create-thread-page-talent.css')}}">
+<link rel="stylesheet" href="{{asset('/css/thread/talent/create-thread-page-talent.css')}}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -7,7 +7,11 @@
 
 <section class="create-thread-page-talent">
     <div class="thread-page-talent-header">
-        <h1>Create your thread</h1>
+        <h1>Post your service to thread</h1>
+        <p>Get a customer and client by posting your service as freelancer or talent. You can sell your service by post
+            your abillity and package to gain
+            income.
+        </p>
     </div>
     <div class="create-thread-page-talent-wrapper">
         <div class="profile-talent">
@@ -32,7 +36,7 @@
             <form action="#">
                 <div class="talent-thread-description">
                     <h3>Description</h3>
-                    <textarea name="learner-thread-description"></textarea>
+                    <textarea name="learner-thread-description" maxlength="600"></textarea>
                 </div>
 
                 <div class="talent-thread-package">
@@ -55,7 +59,7 @@
                                             </div>
                                             <div class="package-description">
                                                 <h2>Package Description</h2>
-                                                <textarea name="package-description"></textarea>
+                                                <textarea name="package-description" maxlength="200"></textarea>
                                             </div>
                                             <div class="package-list">
                                                 <h2>Package List</h2>
@@ -75,7 +79,7 @@
                                                 <h2>Package Price</h2>
                                                 <div class="package-price-wrapper">
                                                     <span>Rp</span>
-                                                    <input type="number" name="package-price">
+                                                    <input type="text" name="package-price" id="rupiah" maxlength="11">
                                                 </div>
                                             </div>
 
@@ -104,7 +108,7 @@
                                             </div>
                                             <div class="package-description">
                                                 <h2>Package Description</h2>
-                                                <textarea name="package-description"></textarea>
+                                                <textarea name="package-description" maxlength="200"></textarea>
                                             </div>
                                             <div class="package-list">
                                                 <h2>Package List</h2>
@@ -124,7 +128,7 @@
                                                 <h2>Package Price</h2>
                                                 <div class="package-price-wrapper">
                                                     <span>Rp</span>
-                                                    <input type="number" name="package-price">
+                                                    <input type="text" name="package-price" id="rupiah" maxlength="11">
                                                 </div>
                                             </div>
 
@@ -153,7 +157,7 @@
                                             </div>
                                             <div class="package-description">
                                                 <h2>Package Description</h2>
-                                                <textarea name="package-description"></textarea>
+                                                <textarea name="package-description" maxlength="200"></textarea>
                                             </div>
                                             <div class="package-list">
                                                 <h2>Package List</h2>
@@ -173,7 +177,7 @@
                                                 <h2>Package Price</h2>
                                                 <div class="package-price-wrapper">
                                                     <span>Rp</span>
-                                                    <input type="number" name="package-price">
+                                                    <input type="text" name="package-price" id="rupiah" maxlength="11">
                                                 </div>
                                             </div>
 
@@ -203,6 +207,30 @@
 }
 function closeModal() {
     document.getElementById("myModal").style.display = "none";
+}
+
+
+var rupiah = document.getElementById("rupiah");
+rupiah.addEventListener("keyup", function (e) {
+    // tambahkan 'Rp.' pada saat form di ketik
+    // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+    rupiah.value = formatRupiah(this.value, "Rp. ");
+});
+function formatRupiah(angka, prefix) {
+    var number_string = angka.replace(/[^,\d]/g, "").toString(),
+        split = number_string.split(","),
+        sisa = split[0].length % 3,
+        rupiah = split[0].substr(0, sisa),
+        ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+    // tambahkan titik jika yang di input sudah menjadi angka ribuan
+    if (ribuan) {
+        separator = sisa ? "." : "";
+        rupiah += separator + ribuan.join(".");
+    }
+
+    rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
+    return prefix == undefined ? rupiah : rupiah ? rupiah : "";
 }
 
 </script>

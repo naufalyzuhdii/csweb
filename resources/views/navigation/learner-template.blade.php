@@ -59,7 +59,13 @@
             </div>
 
             <div class="thread-navbar">
-                <a href="/view/thread-learner" class="thread-links">Thread</a>
+                <a href="#" class="thread-links">
+                    Thread
+                </a>
+                <ul>
+                    <li> <a href="/view/thread-learner">Post a Project</a></li>
+                    <li> <a href="/view/find-freelancers-talents">Find Freelancers or Talents</a></li>
+                </ul>
             </div>
 
             <div class="search-navbar">

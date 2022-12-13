@@ -27,7 +27,7 @@
             <div class="categories-navbar">
                 <ul class="main-navigation">
                     <li>
-                        <a href="#" class="categories-links">Categories</a>
+                        <div class="categories-links">Categories</div>
                         <ul>
                             <li><a href="/view/course">Technology <i class="fa-sharp fa-solid fa-play"></i></a>
                                 <ul>
@@ -58,7 +58,7 @@
             </div>
 
             <div class="thread-navbar">
-                <a href="/view/thread" class="thread-links">Thread</a>
+                <a href="/view/thread-learner" class="thread-links">Thread</a>
             </div>
 
             <div class="search-navbar">

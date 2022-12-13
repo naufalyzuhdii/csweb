@@ -5,6 +5,30 @@
 
 .thread-wrapper {
     padding: 10rem 25rem;
+}
+
+.thread-content-heading {
+    margin-bottom: 5rem;
+}
+
+.thread-content-heading h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.thread-content-heading h1 span {
+    color: var(--primarycolor);
+}
+.thread-content-heading p {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+
+.thread-main {
     display: flex;
 }
 
