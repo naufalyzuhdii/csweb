@@ -427,13 +427,13 @@
 }
 
 .talent-thread-bottom-content h4 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: white;
 }
 
 .talent-thread-bottom-content p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: white;
     display: flex;
     text-align: left;
@@ -443,6 +443,10 @@
 
 .talent-thread-bottom-content p i {
     color: var(--orange);
+}
+
+.talent-thread-bottom-content p span {
+    font-size: 1.5rem;
 }
 #rating {
     color: orange;

@@ -14,7 +14,3 @@ document.querySelector("#eye").addEventListener("click", () => {
     }
 });
 // REVEAL PASSWORD
-
-// COURSE CAROUSEL
-
-// COURSE CAROUSEL

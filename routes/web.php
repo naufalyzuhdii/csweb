@@ -64,9 +64,10 @@ Route::post('/postcourse', [CourseController::class, 'post_course']);
 
 
 // Thread
-Route::get('/view/thread', [ThreadController::class, 'view_thread']);
+Route::get('/view/thread-learner', [ThreadController::class, 'view_thread_learner']);
+Route::get('/view/thread-talent', [ThreadController::class, 'view_thread_talent']);
 Route::get('/view/create-thread-page-learner', [ThreadController::class, 'view_create_thread_page_learner']);
-
+Route::get('/view/create-thread-page-talent', [ThreadController::class, 'view_create_thread_page_talent']);
 // Forum
 Route::get('/view/forum-detail-reply', [ForumController::class, 'view_forum_detail_reply']);
 

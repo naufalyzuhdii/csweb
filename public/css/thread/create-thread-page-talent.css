@@ -1,0 +1,397 @@
+.create-thread-page-talent {
+    width: 100%;
+    height: fit-content;
+    padding: 10rem 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.thread-page-talent-header {
+    width: 100%;
+}
+
+.thread-page-talent-header h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+}
+
+.create-thread-page-talent-wrapper {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    background-color: var(--primarycolor);
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+/* Profile Talent */
+
+.profile-talent {
+    position: relative;
+    width: 20%;
+    height: 30rem;
+}
+
+.profile-talent-wrapper {
+    position: absolute;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile-talent-image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-talent-image {
+    width: 20rem;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile-talent-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.profile-talent-role-wrapper {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+.profile-talent-role {
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    color: var(--primarycolor);
+}
+
+/* Profile Talent */
+
+/* Talent Thread Content */
+
+.talent-thread-content {
+    width: 80%;
+    padding: 2rem;
+    padding-right: 5rem;
+    height: fit-content;
+}
+
+.talent-thread-name h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.talent-thread-content form {
+    width: 100%;
+    height: fit-content;
+}
+
+.talent-thread-description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.talent-thread-description > h3 {
+    height: 3.5rem;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.talent-thread-description textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 10rem;
+    max-height: 15rem;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.post-thread-btn {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    margin-top: 5rem;
+}
+
+.post-thread-btn button {
+    position: absolute;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-color: white;
+    color: var(--deepblue);
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+/* --PACKAGE */
+
+.talent-thread-package {
+    margin: 5rem 0;
+}
+
+.talent-thread-package > h3 {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.packages-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.myPackage {
+    border: 1px solid white;
+    border-radius: 3rem;
+    margin: 3rem 0;
+    width: 30rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-package-wrapper {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#addPackage:hover h1,
+#addPackage:hover i {
+    color: var(--light-grey-color2);
+}
+
+.myPackage h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: white;
+}
+
+.myPackage i {
+    font-size: 2rem;
+    color: white;
+    margin: 2rem 0;
+}
+.thread-package-modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.thread-package-modal-wrapper {
+    position: absolute;
+    background-color: var(--light-grey-color2);
+    width: 50rem;
+    height: 55rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    padding: 5rem 8rem;
+}
+
+.close {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    font-size: 4rem;
+    right: 10%;
+    top: 3%;
+    cursor: pointer;
+    color: #aaaaaa;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.package-form {
+    width: 100%;
+    height: 100%;
+}
+
+.package-title {
+    width: 100%;
+    height: 6rem;
+    margin-bottom: 1.5rem;
+}
+
+.package-title h2 {
+    width: 100%;
+    height: 50%;
+    font-size: 1.8rem;
+}
+
+.package-title input {
+    width: 100%;
+    height: 50%;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    font-size: 1.5rem;
+}
+.package-description {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 1.5rem;
+}
+
+.package-description h2 {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+.package-description textarea {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 5rem;
+    max-height: 10rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1.5rem;
+}
+
+.package-list {
+    width: 100%;
+    height: 12rem;
+    margin-bottom: 2rem;
+}
+
+.package-list h2 {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.package-list ul {
+    width: 100%;
+}
+
+.package-list ul li {
+    width: 100%;
+    height: 3rem;
+    margin: 0.3rem 0;
+}
+
+.package-list ul li input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    font-size: 1.5rem;
+}
+
+.package-price {
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.package-price h2 {
+    width: 100%;
+    height: 50%;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.package-price-wrapper {
+    width: 90%;
+    height: 50%;
+    display: flex;
+}
+
+.package-price-wrapper span {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    border-radius: 1rem 0 0 1rem;
+    background-color: var(--primarycolor);
+    color: white;
+}
+.package-price-wrapper input {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    border-radius: 0 1rem 1rem 0;
+    padding: 0.8rem;
+    border: none;
+}
+
+.package-post-btn {
+    position: relative;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.package-post-btn button {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    background-color: var(--deepblue);
+    color: white;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+}
+/* --PACKAGE */
+/* Talent Thread Content */

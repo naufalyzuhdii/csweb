@@ -1,6 +1,6 @@
-@extends('navigation.guest-template')
+@extends('navigation.learner-template')
 
-<link rel="stylesheet" href="{{asset('css/thread/thread.css')}}">
+<link rel="stylesheet" href="{{asset('css/thread/thread-learner.css')}}">
 
 
 @section('content')
@@ -141,7 +141,7 @@
 
 
                 {{-- Thread Talent --}}
-                <a href="/view/thread-learner-detail" class="thread-content-talent-links">
+                <a href="/view/thread-talent-detail" class="thread-content-talent-links">
                     <div class="thread-content-talent-wrapper">
                         <div class="thread-content-talent-main">
                             <div class="profile-talent">
