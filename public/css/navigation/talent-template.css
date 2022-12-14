@@ -11,9 +11,19 @@
     display: flex;
     justify-content: space-evenly;
 }
+.nav-1 {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+.nav-2 {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
 
 .logo {
-    width: 10%;
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -26,7 +36,7 @@
     object-fit: cover;
 }
 .categories-navbar {
-    width: 15%;
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -111,7 +121,8 @@ ul ul ul {
 
 /* THREAD */
 .thread-navbar {
-    width: 15%;
+    position: relative;
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -131,7 +142,7 @@ ul ul ul {
 
 /* SEARCHBAR */
 .search-navbar {
-    width: 35%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -165,9 +176,9 @@ ul ul ul {
 
 /* SEARCHBAR */
 
-/* CART */
+/* FreelanceJob */
 .your-freelance-job {
-    width: 5%;
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -201,11 +212,11 @@ ul ul ul {
     opacity: 1;
     visibility: visible;
 }
-/* CART */
+/* FreelanceJob */
 
 /* your-course */
 .your-course {
-    width: 5%;
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -249,7 +260,7 @@ ul ul ul {
 
 /* Profile Nav */
 .profile-navbar {
-    width: 5%;
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -279,7 +290,7 @@ ul ul ul {
     display: none;
     position: absolute;
     top: 85%;
-    left: -10rem;
+    left: 0;
     background-color: var(--secondarycolor);
     border-radius: 0.5rem;
     justify-content: center;
