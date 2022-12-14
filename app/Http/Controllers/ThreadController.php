@@ -10,10 +10,17 @@ use Illuminate\Support\Facades\Validator;
 class ThreadController extends Controller
 {
     // LEARNER
+
+    // public function view_thread_learner()
+    // {
+    //     return view('thread.learner.thread-learner');
+    // }
+
     public function view_thread_learner()
     {
-        return view('thread.learner.thread-learner');
+         return view('thread.learner.thread-learner');
     }
+
     public function view_create_thread_page_learner()
     {
         return view('thread.learner.create-thread-page-learner');
