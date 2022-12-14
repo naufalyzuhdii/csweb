@@ -1,4 +1,3 @@
-{{-- @extends('navigation.learner-template') --}}
 @extends('layout.main-template')
 
 @section('linkCSS')
