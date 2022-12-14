@@ -202,20 +202,22 @@
 </section>
 
 <script>
-    function showModal() {
+function showModal() {
     document.getElementById("myModal").style.display = "block";
 }
+
 function closeModal() {
     document.getElementById("myModal").style.display = "none";
 }
 
 
 var rupiah = document.getElementById("rupiah");
-rupiah.addEventListener("keyup", function (e) {
+rupiah.addEventListener("keyup", function(e) {
     // tambahkan 'Rp.' pada saat form di ketik
     // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
     rupiah.value = formatRupiah(this.value, "Rp. ");
 });
+
 function formatRupiah(angka, prefix) {
     var number_string = angka.replace(/[^,\d]/g, "").toString(),
         split = number_string.split(","),
@@ -232,7 +234,6 @@ function formatRupiah(angka, prefix) {
     rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
     return prefix == undefined ? rupiah : rupiah ? rupiah : "";
 }
-
 </script>
 
 

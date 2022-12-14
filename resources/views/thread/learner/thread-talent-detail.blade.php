@@ -72,12 +72,106 @@
             <div class="thread-content-main">
                 <div class="thread-content-main-wrapper">
 
+                    <!-- Thread Content Description -->
+                    <div class="thread-content-description">
+                        <h4>Description</h4>
+                        <p>I will create a custom website development with many of framework such as Laravel,
+                            JavaScript, ReactJs and etc. As a learner you can
+                            do request any improvement of the website development. You can also choose a variation of
+                            services package that i serve here.</p>
+                    </div>
+                    <!-- Thread Content Description -->
 
+                    <!-- Thread Content Package -->
+                    <div class="thread-content-package">
+                        <h4>Package</h4>
+                        <div class="package-wrapper">
+                            <div class="myPackage">
+                                <div class="package-title">
+                                    <h2>Reguler</h2>
+                                </div>
+                                <div class="package-description">
+                                    <p>Includes navigation, background
+                                        slide, social media button, and
+                                        source file</p>
+                                </div>
+                                <div class="package-list">
+                                    <ul>
+                                        <li>
+                                            <h4>2 Days Delivery</h4>
+                                        </li>
+                                        <li>
+                                            <h4>2 Maximum revision</h4>
+                                        </li>
+                                        <li>
+                                            <h4>Requested Framework</h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="package-price">
+                                    <h3>Rp. 300.000</h3>
+                                </div>
+                            </div>
+                            <div class="myPackage">
+                                <div class="package-title">
+                                    <h2>Reguler</h2>
+                                </div>
+                                <div class="package-description">
+                                    <p>Includes navigation, background
+                                        slide, social media button, and
+                                        source file</p>
+                                </div>
+                                <div class="package-list">
+                                    <ul>
+                                        <li>
+                                            <h4>2 Days Delivery</h4>
+                                        </li>
+                                        <li>
+                                            <h4>2 Maximum revision</h4>
+                                        </li>
+                                        <li>
+                                            <h4>Requested Framework</h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="package-price">
+                                    <h3>Rp. 300.000</h3>
+                                </div>
+                            </div>
+                            <div class="myPackage">
+                                <div class="package-title">
+                                    <h2>Reguler</h2>
+                                </div>
+                                <div class="package-description">
+                                    <p>Includes navigation, background
+                                        slide, social media button, and
+                                        source file</p>
+                                </div>
+                                <div class="package-list">
+                                    <ul>
+                                        <li>
+                                            <h4>2 Days Delivery</h4>
+                                        </li>
+                                        <li>
+                                            <h4>2 Maximum revision</h4>
+                                        </li>
+                                        <li>
+                                            <h4>Requested Framework</h4>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="package-price">
+                                    <h3>Rp. 300.000</h3>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Thread Content Package -->
                 </div>
             </div>
             {{-- Thread Content Main --}}
         </div>
-
 
     </div>
 </section>
