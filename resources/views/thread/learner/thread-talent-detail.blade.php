@@ -171,6 +171,67 @@
                         </div>
                     </div>
                     <!-- Thread Content Package -->
+
+                    <!-- Thread Content Ratings -->
+                    <div class="thread-content-ratings">
+                        <h4>Ratings</h4>
+                        <div class="thread-content-ratings-wrapper">
+                            <div class="rating-list">
+                                <h4>
+                                    Talent's services
+                                </h4>
+                                <div class="rating-icon">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="rating-list">
+                                <h4>
+                                    Talent's communication
+                                </h4>
+                                <div class="rating-icon">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Thread Content Ratings -->
+
+                    <!-- Thread Content Reviews -->
+                    <div class="thread-content-reviews">
+                        <h4>Reviews</h4>
+                        <h3>(200 reviews)</h3>
+                        <div class="thread-content-reviews-wrapper">
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Thread Content Reviews -->
+
+
                 </div>
             </div>
             {{-- Thread Content Main --}}

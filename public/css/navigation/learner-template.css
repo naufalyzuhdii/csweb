@@ -11,9 +11,19 @@
     display: flex;
     justify-content: space-evenly;
 }
+.nav-1 {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
+.nav-2 {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+}
 
 .logo {
-    width: 10%;
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -26,7 +36,7 @@
     object-fit: cover;
 }
 .categories-navbar {
-    width: 15%;
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -112,7 +122,7 @@ ul ul ul {
 /* THREAD */
 .thread-navbar {
     position: relative;
-    width: 15%;
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -135,9 +145,9 @@ ul ul ul {
 .thread-navbar ul {
     position: absolute;
     height: fit-content;
-    bottom: -60%;
+    bottom: -80%;
     background-color: var(--secondarycolor);
-    width: 90%;
+    width: fit-content;
     border-radius: 0.5rem;
     display: none;
     z-index: 200;
@@ -165,7 +175,7 @@ ul ul ul {
 
 /* SEARCHBAR */
 .search-navbar {
-    width: 35%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,7 +211,7 @@ ul ul ul {
 
 /* CART */
 .cart-navbar {
-    width: 5%;
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -239,7 +249,7 @@ ul ul ul {
 
 /* Progress Nav */
 .progress-navbar {
-    width: 5%;
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -283,7 +293,7 @@ ul ul ul {
 
 /* Profile Nav */
 .profile-navbar {
-    width: 5%;
+    width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;

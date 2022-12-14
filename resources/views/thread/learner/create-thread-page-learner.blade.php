@@ -7,89 +7,96 @@
 @section('content')
 
 <section class="create-thread-page-learner">
-    <div class="thread-page-learner-header">
-        <h1>Tell us what you need done</h1>
-        <p>Get in touch with skilled freelancers and talents. You can view their profiles, portfolios and ratings. Pay
-            the freelancer or talent only when
-            you are 100% satisfied with their work.
-        </p>
-    </div>
-    <div class="create-thread-page-learner-wrapper">
-        <div class="profile-learner">
-            <div class="profile-learner-wrapper">
-                <div class="profile-learner-image-wrapper">
-                    <div class="profile-learner-image">
-                        <img src="{{asset('images/thread/jason.jpg')}}" alt="">
-                    </div>
-                </div>
-                <div class="profile-learner-role-wrapper">
-                    <div class="profile-learner-role">
-                        <h2>Learner</h2>
-                    </div>
-                </div>
-            </div>
+    <div class="wrapper">
+        <div class="thread-page-learner-header">
+            <h1>Tell us what you need done</h1>
+            <p>Get in touch with skilled freelancers and talents. You can view their profiles, portfolios and ratings.
+                Pay
+                the freelancer or talent only when
+                you are 100% satisfied with their work.
+            </p>
         </div>
-
-        <div class="learner-thread-content">
-            <div class="learner-thread-name">
-                <h2>{{ old('name', Auth::user()->name) }}</h2>
-            </div>
-            <form action="/create_thread" enctype="multipart/form-data" method="POST">
-                @csrf
-                <div class="learner-thread-project-title">
-                    <h3>Project Title</h3>
-                    <input type="text" name="project_title" placeholder="e.g Build me a website ...">
-                </div>
-
-                <div class="learner-thread-description">
-                    <h3>Description</h3>
-                    <textarea name="description" maxlength="500"
-                        placeholder="Describe your project here ..."></textarea>
-                </div>
-
-                <div class="learner-thread-skills-required">
-                    <h3>What skills are required?</h3>
-                    <input type="text" name="skills_requirement" placeholder="Enter required skills...">
-                </div>
-
-                <div class="learner-offered-things">
-                    <div class="offered-duration">
-                        <h3>Offered Duration</h3>
-                        <input type="text" name="offered_duration">
-                    </div>
-                    <div class="offered-price">
-                        <h3>Offered Price</h3>
-                        <div class="price">
-                            <div class="min-price">
-                                <span>Rp.</span>
-                                <input type="text" name="min_price" id="rupiah" maxlength="11" placeholder="Min Price">
-                            </div>
-                            <div class="max-price">
-                                <span>Rp.</span>
-                                <input type="text" name="max_price" id="rupiah2" maxlength="11" placeholder="Max Price">
-                            </div>
+        <div class="create-thread-page-learner-wrapper">
+            <!-- Profile Learner -->
+            <div class="profile-learner">
+                <div class="profile-learner-wrapper">
+                    <div class="profile-learner-image-wrapper">
+                        <div class="profile-learner-image">
+                            <img src="{{asset('images/thread/jason.jpg')}}" alt="">
                         </div>
                     </div>
-
+                    <div class="profile-learner-role-wrapper">
+                        <div class="profile-learner-role">
+                            <h2>Learner</h2>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="post-thread-btn">
-                    <button type="submit">Post Thread</button>
+            </div>
+            <!-- Profile Learner -->
+            <!-- Learner Thread Content -->
+            <div class="learner-thread-content">
+                <div class="learner-thread-name">
+                    <h2>{{ old('name', Auth::user()->name) }}</h2>
                 </div>
-            </form>
-            <label for="error" style="color:red">
-                @if ($errors->any())
+                <form action="/create_thread" enctype="multipart/form-data" method="POST">
+                    @csrf
+                    <div class="learner-thread-project-title">
+                        <h3>Project Title</h3>
+                        <input type="text" name="project_title" placeholder="e.g Build me a website ...">
+                    </div>
+
+                    <div class="learner-thread-description">
+                        <h3>Description</h3>
+                        <textarea name="description" maxlength="500"
+                            placeholder="Describe your project here ..."></textarea>
+                    </div>
+
+                    <div class="learner-thread-skills-required">
+                        <h3>What skills are required?</h3>
+                        <input type="text" name="skills_requirement" placeholder="Enter required skills...">
+                    </div>
+
+                    <div class="learner-offered-things">
+                        <div class="offered-duration">
+                            <h3>Offered Duration</h3>
+                            <input type="text" name="offered_duration">
+                        </div>
+                        <div class="offered-price">
+                            <h3>Offered Price</h3>
+                            <div class="price">
+                                <div class="min-price">
+                                    <span>Rp.</span>
+                                    <input type="text" name="min_price" id="rupiah" maxlength="11"
+                                        placeholder="Min Price">
+                                </div>
+                                <div class="max-price">
+                                    <span>Rp.</span>
+                                    <input type="text" name="max_price" id="rupiah2" maxlength="11"
+                                        placeholder="Max Price">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="post-thread-btn">
+                        <button type="submit">Post Thread</button>
+                    </div>
+                </form>
+                <label for="error" style="color:red">
+                    @if ($errors->any())
                     {{ $errors->first() }}
-                @endif
-            </label>
+                    @endif
+                </label>
+            </div>
+            <!-- Learner Thread Content -->
         </div>
-
     </div>
 </section>
 
 <script>
-    var rupiah = document.getElementById("rupiah");
-rupiah.addEventListener("keyup", function (e) {
+var rupiah = document.getElementById("rupiah");
+rupiah.addEventListener("keyup", function(e) {
     // tambahkan 'Rp.' pada saat form di ketik
     // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
     rupiah.value = formatRupiah(this.value, "Rp. ");
@@ -115,7 +122,7 @@ function formatRupiah(angka, prefix) {
 
 
 var rupiah2 = document.getElementById("rupiah2");
-rupiah2.addEventListener("keyup", function (e) {
+rupiah2.addEventListener("keyup", function(e) {
 
     rupiah2.value = formatrupiah2(this.value, "Rp. ");
 });

@@ -10,10 +10,17 @@ use Illuminate\Support\Facades\Validator;
 class ThreadController extends Controller
 {
     // LEARNER
+
     // public function view_thread_learner()
     // {
     //     return view('thread.learner.thread-learner');
     // }
+
+    public function view_thread_learner()
+    {
+         return view('thread.learner.thread-learner');
+    }
+
     public function view_create_thread_page_learner()
     {
         return view('thread.learner.create-thread-page-learner');
@@ -76,8 +83,13 @@ class ThreadController extends Controller
         $thread->max_price = $request->max_price;
 
         $thread->save();
-        return redirect()->route('thread-learner-page');
+        return redirect()->route('thread.learner.thread-learner-page');
     }
+
+    
+    // $inputed =  $request->input('item_price');
+    // $item_price = (int)str_replace('.', '', $inputed);
+    // $current_item_price = number_format($item_price, 0, ",", ".");
 
     public function update_thread(Request $request)
     {
