@@ -10,22 +10,22 @@ use Illuminate\Support\Facades\Validator;
 class ThreadController extends Controller
 {
     // LEARNER
-    public function view_thread_learner()
-    {
-        return view('thread.learner.thread-learner');
-    }
-    public function view_create_thread_page_learner()
-    {
-        return view('thread.learner.create-thread-page-learner');
-    }
-    public function view_find_freelancers_talents()
-    {
-        return view('thread.learner.find-freelancers-talent');
-    }
-    public function view_thread_talent_detail()
-    {
-        return view('thread.learner.thread-talent-detail');
-    }
+    // public function view_thread_learner()
+    // {
+    //     return view('thread.learner.thread-learner');
+    // }
+    // public function view_create_thread_page_learner()
+    // {
+    //     return view('thread.learner.create-thread-page-learner');
+    // }
+    // public function view_find_freelancers_talents()
+    // {
+    //     return view('thread.learner.find-freelancers-talent');
+    // }
+    // public function view_thread_talent_detail()
+    // {
+    //     return view('thread.learner.thread-talent-detail');
+    // }
 
 
     // TALENT
@@ -40,33 +40,43 @@ class ThreadController extends Controller
         return view('thread.talent.create-thread-page-talent');
     }
 
+    // CONTROLL FUNCTION
 
-
-
+    public function show_thread(){
+        $threads = Thread::latest();
+        if(request('search')){
+            $products->where('name', 'like', '%'. request('search'). '%');
+        }
+        // $products = Product::all();
+        return view('thread/learner/thread-learner', [
+            "threads" => $threads->paginate(8)
+        ]);
+    }
 
     public function post_thread(Request $request)
     {
         $rules = [
-            'title' => 'required|unique:threads',
-            'topic' => 'required',
+            'project_title' => 'required|unique:threads',
             'description' => 'required',
-            'duration' => 'required',
-            'price' => 'required'
+            'skills_requirement' => 'required',
+            'offered_duration' => 'required',
+            'min_price' => 'required',
+            'max_price' => 'required'
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return back()->withErrors($validator);
         }
         $thread = new Thread();
-        $thread->title = $request->title;
-        $thread->topic = $request->topic;
+        $thread->project_title = $request->project_title;
         $thread->description = $request->description;
-        $thread->duration = $request->duration;
-        $thread->price = $request->price;
-        $thread->category_id = $request->category;
+        $thread->skills_requirement = $request->skills_requirement;
+        $thread->offered_duration = $request->offered_duration;
+        $thread->min_price = $request->min_price;
+        $thread->max_price = $request->max_price;
 
         $thread->save();
-        return ["Post Thread Success!"];
+        return redirect()->route('thread-learner-page');
     }
 
     public function update_thread(Request $request)

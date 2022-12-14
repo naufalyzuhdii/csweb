@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('threads', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('category_id');
-            $table->string('title');
-            $table->string('topic');
+            // $table->unsignedBigInteger('category_id');
+            $table->string('project_title');
             $table->string('description');
-            $table->string('duration');
-            $table->bigInteger('price');
-            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('skills_requirement');
+            $table->string('offered_duration');
+            $table->bigInteger('min_price');
+            $table->bigInteger('max_price');
+            // $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

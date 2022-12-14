@@ -31,40 +31,41 @@
 
         <div class="learner-thread-content">
             <div class="learner-thread-name">
-                <h2>Jason</h2>
+                <h2>{{ old('name', Auth::user()->name) }}</h2>
             </div>
-            <form action="#">
+            <form action="/create_thread" enctype="multipart/form-data" method="POST">
+                @csrf
                 <div class="learner-thread-project-title">
                     <h3>Project Title</h3>
-                    <input type="text" name="project-title" placeholder="e.g Build me a website ...">
+                    <input type="text" name="project_title" placeholder="e.g Build me a website ...">
                 </div>
 
                 <div class="learner-thread-description">
                     <h3>Description</h3>
-                    <textarea name="learner-thread-description" maxlength="500"
+                    <textarea name="description" maxlength="500"
                         placeholder="Describe your project here ..."></textarea>
                 </div>
 
                 <div class="learner-thread-skills-required">
                     <h3>What skills are required?</h3>
-                    <input type="text" name="skills" placeholder="Enter required skills...">
+                    <input type="text" name="skills_requirement" placeholder="Enter required skills...">
                 </div>
 
                 <div class="learner-offered-things">
                     <div class="offered-duration">
                         <h3>Offered Duration</h3>
-                        <input type="text" name="offered-duration">
+                        <input type="text" name="offered_duration">
                     </div>
                     <div class="offered-price">
                         <h3>Offered Price</h3>
                         <div class="price">
                             <div class="min-price">
                                 <span>Rp.</span>
-                                <input type="text" name="min-price" id="rupiah" maxlength="11" placeholder="Min Price">
+                                <input type="text" name="min_price" id="rupiah" maxlength="11" placeholder="Min Price">
                             </div>
                             <div class="max-price">
                                 <span>Rp.</span>
-                                <input type="text" name="max-price" id="rupiah2" maxlength="11" placeholder="Max Price">
+                                <input type="text" name="max_price" id="rupiah2" maxlength="11" placeholder="Max Price">
                             </div>
                         </div>
                     </div>
@@ -75,6 +76,11 @@
                     <button type="submit">Post Thread</button>
                 </div>
             </form>
+            <label for="error" style="color:red">
+                @if ($errors->any())
+                    {{ $errors->first() }}
+                @endif
+            </label>
         </div>
 
     </div>

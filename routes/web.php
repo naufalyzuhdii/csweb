@@ -41,9 +41,11 @@ Route::get('/view/signin_page', [AuthController::class, 'view_signIn']);
 // Auth
 Route::get('/view/signin_page', [AuthController::class, 'view_signIn'])->name('signin');
 Route::post('/signin', [AuthController::class, 'signin']);
+
 Route::get('/view/signup_page', [AuthController::class, 'view_signUp']);
 Route::post('/signup', [AuthController::class, 'signup']);
 
+Route::get('/signout', [AuthController::Class, 'signout']);
 
 // Categories Course
 
@@ -65,10 +67,12 @@ Route::post('/postcourse', [CourseController::class, 'post_course']);
 
 // Thread
 // --Learner
-Route::get('/view/thread-learner', [ThreadController::class, 'view_thread_learner']);
+Route::get('/view/thread-learner', [ThreadController::class, 'show_thread']);
 Route::get('/view/create-thread-page-learner', [ThreadController::class, 'view_create_thread_page_learner']);
 Route::get('/view/find-freelancers-talents', [ThreadController::class, 'view_find_freelancers_talents']);
 Route::get('/view/thread-talent-detail', [ThreadController::class, 'view_thread_talent_detail']);
+
+Route::post('/create_thread', [ThreadController::class, 'post_thread']);
 // --Talent
 Route::get('/view/thread-talent', [ThreadController::class, 'view_thread_talent']);
 Route::get('/view/create-thread-page-talent', [ThreadController::class, 'view_create_thread_page_talent']);

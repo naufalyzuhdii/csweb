@@ -67,7 +67,7 @@ class AuthController extends Controller
     public function signout()
     {
         Auth::logout();
-        return ["Sign Out Success!"];
+        return redirect()->route('signin');
     }
 
 
