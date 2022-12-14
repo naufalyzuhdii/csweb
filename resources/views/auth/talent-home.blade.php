@@ -1,7 +1,10 @@
-@extends('navigation.talent-template')
+@extends('layout.main-template')
+@section('linkCSS')
 <link href="{{ asset('css/auth/talent-home.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+@endsection
+
 @section('content')
 {{-- Section Home Guest --}}
 <section class="home-guest">
@@ -190,24 +193,21 @@
 
 
 <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 4,
-      spaceBetween: 10,
-      slidesPerGroup: 1,
-      loop: false,
-      loopFillGroupWithBlank: true,
-      pagination: {
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 10,
+    slidesPerGroup: 1,
+    loop: false,
+    loopFillGroupWithBlank: true,
+    pagination: {
         el: ".swiper-pagination",
         clickable: true,
-      },
-      navigation: {
+    },
+    navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
-      },
-    });
-
-
-
+    },
+});
 </script>
 
 

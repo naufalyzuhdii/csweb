@@ -1,7 +1,8 @@
-@extends('navigation.learner-template')
+@extends('layout.main-template')
+@section('linkCSS')
 <link rel="stylesheet" href="{{asset('css/auth/talent-profile-course.css')}}">
+@endsection
 @section('content')
-
 <section class="talent-profile-course">
     <div class="talent-profile-course-header">
         <div class="talent-profile-course-header-wrapper">

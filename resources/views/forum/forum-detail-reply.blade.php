@@ -1,5 +1,7 @@
-@extends('navigation.learner-template')
+@extends('layout.main-template')
+@section('linkCSS')
 <link rel="stylesheet" href="{{asset('css/forum/forum-detail-reply.css')}}">
+@endsection
 
 @section ('content')
 <section class="forum-detail-reply">

@@ -1,7 +1,8 @@
-@extends('navigation.talent-template')
+@extends('layout.main-template')
 
+@section('linkCSS')
 <link rel="stylesheet" href="{{asset('css/thread/talent/thread-talent.css')}}">
-
+@endsection
 
 @section('content')
 
@@ -145,20 +146,15 @@
 
 
 <script>
-    var links_title = document.querySelectorAll(".categories-links-title");
-    links_title.forEach((links_title) =>
-    {
-        links_title.addEventListener("click", () =>
-        {
-                links_title.classList.toggle("change");
-                const parent = links_title.parentNode;
-                parent.classList.toggle("active");
+var links_title = document.querySelectorAll(".categories-links-title");
+links_title.forEach((links_title) => {
+    links_title.addEventListener("click", () => {
+        links_title.classList.toggle("change");
+        const parent = links_title.parentNode;
+        parent.classList.toggle("active");
 
-        });
     });
-
-
-
+});
 </script>
 
 @endsection
