@@ -24,6 +24,7 @@ class ThreadController extends Controller
     public function view_create_thread_page_learner()
     {
         return view('thread.learner.create-thread-page-learner');
+        
     }
     public function view_find_freelancers_talents()
     {
