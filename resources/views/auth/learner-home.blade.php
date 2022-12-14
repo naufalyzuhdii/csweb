@@ -1,7 +1,12 @@
-@extends('navigation.learner-template')
-<link href="{{ asset('css/auth/learner-home.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+{{-- @extends('navigation.learner-template') --}}
+@extends('layout.main-template')
+
+@section('linkCSS')
+    <link href="{{ asset('css/auth/learner-home.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>    
+@endsection
+
 @section('content')
 {{-- Section Home Guest --}}
 <section class="home-guest">

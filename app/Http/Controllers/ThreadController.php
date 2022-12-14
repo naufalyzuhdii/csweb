@@ -14,18 +14,18 @@ class ThreadController extends Controller
     // {
     //     return view('thread.learner.thread-learner');
     // }
-    // public function view_create_thread_page_learner()
-    // {
-    //     return view('thread.learner.create-thread-page-learner');
-    // }
-    // public function view_find_freelancers_talents()
-    // {
-    //     return view('thread.learner.find-freelancers-talent');
-    // }
-    // public function view_thread_talent_detail()
-    // {
-    //     return view('thread.learner.thread-talent-detail');
-    // }
+    public function view_create_thread_page_learner()
+    {
+        return view('thread.learner.create-thread-page-learner');
+    }
+    public function view_find_freelancers_talents()
+    {
+        return view('thread.learner.find-freelancers-talent');
+    }
+    public function view_thread_talent_detail()
+    {
+        return view('thread.learner.thread-talent-detail');
+    }
 
 
     // TALENT

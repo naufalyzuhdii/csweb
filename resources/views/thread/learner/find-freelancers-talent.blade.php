@@ -1,5 +1,8 @@
-@extends('navigation.learner-template')
-<link rel="stylesheet" href="{{asset('css/thread/learner/find-freelancers-talent.css')}}">
+@extends('layout.main-template')
+
+@section('linkCSS')
+    <link rel="stylesheet" href="{{asset('css/thread/learner/find-freelancers-talent.css')}}">    
+@endsection
 
 @section('content')
 <section class="find-freelancers-talents">

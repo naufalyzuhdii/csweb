@@ -1,7 +1,8 @@
-@extends('navigation.learner-template')
-<link rel="stylesheet" href="{{asset('/css/thread/learner/create-thread-page-learner.css')}}">
+@extends('layout.main-template')
 
-
+@section('linkCSS')
+    <link rel="stylesheet" href="{{asset('/css/thread/learner/create-thread-page-learner.css')}}">    
+@endsection
 
 @section('content')
 
