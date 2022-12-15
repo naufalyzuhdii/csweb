@@ -1,131 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=PT+Serif:wght@400;700&family=Roboto:wght@300;500&display=swap"
-        rel="stylesheet">
-    <link href="{{ asset('css/general.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/navigation/guest-template.css') }}" rel="stylesheet">
-
-    <title>CS</title>
-</head>
-
-<body>
-    {{-- Section Header --}}
-    <section class="header">
-        <div class="navigation">
-            <div class="nav-1">
-                <a href="" class="logo">
-                    <img src="{{asset('images/header/logo-white.png')}}">
-                </a>
-                <div class="categories-navbar">
-                    <ul class="main-navigation">
-                        <li>
-                            <div class="categories-links">Categories</div>
-                            <ul>
-                                <li><a href="/view/course">Technology <i class="fa-sharp fa-solid fa-play"></i></a>
-                                    <ul>
-                                        <li><a href="/view/sub-course">Wesbite<i
-                                                    class="fa-sharp fa-solid fa-play"></i></a>
-                                            <ul>
-                                                <li><a href="/view/topic-course">HTML</a></li>
-                                                <li><a href="#3">CSS</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#2">Mobile Application <i
-                                                    class="fa-sharp fa-solid fa-play"></i></a>
-                                            <ul>
-                                                <li><a href="">Android Studio</a></li>
-                                                <li><a href="#3">Java</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#3">Engineering</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#B">Mathemathic <i class="fa-sharp fa-solid fa-play"></i></a>
-                                    <ul>
-                                        <li><a href="#11">Calculus</a></li>
-                                        <li><a href="#22">Algebra</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="thread-navbar">
-                    <a href="/view/thread-learner" class="thread-links">Thread</a>
-                </div>
-            </div>
-            <div class="search-navbar">
-                <form class="search-bar" action="#" method="get">
-                    <input type="search" name="keyword" placeholder="Search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </form>
-            </div>
-            <div class="nav-2">
-                <div class="cart-navbar">
-                    <a href="/view/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-                <div class="nav-auth">
-                    <a href="/view/signin_page" class="auth-btn">
-                        <div class="auth-links">
-                            Sign In
-                        </div>
-                    </a>
-                    <a href="/view/signup_page" class="auth-btn">
-                        <div class="auth-links">
-                            Sign Up
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    {{-- End Of Section Header --}}
-
-    @yield('content')
-
-
-
-
-    {{-- Section Footer --}}
-    <section class="footer">
-        <div class="footer-wrapper">
-            <a href="#" class="logo-footer">
-                <img src="/images/header/logo-white.png" alt="">
+{{-- Section Header --}}
+<section class="header">
+    <div class="navigation">
+        <div class="nav-1">
+            <a href="" class="logo">
+                <img src="{{asset('images/header/logo-white.png')}}">
             </a>
-            <ul class="content">
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Help and Support</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
+            <div class="categories-navbar">
+                <ul class="main-navigation">
+                    <li>
+                        <div class="categories-links">Categories</div>
+                        <ul>
+                            <li><a href="/view/course">Technology <i class="fa-sharp fa-solid fa-play"></i></a>
+                                <ul>
+                                    <li><a href="/view/sub-course">Wesbite<i class="fa-sharp fa-solid fa-play"></i></a>
+                                        <ul>
+                                            <li><a href="/view/topic-course">HTML</a></li>
+                                            <li><a href="#3">CSS</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#2">Mobile Application <i class="fa-sharp fa-solid fa-play"></i></a>
+                                        <ul>
+                                            <li><a href="">Android Studio</a></li>
+                                            <li><a href="#3">Java</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#3">Engineering</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#B">Mathemathic <i class="fa-sharp fa-solid fa-play"></i></a>
+                                <ul>
+                                    <li><a href="#11">Calculus</a></li>
+                                    <li><a href="#22">Algebra</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 
-            <div class="copyright">
-                <p>&copy; 2022 Course Service &#x2022; All Rights Reserved</p>
+            <div class="thread-navbar">
+                <a href="/view/thread-learner" class="thread-links">Thread</a>
             </div>
         </div>
-    </section>
+        <div class="search-navbar">
+            <form class="search-bar" action="#" method="get">
+                <input type="search" name="keyword" placeholder="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </form>
+        </div>
+        <div class="nav-2">
+            <div class="cart-navbar">
+                <a href="/view/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="nav-auth">
+                <a href="/view/signin_page" class="auth-btn">
+                    <div class="auth-links">
+                        Sign In
+                    </div>
+                </a>
+                <a href="/view/signup_page" class="auth-btn">
+                    <div class="auth-links">
+                        Sign Up
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 
-    {{-- End Of Section Footer --}}
+</section>
+{{-- End Of Section Header --}}
 
-    <script>
-    // DROPDOWN CATEGORIES
-    document
-        .querySelector(".categories-nav-links")
-        .addEventListener("click", () => {
-            document.querySelector(".categories-nav-links").classList.toggle("change");
-        });
-    </script>
+
+
+
+
+<script>
+// DROPDOWN CATEGORIES
+document
+    .querySelector(".categories-nav-links")
+    .addEventListener("click", () => {
+        document.querySelector(".categories-nav-links").classList.toggle("change");
+    });
+</script>
 
 
 

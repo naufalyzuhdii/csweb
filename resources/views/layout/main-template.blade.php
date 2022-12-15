@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,19 +13,23 @@
         rel="stylesheet">
     <link href="{{ asset('css/general.css') }}" rel="stylesheet">
     @if (Auth::check())
-        @if (Auth::user()->role=='learner') <link rel="stylesheet" href="{{ asset('css/navigation/learner-template.css') }}">
-        @elseif (Auth::user()->role=='talent') <link rel="stylesheet" href="{{ asset('css/navigation/talent-template.css') }}">
-        @endif
-    @else <link rel="stylesheet" href="{{ asset('css/navigation/guest-template.css') }}">
+    @if (Auth::user()->role=='learner')
+    <link rel="stylesheet" href="{{ asset('css/navigation/learner-template.css') }}">
+    @elseif (Auth::user()->role=='talent')
+    <link rel="stylesheet" href="{{ asset('css/navigation/talent-template.css') }}">
+    @endif
+    @else
+    <link rel="stylesheet" href="{{ asset('css/navigation/guest-template.css') }}">
     @endif
     @yield('linkCSS')
     <title>CS</title>
 </head>
+
 <body>
     @if (Auth::check())
-        @if (Auth::user()->role=='learner') @include('navigation.learner-template')
-        @elseif (Auth::user()->role=='talent') @include('navigation.talent-template')
-        @endif
+    @if (Auth::user()->role=='learner') @include('navigation.learner-template')
+    @elseif (Auth::user()->role=='talent') @include('navigation.talent-template')
+    @endif
     @else @include('navigation/guest-template')
     @endif
     @yield('content')
@@ -46,4 +51,5 @@
         </div>
     </section>
 </body>
+
 </html>

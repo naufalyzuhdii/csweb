@@ -1,7 +1,8 @@
-@extends('navigation.guest-template')
-
+@extends('layout.main-template')
+@section('linkCSS')
+<link rel="stylesheet" href="{{asset('css/auth/signup.css')}}">
+@endsection
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/auth/signup.css') }}">
 <section class="signup">
     <div class="signup-wrapper">
         <div class="signup-header">

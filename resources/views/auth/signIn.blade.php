@@ -1,7 +1,9 @@
-@extends('navigation.guest-template')
+@extends('layout.main-template')
+@section('linkCSS')
+<link rel="stylesheet" href="{{asset('css/auth/signin.css')}}">
+@endsection
 
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/auth/signin.css') }}">
 <section class="signin">
     <div class="signin-wrapper">
         <div class="signin-header">
@@ -22,7 +24,8 @@
                     <label for="Email">
                         Email
                     </label>
-                    <input type="email" name="email" placeholder="Enter your email" value="{{ Cookie::get('mycookie') != null ? Cookie::get('mycookie') : '' }}">
+                    <input type="email" name="email" placeholder="Enter your email"
+                        value="{{ Cookie::get('mycookie') != null ? Cookie::get('mycookie') : '' }}">
                 </div>
                 <div class="password-signin auth">
                     <label for="Password">Password</label>
@@ -33,7 +36,8 @@
                 </div>
                 <div class="rememberme-group">
                     <div class="rememberme">
-                        <input type="checkbox" name="rememberme" id="remember" {{ Cookie::get('mycookie') != null ? 'checked' : '' }} checked="checked">
+                        <input type="checkbox" name="rememberme" id="remember"
+                            {{ Cookie::get('mycookie') != null ? 'checked' : '' }} checked="checked">
                         <label for="RememberMe">Remember Me</label>
                     </div>
                     <a href="#" class="forgot-password-link">Forgot Password? </a>
@@ -53,6 +57,5 @@
 
 <script src="{{ asset('js/script.js') }}">
 </script>
-
 
 @endsection

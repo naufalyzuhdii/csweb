@@ -1,7 +1,10 @@
-@extends('navigation.guest-template')
+@extends('layout.main-template')
+@section('linkCSS')
 <link rel="stylesheet" href="{{asset('css/categories/sub-course.css')}}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+@endsection
 @section('content')
 
 <section class="sub-course">
@@ -487,31 +490,28 @@
 
 
 <script>
-    var swiper = new Swiper(".mySubCourseSwiper", {
-      slidesPerView: 4,
-      spaceBetween: 10,
-      slidesPerGroup: 1,
-      loop: false,
-      loopFillGroupWithBlank: true,
-      navigation: {
+var swiper = new Swiper(".mySubCourseSwiper", {
+    slidesPerView: 4,
+    spaceBetween: 10,
+    slidesPerGroup: 1,
+    loop: false,
+    loopFillGroupWithBlank: true,
+    navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
-      },
-    });
+    },
+});
 
 
-    var swiper = new Swiper(".talentSwiper", {
-        slidesPerView: 4,
-        spaceBetween: 5,
-        freeMode: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-
-
-
+var swiper = new Swiper(".talentSwiper", {
+    slidesPerView: 4,
+    spaceBetween: 5,
+    freeMode: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
 </script>
 
 {{-- <script src="{{asset('js/script.js')}}"></script> --}}

@@ -1,8 +1,7 @@
-@extends('navigation.guest-template')
+@extends('layout.main-template')
+@section('linkCSS')
 <link rel="stylesheet" href="{{asset('css/categories/topic-course-detail.css')}}">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-
+@endsection
 @section('content')
 <section class="topic-course-detail">
     <div class="topic-course-detail-wrapper">
@@ -387,19 +386,15 @@
 </section>
 
 <script>
-    var chapter_title = document.querySelectorAll(".content-video-chapter-title");
-    chapter_title.forEach((chapter_title) =>
-    {
-        chapter_title.addEventListener("click", () =>
-        {
-                chapter_title.classList.toggle("change");
-                const parent = chapter_title.parentNode;
-                parent.classList.toggle("active");
+var chapter_title = document.querySelectorAll(".content-video-chapter-title");
+chapter_title.forEach((chapter_title) => {
+    chapter_title.addEventListener("click", () => {
+        chapter_title.classList.toggle("change");
+        const parent = chapter_title.parentNode;
+        parent.classList.toggle("active");
 
-        });
     });
-
-
+});
 </script>
 
 

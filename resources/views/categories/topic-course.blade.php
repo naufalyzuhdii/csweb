@@ -1,8 +1,7 @@
-@extends('navigation.guest-template')
+@extends('layout.main-template')
+@section('linkCSS')
 <link rel="stylesheet" href="{{asset('css/categories/topic-course.css')}}">
-
-
-
+@endsection
 @section('content')
 <section class="topic-course">
     <div class="topic-course-wrapper">
