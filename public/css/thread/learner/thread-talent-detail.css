@@ -51,6 +51,7 @@
     background-color: var(--primarycolor);
     border-radius: 1rem;
     margin-bottom: 2rem;
+    border-radius: 1rem 1rem 0 0;
 }
 
 .thread-content-talent-main {
@@ -231,6 +232,7 @@
 .thread-content-main-wrapper {
     background-color: var(--primarycolor);
     padding: 3rem 4rem;
+    border-radius: 0 0 1rem 1rem;
 }
 
 /* ----Thread Content Description */
@@ -430,6 +432,17 @@
 .thread-content-reviews-wrapper {
     width: 100%;
     height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.review:nth-child(1) {
+    display: inline-block;
+}
+.review:nth-child(2) {
+    display: inline-block;
 }
 
 .review {
@@ -442,7 +455,8 @@
     padding: 2rem;
     border: 2px solid white;
     border-radius: 2rem;
-    margin: 2rem 0;
+    margin: 1rem 2rem;
+    display: none;
 }
 .review-time {
     position: absolute;
@@ -508,10 +522,10 @@
 
 .review-rating {
     width: 100%;
-    height: 100%;
     padding: 0 1.5rem;
     align-items: center;
     justify-content: center;
+    margin-top: -1rem;
 }
 .review-rating i {
     font-size: 1.6rem;
@@ -523,6 +537,23 @@
     font-size: 1.6rem;
     color: var(--orange);
     font-weight: 900;
+}
+.showMore-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem 0;
+}
+#showMore {
+    font-size: 1.8rem;
+    width: 15%;
+    background-color: white;
+    color: var(--primarycolor);
+    border-radius: 1rem;
+}
+#showMore:hover {
+    background-color: rgba(255, 255, 255, 0.74);
 }
 
 /* ----Trhead Content Reviews */

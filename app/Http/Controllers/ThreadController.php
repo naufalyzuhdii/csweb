@@ -84,7 +84,7 @@ class ThreadController extends Controller
         $thread->max_price = $request->max_price;
 
         $thread->save();
-        return redirect()->route('thread.learner.thread-learner-page');
+        return redirect()->route('thread.learner.thread-learner');
     }
 
     

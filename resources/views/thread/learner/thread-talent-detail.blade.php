@@ -1,7 +1,7 @@
 @extends('layout.main-template')
 
 @section('linkCSS')
-    <link rel="stylesheet" href="{{asset('css/thread/learner/thread-talent-detail.css')}}">
+<link rel="stylesheet" href="{{asset('css/thread/learner/thread-talent-detail.css')}}">
 @endsection
 
 @section('content')
@@ -227,11 +227,180 @@
                                     <span>5.0</span>
                                 </div>
                             </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showMore-btn">
+                            <a href="#showMore" id="showMore">Show More</a>
                         </div>
                     </div>
                     <!-- Thread Content Reviews -->
-
-
                 </div>
             </div>
             {{-- Thread Content Main --}}
@@ -239,5 +408,30 @@
 
     </div>
 </section>
+
+<script>
+let loadMoreBtn = document.querySelector('#showMore');
+let currentItem = 2;
+
+// let boxes = [...document.querySelectorAll('.thread-content-reviews-wrapper .review')];
+// alert(boxes.length)
+
+
+
+loadMoreBtn.onclick = () => {
+    let boxes = [...document.querySelectorAll('.thread-content-reviews-wrapper .review')];
+
+    for (var i = currentItem; i <= currentItem + 1; i++) {
+        boxes[i].style.display = "inline-block";
+    }
+
+    currentItem += 2;
+
+    if (currentItem >= boxes.length) {
+        loadMoreBtn.style.display = "none"
+    }
+
+}
+</script>
 
 @endsection
