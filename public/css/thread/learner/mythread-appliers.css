@@ -1,0 +1,346 @@
+.mythread-appliers {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    padding: 10rem 25rem;
+    align-items: center;
+}
+
+.mythread-appliers-wrapper {
+    width: 75%;
+}
+/* ============== My Thread Appliers Heading =============== */
+.mythread-appliers-heading {
+    margin-bottom: 5rem;
+}
+.mythread-appliers-heading h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.mythread-appliers-heading h1 span {
+    color: var(--primarycolor);
+}
+.mythread-appliers-heading p {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+/* ============== My Thread Appliers Heading =============== */
+
+/* ============= My Thread Appliers Upper Content =========== */
+
+.thread-content-learner-wrapper {
+    width: 100%;
+    height: 22rem;
+    background-color: var(--light-grey-color2);
+    margin-bottom: 2rem;
+    border-radius: 1rem 1rem 0 0;
+}
+/* === Thread Content Learner Valid Wrapper */
+.thread-content-learner-valid-wrapper {
+    position: relative;
+}
+
+.thread-content-learner-valid {
+    position: absolute;
+    padding: 0.5rem;
+    right: 0;
+}
+
+.thread-content-learner-valid h3 {
+    font-size: 1.3rem;
+    padding: 1rem;
+    color: black;
+}
+/* === Thread Content Learner Valid Wrapper */
+
+/* === Thread Content Learner Main */
+/* ===== Profile Learner */
+.thread-content-learner-main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.profile-learner {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profile-learner-image-wrapper {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-learner-image {
+    width: 20rem;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile-learner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.profile-learner-role-wrapper {
+    width: 70%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-learner-role {
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    color: var(--primarycolor);
+}
+/* ===== Profile Learner */
+
+/* ==== Learner Thread Content */
+.learner-thread-content {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.learner-thread-name {
+    width: fit-content;
+}
+.learner-thread-name h2 {
+    font-size: 2.5rem;
+    color: black;
+}
+
+.learner-thread-project-title {
+    width: 100%;
+}
+
+.learner-thread-project-title h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: black;
+}
+
+.learner-thread-project-title p {
+    font-size: 1.6rem;
+    color: black;
+}
+
+.learner-thread-offer h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: black;
+}
+
+.learner-thread-offer-detail {
+    width: 100%;
+    display: flex;
+}
+
+.learner-thread-offer-detail h4 {
+    width: fit-content;
+    font-weight: 100;
+    font-size: 1.5rem;
+    color: black;
+    margin-right: 10%;
+}
+
+.learner-thread-bottom-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.talents-apply {
+    width: 100%;
+    padding-right: 2rem;
+}
+.talents-apply-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.talents-apply-wrapper h4 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: black;
+}
+.talents-apply-wrapper h4 span {
+    font-weight: 900;
+}
+
+/* ==== Learner Thread Content */
+/* === Thread Content Learner Main */
+/* ============= My Thread Appliers Upper Content =========== */
+
+/* ============= My Thread Appliers Content =========== */
+.mythread-appliers-content {
+}
+
+.mythread-appliers-content-wrapper {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--light-grey-color2);
+    border-radius: 0 0 1rem 1rem;
+    padding: 2rem 5rem;
+}
+/* === My Thread appliers Content Heading */
+.mythread-appliers-content-heading {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+.mythread-appliers-content-heading h2 {
+    font-size: 2rem;
+    font-weight: 900;
+}
+/* === My Thread appliers Content Heading */
+
+/* === My Thread Appliers Content Main */
+.mythread-appliers-content-main {
+    width: 100%;
+}
+
+.appliers {
+    width: 100%;
+    height: 20rem;
+    background-color: var(--primarycolor);
+    position: relative;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+.accept-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 10rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.accept-btn a h3 {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--primarycolor);
+}
+
+.appliers-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.appliers-picture {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 1rem;
+}
+.appliers-picture-wrapper {
+    width: 80%;
+    height: 100%;
+}
+.appliers-picture-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.appliers-data {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.appliers-name {
+    width: 80%;
+}
+.appliers-name h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: white;
+}
+.appliers-offered-price {
+    width: 100%;
+}
+
+.appliers-offered-price h3 {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 600;
+}
+.appliers-offered-price span {
+    margin-left: 1rem;
+    font-weight: 500;
+}
+.appliers-offered-description {
+    width: 100%;
+}
+.appliers-offered-description h3 {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 600;
+}
+.appliers-offered-description p {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 500;
+    margin-left: 1%;
+}
+
+.appliers-documents {
+    width: 100%;
+}
+.appliers-documents h3 {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 600;
+}
+.appliers-documents ul {
+    display: flex;
+}
+.appliers-documents ul li {
+    margin-right: 1rem;
+}
+.appliers-documents ul li a {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: underline;
+}
+/* === My Thread Appliers Content Main */
+
+/* ============= My Thread Appliers Content =========== */ ;

@@ -117,7 +117,7 @@
                             </div>
                             <div class="myPackage">
                                 <div class="package-title">
-                                    <h2>Reguler</h2>
+                                    <h2>Medium</h2>
                                 </div>
                                 <div class="package-description">
                                     <p>Includes navigation, background
@@ -138,12 +138,12 @@
                                     </ul>
                                 </div>
                                 <div class="package-price">
-                                    <h3>Rp. 300.000</h3>
+                                    <h3>Rp. 400.000</h3>
                                 </div>
                             </div>
                             <div class="myPackage">
                                 <div class="package-title">
-                                    <h2>Reguler</h2>
+                                    <h2>Super</h2>
                                 </div>
                                 <div class="package-description">
                                     <p>Includes navigation, background
@@ -164,7 +164,7 @@
                                     </ul>
                                 </div>
                                 <div class="package-price">
-                                    <h3>Rp. 300.000</h3>
+                                    <h3>Rp. 500.000</h3>
                                 </div>
                             </div>
 

@@ -13,7 +13,7 @@
 
 /* THREAD FILTER */
 
-.thread-filter {
+/* .thread-filter {
     width: 25%;
     display: flex;
     flex-direction: column;
@@ -125,16 +125,17 @@
     width: 1.5rem;
     height: 1.5rem;
     margin-right: 2rem;
-}
+} */
 
 /* THREAD FILTER */
 
 /* THREAD CONTENT */
-
 .thread-content {
     width: 75%;
     height: fit-content;
 }
+
+/* --THREAD CONTENT HEADING */
 
 .thread-content-heading {
     margin-bottom: 5rem;
@@ -156,7 +157,9 @@
     margin-top: 1rem;
     line-height: 2.5rem;
 }
-/* Thread Btn Wrapper */
+/* --THREAD CONTENT HEADING */
+
+/* --THREAD BTN WRAPPER */
 .thread-btn-wrapper {
     width: 100%;
     display: flex;
@@ -200,21 +203,22 @@
     justify-content: center;
     align-items: center;
 }
-/* Thread Btn Wrapper */
+/* --THREAD BTN WRAPPER */
 
+/* --THREAD CONTENT WRAPPER */
 .thread-content-wrapper {
     margin-top: 2.5rem;
 }
 
-/* --Thread Learner */
-
 .thread-content-learner-wrapper {
     width: 100%;
-    height: 20rem;
+    height: 22rem;
     background-color: var(--light-grey-color2);
     margin-bottom: 2rem;
     border-radius: 1rem;
 }
+
+/* --- THREAD CONTENT LEARNER VALID WRAPPER */
 
 .thread-content-learner-valid-wrapper {
     position: relative;
@@ -231,11 +235,14 @@
     padding: 1rem;
     color: black;
 }
+/* --- THREAD CONTENT LEARNER VALID WRAPPER */
 
+/* --- THREAD CONTENT LEARNER MAIN */
 .thread-content-learner-main {
     display: flex;
     width: 100%;
     height: 100%;
+    justify-content: space-between;
 }
 
 .profile-learner {
@@ -248,7 +255,7 @@
 }
 
 .profile-learner-image-wrapper {
-    width: 60%;
+    width: 70%;
     height: 70%;
     display: flex;
     justify-content: center;
@@ -268,7 +275,7 @@
     border-radius: 50%;
 }
 .profile-learner-role-wrapper {
-    width: 100%;
+    width: 70%;
     height: 15%;
     display: flex;
     justify-content: center;
@@ -284,13 +291,14 @@
     color: var(--primarycolor);
 }
 
+/* --LEARNER THREAD CONTENT */
+
 .learner-thread-content {
     width: 75%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 1rem;
 }
 
 .learner-thread-name {
@@ -301,17 +309,17 @@
     color: black;
 }
 
-.learner-thread-description {
+.learner-thread-project-title {
     width: 100%;
 }
 
-.learner-thread-description h4 {
+.learner-thread-project-title h4 {
     font-size: 1.5rem;
     font-weight: 600;
     color: black;
 }
 
-.learner-thread-description p {
+.learner-thread-project-title p {
     font-size: 1.6rem;
     color: black;
 }
@@ -336,12 +344,106 @@
 }
 
 .learner-thread-bottom-content {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: left;
+    align-items: center;
 }
 
-.learner-thread-bottom-content > div {
+/* .offer-date {
+    width: 40%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    border: 2px solid var(--light-grey-color);
+}
+
+.offer-date > div {
+}
+.offer-date > div h4 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: black;
+}
+
+.offer-date > div h4 span {
+    font-weight: 900;
+}
+
+.offer-started-from h4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.offer-ended-at h4 {
+    display: flex;
+    justify-content: space-between;
+} */
+
+.talents-apply {
+    width: 100%;
+    padding-right: 2rem;
+}
+.talents-apply-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.talents-apply-wrapper h4 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: black;
+}
+.talents-apply-wrapper h4 span {
+    font-weight: 900;
+}
+.talents-apply-wrapper h3 {
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.7rem;
+}
+
+.talents-apply-wrapper h3 a {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: black;
+}
+
+/* .talents-apply {
+    display: flex;
+}
+.talents-apply-wrapper {
+    background-color: red;
+    margin-right: 5rem;
+}
+
+.talents-apply-wrapper h4 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: black;
+}
+
+.talents-apply-wrapper h4 span {
+    font-weight: 900;
+}
+
+.talents-appliers {
+    background-color: pink;
+}
+.talents-apply a h3 {
+    font-size: 1.6rem;
+    color: black;
+    font-weight: 500;
+} */
+
+/* .learner-thread-bottom-content > div {
     width: fit-content;
     margin: 1rem 2rem 0 0;
 }
@@ -354,12 +456,15 @@
 
 .learner-thread-bottom-content > div h4 span {
     font-weight: 900;
-}
+} */
+/* --LEARNER THREAD CONTENT */
 
-/* --Thread Learner */
+/* --- THREAD CONTENT LEARNER MAIN */
+
+/* --THREAD CONTENT WRAPPER */
 
 /*  --Thread Talent */
-.thread-content-talent-wrapper {
+/* .thread-content-talent-wrapper {
     width: 100%;
     height: 20rem;
     background-color: var(--primarycolor);
@@ -498,7 +603,7 @@
 }
 #rating {
     color: orange;
-}
+} */
 
 /*  --Thread Talent */
 /* THREAD CONTENT */

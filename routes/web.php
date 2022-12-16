@@ -68,6 +68,8 @@ Route::get('/view/thread-learner', [ThreadController::class, 'show_thread'])->na
 Route::get('/view/create-thread-page-learner', [ThreadController::class, 'view_create_thread_page_learner']);
 Route::get('/view/find-freelancers-talents', [ThreadController::class, 'view_find_freelancers_talents']);
 Route::get('/view/thread-talent-detail', [ThreadController::class, 'view_thread_talent_detail']);
+Route::get('/view/my-thread', [ThreadController::class, 'view_my_thread']);
+Route::get('/view/appliers', [ThreadController::class, 'view_my_appliers']);
 
 Route::post('/create_thread', [ThreadController::class, 'post_thread']);
 // --Talent
