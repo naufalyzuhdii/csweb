@@ -100,7 +100,7 @@
                     thread, freelancers or talents
                     can apply the thread that you posted since they deal with the requirements.
                     <br><br>
-                    Here, you can create and post your own thread project by click button "create thread".
+                    Here, you can create and post your own thread project by clicking button "create thread".
                 </p>
             </div>
             <!-- THREAD CONTENT HEADING -->
