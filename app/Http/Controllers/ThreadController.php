@@ -35,6 +35,16 @@ class ThreadController extends Controller
         return view('thread.learner.thread-talent-detail');
     }
 
+    public function view_my_thread()
+    {
+        return view('thread.learner.mythread-learner');
+    }
+
+    public function view_my_appliers ()
+    {
+        return view('thread.learner.mythread-appliers');
+    }
+
 
     // TALENT
 
@@ -84,7 +94,7 @@ class ThreadController extends Controller
         $thread->max_price = $request->max_price;
 
         $thread->save();
-        return redirect()->route('thread.learner.thread-learner-page');
+        return redirect()->route('thread.learner.thread-learner');
     }
 
     

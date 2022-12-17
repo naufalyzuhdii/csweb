@@ -7,8 +7,6 @@
 
 <section class="thread">
     <div class="thread-wrapper">
-
-
         {{-- THREAD FILTER ( LEFT CONTENT ) --}}
         <!-- {{-- <div class="thread-filter">
             <div class="thread-filter-header">
@@ -93,31 +91,47 @@
             </div>
         </div> --}} -->
         {{-- END OF THREAD FILTER ( LEFT CONTENT ) --}}
-
-
-        {{-- THREAD CONTENT ( RIGHT CONTENT ) --}}
+        <!-- THREAD CONTENT  -->
         <div class="thread-content">
+            <!-- THREAD CONTENT HEADING -->
             <div class="thread-content-heading">
                 <h1> <span>Learner Thread</span> - Posted Project </h1>
                 <p>As a <i>learner</i> you can look for freelancers or talents to work on your projects. By posting a
                     thread, freelancers or talents
                     can apply the thread that you posted since they deal with the requirements.
                     <br><br>
-                    Here, you can create and post your own thread project by click button "create thread".
+                    Here, you can create and post your own thread project by clicking button "create thread".
                 </p>
             </div>
+            <!-- THREAD CONTENT HEADING -->
 
-            {{-- Create Thread --}}
-            <div class="create-thread-btn-wrapper">
-                <div class="create-thread-btn">
-                    <a href="/view/create-thread-page-learner">
-                        Create Thread
-                    </a>
+            <!-- THREAD BTN WRAPPER -->
+            <div class="thread-btn-wrapper">
+                <div class="thread-btn">
+                    <!-- View My Thread -->
+                    <div class="view-my-thread-btn-wrapper">
+                        <div class="view-my-thread-btn">
+                            <a href="/view/my-thread">
+                                My Thread
+                            </a>
+                        </div>
+                    </div>
+                    <!-- View My Thread -->
+
+                    {{-- Create Thread --}}
+                    <div class="create-thread-btn-wrapper">
+                        <div class="create-thread-btn">
+                            <a href="/view/create-thread-page-learner">
+                                Create Thread
+                            </a>
+                        </div>
+                    </div>
+                    {{-- End Of Create Thread --}}
                 </div>
             </div>
-            {{-- End Of Create Thread --}}
+            <!-- THREAD BTN WRAPPER -->
 
-
+            <!-- THREAD CONTENT WRAPPER -->
             <div class="thread-content-wrapper">
                 @if (count($threads) == 0)
                 <div>
@@ -126,207 +140,82 @@
 
                 @elseif (count($threads) > 0)
                 @foreach ($threads as $thread)
-                <a href="/view/thread-learner-detail" class="thread-content-learner-links">
-                    <div class="thread-content-learner-wrapper">
-                        <div class="thread-content-learner-valid-wrapper">
-                            <div class="thread-content-learner-valid">
-                                <h3>Status Offer : Valid</h3>
-                            </div>
-                        </div>
-
-                        <div class="thread-content-learner-main">
-                            <div class="profile-learner">
-                                <div class="profile-learner-image-wrapper">
-                                    <div class="profile-learner-image">
-                                        <img src="{{asset('images/thread/jason.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <div class="profile-learner-role-wrapper">
-                                    <div class="profile-learner-role">
-                                        <h2>Learner</h2>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="learner-thread-content">
-                                <div class="learner-thread-name">
-                                    <h2>Jason</h2>
-                                </div>
-                                <div class="learner-thread-description">
-                                    <h4>Project title : </h4>
-                                    <p>{{ $thread->project_title }}</p>
-                                </div>
-                                <div class="learner-thread-offer">
-                                    <h4>Offer : </h4>
-                                    <div class="learner-thread-offer-detail">
-                                        <h4>Duration : {{ $thread->offered_duration }}</h4>
-                                        <h4>Price range : <span>Rp {{ $thread->min_price }}</span> - <span>Rp
-                                                {{ $thread->max_price }}</span></h4>
-                                    </div>
-
-                                </div>
-                                <div class="learner-thread-bottom-content">
-                                    <div class="talents-accept">
-                                        <h4><span>2 </span>talent(s) has accept this offer</h4>
-                                    </div>
-                                    <div class="offer-started-from">
-                                        <h4>Offer started from: <span>13 Januari 2022</span></h4>
-                                    </div>
-
-                                    <div class="offer-ended-at">
-                                        <h4>Offer ended at : <span>15 April 2022</span></h4>
-                                    </div>
-                                </div>
-                            </div>
-
+                <!-- <a href="#/view/thread-learner-detail" class="thread-content-learner-links"> -->
+                <div class="thread-content-learner-wrapper">
+                    <!-- THREAD CONTENT LEARNER VALID WRAPPER -->
+                    <div class="thread-content-learner-valid-wrapper">
+                        <div class="thread-content-learner-valid">
+                            <h3>Status Offer : Valid</h3>
                         </div>
                     </div>
-                </a>
+                    <!-- THREAD CONTENT LEARNER VALID WRAPPER -->
+
+                    <!-- THREAD CONTENT LEARNER MAIN -->
+                    <div class="thread-content-learner-main">
+                        <!-- PROFILE LEARNER -->
+                        <div class="profile-learner">
+                            <div class="profile-learner-image-wrapper">
+                                <div class="profile-learner-image">
+                                    <img src="{{asset('images/thread/jason.jpg')}}" alt="">
+                                </div>
+                            </div>
+                            <div class="profile-learner-role-wrapper">
+                                <div class="profile-learner-role">
+                                    <h2>Learner</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PROFILE LEARNER -->
+
+                        <!-- LEARNER THREAD CONTENT -->
+                        <div class="learner-thread-content">
+                            <div class="learner-thread-name">
+                                <h2>Jason</h2>
+                            </div>
+                            <div class="learner-thread-project-title">
+                                <h4>Project title : </h4>
+                                <p>{{ $thread->project_title }}</p>
+                            </div>
+                            <div class="learner-thread-offer">
+                                <h4>Offer : </h4>
+                                <div class="learner-thread-offer-detail">
+                                    <h4>Duration : {{ $thread->offered_duration }}</h4>
+                                    <h4>Price range : <span>Rp {{ $thread->min_price }}</span> - <span>Rp
+                                            {{ $thread->max_price }}</span></h4>
+                                </div>
+
+                            </div>
+                            <div class="learner-thread-bottom-content">
+                                <div class="talents-apply">
+                                    <div class="talents-apply-wrapper">
+                                        <h4><span>2 </span>talent(s) has apply this offer</h4>
+                                        <h3>
+                                            <a href="/view/appliers">View Appliers</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- LEARNER THREAD CONTENT -->
+                    </div>
+                    <!-- THREAD CONTENT LEARNER MAIN -->
+                </div>
+                <!-- </a> -->
                 @endforeach
 
                 @endif
                 {{-- Thread Learner --}}
 
-                {{-- <a href="/view/thread-learner-detail" class="thread-content-learner-links">
-                    <div class="thread-content-learner-wrapper">
-                        <div class="thread-content-learner-valid-wrapper">
-                            <div class="thread-content-learner-valid">
-                                <h3>Status Offer : Valid</h3>
-                            </div>
-                        </div>
 
-                        <div class="thread-content-learner-main">
-                            <div class="profile-learner">
-                                <div class="profile-learner-image-wrapper">
-                                    <div class="profile-learner-image">
-                                        <img src="{{asset('images/thread/jason.jpg')}}" alt="">
             </div>
+            <!-- THREAD CONTENT WRAPPER -->
         </div>
-        <div class="profile-learner-role-wrapper">
-            <div class="profile-learner-role">
-                <h2>Learner</h2>
-            </div>
-        </div>
-    </div>
-
-    {{-- Thread Learner --}}
-    <div class="thread-content-wrapper">
-        @if (count($threads) == 0)
-        <div>
-            <h1>No Data</h1>
-        </div>
-
-        @elseif (count($threads) > 0)
-        @foreach ($threads as $thread)
-        <a href="/view/thread-learner-detail" class="thread-content-learner-links">
-            <div class="thread-content-learner-wrapper">
-                <div class="thread-content-learner-valid-wrapper">
-                    <div class="thread-content-learner-valid">
-                        <h3>Status Offer : Valid</h3>
-                    </div>
-                </div>
-
-                <div class="thread-content-learner-main">
-                    <div class="profile-learner">
-                        <div class="profile-learner-image-wrapper">
-                            <div class="profile-learner-image">
-                                <img src="{{asset('images/thread/jason.jpg')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="profile-learner-role-wrapper">
-                            <div class="profile-learner-role">
-                                <h2>Learner</h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="learner-thread-content">
-                        <div class="learner-thread-name">
-                            <h2>Jason</h2>
-                        </div>
-                        <div class="learner-thread-description">
-                            <h4>Project title : </h4>
-                            <p>{{ $thread->project_title }}</p>
-                        </div>
-                        <div class="learner-thread-offer">
-                            <h4>Offer : </h4>
-                            <div class="learner-thread-offer-detail">
-                                <h4>Duration : {{ $thread->offered_duration }}</h4>
-                                <h4>Price range : <span>Rp {{ $thread->min_price }}</span> - <span>Rp
-                                        {{ $thread->max_price }}</span></h4>
-                            </div>
-
-                        </div>
-                        <div class="learner-thread-bottom-content">
-                            <div class="talents-accept">
-                                <h4><span>2 </span>talent(s) has accept this offer</h4>
-                            </div>
-                            <div class="offer-started-from">
-                                <h4>Offer started from: <span>13 Januari 2022</span></h4>
-                            </div>
-
-                            <div class="offer-ended-at">
-                                <h4>Offer ended at : <span>15 April 2022</span></h4>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </a>
-        @endforeach
-
-        @endif
-
-        {{-- End Of Thread Learner --}}
-    </div>
-
-    </div>
-    {{-- END OF THREAD CONTENT ( RIGHT CONTENT ) --}}
+        <!-- THREAD CONTENT  -->
     </div>
 </section>
 
 
-<div class="learner-thread-content">
-    <div class="learner-thread-name">
-        <h2>Jason</h2>
-    </div>
-    <div class="learner-thread-description">
-        <h4>Project title : </h4>
-        <p>Pengajar materi perancangan Website Development menggunakan Laravel</p>
-    </div>
-    <div class="learner-thread-offer">
-        <h4>Offer : </h4>
-        <div class="learner-thread-offer-detail">
-            <h4>Duration : 1 - 2 hours</h4>
-            <h4>Price range : <span>Rp 300.000</span> - <span>Rp 500.000</span></h4>
-        </div>
 
-    </div>
-    <div class="learner-thread-bottom-content">
-        <div class="talents-accept">
-            <h4><span>2 </span>talent(s) has accept this offer</h4>
-        </div>
-        <div class="offer-started-from">
-            <h4>Offer started from: <span>13 Januari 2022</span></h4>
-        </div>
-
-        <div class="offer-ended-at">
-            <h4>Offer ended at : <span>15 April 2022</span></h4>
-        </div>
-    </div>
-</div>
-
-</div>
-</div>
-</a> --}}
-{{-- End Of Thread Learner --}}
-</div>
-
-</div>
-{{-- END OF THREAD CONTENT ( RIGHT CONTENT ) --}}
-</div>
-</section>
 
 
 <script>
