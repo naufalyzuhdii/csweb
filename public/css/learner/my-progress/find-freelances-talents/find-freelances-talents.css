@@ -38,6 +38,7 @@
 
 /* ===================== Find Freelances Talents Content ====================== */
 .find-freelances-talents-content {
+    height: fit-content;
 }
 
 .find-freelances-talents-content-wrapper {
