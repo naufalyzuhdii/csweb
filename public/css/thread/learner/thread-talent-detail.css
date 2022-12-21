@@ -355,6 +355,28 @@
     color: white;
     font-weight: 900;
 }
+
+.order-btn {
+    width: 10%;
+    height: 3.5rem;
+    margin-right: 3rem;
+    float: right;
+}
+.order-btn button {
+    width: 100%;
+    height: 100%;
+    color: var(--deepblue);
+    background-color: white;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 10rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.order-btn:hover.order-btn button {
+    background-color: rgb(209, 209, 209);
+}
 /* ----Thread Content Package */
 
 /* ----Thread Content Ratings */

@@ -1,0 +1,117 @@
+.course {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    padding: 10rem 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.course-wrapper {
+    width: 75%;
+    min-height: 100vh;
+}
+
+/* ===================== Course Header ====================== */
+.course-header {
+    margin-bottom: 5rem;
+}
+
+.course-header h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.course-header h1 span {
+    color: var(--primarycolor);
+}
+
+.course-header p {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+/* ===================== Course Header ====================== */
+
+/* ===================== Course Content Wrapper ====================== */
+
+/* ==== Course Image wrapper */
+.course-content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.course-links {
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0.3rem 0.4rem 0.8rem rgb(0, 0, 0, 0.5);
+    margin-right: 3rem;
+    margin-top: 3rem;
+    border-radius: 1rem;
+}
+
+.course-image-wrapper {
+    width: 100%;
+    height: 50%;
+    background-color: var(--light-grey-color2);
+}
+.course-image {
+    width: 100%;
+    height: 100%;
+}
+.course-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* ==== Course Image wrapper */
+
+/* ==== Course Text Content */
+.course-text-content {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.course-title {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: black;
+}
+
+.course-category ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.course-category ul li {
+    width: max-content;
+    height: max-content;
+    color: #df9627;
+    background-color: transparent;
+    border: 1px solid #df9627;
+    border-radius: 10rem;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+    letter-spacing: 0.1rem;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.course-author {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--light-grey-color);
+}
+
+/* ==== Course Text Content */
+/* ===================== Course Content Wrapper ====================== */

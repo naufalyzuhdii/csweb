@@ -1,0 +1,240 @@
+.find-freelances-talents {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    padding: 10rem 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.find-freelances-talents-wrapper {
+    width: 75%;
+    min-height: 100vh;
+    height: fit-content;
+}
+/* ===================== Find Freelances Talents Header ====================== */
+.find-freelances-talents-header {
+    margin-bottom: 5rem;
+}
+
+.find-freelances-talents-header h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.find-freelances-talents-header h1 span {
+    color: var(--primarycolor);
+}
+
+.find-freelances-talents-header p {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+/* ===================== Find Freelances Talents Header ====================== */
+
+/* ===================== Find Freelances Talents Content ====================== */
+.find-freelances-talents-content {
+}
+
+.find-freelances-talents-content-wrapper {
+    height: fit-content;
+}
+
+.project-links {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2rem;
+}
+.active {
+    margin-bottom: 25rem;
+}
+/* === Your project */
+.your-project {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: 1rem;
+    position: relative;
+    justify-content: space-evenly;
+    background-color: var(--light-grey-color2);
+    box-shadow: 0.2rem 0.3rem 1rem rgb(0, 0, 0, 0.5);
+}
+
+.your-project > div {
+    margin-bottom: 1rem;
+}
+.project-title h2 {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.2rem;
+}
+.project-description h4 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.project-description p {
+    font-size: 1.6rem;
+}
+
+.project-offer > div > h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.arrow {
+    width: 10%;
+    top: 50%;
+    right: 0;
+    position: absolute;
+    z-index: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.arrow i {
+    font-size: 2rem;
+    transition: transform 0.2s;
+}
+.your-project.change .arrow i {
+    transform: rotate(90deg);
+}
+/* === Your project */
+
+/* === Accepted Freelances Talents */
+
+.accepted-freelances-talents {
+    width: 95%;
+    height: 100%;
+    background-color: var(--primarycolor);
+    float: right;
+    box-shadow: 0.2rem 0.3rem 1rem rgb(0, 0, 0, 0.5);
+    position: relative;
+    display: none;
+}
+
+.active .accepted-freelances-talents {
+    display: block;
+}
+
+.freelances-talents-data {
+    height: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.applier-role {
+}
+.appliers-picture {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 1rem;
+}
+.appliers-picture-wrapper {
+    width: 70%;
+    height: 100%;
+}
+.appliers-picture-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.appliers-data {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.appliers-name {
+    width: 80%;
+}
+.appliers-name h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+}
+.appliers-offered-price {
+    width: 80%;
+}
+
+.appliers-offered-price h3 {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 600;
+}
+.appliers-offered-price span {
+    margin-left: 1rem;
+    font-weight: 500;
+}
+.appliers-offered-description {
+    width: 80%;
+    margin-bottom: 0.5rem;
+}
+.appliers-offered-description h3 {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 600;
+}
+.appliers-offered-description p {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 500;
+    margin-left: 1%;
+}
+
+.appliers-documents {
+    width: 80%;
+}
+.appliers-documents h3 {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 600;
+}
+.appliers-documents ul {
+    display: flex;
+}
+.appliers-documents ul li {
+    margin-right: 1rem;
+}
+.appliers-documents ul li a {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 500;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.chat-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2rem;
+    width: 10rem;
+    height: 5rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+}
+.chat-btn a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primarycolor);
+}
+
+/* === Accepted Freelances Talents */
+/* ===================== Find Freelances Talents Content ====================== */
