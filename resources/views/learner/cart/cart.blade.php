@@ -25,7 +25,6 @@
                     <h2> <span> 2 </span> courses in cart</h2>
                 </div>
                 <!-- Cart Item Header -->
-
                 <!-- Cart Items Content -->
                 <div class="cart-items-content">
                     <!-- Courses Cart -->
