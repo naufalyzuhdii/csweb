@@ -62,7 +62,7 @@
 
           <div class="nav-2">
               <div class="cart-navbar">
-                  <a href="/view/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                  <a href="/view/learner/cart"><i class="fa-solid fa-cart-shopping"></i></a>
               </div>
 
               <div class="progress-navbar">

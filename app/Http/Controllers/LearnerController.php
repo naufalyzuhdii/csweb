@@ -15,4 +15,8 @@ class LearnerController extends Controller
     {
         return view('learner.my-progress.find-freelances-talents.find-freelances-talents');
     }
+    public function view_learner_cart()
+    {
+        return view('learner.cart.cart');
+    }
 }
