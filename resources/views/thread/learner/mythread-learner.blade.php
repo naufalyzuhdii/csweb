@@ -51,6 +51,10 @@
                             <h4>Project title : </h4>
                             <p>-</p>
                         </div>
+                        <div class="learner-thread-project-description">
+                            <h4>Project Description : </h4>
+                            <p>-</p>
+                        </div>
                         <div class="learner-thread-offer">
                             <h4>Offer : </h4>
                             <div class="learner-thread-offer-detail">

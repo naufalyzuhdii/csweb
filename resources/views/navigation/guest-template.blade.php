@@ -2,7 +2,7 @@
 <section class="header">
     <div class="navigation">
         <div class="nav-1">
-            <a href="" class="logo">
+            <a href="/" class="logo">
                 <img src="{{asset('images/header/logo-white.png')}}">
             </a>
             <div class="categories-navbar">

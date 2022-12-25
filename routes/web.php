@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ThreadController;
-
+use App\Http\Controllers\LearnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,5 +79,10 @@ Route::get('/view/create-thread-page-talent', [ThreadController::class, 'view_cr
 // Forum
 Route::get('/view/forum-detail-reply', [ForumController::class, 'view_forum_detail_reply']);
 
+
+// Learner
+Route::get('/view/my-progress/courses', [LearnerController::class, 'view_my_progress_courses']);
+Route::get('/view/my-progress/find-freelances-talents', [LearnerController::class, 'view_my_progress_find_freelances_talents']);
+Route::get('/view/learner/cart', [LearnerController::class, 'view_learner_cart']);
 
 //

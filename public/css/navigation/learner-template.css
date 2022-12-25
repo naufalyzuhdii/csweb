@@ -248,45 +248,56 @@ ul ul ul {
 /* CART */
 
 /* Progress Nav */
+
 .progress-navbar {
+    position: relative;
     width: 33%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    text-align: center;
 }
 
-.progress-navbar a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.progress-navbar:hover ul {
+    display: block;
 }
 
-.progress-navbar a i {
-    font-size: 2.5rem;
-    color: white;
-}
-.progress-navbar a i:hover {
-    color: var(--secondarycolor);
+.progress-navbar-links {
+    width: 100%;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--white-color);
+    cursor: pointer;
 }
 
-.progress-navbar::before {
+.progress-navbar ul {
     position: absolute;
-    top: 80%;
-    content: "Your progress";
-    width: fit-content;
     height: fit-content;
-    font-size: 1.5rem;
-    color: grey;
-    background-color: var(--light-grey-color2);
-    visibility: hidden;
-    opacity: 0;
+    bottom: -90%;
+    background-color: var(--secondarycolor);
+    width: fit-content;
+    border-radius: 0.5rem;
+    display: none;
+    z-index: 200;
 }
 
-.progress-navbar:hover.progress-navbar::before {
-    opacity: 1;
-    visibility: visible;
+.progress-navbar ul li {
+    width: 100%;
+    text-align: left;
+}
+
+.progress-navbar ul li a {
+    width: 100%;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--deepblue);
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.progress-navbar ul li a:hover {
+    background-color: var(--white-color);
 }
 
 /* Progress Nav */
@@ -323,7 +334,6 @@ ul ul ul {
     display: none;
     position: absolute;
     top: 85%;
-    left: -10rem;
     background-color: var(--secondarycolor);
     border-radius: 0.5rem;
     justify-content: center;

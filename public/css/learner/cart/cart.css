@@ -1,0 +1,240 @@
+.learner-cart {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    padding: 10rem 25rem;
+    display: flex;
+    justify-content: center;
+}
+
+.learner-cart-wrapper {
+    width: 75%;
+}
+
+/* ===================== learner Cart Header ====================== */
+.learner-cart-header {
+    margin-bottom: 5rem;
+}
+
+.learner-cart-header h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.learner-cart-header h1 span {
+    color: var(--primarycolor);
+}
+
+.learner-cart-header p {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+/* ===================== learner Cart Header ====================== */
+
+/* ===================== learner Cart Content ====================== */
+
+.learner-cart-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.cart-items-wrapper {
+    width: 75%;
+    height: 100%;
+    z-index: 100;
+}
+/* ==== Cart Items Header */
+.cart-items-header {
+    width: 100%;
+}
+.cart-items-header h2 {
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+
+.cart-items-header h2 span {
+    font-size: 900;
+}
+/* ==== End Of Cart Items Header */
+
+/* ==== Cart Items Content*/
+.cart-items-content {
+    width: 100%;
+    margin: 2rem 0;
+}
+.courses-cart {
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: var(--light-grey-color2);
+    box-shadow: 0.2rem 0.2rem 0.7rem rgb(0, 0, 0, 0.5); */
+    border-top: 1px solid rgb(128, 128, 128, 0.5);
+    margin: 2rem 0;
+    position: relative;
+}
+
+/* == Courses Cart Image Wrapper */
+
+.courses-cart-image-wrapper {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.courses-cart-image {
+    width: 100%;
+    height: 80%;
+}
+.courses-cart-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* == End of Courses Cart Image Wrapper */
+
+/* == Courses Cart Data */
+.courses-cart-data {
+    width: 75%;
+    height: 100%;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.courses-cart-data-wrapper {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.courses-cart-title {
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    color: black;
+}
+.courses-cart-category ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.courses-cart-category ul li {
+    width: max-content;
+    height: max-content;
+    color: #df9627;
+    background-color: transparent;
+    border: 1px solid #df9627;
+    border-radius: 10rem;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+    letter-spacing: 0.1rem;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+}
+.courses-cart-author {
+    font-size: 1.5rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    color: black;
+}
+.courses-total-hours {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: rgb(112, 112, 112);
+}
+.courses-cart-data-price {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.courses-cart-data-price h2 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primarycolor);
+}
+.courses-cart-data-navigation {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.courses-cart-data-navigation a {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: purple;
+    z-index: 2000;
+}
+.courses-cart-data-navigation a:hover {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: black;
+}
+.courses-links {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: transparent;
+    user-select: none;
+}
+
+/* == End Of Courses Cart Data */
+/* ==== End of Cart Items Content */
+
+/* === Cart Checkouts */
+.cart-checkouts-wrapper {
+    width: 25%;
+    height: 30rem;
+    padding: 1rem 0 0 5rem;
+}
+.cart-checkouts-wrapper h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--light-grey-color);
+}
+
+.cart-checkouts-wrapper h3 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: black;
+}
+
+.checkout-btn {
+    width: 100%;
+    height: 5rem;
+    background-color: var(--primarycolor);
+    position: relative;
+    margin-top: 1rem;
+}
+.checkout-btn:hover {
+    background-color: var(--deepblue);
+}
+.checkout-btn a {
+    position: absolute;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* === Cart Checkouts */
+/* ===================== learner Cart Content ====================== */
