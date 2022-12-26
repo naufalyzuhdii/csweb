@@ -75,12 +75,11 @@
     /* background-color: var(--light-grey-color2);
     box-shadow: 0.2rem 0.2rem 0.7rem rgb(0, 0, 0, 0.5); */
     border-top: 1px solid rgb(128, 128, 128, 0.5);
-    margin: 2rem 0;
+    margin-top: 0.5rem;
     position: relative;
 }
 
 /* == Courses Cart Image Wrapper */
-
 .courses-cart-image-wrapper {
     width: 25%;
     height: 100%;
@@ -97,7 +96,6 @@
     height: 100%;
     object-fit: cover;
 }
-
 /* == End of Courses Cart Image Wrapper */
 
 /* == Courses Cart Data */

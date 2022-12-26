@@ -84,5 +84,5 @@ Route::get('/view/forum-detail-reply', [ForumController::class, 'view_forum_deta
 Route::get('/view/my-progress/courses', [LearnerController::class, 'view_my_progress_courses']);
 Route::get('/view/my-progress/find-freelances-talents', [LearnerController::class, 'view_my_progress_find_freelances_talents']);
 Route::get('/view/learner/cart', [LearnerController::class, 'view_learner_cart']);
-
+Route::get('/view/my-progress/course/course-learn-detail', [LearnerController::class, 'view_course_learn_detail']);
 //

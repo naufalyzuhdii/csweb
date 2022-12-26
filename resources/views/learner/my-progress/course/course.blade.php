@@ -16,7 +16,7 @@
 
         <!-- Course Content Wrapper -->
         <div class="course-content-wrapper">
-            <a href="" class="course-links">
+            <a href="/view/my-progress/course/course-learn-detail" class="course-links">
                 <!-- Course Image Wrapper -->
                 <div class="course-image-wrapper">
                     <div class="course-image">
