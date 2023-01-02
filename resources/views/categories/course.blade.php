@@ -15,7 +15,7 @@
         <div class="course-content">
             <div class="swiper myCourseSwiper">
                 <div class="swiper-wrapper" id="swiperCourseWrapper">
-                    <a href="#" class="swiper-slide" id="card-slide">
+                    <a href="" class="swiper-slide" id="card-slide">
                         <div class="course-card-image">
                             <img src="{{asset('images/course/html.png')}}" alt="">
                         </div>
@@ -35,7 +35,7 @@
                             <h2 class="course-price">Rp 50.000</h2>
                         </div>
                     </a>
-                    <a href="#" class="swiper-slide" id="card-slide">
+                    <a href="" class="swiper-slide" id="card-slide">
                         <div class="course-card-image">
                             <img src="{{asset('images/course/html.png')}}" alt="">
                         </div>

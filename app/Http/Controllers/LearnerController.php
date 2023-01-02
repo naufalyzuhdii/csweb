@@ -19,4 +19,9 @@ class LearnerController extends Controller
     {
         return view('learner.cart.cart');
     }
+
+    public function view_course_learn_detail()
+    {
+        return view('learner.my-progress.course.course-learn-detail');
+    }
 }

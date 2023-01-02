@@ -16,7 +16,7 @@
         <div class="sub-course-content">
             <div class="swiper mySubCourseSwiper">
                 <div class="swiper-wrapper" id="swiperSubCourseWrapper">
-                    <a href="#" class="swiper-slide" id="card-slide">
+                    <a href="/view/topic-course-detail" class="swiper-slide" id="card-slide">
                         <div class="sub-course-card-image">
                             <img src="{{asset('images/course/html.png')}}" alt="">
                         </div>
@@ -36,7 +36,7 @@
                             <h2 class="sub-course-price">Rp 50.000</h2>
                         </div>
                     </a>
-                    <a href="#" class="swiper-slide" id="card-slide">
+                    <a href="/view/topic-course-detail" class="swiper-slide" id="card-slide">
                         <div class="sub-course-card-image">
                             <img src="{{asset('images/course/html.png')}}" alt="">
                         </div>
@@ -56,7 +56,7 @@
                             <h2 class="sub-course-price">Rp 50.000</h2>
                         </div>
                     </a>
-                    <a href="#" class="swiper-slide" id="card-slide">
+                    <a href="/view/topic-course-detail" class="swiper-slide" id="card-slide">
                         <div class="sub-course-card-image">
                             <img src="{{asset('images/course/html.png')}}" alt="">
                         </div>
@@ -76,7 +76,7 @@
                             <h2 class="sub-course-price">Rp 50.000</h2>
                         </div>
                     </a>
-                    <a href="#" class="swiper-slide" id="card-slide">
+                    <a href="/view/topic-course-detail" class="swiper-slide" id="card-slide">
                         <div class="sub-course-card-image">
                             <img src="{{asset('images/course/html.png')}}" alt="">
                         </div>
