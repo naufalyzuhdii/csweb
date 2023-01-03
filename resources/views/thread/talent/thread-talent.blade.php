@@ -20,7 +20,7 @@
 
         <div class="thread-main">
             {{-- THREAD FILTER ( LEFT CONTENT ) --}}
-            <div class="thread-filter">
+            <!-- <div class="thread-filter">
                 <div class="thread-filter-header">
                     <h2>Categories</h2>
                 </div>
@@ -74,7 +74,7 @@
                         <input type="checkbox" name="learner-checkbox">
                     </div>
                 </div>
-            </div>
+            </div> -->
             {{-- END OF THREAD FILTER ( LEFT CONTENT ) --}}
 
             {{-- THREAD CONTENT ( RIGHT CONTENT ) --}}

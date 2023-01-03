@@ -81,14 +81,20 @@
                   </a>
                   <ul>
                       <h2>Hi, {{ old('name', Auth::user()->name) }}</h2>
-                      <h3>You signed in as <b>learner</b></h3>
+                      <h3>You signed in as <b>{{ Auth::user()->role }}</b></h3>
                       <li id="switch-roles">
                           <h3>Switch role</h3>
-                          <label class="switch">
-                              <input type="checkbox">
-                              <span class="slider round"></span>
-                          </label>
+                          <form action="{{ route('switch-role.update') }}" method="post" id="formName">
+                              @csrf
+                              <input type="hidden" name="id" value="{{ Auth::user()->id }}">
 
+                              <label class="switch">
+                                  <input type="checkbox" name="switch_role" value="talent"
+                                      onchange="document.getElementById('formName').submit()">
+                                  <span class=" slider round"></span>
+                              </label>
+                              <!-- <button type="submit" value="Submit">DE</button> -->
+                          </form>
                       </li>
                       <li><a href="/profile">Your profile</a></li>
                       <li>

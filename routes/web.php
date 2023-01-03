@@ -33,7 +33,7 @@ Route::get('/view/learner-home', [AuthController::class, 'view_learner_home'])->
 //--Talent Home
 Route::get('/view/talent-home', [AuthController::class, 'view_talent_home'])->name('talent_home');
 
-// Auth Guest CALVIN KURNIAWAN
+// Auth Guest 
 Route::get('/view/signin_page', [AuthController::class, 'view_signIn']);
 
 // Auth
@@ -47,6 +47,8 @@ Route::get('/signout', [AuthController::class, 'signout']);
 
 Route::get('/profile', [UserController::class, 'view_profile'])->name('profile.page');
 Route::put('/user_update', [UserController::class, 'user_update'])->name('user.update');
+
+Route::post('/switch_role', [UserController::class, 'switch_role'])->name('switch-role.update');
 
 // Categories Course
 Route::get('/view/course', [CourseController::class, 'view_course']);

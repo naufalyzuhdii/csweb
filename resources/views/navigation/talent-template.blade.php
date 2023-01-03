@@ -38,7 +38,13 @@
                 </ul>
             </div>
             <div class="thread-navbar">
-                <a href="/view/thread-talent" class="thread-links">Thread</a>
+                <a href="" class="thread-links">
+                    Thread
+                </a>
+                <ul>
+                    <li> <a href="/view/thread-talent">Post your shop</a></li>
+                    <li> <a href="/view/find-jobs">Find Jobs</a></li>
+                </ul>
             </div>
         </div>
 
@@ -66,13 +72,20 @@
                 </a>
                 <ul>
                     <h2>Hi, {{ old('name', Auth::user()->name) }}</h2>
-                    <h3>You signed in as <b>talent</b></h3>
+                    <h3>You signed in as <b>{{ Auth::user()->role }}</b></h3>
                     <li id="switch-roles">
                         <h3>Switch role</h3>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
+                        <form action="{{ route('switch-role.update') }}" method="post" id="formName">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ Auth::user()->id }}">
+
+                            <label class="switch">
+                                <input type="checkbox" name="switch_role" value="learner"
+                                    onchange="document.getElementById('formName').submit()">
+                                <span class=" slider round"></span>
+                            </label>
+                            <!-- <button type="submit" value="Submit">DE</button> -->
+                        </form>
 
                     </li>
                     <li><a href="#yourprofile">Your profile</a></li>
