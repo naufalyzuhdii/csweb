@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -25,5 +27,24 @@ class UserController extends Controller
             'phone' => $request->phone,
         ]);
         return back()->with('message', 'Your profile has been updated');
+    }
+
+    public function switch_role(Request $request )
+    {
+        // $user = User::find($request->id);
+        $check = $request->input('switch_role');
+        $id = $request->input('id');
+
+        DB::table('users')->where('id',$id)->update(['role'=> $check]);
+
+        if($check== "talent")
+        {
+            return redirect('/view/talent-home');
+        }
+        else{
+            return redirect('/view/learner-home');
+        }
+
+
     }
 }
