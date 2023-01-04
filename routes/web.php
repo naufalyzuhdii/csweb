@@ -53,16 +53,16 @@ Route::post('/switch_role', [UserController::class, 'switch_role'])->name('switc
 // Categories Course
 Route::get('/view/course', [CourseController::class, 'view_course']);
 Route::get('/view/sub-course', [CourseController::class, 'view_sub_course']);
-Route::get('/view/topic-course', [CourseController::class, 'view_topic_course']);
-Route::get('/view/topic-course-detail', [CourseController::class, 'view_topic_course_detail']);
+Route::get('/view/topic-course', [CourseController::class, 'show_course']);
+Route::get('/view/topic-course-detail/{id}', [CourseController::class, 'course_detail']);
 Route::get('/view/talent-profile', [CourseController::class, 'view_talent_profile']);
 
-Route::get('/view/course', [CourseController::class, 'view_course'])->name('course');
-Route::get('/view/sub-course', [CourseController::class, 'view_sub_course']);
-Route::get('/view/topic-course', [CourseController::class, 'view_topic_course']);
-Route::get('/view/topic-course-detail', [CourseController::class, 'view_topic_course_detail']);
-Route::get('/getcourse', [CourseController::class, 'get_all']);
-Route::post('/postcourse', [CourseController::class, 'post_course']);
+// Route::get('/view/course', [CourseController::class, 'view_course'])->name('course');
+// Route::get('/view/sub-course', [CourseController::class, 'view_sub_course']);
+// Route::get('/view/topic-course', [CourseController::class, 'view_topic_course']);
+// Route::get('/view/topic-course-detail', [CourseController::class, 'view_topic_course_detail']);
+// Route::get('/getcourse', [CourseController::class, 'get_all']);
+// Route::post('/postcourse', [CourseController::class, 'post_course']);
 
 // Thread
 // --Learner

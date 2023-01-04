@@ -63,7 +63,7 @@ class ThreadController extends Controller
     public function show_thread(){
         $threads = Thread::latest();
         if(request('search')){
-            $products->where('name', 'like', '%'. request('search'). '%');
+            $threads->where('name', 'like', '%'. request('search'). '%');
         }
         // $products = Product::all();
         return view('thread/learner/thread-learner', [

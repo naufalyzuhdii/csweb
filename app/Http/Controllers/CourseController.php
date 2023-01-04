@@ -38,11 +38,20 @@ class CourseController extends Controller
 
     // CONTROLL FUNCTION
 
-    public function get_all(){
+    public function show_course(){
         $courses = Course::latest();
-        if (request('search')){
+        if(request('search')){
             $courses->where('name', 'like', '%'. request('search'). '%');
         }
+        // $products = Product::all();
+        return view('categories.topic-course', [
+            "courses" => $courses->paginate(8)
+        ]);
+    }
+
+    public function course_detail($id){
+        $course = Course::find($id);
+        return view('categories.topic-course-detail', ['course' => $course]);
     }
 
     public function post_course(Request $request)
