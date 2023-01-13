@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ForumController;
+use App\Http\Controllers\StoreController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\LearnerController;
@@ -81,10 +82,12 @@ Route::get('/view/create-thread-page-talent', [ThreadController::class, 'view_cr
 // Forum
 Route::get('/view/forum-detail-reply', [ForumController::class, 'view_forum_detail_reply']);
 
-
 // Learner
 Route::get('/view/my-progress/courses', [LearnerController::class, 'view_my_progress_courses']);
 Route::get('/view/my-progress/find-freelances-talents', [LearnerController::class, 'view_my_progress_find_freelances_talents']);
-Route::get('/view/learner/cart', [LearnerController::class, 'view_learner_cart']);
+Route::get('/view/learner/cart', [StoreController::class, 'cart'])->name('view_cart');
 Route::get('/view/my-progress/course/course-learn-detail', [LearnerController::class, 'view_course_learn_detail']);
+
+Route::get('/addtocart/{id}', [StoreController::class, 'add_to_cart'])->name('addtocart');
+Route::post('/checkout', [StoreController::class, 'checkout'])->name('checkout');
 //
