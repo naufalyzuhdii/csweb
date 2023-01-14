@@ -30,7 +30,7 @@
     @if (Auth::user()->role=='learner') @include('navigation.learner-template')
     @elseif (Auth::user()->role=='talent') @include('navigation.talent-template')
     @endif
-    @else @include('navigation/guest-template')
+    @else @include('navigation.guest-template')
     @endif
     @yield('content')
     <section class="footer">

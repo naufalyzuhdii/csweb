@@ -58,6 +58,18 @@ class ThreadController extends Controller
         return view('thread.talent.create-thread-page-talent');
     }
 
+    public function view_thread_find_jobs()
+    
+    {
+        return view('thread.talent.thread-find-jobs');
+
+    }
+
+    public function view_thread_learner_detail()
+    {
+        return view('thread.talent.thread-learner-detail');
+    }
+
     // CONTROLL FUNCTION
 
     public function show_thread(){
@@ -123,4 +135,6 @@ class ThreadController extends Controller
         $thread->delete();
         return ["Thread Deleted"];
     }
+
+
 }

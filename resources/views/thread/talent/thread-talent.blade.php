@@ -10,10 +10,11 @@
     <div class="thread-wrapper">
         {{-- Thread Content Heading --}}
         <div class="thread-content-heading">
-            <h1> <span>Talent Thread</span> - Find Jobs </h1>
-            <p>As a <i>freelancer or talent</i> you can look for jobs project. By posting a
-                thread, freelancers or talents
-                can apply the thread that you posted since they deal with the requirements.
+            <h1> <span>Talent Thread</span> - Post Your Freelance Shop </h1>
+            <p>As a <i>freelancer or talent</i> you can look for sell your service, by posting a
+                thread of your shop. You can post what service do you serve in your shop. Once they interest with the
+                service,
+                they could buy your service for their project.
             </p>
         </div>
         {{-- End of Thread Content Heading --}}
@@ -83,7 +84,7 @@
                 <div class="create-thread-btn-wrapper">
                     <div class="create-thread-btn">
                         <a href="/view/create-thread-page-talent">
-                            Create Thread
+                            Post Your Shop
                         </a>
                     </div>
                 </div>
@@ -92,7 +93,7 @@
 
                 <div class="thread-content-wrapper">
                     {{-- Thread Talent --}}
-                    <a href="/view/thread-talent-detail" class="thread-content-talent-links">
+                    <a href="/view/talent-shop-detail" class="thread-content-talent-links">
                         <div class="thread-content-talent-wrapper">
                             <div class="thread-content-talent-main">
                                 <div class="profile-talent">

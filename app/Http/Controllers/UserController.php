@@ -31,7 +31,6 @@ class UserController extends Controller
 
     public function switch_role(Request $request )
     {
-        // $user = User::find($request->id);
         $check = $request->input('switch_role');
         $id = $request->input('id');
 
@@ -39,10 +38,13 @@ class UserController extends Controller
 
         if($check== "talent")
         {
-            return redirect('/view/talent-home');
+            return redirect()->route('talent_home');
+        }
+        else if($check == "learner"){
+            return redirect()->route('learner_home');
         }
         else{
-            return redirect('/view/learner-home');
+            return redirect()->route('guest_home');
         }
 
 

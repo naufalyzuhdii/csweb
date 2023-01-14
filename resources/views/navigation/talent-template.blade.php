@@ -38,12 +38,12 @@
                 </ul>
             </div>
             <div class="thread-navbar">
-                <a href="" class="thread-links">
+                <a href="#" class="thread-links">
                     Thread
                 </a>
                 <ul>
-                    <li> <a href="/view/thread-talent">Post your shop</a></li>
-                    <li> <a href="/view/find-jobs">Find Jobs</a></li>
+                    <li> <a href="/view/thread-talent">Post your freelance shop</a></li>
+                    <li> <a href="/view/thread_find_jobs">Find Jobs</a></li>
                 </ul>
             </div>
         </div>
@@ -88,9 +88,9 @@
                         </form>
 
                     </li>
-                    <li><a href="#yourprofile">Your profile</a></li>
+                    <li><a href="/yourprofile">Your profile</a></li>
                     <li>
-                        <a href="#signout">Sign Out</a>
+                        <a href="/signout">Sign Out</a>
                     </li>
                 </ul>
             </div>

@@ -41,7 +41,7 @@ class AuthController extends Controller
         return view('auth.signIn');
     }
 
-    public function signin(Request $request)
+    public function signin(Request $request, User $user)
     {
         $credentials = $request->validate([
             'email' => ['required', 'email'],
@@ -54,9 +54,23 @@ class AuthController extends Controller
         }
         $user_data = array(
             'email' => $request->get('email'),
-            'password' => $request->get('password')
+            'password' => $request->get('password'),
         );
+        
         if(Auth::attempt($user_data)){
+
+            $user = Auth::user();
+
+            if($user->role == "talent")
+            {
+                return redirect()->route('talent_home');
+            }
+            else if ($user->role == "learner")
+            {
+                return redirect()->route('learner_home');
+            }
+
+
             return redirect()->route('learner_home');
         }
         else{
