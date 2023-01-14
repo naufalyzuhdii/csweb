@@ -70,8 +70,8 @@
                       My Progress
                   </a>
                   <ul>
-                      <li> <a href="/view/my-progress/courses">Courses</a></li>
-                      <li> <a href="/view/my-progress/find-freelances-talents">Find Freelances or Talents</a></li>
+                      <li> <a href="/view/my-progress/courses">My Courses</a></li>
+                      <li> <a href="/view/my-progress/find-freelances-talents">Applied Freelancers</a></li>
                   </ul>
               </div>
 

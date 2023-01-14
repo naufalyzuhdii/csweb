@@ -74,9 +74,12 @@ Route::get('/view/my-thread', [ThreadController::class, 'view_my_thread']);
 Route::get('/view/appliers', [ThreadController::class, 'view_my_appliers']);
 
 Route::post('/create_thread', [ThreadController::class, 'post_thread']);
+
 // --Talent
 Route::get('/view/thread-talent', [ThreadController::class, 'view_thread_talent']);
 Route::get('/view/create-thread-page-talent', [ThreadController::class, 'view_create_thread_page_talent']);
+Route::get('/view/thread_find_jobs', [ThreadController::class, 'view_thread_find_jobs']);
+Route::get('/view/thread-learner-detail', [ThreadController::class, 'view_thread_learner_detail']);
 
 // Forum
 Route::get('/view/forum-detail-reply', [ForumController::class, 'view_forum_detail_reply']);
