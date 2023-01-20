@@ -1,16 +1,16 @@
 @extends('layout.main-template')
 @section('linkCSS')
-<link rel="stylesheet" href="{{asset('css/thread/talent/thread-find-jobs.css')}}">
+<link rel="stylesheet" href="{{asset('css/thread/talent/thread-apply-jobs.css')}}">
 @endsection
 
 
 @section ('content')
-<section class="find-jobs">
-    <div class="find-jobs-wrapper">
+<section class="apply-jobs">
+    <div class="apply-jobs-wrapper">
 
         <!-- Thread Content Heading -->
         <div class="thread-content-heading">
-            <h1> <span>Talent Thread</span> - Find Jobs </h1>
+            <h1> <span>Talent Thread</span> - Apply Jobs </h1>
             <p>As a <i>talent</i> you can look for jobs by apply projects thread that have been created by learners.
             </p>
         </div>
@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="talents-view-btn">
                                     <h3>
-                                        <a href="/view/thread-learner-detail">View Detail</a>
+                                        <a href="/view/thread-apply-jobs-learner-detail">View Detail</a>
                                     </h3>
                                 </div>
                             </div>

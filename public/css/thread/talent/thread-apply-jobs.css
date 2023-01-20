@@ -1,4 +1,4 @@
-.find-jobs {
+.apply-jobs {
     width: 100%;
     padding: 10rem 25rem;
     display: flex;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.find-jobs-wrapper {
+.apply-jobs-wrapper {
     width: 75%;
 }
 
