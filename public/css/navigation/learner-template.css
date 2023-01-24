@@ -274,7 +274,7 @@ ul ul ul {
 .progress-navbar ul {
     position: absolute;
     height: fit-content;
-    bottom: -90%;
+    bottom: -50%;
     background-color: var(--secondarycolor);
     width: fit-content;
     border-radius: 0.5rem;

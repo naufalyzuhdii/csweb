@@ -226,23 +226,14 @@ ul ul ul {
     color: var(--secondarycolor);
 }
 
-.your-freelance-job::before {
-    position: absolute;
-    top: 80%;
-    content: "Your Freelance Jobs";
-    text-align: center;
-    width: fit-content;
-    height: fit-content;
-    font-size: 1.5rem;
-    color: grey;
-    background-color: var(--light-grey-color2);
-    visibility: hidden;
-    opacity: 0;
+.your-freelance-job a {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: white;
 }
 
-.your-freelance-job:hover.your-freelance-job::before {
-    opacity: 1;
-    visibility: visible;
+.your-freelance-job a:hover {
+    color: var(--secondarycolor);
 }
 /* FreelanceJob */
 
@@ -257,37 +248,13 @@ ul ul ul {
 }
 
 .your-course a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.your-course a i {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
     color: white;
 }
-.your-course a i:hover {
+.your-course a:hover {
     color: var(--secondarycolor);
 }
-
-.your-course::before {
-    position: absolute;
-    top: 80%;
-    content: "Your course";
-    width: fit-content;
-    height: fit-content;
-    font-size: 1.5rem;
-    color: grey;
-    background-color: var(--light-grey-color2);
-    visibility: hidden;
-    opacity: 0;
-}
-
-.your-course:hover.your-course::before {
-    opacity: 1;
-    visibility: visible;
-}
-
 /* your-course */
 
 /* Profile Nav */

@@ -8,7 +8,7 @@ use App\Http\Controllers\StoreController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\LearnerController;
-
+use App\Http\Controllers\TalentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,14 +73,13 @@ Route::get('/view/find-freelancers-talents', [ThreadController::class, 'view_fin
 Route::get('/view/thread-talent-detail', [ThreadController::class, 'view_thread_talent_detail']);
 Route::get('/view/my-thread', [ThreadController::class, 'view_my_thread']);
 Route::get('/view/appliers', [ThreadController::class, 'view_my_appliers']);
-
 Route::post('/create_thread', [ThreadController::class, 'post_thread']);
 
 // --Talent
 Route::get('/view/thread-talent', [ThreadController::class, 'view_thread_talent']);
 Route::get('/view/create-thread-page-talent', [ThreadController::class, 'view_create_thread_page_talent']);
-Route::get('/view/thread_find_jobs', [ThreadController::class, 'view_thread_find_jobs']);
-Route::get('/view/thread-learner-detail', [ThreadController::class, 'view_thread_learner_detail']);
+Route::get('/view/thread_apply_jobs', [ThreadController::class, 'view_thread_apply_jobs']);
+Route::get('/view/thread-apply-jobs-learner-detail', [ThreadController::class, 'view_thread_apply_jobs_learner_detail']);
 
 // Forum
 Route::get('/view/forum-detail-reply', [ForumController::class, 'view_forum_detail_reply']);
@@ -93,4 +92,12 @@ Route::get('/view/my-progress/course/course-learn-detail', [LearnerController::c
 
 Route::get('/addtocart/{id}', [StoreController::class, 'add_to_cart'])->name('addtocart');
 Route::post('/checkout', [StoreController::class, 'checkout'])->name('checkout');
-//
+
+
+// MY ACTIVITY
+// --Talent 
+Route::get('/view/my-activity-freelance', [TalentController::class, 'view_talent_activity_freelance']);
+Route::get('/view/freelance-detail/', [TalentController::class, 'view_freelance_detail']);
+
+// --Learner
+Route::get('/view/my-activity-applied-jobs', [TalentController::class, 'view_talent_activity_applied_jobs']);

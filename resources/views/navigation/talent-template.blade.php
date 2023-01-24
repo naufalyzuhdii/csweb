@@ -43,7 +43,7 @@
                 </a>
                 <ul>
                     <li> <a href="/view/thread-talent">Post your freelance shop</a></li>
-                    <li> <a href="/view/thread_find_jobs">Find Jobs</a></li>
+                    <li> <a href="/view/thread_apply_jobs">Apply Jobs</a></li>
                 </ul>
             </div>
         </div>
@@ -57,13 +57,13 @@
 
         <div class="nav-2">
             <div class="your-freelance-job">
-                <a href="#your-freelance-job">
-                    <i class="fa-solid fa-handshake"></i>
+                <a href="/view/my-activity-freelance">
+                    My Activity
                 </a>
             </div>
             <div class="your-course">
                 <a href="#your-course">
-                    <i class="fa-solid fa-book"></i>
+                    Your Course
                 </a>
             </div>
             <div class="profile-navbar">

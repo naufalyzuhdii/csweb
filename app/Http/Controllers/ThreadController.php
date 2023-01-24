@@ -58,16 +58,16 @@ class ThreadController extends Controller
         return view('thread.talent.create-thread-page-talent');
     }
 
-    public function view_thread_find_jobs()
+    public function view_thread_apply_jobs()
     
     {
-        return view('thread.talent.thread-find-jobs');
+        return view('thread.talent.thread-apply-jobs');
 
     }
 
-    public function view_thread_learner_detail()
+    public function view_thread_apply_jobs_learner_detail()
     {
-        return view('thread.talent.thread-learner-detail');
+        return view('thread.talent.thread-apply-jobs-learner-detail');
     }
 
     // CONTROLL FUNCTION
