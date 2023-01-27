@@ -1,0 +1,113 @@
+.my-course-detail-sub-chapter {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    padding: 10rem 25rem;
+    display: flex;
+    justify-content: center;
+}
+.my-course-detail-sub-chapter-wrapper {
+    width: 75%;
+}
+/* ============== Title Heading ==================== */
+
+.title-heading h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.title-heading h1 span {
+    color: var(--primarycolor);
+}
+.title-heading p {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+/* ============== Title Heading ==================== */
+
+/* ============== Content Wrapper ==================== */
+.my-course-detail-sub-chapter-content-wrapper {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    padding: 2rem 0;
+}
+.my-course-detail-sub-chapter-content-wrapper form {
+    width: 70%;
+    height: fit-content;
+}
+.my-course-detail-sub-chapter-content-wrapper form > div {
+    height: fit-content;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.my-course-detail-sub-chapter-content-wrapper form > div > label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: black;
+}
+.course-video-title-wrapper > input {
+    width: 60%;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+}
+.file-input [type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+}
+
+.file-input [type="file"] + label {
+    height: 2.5rem;
+    width: 15rem;
+    background: var(--light-grey-color2);
+    border: none;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 100;
+    outline: none;
+    padding: 1rem;
+    transition: all 0.3s;
+}
+
+.file-input [type="file"] + label:hover {
+    background-color: var(--deepblue);
+    color: white;
+}
+/* ============== Content Wrapper ==================== */
+
+.submit-btn {
+    position: relative;
+    float: center;
+    width: 30%;
+    height: 3rem;
+    padding: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    color: white;
+    background-color: var(--deepblue);
+    cursor: pointer;
+    transition: all 0.1s;
+    margin-top: 2rem;
+}
+.submit-btn:hover {
+    background-color: white;
+    color: var(--primarycolor);
+}

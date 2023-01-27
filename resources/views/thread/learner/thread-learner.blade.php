@@ -95,8 +95,9 @@
         <div class="thread-content">
             <!-- THREAD CONTENT HEADING -->
             <div class="thread-content-heading">
-                <h1> <span>Learner Thread</span> - Posted Project </h1>
-                <p>As a <i>learner</i> you can look for freelancers or talents to work on your projects. By posting a
+                <h1> <span>Learner Thread</span> - Post a Project </h1>
+                <p>As a <i>learner</i> you can look for freelancers or talents to work on your projects or tasks. By
+                    posting a
                     thread, freelancers or talents
                     can apply the thread that you posted since they deal with the requirements.
                     <br><br>
@@ -170,33 +171,55 @@
                         <!-- LEARNER THREAD CONTENT -->
                         <div class="learner-thread-content">
                             <div class="learner-thread-name">
-                                <h2>Jason</h2>
+                                <h3>Jason</h3>
                             </div>
                             <div class="learner-thread-project-title">
-                                <h4>Project title : </h4>
-                                <p>{{ $thread->project_title }}</p>
+                                <div class="title_wrapper">
+                                    <h3>Project Title</h3>
+                                    <h3>:</h3>
+                                </div>
+                                <div class="content">
+                                    <p>{{ $thread->project_title }}</p>
+                                </div>
                             </div>
                             <div class="learner-thread-project-description">
-                                <h4>Project Description : </h4>
-                                <p>{{ $thread->project_description }}</p>
+                                <div class="title_wrapper">
+                                    <h3>Project Description </h3>
+                                    <h3>:</h3>
+                                </div>
+                                <div class="content">
+                                    <p>{{ $thread->project_description }}</p>
+                                </div>
+                            </div>
+                            <div class="learner-thread-project-required-skills">
+                                <div class="title_wrapper">
+                                    <h3>Required Skills </h3>
+                                    <h3>:</h3>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li>Laravel</li>
+                                        <li>CSS</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="learner-thread-offer">
-                                <h4>Offer : </h4>
+                                <div class="title_wrapper">
+                                    <h3>Offer </h3>
+                                </div>
                                 <div class="learner-thread-offer-detail">
-                                    <h4>Duration : {{ $thread->offered_duration }}</h4>
-                                    <h4>Price range : <span>Rp {{ $thread->min_price }}</span> - <span>Rp
-                                            {{ $thread->max_price }}</span></h4>
+                                    <h3>Duration : {{ $thread->offered_duration }}</h3>
+                                    <h3>Price range : <span>Rp {{ $thread->min_price }}</span> - <span>Rp
+                                            {{ $thread->max_price }}</span></h3>
                                 </div>
 
                             </div>
                             <div class="learner-thread-bottom-content">
-                                <div class="talents-apply">
-                                    <div class="talents-apply-wrapper">
-                                        <h4><span>2 </span>talent(s) has apply this offer</h4>
-                                        <h3>
-                                            <a href="/view/appliers">View Appliers</a>
-                                        </h3>
-                                    </div>
+                                <div class="talents-apply-wrapper">
+                                    <h3 class="talents-apply"><span>2 </span>talent(s) has apply this offer</h3>
+                                    <h3 class="view-appliers">
+                                        <a href="/view/appliers">View Appliers</a>
+                                    </h3>
                                 </div>
                             </div>
                         </div>

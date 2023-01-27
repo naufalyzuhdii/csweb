@@ -1,22 +1,22 @@
 @extends('layout.main-template')
 
 @section('linkCSS')
-<link rel="stylesheet" href="{{asset('css/learner/my-progress/course/course.css')}}">
+<link rel="stylesheet" href="{{asset('css/learner/my-learning/my-courses.css')}}">
 @endsection
 
 @section('content')
-<section class="course">
-    <div class="course-wrapper">
+<section class="my-courses">
+    <div class="my-courses-wrapper">
         <!-- Course Header -->
-        <div class="course-header">
+        <div class="my-courses-header">
             <h1> <span>My Progress</span> - Courses </h1>
             <p>Here is your courses progress. You can see which courses you learned or not</p>
         </div>
         <!-- Course Header -->
 
         <!-- Course Content Wrapper -->
-        <div class="course-content-wrapper">
-            <a href="/view/my-progress/course/course-learn-detail" class="course-links">
+        <div class="my-courses-content-wrapper">
+            <a href="/view/my-learning/course-learned-detail" class="course-links">
                 <!-- Course Image Wrapper -->
                 <div class="course-image-wrapper">
                     <div class="course-image">

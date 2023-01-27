@@ -1,0 +1,110 @@
+.dealed-projects-details {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    padding: 10rem 25rem;
+    display: flex;
+    justify-content: center;
+}
+.dealed-projects-details-wrapper {
+    width: 75%;
+    min-height: 100vh;
+    height: fit-content;
+}
+/* ===================== Dealed Projects Details ====================== */
+.dealed-projects-details-header {
+    margin-bottom: 5rem;
+}
+
+.dealed-projects-details-header h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.dealed-projects-details-header h1 span {
+    color: var(--primarycolor);
+}
+
+.dealed-projects-details-header p {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+/* ===================== Dealed Projects Details ====================== */
+
+/* ===================== Navigation Wrapper ====================== */
+.navigation-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.navigation-wrapper > div {
+    width: fit-content;
+}
+
+.navigation-wrapper > div a {
+    width: 100%;
+    font-size: 1.8rem;
+    color: var(--light-grey-color);
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-activity {
+    border-bottom: 3px solid var(--light-grey-color);
+}
+.navigation-wrapper > div a:hover {
+    color: var(--light-grey-color);
+    opacity: 0.7;
+}
+/* ===================== Navigation Wrapper ====================== */
+
+/* ===================== Activity Content Wrapper ====================== */
+
+.dealed-projects-details-content-activity {
+    width: 100%;
+    height: fit-content;
+    /* background-color: var(--light-grey-color2); */
+    background-color: white;
+    box-shadow: 0.1rem 0.2rem 2rem rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    margin: 5rem 0;
+}
+.activity-day-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-bottom: 6rem;
+}
+
+.activity-day-wrapper::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0.2rem;
+    background-color: var(--light-grey-color);
+    opacity: 0.3;
+    margin-top: 3%;
+}
+.activity-wrapper {
+    margin: 2rem 0;
+}
+.activity-wrapper > h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: black;
+}
+.activity-wrapper > h3 span {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--primarycolor);
+}
+.activity-wrapper > h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+/* ===================== Activity Content Wrapper ====================== */

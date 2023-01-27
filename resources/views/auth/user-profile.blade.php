@@ -27,7 +27,7 @@
                         </div>
                         <div class="file-input">
                             <input type="file" id="file" />
-                            <label for="file" />choose a file</label>
+                            <label for="file">choose a file</label>
                         </div>
                     </div>
                 </div>

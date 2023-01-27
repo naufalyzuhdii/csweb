@@ -40,33 +40,60 @@
                     </div>
                 </div>
                 <!-- PROFILE LEARNER -->
+
                 <!-- LEARNER THREAD CONTENT -->
                 <div class="learner-thread-content">
                     <div class="learner-thread-name">
-                        <h2>Jason</h2>
+                        <h3>Jason</h3>
                     </div>
                     <div class="learner-thread-project-title">
-                        <h4>Project title : </h4>
-                        <p>-</p>
+                        <div class="title_wrapper">
+                            <h3>Project Title</h3>
+                            <h3>:</h3>
+                        </div>
+                        <div class="content">
+                            <p></p>
+                        </div>
                     </div>
                     <div class="learner-thread-project-description">
-                        <h4>Project Description : </h4>
-                        <p>-</p>
+                        <div class="title_wrapper">
+                            <h3>Project Description </h3>
+                            <h3>:</h3>
+                        </div>
+                        <div class="content">
+                            <p></p>
+                        </div>
                     </div>
+                    <div class="learner-thread-project-required-skills">
+                        <div class="title_wrapper">
+                            <h3>Required Skills </h3>
+                            <h3>:</h3>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>Laravel</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <div class="learner-thread-offer">
-                        <h4>Offer : </h4>
+                        <div class="title_wrapper">
+                            <h3>Offer </h3>
+                        </div>
                         <div class="learner-thread-offer-detail">
-                            <h4>Duration : -</h4>
-                            <h4>Price range : <span>Rp - </span> - <span>Rp
-                                    -</span></h4>
+                            <h3>Duration : </h3>
+                            <h3>Price range : <span>Rp </span> - <span>Rp
+                                </span></h3>
                         </div>
 
                     </div>
                     <div class="learner-thread-bottom-content">
-                        <div class="talents-apply">
-                            <div class="talents-apply-wrapper">
-                                <h4><span>2 </span>talent(s) has apply this offer</h4>
-                            </div>
+                        <div class="talents-apply-wrapper">
+                            <h3 class="talents-apply"><span>2 </span>talent(s) has apply this offer</h3>
+                            <h3 class="view-appliers">
+                                <a href="/view/appliers">View Appliers</a>
+                            </h3>
                         </div>
                     </div>
                 </div>
@@ -101,17 +128,33 @@
                             </div>
                             <div class="appliers-data">
                                 <div class="appliers-name">
-                                    <h2>Udin Petot</h2>
+                                    <h3>Udin Petot</h3>
                                 </div>
                                 <div class="appliers-offered-price">
-                                    <h3>Offered Price : <span> Rp 700.000</span></h3>
+                                    <div class="title_wrapper_applier">
+                                        <h3>Offered Price</h3>
+                                        <h3>:</h3>
+                                    </div>
+                                    <div class="content_applier">
+                                        <h3>Rp 700.000</h3>
+                                    </div>
                                 </div>
                                 <div class="appliers-offered-description">
-                                    <h3>Offered Description : </h3>
-                                    <p>Karena susah dan sulit untuk pengembangannya dan diperlukan beberapa aspek</p>
+                                    <div class="title_wrapper_applier_description">
+                                        <h3>Offered Description</h3>
+                                        <h3>:</h3>
+                                    </div>
+                                    <div class="content_applier_description">
+                                        <h3>Karena susah dan sulit untuk pengembangannya dan diperlukan beberapa aspek
+                                        </h3>
+                                    </div>
+
                                 </div>
                                 <div class="appliers-documents">
-                                    <h3>Document Uploaded : </h3>
+                                    <div class="title_wrapper_applier_document">
+                                        <h3>Document Uploaded</h3>
+                                        <h3>:</h3>
+                                    </div>
                                     <ul>
                                         <li><a href="#1">portfolio.jpg</a></li>
                                         <li><a href="#2">gambar.jpg</a></li>
@@ -120,39 +163,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="appliers">
-                        <div class="accept-btn">
-                            <a href="#">
-                                <h3>Accept</h3>
-                            </a>
-                        </div>
-                        <div class="appliers-wrapper">
-                            <div class="appliers-picture">
-                                <div class="appliers-picture-wrapper">
-                                    <img src="{{asset('images/thread/jason.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="appliers-data">
-                                <div class="appliers-name">
-                                    <h2>Udin Petot</h2>
-                                </div>
-                                <div class="appliers-offered-price">
-                                    <h3>Offered Price : <span> Rp 1.000.000</span></h3>
-                                </div>
-                                <div class="appliers-offered-description">
-                                    <h3>Offered Description : </h3>
-                                    <p>Karena susah dan sulit untuk pengembangannya dan diperlukan beberapa aspek</p>
-                                </div>
-                                <div class="appliers-documents">
-                                    <h3>Document Uploaded : </h3>
-                                    <ul>
-                                        <li><a href="#1">portfolio.jpg</a></li>
-                                        <li><a href="#2">gambar.jpg</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <!-- == My Thread Appliers Content Main == -->
             </div>

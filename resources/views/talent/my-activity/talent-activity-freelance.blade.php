@@ -47,16 +47,36 @@
                 <div class="content-wrapper">
                     <h3 class="learner-name">Jason</h3>
                     <div class="package-wrapper">
-                        <h3 class="services-text">
-                            Services :
-                            <span>Create Website Developments with ReactJs</span>
-                        </h3>
-                        <h3 class="services-package">
-                            Package : <span>Medium</span>
-                        </h3>
-                        <h3 class="services-package-price">
-                            Price : <span>Rp. 300.000</span>
-                        </h3>
+                        <div class="service-name">
+                            <div class="title_wrapper">
+                                <h3>Service Name</h3>
+                                <h3>:</h3>
+                            </div>
+                            <div class="content">
+                                <p> Create Website Developments with ReactJs
+                                </p>
+                            </div>
+                        </div>
+                        <div class="service-package">
+                            <div class="title_wrapper">
+                                <h3>Choosen Package</h3>
+                                <h3>:</h3>
+                            </div>
+                            <div class="content">
+                                <p>Medium
+                                </p>
+                            </div>
+                        </div>
+                        <div class="service-price">
+                            <div class="title_wrapper">
+                                <h3> Price</h3>
+                                <h3>:</h3>
+                            </div>
+                            <div class="content">
+                                <p> Rp 300.000
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="progress-status">

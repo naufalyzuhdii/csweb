@@ -1,50 +1,64 @@
-.course {
+.my-courses {
     width: 100%;
     min-height: 100vh;
     height: fit-content;
     padding: 10rem 25rem;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
-
-.course-wrapper {
+.my-courses-wrapper {
     width: 75%;
-    min-height: 100vh;
 }
+/* ============== Title Heading ==================== */
 
-/* ===================== Course Header ====================== */
-.course-header {
-    margin-bottom: 5rem;
-}
-
-.course-header h1 {
+.title-heading h1 {
     font-size: 2rem;
     font-family: "Roboto", sans-serif;
     letter-spacing: 0.1rem;
     font-weight: 600;
 }
-.course-header h1 span {
+.title-heading h1 span {
     color: var(--primarycolor);
 }
-
-.course-header p {
+.title-heading p {
     font-size: 1.8rem;
     font-family: "Roboto", sans-serif;
     font-weight: 200;
     margin-top: 1rem;
     line-height: 2.5rem;
 }
-/* ===================== Course Header ====================== */
+/* ============== Title Heading ==================== */
 
-/* ===================== Course Content Wrapper ====================== */
+/* ============== Create Course Btn ==================== */
 
-/* ==== Course Image wrapper */
-.course-content-wrapper {
+.create-new-course-btn {
+    height: 2.5rem;
+    width: 18rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    margin-top: 5rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+.create-new-course-btn a {
+    width: 100%;
+    height: 100%;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--primarycolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ============== Create Course Btn ==================== */
+
+/* ============== My Courses Content ==================== */
+.my-courses-content-wrapper {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
+
 .course-links {
     width: 30rem;
     height: 30rem;
@@ -114,4 +128,4 @@
 }
 
 /* ==== Course Text Content */
-/* ===================== Course Content Wrapper ====================== */
+/* ============== My Courses Content ==================== */

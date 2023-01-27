@@ -1,11 +1,14 @@
 .create-thread-page-learner {
     width: 100%;
     height: fit-content;
+    padding: 10rem 25rem;
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 
 .wrapper {
-    padding: 10rem 25rem;
+    width: 75%;
 }
 
 .thread-page-learner-header {
@@ -30,9 +33,8 @@
     width: 100%;
     height: fit-content;
     display: flex;
-    background-color: var(--light-grey-color2);
     border-radius: 1rem;
-    margin: 2rem 0;
+    margin: 4rem 0 2rem 0;
 }
 
 /* Profile Learner */
@@ -45,10 +47,9 @@
 
 .profile-learner-wrapper {
     position: absolute;
-    height: 80%;
+    height: 70%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -99,18 +100,22 @@
 .learner-thread-content {
     width: 80%;
     padding: 2rem;
-    padding-right: 5rem;
     height: fit-content;
 }
 
-.learner-thread-name h2 {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+.learner-thread-name h3 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: var(--primarycolor);
 }
 
 .learner-thread-content form {
     width: 100%;
     height: fit-content;
+}
+
+.learner-thread-content form > div {
+    margin-bottom: 1rem;
 }
 
 .learner-thread-project-title {
@@ -125,7 +130,8 @@
     height: 50%;
     display: flex;
     align-items: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .learner-thread-project-title input {
@@ -139,17 +145,14 @@
 
 .learner-thread-description {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
 }
 .learner-thread-description > h3 {
     height: 3.5rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    font-weight: 600;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
 }
 
 .learner-thread-description textarea {
@@ -170,14 +173,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 2rem;
 }
 
 .learner-thread-skills-required h3 {
     height: 50%;
     display: flex;
     align-items: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .learner-thread-skills-required input {
@@ -189,42 +192,56 @@
     border: none;
 }
 
-.learner-offered-things {
+.learner-offered-wrapper {
     width: 100%;
-    height: 7rem;
+    height: fit-content;
     display: flex;
-    margin: 2rem 0;
+    justify-content: space-between;
 }
 
-.learner-offered-things > div {
+.learner-offered-wrapper > div {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.learner-offered-things > div > h3 {
-    font-size: 1.8rem;
+.learner-offered-wrapper > div > h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
     height: 50%;
     display: flex;
     align-items: center;
 }
 
-.learner-offered-things > div > input {
+.learner-offered-wrapper > div > input {
     width: 100%;
     height: 50%;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     padding: 0.8rem;
     border-radius: 1rem;
     border: none;
 }
 
 .offered-duration {
-    width: 25rem;
+    width: 35%;
+}
+.offered-duration h3 span {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: red;
+    margin-left: 0.5rem;
+}
+
+.offered-duration select {
+    width: 100%;
+    height: 3.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
 }
 
 .offered-price {
-    width: 50rem;
-    margin-left: 8rem;
+    width: 60%;
 }
 
 .price {
@@ -259,7 +276,7 @@
     border-radius: 0 1rem 1rem 0;
 }
 
-.learner-offered-things > div:nth-child(3) {
+.learner-offered-wrapper > div:nth-child(3) {
     opacity: 0;
     visibility: hidden;
 }
@@ -274,8 +291,8 @@
 .post-thread-btn button {
     position: absolute;
     right: 0;
-    width: 25%;
-    height: 100%;
+    width: 30rem;
+    height: 4rem;
     background-color: var(--primarycolor);
     color: white;
     border: none;

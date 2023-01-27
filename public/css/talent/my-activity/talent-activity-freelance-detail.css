@@ -33,11 +33,12 @@
 .freelance-content-item {
     position: relative;
     width: 100%;
-    height: 16rem;
+    height: fit-content;
+    padding: 2rem 1rem;
     display: flex;
-    background-color: var(--light-grey-color2);
-    border-radius: 0.5rem 0.5rem 0 0;
     box-shadow: 0.5rem 0.1rem 0.8rem rgb(0, 0, 0, 0.5);
+    background-color: rgb(230, 230, 230);
+    border-radius: 0.5rem 0.5rem 0 0;
     color: black;
 }
 .profile-learner {
@@ -107,18 +108,31 @@
     justify-content: space-evenly;
 }
 
-.services-text,
-.services-package {
+.service-name,
+.service-package,
+.service-price {
+    width: 100%;
+    display: flex;
+    height: fit-content;
+}
+.title_wrapper {
+    width: 25%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+}
+.title_wrapper h3 {
     font-size: 1.6rem;
     font-weight: 500;
 }
-.services-text span,
-.services-package span {
-    font-weight: 400;
+.content {
+    width: 75%;
+    height: fit-content;
 }
-
-.services-package-price {
+.content p {
     font-size: 1.6rem;
+    font-weight: 600;
+    margin-left: 1%;
 }
 
 .progress-status {
@@ -170,7 +184,7 @@
 .details-content-wrapper {
     width: 100%;
     height: fit-content;
-    background-color: var(--light-grey-color2);
+    background-color: rgb(230, 230, 230);
     box-shadow: 0.3rem 0.4rem 0.8rem rgb(0, 0, 0, 0.5);
     margin: 2rem 0;
     padding: 2rem 4rem;

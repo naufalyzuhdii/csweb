@@ -78,45 +78,59 @@
 .learner-thread-name {
     width: fit-content;
 }
-.learner-thread-name h2 {
-    font-size: 2.5rem;
+.learner-thread-name h3 {
+    font-size: 2rem;
     color: black;
 }
 
 .learner-thread-project-title {
     width: 100%;
+    display: flex;
 }
 
-.learner-thread-project-title h4 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: black;
+.title_wrapper {
+    width: 25%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
 }
-
-.learner-thread-project-title p {
+.title_wrapper h3 {
     font-size: 1.6rem;
-    color: black;
+    font-weight: 500;
+}
+.content {
+    width: 75%;
+    height: fit-content;
+}
+.content p {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-left: 1%;
+}
+.content ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.content ul li {
+    width: fit-content;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-left: 1%;
+    background-color: var(--primarycolor);
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0 0.5rem;
+}
+
+.learner-thread-project-required-skills {
+    width: 100%;
+    display: flex;
 }
 
 .learner-thread-project-description {
     width: 100%;
-}
-
-.learner-thread-project-description h4 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: black;
-}
-
-.learner-thread-project-description p {
-    font-size: 1.6rem;
-    color: black;
-}
-
-.learner-thread-offer h4 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: black;
+    display: flex;
 }
 
 .learner-thread-offer-detail {
@@ -124,7 +138,7 @@
     display: flex;
 }
 
-.learner-thread-offer-detail h4 {
+.learner-thread-offer-detail h3 {
     width: fit-content;
     font-weight: 100;
     font-size: 1.5rem;
@@ -202,7 +216,7 @@
     font-size: 1.6rem;
 }
 .job-title-section h4 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 400;
 }
 
@@ -217,7 +231,7 @@
     font-size: 1.6rem;
 }
 .job-category-section > div > h4 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 400;
 }
 
@@ -226,7 +240,7 @@
 }
 
 .job-description-section h4 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 400;
 }
 
@@ -240,7 +254,7 @@
     font-size: 1.6rem;
 }
 .job-duration-section > div > h4 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 400;
 }
 

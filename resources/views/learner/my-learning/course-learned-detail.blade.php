@@ -1,13 +1,13 @@
 @extends('layout.main-template')
 
 @section('linkCSS')
-<link rel="stylesheet" href="{{asset('css/learner/my-progress/course/course-learn-detail.css')}}">
+<link rel="stylesheet" href="{{asset('css/learner/my-learning/course-learned-detail.css')}}">
 @endsection
 
 @section('content')
 
-<section class="course-learn-detail">
-    <div class="course-learn-detail-wrapper">
+<section class="course-learned-detail">
+    <div class="course-learned-detail-wrapper">
         <!-- Video Learning Wrapper -->
         <div class="video-learning-wrapper">
             <video width="320" height="240" controls>

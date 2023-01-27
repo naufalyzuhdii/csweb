@@ -114,12 +114,21 @@
                                         <h2>Udin Petot</h2>
                                     </div>
                                     <div class="talent-thread-description">
-                                        <h4>Services : </h4>
-                                        <p>I can do Website Development with ReactJs, HTML, CSS, Bootstrap</p>
+                                        <div class="title_wrapper">
+                                            <h3>Services Name </h3>
+                                            <h3>:</h3>
+                                        </div>
+                                        <div class="content">
+                                            <p>Create Website Development with ReactJs, HTML, CSS, BootstrapHTML</p>
+                                        </div>
                                     </div>
                                     <div class="talent-thread-offer">
-                                        <div class="talent-thread-offer-detail">
-                                            <h4>Start Price : Rp. 300.000</h4>
+                                        <div class="title_wrapper">
+                                            <h3>Start Price </h3>
+                                            <h3>:</h3>
+                                        </div>
+                                        <div class="content">
+                                            <p>Rp. 300.000</p>
                                         </div>
                                     </div>
                                     <div class="talent-thread-bottom-content">
