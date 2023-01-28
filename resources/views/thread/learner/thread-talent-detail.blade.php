@@ -84,6 +84,7 @@
             {{-- Thread Content Main --}}
             <div class="thread-content-main">
                 <div class="thread-content-main-wrapper">
+
                     <!-- Thread Content Description -->
                     <div class="thread-content-description">
                         <h4>Description</h4>
@@ -99,46 +100,325 @@
                         <h4>Package</h4>
                         <form action="">
                             <div class="package-wrapper">
-                                <div class="package-1-wrapper">
-                                    <input type="radio" id="radio-1">
-                                    <label for="radio-1" class="package-1">
-                                        <div class="myPackage">
-                                            <div class="package-title">
-                                                <h2>Reguler</h2>
-                                            </div>
-                                            <div class="package-description">
-                                                <p>Includes navigation, background
-                                                    slide, social media button, and
-                                                    source file</p>
-                                            </div>
-                                            <div class="package-list">
-                                                <ul>
-                                                    <li>
-                                                        <h4>2 Days Delivery</h4>
-                                                    </li>
-                                                    <li>
-                                                        <h4>2 Maximum revision</h4>
-                                                    </li>
-                                                    <li>
-                                                        <h4>Requested Framework</h4>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="package-price">
-                                                <h3>Rp. 300.000</h3>
-                                            </div>
-                                        </div>
-                                    </label>
+                                <div class="myPackage">
+                                    <div class="package-title" name="package-title">
+                                        <h2>Reguler</h2>
+                                    </div>
+                                    <div class="package-description" name="package-description">
+                                        <p>Includes navigation, background
+                                            slide, social media button, and
+                                            source file</p>
+                                    </div>
+                                    <div class="package-list" name="package-list">
+                                        <ul>
+                                            <li>
+                                                <h4>2 Days Delivery</h4>
+                                            </li>
+                                            <li>
+                                                <h4>2 Maximum revision</h4>
+                                            </li>
+                                            <li>
+                                                <h4>Requested Framework</h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="package-price" name="package-price">
+                                        <h3>Rp. 300.000</h3>
+                                    </div>
+                                </div>
+                                <div class="myPackage">
+                                    <div class="package-title" name="package-title">
+                                        <h2>Medium</h2>
+                                    </div>
+                                    <div class="package-description" name="package-description">
+                                        <p>Includes navigation, background
+                                            slide, social media button, and
+                                            source file</p>
+                                    </div>
+                                    <div class="package-list" name="package-list">
+                                        <ul>
+                                            <li>
+                                                <h4>2 Days Delivery</h4>
+                                            </li>
+                                            <li>
+                                                <h4>2 Maximum revision</h4>
+                                            </li>
+                                            <li>
+                                                <h4>Requested Framework</h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="package-price" name="package-price">
+                                        <h3>Rp. 300.000</h3>
+                                    </div>
+                                </div>
+                                <div class="myPackage">
+                                    <div class="package-title" name="package-title">
+                                        <h2>Super</h2>
+                                    </div>
+                                    <div class="package-description" name="package-description">
+                                        <p>Includes navigation, background
+                                            slide, social media button, and
+                                            source file</p>
+                                    </div>
+                                    <div class="package-list" name="package-list">
+                                        <ul>
+                                            <li>
+                                                <h4>2 Days Delivery</h4>
+                                            </li>
+                                            <li>
+                                                <h4>2 Maximum revision</h4>
+                                            </li>
+                                            <li>
+                                                <h4>Requested Framework</h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="package-price" name="package-price">
+                                        <h3>Rp. 300.000</h3>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="order-btn">
+                                <button value="submit">Order</button>
+                            </div>
                         </form>
-                    </div>
-                    <div class="order-btn">
-                        <button value="submit">Order</button>
-                    </div>
 
+                    </div>
+                    <!-- Thread Content Package -->
+
+                    <!-- Thread Content Ratings -->
+                    <div class="thread-content-ratings">
+                        <h4>Ratings</h4>
+                        <div class="thread-content-ratings-wrapper">
+                            <div class="rating-list">
+                                <h4>
+                                    Talent's services
+                                </h4>
+                                <div class="rating-icon">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="rating-list">
+                                <h4>
+                                    Talent's communication
+                                </h4>
+                                <div class="rating-icon">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Thread Content Ratings -->
+
+                    <!-- Thread Content Reviews -->
+                    <div class="thread-content-reviews">
+                        <h4>Reviews</h4>
+                        <h3>(200 reviews)</h3>
+                        <div class="thread-content-reviews-wrapper">
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <div class="review-time">
+                                    <h4>1 month ago</h4>
+                                </div>
+                                <div class="review-content-wrapper">
+                                    <div class="reviewer-image-wrapper">
+                                        <div class="reviewer-image">
+                                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="reviewer-content">
+                                        <div class="reviewer-name">
+                                            <h3>Junaedi</h3>
+                                        </div>
+                                        <div class="reviewer-description">
+                                            <p>The work was great and amazing GILEE!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showMore-btn">
+                            <a href="#showMore" id="showMore">Show More</a>
+                        </div>
+                    </div>
+                    <!-- Thread Content Reviews -->
                 </div>
             </div>
+            {{-- Thread Content Main --}}
             <!-- Thread Content Package -->
             <!-- Thread Content Ratings -->
             <div class="thread-content-ratings">
