@@ -1,67 +1,149 @@
-.mythread-appliers {
+.dealed-projects {
     width: 100%;
     min-height: 100vh;
     height: fit-content;
+    padding: 10rem 25rem;
     display: flex;
     justify-content: center;
-    padding: 10rem 25rem;
     align-items: center;
 }
-
-.mythread-appliers-wrapper {
+.dealed-projects-wrapper {
     width: 75%;
+    min-height: 100vh;
+    height: fit-content;
 }
-/* ============== My Thread Appliers Heading =============== */
-.mythread-appliers-heading {
+/* ===================== Find Freelances Talents Header ====================== */
+.dealed-projects-header {
     margin-bottom: 5rem;
 }
-.mythread-appliers-heading h1 {
+
+.dealed-projects-header h1 {
     font-size: 2rem;
     font-family: "Roboto", sans-serif;
     letter-spacing: 0.1rem;
     font-weight: 600;
 }
-.mythread-appliers-heading h1 span {
+.dealed-projects-header h1 span {
     color: var(--primarycolor);
 }
-.mythread-appliers-heading p {
+
+.dealed-projects-header p {
     font-size: 1.8rem;
     font-family: "Roboto", sans-serif;
     font-weight: 200;
     margin-top: 1rem;
     line-height: 2.5rem;
 }
-/* ============== My Thread Appliers Heading =============== */
+/* ===================== Find Freelances Talents Header ====================== */
 
-/* ============= My Thread Appliers Upper Content =========== */
+/* ===================== Find Freelances Talents Content ====================== */
+.dealed-projects-content {
+    height: fit-content;
+}
 
-.thread-content-learner-wrapper {
+.dealed-projects-content-wrapper {
+    height: fit-content;
+}
+
+.project-links {
     width: 100%;
-    height: 22rem;
-    background-color: var(--light-grey-color2);
+    height: 100%;
     margin-bottom: 2rem;
-    border-radius: 1rem 1rem 0 0;
 }
-/* === Thread Content Learner Valid Wrapper */
-.thread-content-learner-valid-wrapper {
-    position: relative;
+.active {
+    margin-bottom: 25rem;
 }
-
-.thread-content-learner-valid {
-    position: absolute;
-    padding: 0.5rem;
-    right: 0;
-}
-
-.thread-content-learner-valid h3 {
-    font-size: 1.3rem;
+/* === Your project */
+.your-project {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
     padding: 1rem;
-    color: black;
+    position: relative;
+    justify-content: space-evenly;
+    background-color: var(--light-grey-color2);
+    box-shadow: 0.2rem 0.3rem 1rem rgb(0, 0, 0, 0.5);
 }
-/* === Thread Content Learner Valid Wrapper */
 
-/* === Thread Content Learner Main */
-/* ===== Profile Learner */
+.your-project > div {
+    margin-bottom: 1rem;
+}
+
+.details-links {
+    position: absolute;
+    right: 2%;
+    top: 5%;
+    z-index: 200;
+    color: var(--light-grey-color);
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.details-links:hover {
+    color: var(--deepblue);
+}
+
+.project-title {
+    width: 90%;
+}
+.project-title h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+}
+.project-description,
+.offer-duration,
+.offer-price {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.title_wrapper {
+    width: 20%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+}
+.title_wrapper h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.content {
+    width: 80%;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+}
+.content h3 {
+    width: 200%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-left: 1%;
+}
+
+.arrow {
+    width: 10%;
+    top: 50%;
+    right: 0;
+    position: absolute;
+    z-index: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.arrow i {
+    font-size: 2rem;
+    transition: transform 0.2s;
+}
+.your-project.change .arrow i {
+    transform: rotate(90deg);
+}
+
+/* --- THREAD CONTENT LEARNER MAIN */
 .thread-content-learner-main {
     display: flex;
     width: 100%;
@@ -114,7 +196,6 @@
     border-radius: 1rem;
     color: var(--primarycolor);
 }
-/* ===== Profile Learner */
 
 /* --LEARNER THREAD CONTENT */
 
@@ -168,18 +249,18 @@
     font-size: 1.4rem;
     font-weight: 500;
     margin-left: 1%;
-    background-color: white;
-    color: black;
+    background-color: var(--primarycolor);
+    color: white;
     border-radius: 0.5rem;
     padding: 0 0.5rem;
 }
 
-.learner-thread-project-required-skills {
+.learner-thread-project-description {
     width: 100%;
     display: flex;
 }
 
-.learner-thread-project-description {
+.learner-thread-project-required-skills {
     width: 100%;
     display: flex;
 }
@@ -236,73 +317,35 @@
     padding: 0 0.5rem;
     border-radius: 0.7rem;
 }
-/* = LEARNER THREAD CONTENT */
-/* === Thread Content Learner Main */
-/* ============= My Thread Appliers Upper Content =========== */
+/* === Your project */
 
-/* ============= My Thread Appliers Content =========== */
-.mythread-appliers-content {
-}
+/* === Accepted Freelances Talents */
 
-.mythread-appliers-content-wrapper {
-    width: 100%;
-    height: fit-content;
-    background-color: var(--light-grey-color2);
-    border-radius: 0 0 1rem 1rem;
-    padding: 2rem 5rem;
-}
-/* === My Thread appliers Content Heading */
-.mythread-appliers-content-heading {
-    width: 100%;
-    margin-bottom: 3rem;
-}
-.mythread-appliers-content-heading h2 {
-    font-size: 2rem;
-    font-weight: 900;
-}
-/* === My Thread appliers Content Heading */
-
-/* === My Thread Appliers Content Main */
-.mythread-appliers-content-main {
-    width: 100%;
-}
-
-.appliers {
-    width: 100%;
-    height: 20rem;
+.accepted-freelances-talents {
+    width: 95%;
+    height: 100%;
     background-color: var(--primarycolor);
+    float: right;
+    box-shadow: 0.2rem 0.3rem 1rem rgb(0, 0, 0, 0.5);
     position: relative;
-    border-radius: 1rem;
-    margin-bottom: 1.5rem;
-}
-.accept-btn {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    width: 10rem;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1rem;
+    display: none;
 }
 
-.accept-btn a h3 {
-    font-size: 1.6rem;
-    font-weight: 900;
-    color: var(--primarycolor);
+.active .accepted-freelances-talents {
+    display: block;
 }
 
-.appliers-wrapper {
-    width: 100%;
+.freelances-talents-data {
     height: 100%;
     display: flex;
+    position: relative;
     justify-content: space-between;
-    align-items: center;
+}
+
+.applier-role {
 }
 .appliers-picture {
     width: 20%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -310,7 +353,7 @@
 }
 .appliers-picture-wrapper {
     width: 80%;
-    height: 70%;
+    height: 90%;
 }
 .appliers-picture-wrapper img {
     width: 100%;
@@ -420,6 +463,25 @@
     font-style: italic;
     text-decoration: underline;
 }
-/* === My Thread Appliers Content Main */
 
-/* ============= My Thread Appliers Content =========== */ ;
+.chat-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2rem;
+    width: 10rem;
+    height: 5rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+}
+.chat-btn a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primarycolor);
+}
+
+/* === Accepted Freelances Talents */
+/* ===================== Find Freelances Talents Content ====================== */

@@ -18,4 +18,27 @@ class TalentController extends Controller
     {
         return view('talent.my-activity.talent-activity-applied-jobs');
     }
+
+    
+
+    public function view_create_new_course()
+    {
+        return view('talent.my-courses.create-new-course');
+    }
+    public function view_my_courses()
+    {
+        return view('talent.my-courses.my-courses');
+    }
+    public function view_my_course_detail_chapter()
+    {
+        return view('talent.my-courses.my-course-detail-chapter');
+    }
+    public function view_my_course_detail_sub_chapter()
+    {
+        return view('talent.my-courses.my-course-detail-sub-chapter');
+    }
+    public function view_my_course_detail_video_learning()
+    {
+        return view('talent.my-courses.my-course-detail-video-learning');
+    }
 }

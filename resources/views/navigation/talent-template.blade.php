@@ -56,14 +56,14 @@
         </div>
 
         <div class="nav-2">
-            <div class="your-freelance-job">
+            <div class="my-activity">
                 <a href="/view/my-activity-freelance">
                     My Activity
                 </a>
             </div>
-            <div class="your-course">
-                <a href="#your-course">
-                    Your Course
+            <div class="my-course">
+                <a href="/view/my-courses">
+                    My Courses
                 </a>
             </div>
             <div class="profile-navbar">

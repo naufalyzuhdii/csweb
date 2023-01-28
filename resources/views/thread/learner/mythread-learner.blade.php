@@ -45,32 +45,56 @@
                     <!-- LEARNER THREAD CONTENT -->
                     <div class="learner-thread-content">
                         <div class="learner-thread-name">
-                            <h2>Jason</h2>
+                            <h3>Jason</h3>
                         </div>
                         <div class="learner-thread-project-title">
-                            <h4>Project title : </h4>
-                            <p>-</p>
-                        </div>
-                        <div class="learner-thread-project-description">
-                            <h4>Project Description : </h4>
-                            <p>-</p>
-                        </div>
-                        <div class="learner-thread-offer">
-                            <h4>Offer : </h4>
-                            <div class="learner-thread-offer-detail">
-                                <h4>Duration : -</h4>
-                                <h4>Price range : <span>Rp -</span> - <span>Rp
-                                        -</span></h4>
+                            <div class="title_wrapper">
+                                <h3>Project Title</h3>
+                                <h3>:</h3>
+                            </div>
+                            <div class="content">
+                                <p></p>
                             </div>
                         </div>
+                        <div class="learner-thread-project-description">
+                            <div class="title_wrapper">
+                                <h3>Project Description </h3>
+                                <h3>:</h3>
+                            </div>
+                            <div class="content">
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="learner-thread-project-required-skills">
+                            <div class="title_wrapper">
+                                <h3>Required Skills </h3>
+                                <h3>:</h3>
+                            </div>
+                            <div class="content">
+                                <ul>
+                                    <li>Laravel</li>
+                                    <li>CSS</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="learner-thread-offer">
+                            <div class="title_wrapper">
+                                <h3>Offer </h3>
+                            </div>
+                            <div class="learner-thread-offer-detail">
+                                <h3>Duration : </h3>
+                                <h3>Price range : <span>Rp </span> - <span>Rp
+                                    </span></h3>
+                            </div>
+
+                        </div>
                         <div class="learner-thread-bottom-content">
-                            <div class="talents-apply">
-                                <div class="talents-apply-wrapper">
-                                    <h4><span>2 </span>talent(s) has apply this offer</h4>
-                                    <h3>
-                                        <a href="/view/appliers">View Appliers</a>
-                                    </h3>
-                                </div>
+                            <div class="talents-apply-wrapper">
+                                <h3 class="talents-apply"><span>2 </span>talent(s) has apply this offer</h3>
+                                <h3 class="view-appliers">
+                                    <a href="/view/appliers">View Appliers</a>
+                                </h3>
                             </div>
                         </div>
                     </div>

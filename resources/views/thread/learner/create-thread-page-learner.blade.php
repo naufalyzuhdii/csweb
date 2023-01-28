@@ -1,7 +1,7 @@
 @extends('layout.main-template')
 
 @section('linkCSS')
-    <link rel="stylesheet" href="{{asset('/css/thread/learner/create-thread-page-learner.css')}}">    
+<link rel="stylesheet" href="{{asset('/css/thread/learner/create-thread-page-learner.css')}}">
 @endsection
 
 @section('content')
@@ -36,12 +36,12 @@
             <!-- Learner Thread Content -->
             <div class="learner-thread-content">
                 <div class="learner-thread-name">
-                    <h2>{{ old('name', Auth::user()->name) }}</h2>
+                    <h3>{{ old('name', Auth::user()->name) }}</h3>
                 </div>
                 <form action="/create_thread" enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="learner-thread-project-title">
-                        <h3>Project Title</h3>
+                        <h3>Project or Task Title</h3>
                         <input type="text" name="project_title" placeholder="e.g Build me a website ...">
                     </div>
 
@@ -56,10 +56,19 @@
                         <input type="text" name="skills_requirement" placeholder="Enter required skills...">
                     </div>
 
-                    <div class="learner-offered-things">
+                    <div class="learner-offered-wrapper">
                         <div class="offered-duration">
-                            <h3>Offered Duration</h3>
-                            <input type="text" name="offered_duration">
+                            <h3>Offered Duration
+                                <span> (estimate)</span>
+                            </h3>
+                            <select name="offered_duration" id="">
+                                <option value="less than 1 hour">
+                                    < 1 hour</option>
+                                <option value="1 hour"> 1 hour</option>
+                                <option value="2 hour">2 hour</option>
+                                <option value="4 hour">4 hour</option>
+                                <option value="More than 4 hour">More than 4 hour</option>
+                            </select>
                         </div>
                         <div class="offered-price">
                             <h3>Offered Price</h3>

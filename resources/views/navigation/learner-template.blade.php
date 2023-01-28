@@ -47,7 +47,7 @@
                       Thread
                   </a>
                   <ul>
-                      <li> <a href="/view/thread-learner">Posted Project</a></li>
+                      <li> <a href="/view/thread-learner">Post a Project</a></li>
                       <li> <a href="/view/find-freelancers-talents">Find Freelancers or Talents</a></li>
                   </ul>
               </div>
@@ -61,18 +61,19 @@
           </div>
 
           <div class="nav-2">
-              <div class="cart-navbar">
-                  <a href="/view/learner/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-              </div>
-
               <div class="progress-navbar">
                   <a href="" class="progress-navbar-links" id="progress-navbar-links">
                       My Progress
                   </a>
                   <ul>
-                      <li> <a href="/view/my-progress/courses">My Courses</a></li>
-                      <li> <a href="/view/my-progress/find-freelances-talents">Applied Freelancers</a></li>
+                      <li> <a href="/view/my-progress/dealed-projects">Dealed Projects</a></li>
+                      <li> <a href="/view/my-progress/">My Posted Projects</a></li>
                   </ul>
+              </div>
+              <div class="course-navbar">
+                  <a href="/view/my-learning" class="course-navbar-links" id="course-navbar-links">
+                      My Learning
+                  </a>
               </div>
 
               <div class="profile-navbar">
@@ -95,6 +96,11 @@
                               </label>
                               <!-- <button type="submit" value="Submit">DE</button> -->
                           </form>
+                      </li>
+                      <li>
+                          <div class="cart-navbar">
+                              <a href="/view/learner/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                          </div>
                       </li>
                       <li><a href="/profile">Your profile</a></li>
                       <li>

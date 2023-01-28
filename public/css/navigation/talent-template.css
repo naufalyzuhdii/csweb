@@ -209,7 +209,7 @@ ul ul ul {
 /* SEARCHBAR */
 
 /* FreelanceJob */
-.your-freelance-job {
+.my-activity {
     width: 33%;
     height: 100%;
     display: flex;
@@ -217,28 +217,28 @@ ul ul ul {
     align-items: center;
     position: relative;
 }
-.your-freelance-job i {
+.my-activity i {
     cursor: pointer;
     color: var(--white-color);
     font-size: 1.8rem;
 }
-.your-freelance-job i:hover {
+.my-activity i:hover {
     color: var(--secondarycolor);
 }
 
-.your-freelance-job a {
+.my-activity a {
     font-size: 1.8rem;
     font-weight: 500;
     color: white;
 }
 
-.your-freelance-job a:hover {
+.my-activity a:hover {
     color: var(--secondarycolor);
 }
 /* FreelanceJob */
 
 /* your-course */
-.your-course {
+.my-course {
     width: 33%;
     height: 100%;
     display: flex;
@@ -247,12 +247,12 @@ ul ul ul {
     position: relative;
 }
 
-.your-course a {
+.my-course a {
     font-size: 1.8rem;
     font-weight: 500;
     color: white;
 }
-.your-course a:hover {
+.my-course a:hover {
     color: var(--secondarycolor);
 }
 /* your-course */

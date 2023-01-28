@@ -4,7 +4,6 @@
     padding: 10rem 25rem;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .thread-wrapper {
@@ -258,43 +257,39 @@
 }
 
 .talent-thread-name {
-    width: fit-content;
 }
 .talent-thread-name h2 {
     font-size: 2.5rem;
     color: white;
 }
 
-.talent-thread-description {
-    width: 100%;
-}
-
-.talent-thread-description h4 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: white;
-}
-
-.talent-thread-description p {
-    font-size: 1.6rem;
-    color: white;
-}
-
-.talent-thread-offer h4 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: white;
-}
-
-.talent-thread-offer-detail {
+.title_wrapper {
+    width: 20%;
+    height: max-content;
     display: flex;
+    justify-content: space-between;
+}
+.title_wrapper h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: white;
+}
+.content {
+    width: 80%;
+    height: fit-content;
+}
+.content p {
+    width: 200%;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-left: 1%;
+    color: white;
 }
 
-.talent-thread-offer-detail h4 {
-    width: 20rem;
-    font-weight: 100;
-    font-size: 1.5rem;
-    color: white;
+.talent-thread-description,
+.talent-thread-offer {
+    width: 100%;
+    display: flex;
 }
 
 .talent-thread-bottom-content {

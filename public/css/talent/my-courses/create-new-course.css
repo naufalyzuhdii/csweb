@@ -1,0 +1,178 @@
+.create-new-course {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    padding: 10rem 25rem;
+    display: flex;
+    justify-content: center;
+}
+.create-new-course-wrapper {
+    width: 75%;
+}
+/* ============== Title Heading ==================== */
+
+.title-heading h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.title-heading h1 span {
+    color: var(--primarycolor);
+}
+.title-heading p {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+/* ============== Title Heading ==================== */
+
+/* ============== Content Wrapper ==================== */
+.create-new-course-content-wrapper {
+    width: 100%;
+    height: fit-content;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ;
+}
+.create-new-course-content-wrapper form {
+    width: 70%;
+    height: fit-content;
+}
+.create-new-course-content-wrapper form > div {
+    height: fit-content;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.create-new-course-content-wrapper form > div > label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: black;
+}
+
+.course-title-wrapper > input {
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+}
+
+.course-description-wrapper > textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 10rem;
+    max-height: 10rem;
+    padding: 0.5rem;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+}
+
+.inputed-price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
+    height: 2.5rem;
+}
+
+.inputed-price-wrapper span {
+    width: 20%;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: white;
+    background-color: var(--primarycolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+.inputed-price-wrapper input {
+    width: 80%;
+    padding: 0.5rem;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.course-image-wrapper {
+}
+.profile-picture-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
+}
+.picture-wrapper {
+    width: 250px;
+    height: 200px;
+}
+.picture {
+    width: 100%;
+    height: 100%;
+}
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.file-input [type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+}
+
+.file-input [type="file"] + label {
+    height: 2.5rem;
+    width: 20rem;
+    background: var(--primarycolor);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 100;
+    outline: none;
+    padding: 1rem;
+    transition: all 0.3s;
+}
+
+.file-input [type="file"] + label:hover {
+    background-color: var(--deepblue);
+}
+.button-submit-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-btn {
+    position: relative;
+    float: center;
+    width: 60%;
+    height: 3rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    color: white;
+    background-color: var(--deepblue);
+    cursor: pointer;
+    transition: all 0.1s;
+}
+.submit-btn:hover {
+    background-color: white;
+    color: var(--primarycolor);
+}
+/* ============== Content Wrapper ==================== */

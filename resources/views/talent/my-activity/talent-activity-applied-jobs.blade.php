@@ -49,19 +49,49 @@
                 <div class="content-wrapper">
                     <h3 class="learner-name">Jaenal</h3>
                     <div class="package-wrapper">
-                        <h3 class="project-title">
-                            Project Title : <span> Create Website with Laravel</span>
-                        </h3>
-                        <h3 class="project-description">
-                            Project Description : <span> Membuat website simpel dengan Laravel</span>
-                        </h3>
+                        <div class="project-title">
+                            <div class="title_wrapper">
+                                <h3>Project Name</h3>
+                                <h3>:</h3>
+                            </div>
+                            <div class="content">
+                                <p> Project Title
+                                </p>
+                            </div>
+                        </div>
+                        <div class="project-description">
+                            <div class="title_wrapper">
+                                <h3> Project Description</h3>
+                                <h3>:</h3>
+                            </div>
+                            <div class="content">
+                                <p> Membuat website simpel dengan Laravel
+                                </p>
+                            </div>
+                        </div>
+
                         <div class="offer-wrapper">
-                            <h3 class="duration">
-                                Duration : <span>2 days</span>
-                            </h3>
-                            <h3 class="price-range">
-                                Price range : <span>Rp 300.000</span>
-                            </h3>
+                            <div class="duration">
+                                <div class="title_wrapper">
+                                    <h3> Duration </h3>
+                                    <h3>:</h3>
+                                </div>
+                                <div class="content">
+                                    <p> 2 days
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="price-range">
+                                <div class="title_wrapper">
+                                    <h3>Price range </h3>
+                                    <h3>:</h3>
+                                </div>
+                                <div class="content">
+                                    <p> Rp 300.000
+                                    </p>
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
