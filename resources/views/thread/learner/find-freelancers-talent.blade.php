@@ -1,7 +1,7 @@
 @extends('layout.main-template')
 
 @section('linkCSS')
-    <link rel="stylesheet" href="{{asset('css/thread/learner/find-freelancers-talent.css')}}">    
+<link rel="stylesheet" href="{{asset('css/thread/learner/find-freelancers-talent.css')}}">
 @endsection
 
 @section('content')
@@ -36,12 +36,23 @@
                                     <h2>Udin Petot</h2>
                                 </div>
                                 <div class="talent-thread-description">
-                                    <h4>Services : </h4>
-                                    <p>I can do Website Development with ReactJs, HTML, CSS, Bootstrap</p>
+                                    <div class="title_wrapper">
+                                        <h3>Services </h3>
+                                        <h3>:</h3>
+                                    </div>
+                                    <div class="content">
+                                        <p>I can do Website Development with ReactJs, HTML, CSS, Bootstrap</p>
+                                    </div>
                                 </div>
                                 <div class="talent-thread-offer">
                                     <div class="talent-thread-offer-detail">
-                                        <h4>Start Price : Rp. 300.000</h4>
+                                        <div class="title_wrapper">
+                                            <h3>Start Price </h3>
+                                            <h3>:</h3>
+                                        </div>
+                                        <div class="content">
+                                            <p>Rp. 300.000</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="talent-thread-bottom-content">
@@ -59,48 +70,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/view/thread-talent-detail" class="thread-content-talent-links">
-                    <div class="thread-content-talent-wrapper">
-                        <div class="thread-content-talent-main">
-                            <div class="profile-talent">
-                                <div class="profile-talent-image-wrapper">
-                                    <div class="profile-talent-image">
-                                        <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
-                                    </div>
-                                </div>
-                                <div class="profile-talent-role-wrapper">
-                                    <div class="profile-talent-role">
-                                        <h2>Talent</h2>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="talent-thread-content">
-                                <div class="talent-thread-name">
-                                    <h2>Udin Petot</h2>
-                                </div>
-                                <div class="talent-thread-description">
-                                    <h4>Services : </h4>
-                                    <p>I can do Website Development with ReactJs, HTML, CSS, Bootstrap</p>
-                                </div>
-                                <div class="talent-thread-offer">
-                                    <div class="talent-thread-offer-detail">
-                                        <h4>Start Price : Rp. 300.000</h4>
-                                    </div>
-                                </div>
-                                <div class="talent-thread-bottom-content">
-                                    <h4>Review</h4>
-                                    <p>
-                                        <i class="fa-solid fa-star"></i>
-                                        <span id="rating">4.8</span>
-                                        <span>(1000)</span>
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </a>
                 {{-- End Of Thread Talent --}}
 
             </div>

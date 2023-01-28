@@ -123,13 +123,37 @@
     color: white;
 }
 
-.talent-thread-description {
-    width: 100%;
+.title_wrapper {
+    width: 25%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+}
+.title_wrapper h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: white;
+}
+.content {
+    width: 75%;
+    height: fit-content;
+}
+.content p {
+    width: 200%;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-left: 1%;
+    color: white;
+}
+
+.talent-thread-description,
+.talent-thread-offer {
+    display: flex;
 }
 
 .talent-thread-description h4 {
-    font-size: 1.8rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 600;
     color: white;
 }
 
@@ -139,12 +163,13 @@
 }
 
 .talent-thread-offer h4 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: white;
 }
 
 .talent-thread-offer-detail {
+    width: 100%;
     display: flex;
 }
 
@@ -271,6 +296,11 @@
     justify-content: space-between;
 }
 
+#checkbox-1 {
+    position: relative;
+    width: 100%;
+}
+
 .myPackage {
     width: 30rem;
     height: 35rem;
@@ -281,6 +311,29 @@
     flex-direction: column;
     justify-content: space-evenly;
     cursor: pointer;
+}
+
+.myPackage:hover {
+    background-color: rgba(139, 138, 138, 0.4);
+}
+
+.myPackage:active {
+    background-color: rgba(139, 138, 138, 0.4);
+}
+
+input[type="radio"] {
+    display: none;
+}
+input[type="radio"]:checked + label {
+    background-color: rgb(52, 52, 52);
+    border-color: rgb(52, 52, 52);
+    color: #fff;
+    cursor: default;
+    pointer-events: none;
+}
+
+.package-1 {
+    background-color: red;
 }
 
 .package-title {

@@ -62,12 +62,38 @@
                                 <span> (estimate)</span>
                             </h3>
                             <select name="offered_duration" id="">
-                                <option value="less than 1 hour">
-                                    < 1 hour</option>
-                                <option value="1 hour"> 1 hour</option>
-                                <option value="2 hour">2 hour</option>
-                                <option value="4 hour">4 hour</option>
-                                <option value="More than 4 hour">More than 4 hour</option>
+                                <option value="less than 1 day">
+                                    less than 1 day</option>
+                                <option value="1 day">1 day</option>
+                                <option value="2 day">2 day</option>
+                                <option value="3 day">3 day</option>
+                                <option value="4 day">4 day</option>
+                                <option value="5 day">5 day</option>
+                                <option value="6 day">6 day</option>
+                                <option value="7 day">7 day</option>
+                                <option value="8 day">8 day</option>
+                                <option value="9 day">9 day</option>
+                                <option value="10 day">10 day</option>
+                                <option value="11 day">11 day</option>
+                                <option value="12 day">12 day</option>
+                                <option value="13 day">13 day</option>
+                                <option value="14 day">14 day</option>
+                                <option value="15 day">15 day</option>
+                                <option value="16 day">16 day</option>
+                                <option value="17 day">17 day</option>
+                                <option value="18 day">18 day</option>
+                                <option value="19 day">19 day</option>
+                                <option value="20 day">20 day</option>
+                                <option value="21 day">21 day</option>
+                                <option value="22 day">22 day</option>
+                                <option value="23 day">23 day</option>
+                                <option value="24 day">24 day</option>
+                                <option value="25 day">25 day</option>
+                                <option value="26 day">26 day</option>
+                                <option value="27 day">27 day</option>
+                                <option value="28 day">28 day</option>
+                                <option value="29 day">29 day</option>
+                                <option value="30 day">30 day</option>
                             </select>
                         </div>
                         <div class="offered-price">
