@@ -37,6 +37,9 @@
                 <div class="profile-text-content">
                     <div class="profile-name">
                         <label>Your Name : </label>
+
+
+
                         <input type="text" name="name" id="name" value="{{ old('name', Auth::user()->name) }}"
                             placeholder="Full Name">
                     </div>
