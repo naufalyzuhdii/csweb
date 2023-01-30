@@ -11,25 +11,42 @@
         </div>
         <!-- Profile Page Heading -->
 
+        @if(session()->has('message'))
+        <div class="success">
+            {{session()->get('message')}}
+        </div>
+        @endif
+
         <!-- Profile Page Content -->
         <div class="profile-page-content">
-            <form action="{{ route('user.update') }}" method="post">
+            <form action="{{ route('user.update') }}" method="post" enctype="multipart/form-data">
                 @method('put')
                 @csrf
                 <!-- Profile Picture -->
                 <div class="profile-picture">
+
+                    <input type="hidden" name="id" value="{{$user->id}}">
+
                     <label>Your Profile Picture : </label>
                     <div class="profile-picture-content">
                         <div class="picture-wrapper">
+                            @if($user->image)
                             <div class="picture">
-                                <img src="/images/course/talent-1.jpg">
+                                <img src="{{ url('storage/profile/'.$user->image) }}" />
                             </div>
+                            @endif
                         </div>
                         <div class="file-input">
-                            <input type="file" id="file" />
-                            <label for="file">choose a file</label>
+                            <input type="file" id="file" name="image">
+                            <!-- <label for="file">choose a file</label> -->
                         </div>
+
                     </div>
+                    @error('image')
+                    <div class="danger">
+                        {{$message}}
+                    </div>
+                    @enderror
                 </div>
                 <!-- Profile Picture -->
 
@@ -37,26 +54,45 @@
                 <div class="profile-text-content">
                     <div class="profile-name">
                         <label>Your Name : </label>
-
-
-
                         <input type="text" name="name" id="name" value="{{ old('name', Auth::user()->name) }}"
                             placeholder="Full Name">
+
+                        @error('name')
+                        <div class="danger">
+                            {{$message}}
+                        </div>
+                        @enderror
                     </div>
                     <div class="profile-email">
                         <label>Your Email : </label>
                         <input type="email" name="email" id="email" value="{{ old('email', Auth::user()->email) }}"
                             placeholder="Email">
+
+                        @error('email')
+                        <div class="danger">
+                            {{$message}}
+                        </div>
+                        @enderror
                     </div>
                     <div class="profile-dob">
                         <label> Your Date Of Birth : </label>
                         <input type="date" name="dob" id="dob" value="{{ old('dob', Auth::user()->dob) }}"
                             placeholder="dob" max="2040-01-01" min="1950-01-01">
+                        @error('date')
+                        <div class="danger">
+                            {{$message}}
+                        </div>
+                        @enderror
                     </div>
                     <div class="profile-phone">
                         <label> Your Phone Number : </label>
                         <input type="text" name="phone" id="phone" value="{{ old('phone', Auth::user()->phone) }}"
                             placeholder="Phone">
+                        @error('phone')
+                        <div class="danger">
+                            {{$message}}
+                        </div>
+                        @enderror
                     </div>
                 </div>
                 <!-- Profile Text Content -->
