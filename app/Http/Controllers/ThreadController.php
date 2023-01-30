@@ -71,6 +71,13 @@ class ThreadController extends Controller
     }
 
     // CONTROLL FUNCTION
+    public function view_all_my_thread($id)
+    {
+        $user = User::find($id);
+
+        return redirect()->route('my-thread', compact('user'));
+    }
+  
 
     public function show_thread(){
         $threads = Thread::latest();
@@ -102,11 +109,23 @@ class ThreadController extends Controller
         $thread->description = $request->description;
         $thread->skills_requirement = $request->skills_requirement;
         $thread->offered_duration = $request->offered_duration;
-        $thread->min_price = $request->min_price;
-        $thread->max_price = $request->max_price;
+
+        // Convert inputan user (text) menjadi integer dan disimpan secara real integer di database
+        $fix_min_price = (int)str_replace('.', '', $request->min_price);
+        $fix_max_price = (int)str_replace('.', '', $request->max_price);
+
+        $thread->min_price = $fix_min_price;
+        $thread->max_price = $fix_max_price;
+
+        // variable untuk ditampilin di depan
+        $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");
+        $nominal_depan_max = number_format($thread->max_price, 0, ",", ".");
 
         $thread->save();
-        return redirect()->route('thread.learner.thread-learner');
+
+        session()->flash('success-created', 'The thread was created successfully');
+        
+        return redirect()->route('thread-learner-page',compact('nominal_depan_min','nominal_depan_max'));
     }
 
     
@@ -133,7 +152,10 @@ class ThreadController extends Controller
         $thread = Thread::find($id);
 
         $thread->delete();
-        return ["Thread Deleted"];
+
+        session()->flash('success-deleted', 'The thread has been deleted successfully');
+
+        return redirect()->route('thread-learner-page');
     }
 
 

@@ -7,90 +7,6 @@
 
 <section class="thread">
     <div class="thread-wrapper">
-        {{-- THREAD FILTER ( LEFT CONTENT ) --}}
-        <!-- {{-- <div class="thread-filter">
-            <div class="thread-filter-header">
-                <h2>Categories</h2>
-            </div>
-            <div class="thread-filter-content">
-                <div class="categories-links-wrapper">
-                    <div class="categories-links-title">
-                        <a href="#all-categories">All Categories</a>
-                    </div>
-
-            {{-- THREAD FILTER ( LEFT CONTENT ) --}}
-            {{-- <div class="thread-filter">
-                <div class="thread-filter-header">
-                    <h2>Categories</h2>
-
-                </div>
-                <div class="thread-filter-content">
-                    <div class="categories-links-wrapper">
-                        <div class="categories-links-title">
-                            <a href="#all-categories">All Categories</a>
-                        </div>
-                    </div>
-                    <div class="categories-links-wrapper">
-                        <div class="categories-links-title">
-                            <a href="#websiteandprogramming">
-                                Website and Programming
-                            </a>
-                            <i class="fa-solid fa-play" id="arrow-links"></i>
-                        </div>
-                        <div class="categories-links-content">
-                            <a href="#FEDev">
-                                FrontEnd Developer
-                            </a>
-                            <a href="#MobileApplication">
-                                Mobile Application
-                            </a>
-                        </div>
-                    </div>
-                    <div class="categories-links-wrapper">
-                        <div class="categories-links-title">
-                            <a href="#Design">
-                                Design
-                            </a>
-                            <i class="fa-solid fa-play" id="arrow-links"></i>
-                        </div>
-                        <div class="categories-links-content">
-                            <a href="#logo">
-                                Logo Design
-                            </a>
-                            <a href="#branding">
-                                Branding Design
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="thread-filter-role">
-                    <div class="role-links">
-                        <a href="#">Learner</a>
-                        <input type="checkbox" name="learner-checkbox">
-                    </div>
-                    <div class="role-links">
-                        <a href="#">Talent</a>
-                        <input type="checkbox" name="learner-checkbox">
-                    </div>
-                </div>
-            </div> --}}
-            {{-- END OF THREAD FILTER ( LEFT CONTENT ) --}}
-
-
-            {{-- THREAD CONTENT ( RIGHT CONTENT ) --}}
-            <div class="thread-content">
-                <div class="thread-content-heading">
-                    <h1> <span>Learner Thread</span> - Post a Project </h1>
-                    <p>As a <i>learner</i> you can look for freelancers or talents to work on your projects. By posting a
-                        thread, freelancers or talents
-                        can apply the thread that you posted since they deal with the requirements.
-                    </p>
-                </div>
-
-            </div>
-        </div> --}} -->
-        {{-- END OF THREAD FILTER ( LEFT CONTENT ) --}}
         <!-- THREAD CONTENT  -->
         <div class="thread-content">
             <!-- THREAD CONTENT HEADING -->
@@ -112,7 +28,7 @@
                     <!-- View My Thread -->
                     <div class="view-my-thread-btn-wrapper">
                         <div class="view-my-thread-btn">
-                            <a href="/view/my-thread">
+                            <a href="/view/my-thread/{{ Auth::user()->id }}">
                                 My Thread
                             </a>
                         </div>
@@ -135,13 +51,34 @@
             <!-- THREAD CONTENT WRAPPER -->
             <div class="thread-content-wrapper">
                 @if (count($threads) == 0)
+                <!-- Flash message untuk berhasil menghapus thread -->
+                @if(session()->has('success-deleted'))
+                <div class="success">
+                    {{session()->get('success-deleted')}}
+                </div>
+                @endif
+
                 <div>
                     <h1>No Data</h1>
                 </div>
 
                 @elseif (count($threads) > 0)
+
+                <!-- Flash message untuk berhasil membuat thread -->
+                @if(session()->has('success-created'))
+                <div class="success">
+                    {{session()->get('success-created')}}
+                </div>
+                @endif
+
+                <!-- Flash message untuk berhasil menghapus thread -->
+                @if(session()->has('success-deleted'))
+                <div class="success">
+                    {{session()->get('success-deleted')}}
+                </div>
+                @endif
+
                 @foreach ($threads as $thread)
-                <!-- <a href="#/view/thread-learner-detail" class="thread-content-learner-links"> -->
                 <div class="thread-content-learner-wrapper">
                     <!-- THREAD CONTENT LEARNER VALID WRAPPER -->
                     <div class="thread-content-learner-valid-wrapper">
@@ -171,7 +108,7 @@
                         <!-- LEARNER THREAD CONTENT -->
                         <div class="learner-thread-content">
                             <div class="learner-thread-name">
-                                <h3>Jason</h3>
+                                <h3>{{Auth::user()->name}}</h3>
                             </div>
                             <div class="learner-thread-project-title">
                                 <div class="title_wrapper">
@@ -188,7 +125,7 @@
                                     <h3>:</h3>
                                 </div>
                                 <div class="content">
-                                    <p>{{ $thread->project_description }}</p>
+                                    <p>{{ $thread->description }}</p>
                                 </div>
                             </div>
                             <div class="learner-thread-project-required-skills">
@@ -198,8 +135,7 @@
                                 </div>
                                 <div class="content">
                                     <ul>
-                                        <li>Laravel</li>
-                                        <li>CSS</li>
+                                        <li>{{$thread->skills_requirement}}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -209,8 +145,18 @@
                                 </div>
                                 <div class="learner-thread-offer-detail">
                                     <h3>Duration : {{ $thread->offered_duration }}</h3>
-                                    <h3>Price range : <span>Rp {{ $thread->min_price }}</span> - <span>Rp
-                                            {{ $thread->max_price }}</span></h3>
+                                    <h3>Price range :
+                                        <!-- Php disini untuk convert format value dari database menjadi
+                                    format nominal yang benar secara frontend -->
+                                        <?php
+                                            $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");
+                                            $nominal_depan_max = number_format($thread->max_price, 0, ",", ".");
+                                        ?>
+                                        <span>Rp {{ $nominal_depan_min }}
+                                        </span> - <span>Rp
+                                        </span>{{ $nominal_depan_max }}
+
+                                    </h3>
                                 </div>
 
                             </div>
@@ -222,6 +168,8 @@
                                     </h3>
                                 </div>
                             </div>
+                            <a href="/delete-thread/{{ $thread->id }}" class="delete-thread"><i
+                                    class="fa-solid fa-trash"></i></a>
                         </div>
                         <!-- LEARNER THREAD CONTENT -->
                     </div>

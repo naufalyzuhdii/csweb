@@ -18,6 +18,13 @@
             <div class="signin-text">
                 <h3>Sign In</h3>
             </div>
+
+            <!-- Flash message untuk berhasil membuat account -->
+            @if(session()->has('success'))
+            <div class="success">
+                {{session()->get('success')}}
+            </div>
+            @endif
             <form action="/signin" class="signin-form" method="POST">
                 @csrf
                 <div class="email-signin auth">

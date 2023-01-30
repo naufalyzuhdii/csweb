@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;   
+use Illuminate\Validation\Rules;
 
 class AuthController extends Controller
 {
@@ -19,13 +21,40 @@ class AuthController extends Controller
 
     public function signup(Request $request)
     {
-        $validator = validator($request->all());
-        if ($validator->fails()) {
-            return redirect()
-                ->back()
-                ->withErrors($validator)
-                ->withInput();
+        // $validator = validator($request->all());
+        // if ($validator->fails()) {
+        //     return redirect()
+        //         ->back()
+        //         ->withErrors($validator)
+        //         ->withInput();
+        // }
+        // User::create([
+        //     'name' => $request['name'],
+        //     'email' => $request['email'],
+        //     'password' => Hash::make($request['password']),
+        //     'phone' => $request['phone'],
+        //     'dob' => $request['dob']
+        // ]);
+
+        // session()->flash('success', 'Account has been created. Please login!');
+ 
+        // return redirect()->route('signin');
+
+        $rules = [
+            'name' => 'required|min:3|string|max:50',
+            'dob' => 'required|date',
+            'phone' => 'required|unique:users,phone|min:8|max:12|regex:/^([0-9\s\-\+\(\)]*)$/',
+            'email' => 'required|unique:users,email',
+            'password' => 'required|min:8|string'
+        ];
+
+        $validator = Validator::make($request->all(),$rules);
+
+        if($validator -> fails())
+        {
+            return back()->withErrors($validator);
         }
+
         User::create([
             'name' => $request['name'],
             'email' => $request['email'],
@@ -34,6 +63,7 @@ class AuthController extends Controller
             'dob' => $request['dob']
         ]);
         return redirect()->route('signin');
+        
     }
 
     public function view_signIn()

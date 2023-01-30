@@ -88,7 +88,7 @@
                         </form>
 
                     </li>
-                    <li><a href="/yourprofile">Your profile</a></li>
+                    <li><a href="/profile/{{auth()->user()->id}}">Your profile</a></li>
                     <li>
                         <a href="/signout">Sign Out</a>
                     </li>

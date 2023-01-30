@@ -100,84 +100,101 @@
                         <h4>Package</h4>
                         <form action="">
                             <div class="package-wrapper">
-                                <div class="myPackage">
-                                    <div class="package-title" name="package-title">
-                                        <h2>Reguler</h2>
-                                    </div>
-                                    <div class="package-description" name="package-description">
-                                        <p>Includes navigation, background
-                                            slide, social media button, and
-                                            source file</p>
-                                    </div>
-                                    <div class="package-list" name="package-list">
-                                        <ul>
-                                            <li>
-                                                <h4>2 Days Delivery</h4>
-                                            </li>
-                                            <li>
-                                                <h4>2 Maximum revision</h4>
-                                            </li>
-                                            <li>
-                                                <h4>Requested Framework</h4>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="package-price" name="package-price">
-                                        <h3>Rp. 300.000</h3>
-                                    </div>
-                                </div>
-                                <div class="myPackage">
-                                    <div class="package-title" name="package-title">
-                                        <h2>Medium</h2>
-                                    </div>
-                                    <div class="package-description" name="package-description">
-                                        <p>Includes navigation, background
-                                            slide, social media button, and
-                                            source file</p>
-                                    </div>
-                                    <div class="package-list" name="package-list">
-                                        <ul>
-                                            <li>
-                                                <h4>2 Days Delivery</h4>
-                                            </li>
-                                            <li>
-                                                <h4>2 Maximum revision</h4>
-                                            </li>
-                                            <li>
-                                                <h4>Requested Framework</h4>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="package-price" name="package-price">
-                                        <h3>Rp. 300.000</h3>
-                                    </div>
-                                </div>
-                                <div class="myPackage">
-                                    <div class="package-title" name="package-title">
-                                        <h2>Super</h2>
-                                    </div>
-                                    <div class="package-description" name="package-description">
-                                        <p>Includes navigation, background
-                                            slide, social media button, and
-                                            source file</p>
-                                    </div>
-                                    <div class="package-list" name="package-list">
-                                        <ul>
-                                            <li>
-                                                <h4>2 Days Delivery</h4>
-                                            </li>
-                                            <li>
-                                                <h4>2 Maximum revision</h4>
-                                            </li>
-                                            <li>
-                                                <h4>Requested Framework</h4>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="package-price" name="package-price">
-                                        <h3>Rp. 300.000</h3>
-                                    </div>
-                                </div>
+                                <ul class="radio-wrapper">
+                                    <li>
+                                        <input type="radio" name="package" id="radio-1" value="1">
+                                        <label for="radio-1" class="myPackage">
+                                            <!-- <div class="myPackage"> -->
+                                            <div class="package-title">
+                                                <h2>Reguler</h2>
+                                            </div>
+                                            <div class="package-description">
+                                                <p>Includes navigation, background
+                                                    slide, social media button, and
+                                                    source file</p>
+                                            </div>
+                                            <div class="package-list">
+                                                <ul>
+                                                    <li>
+                                                        <h4>2 Days Delivery</h4>
+                                                    </li>
+                                                    <li>
+                                                        <h4>2 Maximum revision</h4>
+                                                    </li>
+                                                    <li>
+                                                        <h4>Requested Framework</h4>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="package-price">
+                                                <h3>Rp. 300.000</h3>
+                                            </div>
+                                            <!-- </div> -->
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="package" id="radio-3" value="3">
+                                        <label for="radio-3" class="myPackage">
+                                            <!-- <div class="myPackage"> -->
+                                            <div class="package-title">
+                                                <h2>Medium</h2>
+                                            </div>
+                                            <div class="package-description">
+                                                <p>Includes navigation, background
+                                                    slide, social media button, and
+                                                    source file</p>
+                                            </div>
+                                            <div class="package-list">
+                                                <ul>
+                                                    <li>
+                                                        <h4>2 Days Delivery</h4>
+                                                    </li>
+                                                    <li>
+                                                        <h4>2 Maximum revision</h4>
+                                                    </li>
+                                                    <li>
+                                                        <h4>Requested Framework</h4>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="package-price">
+                                                <h3>Rp. 500.000</h3>
+                                            </div>
+                                            <!-- </div> -->
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="package" id="radio-2" value="2">
+                                        <label for="radio-2" class="myPackage">
+                                            <!-- <div class="myPackage"> -->
+                                            <div class="package-title">
+                                                <h2>Premium</h2>
+                                            </div>
+                                            <div class="package-description">
+                                                <p>Includes navigation, background
+                                                    slide, social media button, and
+                                                    source file</p>
+                                            </div>
+                                            <div class="package-list">
+                                                <ul>
+                                                    <li>
+                                                        <h4>2 Days Delivery</h4>
+                                                    </li>
+                                                    <li>
+                                                        <h4>2 Maximum revision</h4>
+                                                    </li>
+                                                    <li>
+                                                        <h4>Requested Framework</h4>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="package-price">
+                                                <h3>Rp. 600.000</h3>
+                                            </div>
+                                            <!-- </div> -->
+                                        </label>
+                                    </li>
+                                </ul>
                             </div>
                             <div class="order-btn">
                                 <button value="submit">Order</button>

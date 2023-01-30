@@ -46,7 +46,7 @@ Route::post('/signup', [AuthController::class, 'signup']);
 
 Route::get('/signout', [AuthController::class, 'signout']);
 
-Route::get('/profile', [UserController::class, 'view_profile'])->name('profile.page');
+Route::get('/profile/{id}', [UserController::class, 'view_profile'])->name('profile.page');
 Route::put('/user_update', [UserController::class, 'user_update'])->name('user.update');
 
 Route::post('/switch_role', [UserController::class, 'switch_role'])->name('switch-role.update');
@@ -77,10 +77,12 @@ Route::get('/view/talent-profile', [CourseController::class, 'view_talent_profil
 // ==================================== Thread Learner ======================================================
 // --Post a Project
 Route::get('/view/thread-learner', [ThreadController::class, 'show_thread'])->name('thread-learner-page');
-Route::get('/view/create-thread-page-learner', [ThreadController::class, 'view_create_thread_page_learner']);
-Route::get('/view/my-thread', [ThreadController::class, 'view_my_thread']);
+Route::get('/view/create-thread-page-learner', [ThreadController::class, 'view_create_thread_page_learner'])->name('create-thread-page-learner');
+Route::get('/view/my-thread/{id}', [ThreadController::class, 'view_my_thread'])->name('my-thread');
 Route::get('/view/appliers', [ThreadController::class, 'view_my_appliers']);
 Route::post('/create_thread', [ThreadController::class, 'post_thread']);
+
+Route::get('/delete-thread/{id}', [ThreadController::class, 'delete_thread']);
 // --Post a Project
 
 // --Find Freelancers or Talents

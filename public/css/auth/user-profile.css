@@ -1,3 +1,20 @@
+.success {
+    width: fit-content;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #49592a;
+    background-color: rgb(177, 203, 166);
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+}
+
+.danger {
+    width: fit-content;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: red;
+}
 .profile-page {
     width: 100%;
     min-height: 100vh;
@@ -68,7 +85,7 @@
     border-radius: 50%;
 }
 
-.file-input [type="file"] {
+/* .file-input [type="file"] {
     height: 0;
     overflow: hidden;
     width: 0;
@@ -90,7 +107,7 @@
     outline: none;
     padding: 1rem;
     transition: all 0.3s;
-}
+} */
 
 .file-input [type="file"] + label:hover {
     background-color: var(--deepblue);
