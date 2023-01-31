@@ -111,7 +111,7 @@ Route::get('/view/details-information/', [LearnerController::class, 'view_my_dea
 //==================================== My Progress ====================================
 
 //==================================== My Learning ====================================
-Route::get('/view/my-learning', [LearnerController::class, 'view_my_learning']);
+Route::get('/view/my-learning', [LearnerController::class, 'view_my_learning'])->name('my_learning');
 Route::get('/view/my-learning/course-learned-detail', [LearnerController::class, 'view_course_learned_detail']);
 //==================================== My Learning ====================================
 
