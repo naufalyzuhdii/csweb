@@ -1,6 +1,10 @@
 <section class="header">
     <div class="navigation">
 
+        <a href="/view/admin-home" class="logo">
+            <img src="{{asset('images/header/logo-white.png')}}">
+        </a>
+
         <div class="nav-2">
             <div class="progress-navbar">
                 <a href="" class="progress-navbar-links" id="progress-navbar-links">

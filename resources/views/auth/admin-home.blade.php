@@ -46,7 +46,7 @@
                     </td>
                     <td>
                         <div class="certification-document-wrapper">
-                            <a href="/view/" target="_blank">
+                            <a href="#">
                                 {{$user->certification_document}}
                             </a>
                         </div>

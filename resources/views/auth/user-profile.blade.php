@@ -103,12 +103,21 @@
 
                 <div class="upload-certification">
                     <h3>Upload Certification</h3>
+
+                    @if(Auth::user()->certification_status == 'none')
                     <label>
                         <span>Uploading certification as a proof that you are competent to be a talent.
                             Once you upload, you can wait for a day to get the result review.
                         </span>
                         <h3><a href="/view/upload-certification-page/{{$user->id}}">Upload certification</a></h3>
                     </label>
+                    @else
+                    <label>
+                        <span style="color:green;font-size:1.6rem">Your certification is qualified and approved!
+                        </span>
+                    </label>
+                    @endif
+
                 </div>
             </form>
             <!-- Form User Update -->

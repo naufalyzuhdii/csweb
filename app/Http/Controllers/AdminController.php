@@ -19,8 +19,35 @@ class AdminController extends Controller
         $user = User::all();
         return redirect()->route('admin_home',compact('user')) ;
     }    
-    // public function view_admin_home()
-    // {
-    //     return view('auth.admin-home');
-    // }
+
+    public function view_certification_document($id)
+    {
+        $user = User::find($id);
+        return view('admin.view-certification-document',compact('user'));
+    }
+
+    public function view_edit($id)
+    {
+        $user = User::find($id);
+      return view('admin.view-certification-document',compact('user'));
+    }
+
+    public function update_certification_status(Request $request)
+    {
+        $attr = $request->validate([
+            'id' => 'exists:users,id',
+            'certification_status' => 'required',
+          ]);
+    
+          auth()->user()->update($attr);
+
+          $user = User::find($request->id);
+          
+          $user->certification_status = $request->certification_status;
+
+          $user->save();
+
+        return redirect()->back()->with('message','Status has been updated!');
+    }
+
 }

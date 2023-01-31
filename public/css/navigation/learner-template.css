@@ -385,10 +385,10 @@ ul ul ul {
     margin-left: 0.5rem;
 }
 
-#switchRole {
+.switchRole {
     position: relative;
 }
-#switchRole::after {
+.switchRole::after {
     position: absolute;
     content: "This function is disabled. Please upload your certification to unable it";
     background-color: orange;
@@ -406,7 +406,7 @@ ul ul ul {
     display: none;
 }
 
-#switchRole:hover::after {
+.switchRole:hover::after {
     display: block;
 }
 
