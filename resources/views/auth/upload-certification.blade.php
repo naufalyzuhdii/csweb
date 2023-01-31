@@ -11,7 +11,11 @@
         <div class="back-links">
             <a href="/profile/{{auth()->user()->id}}">&#8592; Back</a>
         </div>
-
+        @if(session()->has('message'))
+        <div class="success">
+            {{session()->get('message')}}
+        </div>
+        @endif
         <!-- Certification Talent Form -->
         <form action="{{ route('upload.user.certification') }}" method="post" enctype="multipart/form-data"
             id="upload-certification-form">

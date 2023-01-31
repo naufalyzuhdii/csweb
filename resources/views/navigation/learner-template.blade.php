@@ -89,9 +89,8 @@
                               @csrf
                               <input type="hidden" name="id" value="{{ Auth::user()->id }}">
                               <div class="switch-roles-wrapper">
-                                  <h3 id="switchRole">Switch role</h3>
-
-                                  @if(Auth::user()->certification == "none")
+                                  @if(Auth::user()->certification_status == 'none')
+                                  <h3 class="switchRole">Switch role</h3>
                                   <label class="switch">
                                       <input type="checkbox" name="switch_role" value="talent"
                                           onchange="document.getElementById('formName').submit()"
@@ -99,13 +98,15 @@
                                       <span class="slider round"></span>
                                   </label>
                                   @else
-                                  <label class="switch" for="switchRoles">
+                                  <h3>Switch role</h3>
+                                  <label class="switch">
                                       <input type="checkbox" name="switch_role" value="talent"
                                           onchange="document.getElementById('formName').submit()"
                                           onclick="return true;">
-                                      <span class=" slider round"></span>
+                                      <span class="slider round"></span>
                                   </label>
                                   @endif
+
 
                               </div>
                           </form>

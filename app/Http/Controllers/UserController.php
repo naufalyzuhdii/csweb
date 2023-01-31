@@ -20,6 +20,8 @@ class UserController extends Controller
     {
       return redirect()->route('admin_home');
     }
+
+
   // admin only
 
   
@@ -109,7 +111,7 @@ class UserController extends Controller
       }
       $user->save();
 
-      return redirect()->back();
+      return back()->with('message', 'Your certification has been uploaded. Please wait for the review result.', compact('user'));
     }
 
 

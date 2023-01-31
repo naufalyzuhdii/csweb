@@ -54,10 +54,12 @@ Route::put('/user_update', [UserController::class, 'user_update'])->name('user.u
 
 // Admin only
 Route::get('/back', [UserController::class, 'back'])->middleware('admin');
+Route::get('/view/certification-document/{$id}', [AdminController::class, 'view_certification_document']);
+Route::put('/update-certification-status', [AdminController::class, 'update_certification_status'])->name('update.certification-status');
 // Admin only
 
 Route::post('/switch_role', [UserController::class, 'switch_role'])->name('switch-role.update');
-Route::get('/view/edit/{id}', [UserController::class, 'view_edit']);
+Route::get('/view/edit/{id}', [AdminController::class, 'view_edit']);
 
 Route::get('/view/upload-certification-page/{id}', [UserController::class, 'view_upload_certification_page']);
 Route::put('/upload-user-certification',[UserController::class, 'upload_user_certification'])->name('upload.user.certification');
