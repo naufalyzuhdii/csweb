@@ -123,13 +123,37 @@
     color: white;
 }
 
-.talent-thread-description {
-    width: 100%;
+.title_wrapper {
+    width: 25%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+}
+.title_wrapper h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: white;
+}
+.content {
+    width: 75%;
+    height: fit-content;
+}
+.content p {
+    width: 200%;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-left: 1%;
+    color: white;
+}
+
+.talent-thread-description,
+.talent-thread-offer {
+    display: flex;
 }
 
 .talent-thread-description h4 {
-    font-size: 1.8rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 600;
     color: white;
 }
 
@@ -139,12 +163,13 @@
 }
 
 .talent-thread-offer h4 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: white;
 }
 
 .talent-thread-offer-detail {
+    width: 100%;
     display: flex;
 }
 
@@ -270,6 +295,32 @@
     display: flex;
     justify-content: space-between;
 }
+.radio-wrapper {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+.radio-wrapper input[type="radio"] {
+    position: absolute;
+    white-space: nowrap;
+    border: 0;
+    /* 	clip-pathの古いver いらないかな*/
+    clip: rect(0 0 0 0);
+    /* 	inset() は内側へオフセットされた矩形（四角形）を定義します。inset() を使うと矩形のシェイプを切り抜くことができます。　値が１つ：「上下左右」　 */
+    /* 	全方向から50%を切り抜くので全て切り抜かれる */
+    clip-path: inset(50%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+}
+.radio-wrapper input[type="radio"] {
+}
+.radio-wrapper input[type="radio"]:checked + label {
+    background-color: rgba(139, 138, 138, 0.4);
+    cursor: default;
+}
 
 .myPackage {
     width: 30rem;
@@ -281,6 +332,14 @@
     flex-direction: column;
     justify-content: space-evenly;
     cursor: pointer;
+}
+
+.myPackage:hover {
+    background-color: rgba(139, 138, 138, 0.4);
+}
+
+.myPackage:active {
+    background-color: rgba(139, 138, 138, 0.4);
 }
 
 .package-title {
@@ -325,6 +384,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-color: transparent;
 }
 
 .package-list ul li {

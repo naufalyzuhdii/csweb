@@ -17,30 +17,53 @@
             <div class="signup-text">
                 <h3>Sign Up</h3>
             </div>
+
             <form action="/signup" class="signup-form" method="POST">
                 @csrf
                 <div class="signup-content">
                     <div class="name-signup auth">
-                        <label for="Name">Your Name</label>
-                        <input type="text" name="name">
+                        <label for="name">Your Name</label>
+                        <input type="text" name="name" id="name">
                     </div>
+                    @error('name')
+                    <div class="danger">
+                        {{$message}}
+                    </div>
+                    @enderror
 
                     <div class="dob auth">
-                        <label for="DOB">Date Of Birth</label>
-                        <input type="date" name="dob">
+                        <label for="dob">Date Of Birth</label>
+                        <input type="date" name="dob" id="dob">
                     </div>
+                    @error('dob')
+                    <div class="danger">
+                        {{$message}}
+                    </div>
+                    @enderror
 
                     <div class="phone auth">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" name="phone">
+                        <input type="tel" name="phone" id="phone">
                     </div>
+                    @error('phone')
+                    <div class="danger">
+                        {{$message}}
+                    </div>
+                    @enderror
 
                     <div class="email-signup auth">
-                        <label for="Email">
+                        <label for="email">
                             Email
                         </label>
-                        <input type="email" name="email" placeholder="Enter your email">
+                        <input type="email" name="email" placeholder="Enter your email" id="email">
                     </div>
+                    @error('email')
+                    <div class="danger">
+                        {{$message}}
+                    </div>
+                    @enderror
+
+
                     <div class="password-signup auth">
                         <label for="Password">Password</label>
                         <div class="password-input">

@@ -102,7 +102,7 @@
                               <a href="/view/learner/cart"><i class="fa-solid fa-cart-shopping"></i></a>
                           </div>
                       </li>
-                      <li><a href="/profile">Your profile</a></li>
+                      <li><a href="/profile/{{auth()->user()->id}}">Your profile</a></li>
                       <li>
                           <a href="/signout">Sign Out</a>
                       </li>

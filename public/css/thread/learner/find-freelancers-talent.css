@@ -119,9 +119,32 @@
     font-size: 2.5rem;
     color: white;
 }
+.title_wrapper {
+    width: 25%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+}
+.title_wrapper h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: white;
+}
+.content {
+    width: 75%;
+    height: fit-content;
+}
+.content p {
+    width: 200%;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-left: 1%;
+    color: white;
+}
 
-.talent-thread-description {
-    width: 100%;
+.talent-thread-description,
+.talent-thread-offer {
+    display: flex;
 }
 
 .talent-thread-description h4 {
@@ -142,6 +165,7 @@
 }
 
 .talent-thread-offer-detail {
+    width: 100%;
     display: flex;
 }
 
