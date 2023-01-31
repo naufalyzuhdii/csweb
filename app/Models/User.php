@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+use Illuminate\Database\Eloquent\Model;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -23,6 +25,8 @@ class User extends Authenticatable
         'password',
         'phone',
         'dob',
+        'certification_document',
+        'certification_status'
     ];
 
     /**
@@ -43,4 +47,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function Thread()
+    {
+        return $this->hasMany(Thread::class);
+    }
+
+
 }

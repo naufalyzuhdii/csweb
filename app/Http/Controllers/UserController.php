@@ -11,39 +11,26 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Carbon;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use App\Models\CertificationTalent;
 
 class UserController extends Controller
 {
+  // admin only
+    public function back()
+    {
+      return redirect()->route('admin_home');
+    }
+  // admin only
+
+  
     public function view_profile($id)
     {
         $user = User::find($id);
-
         return view('auth.user-profile',compact('user')); 
-        // return redirect()->route('profile.page');
     }
-
-    // public function user_update(Request $request){
-    //     $request->validate([
-    //         'name' => ['string', 'required'],
-    //         'email' => ['string', 'required'],
-    //         'address' => ['string', 'required'],
-    //         'phone' => ['string', 'required'],
-    //         'image' => ['string', 'required'],
-    //     ]);
-    //     auth()->user()->update([
-    //         'name' => $request->name,
-    //         'email' => $request->email,
-    //         'address' => $request->address,
-    //         'phone' => $request->phone,
-    //         'image' => $request->image
-    //     ]);
-    //     return back()->with('message', 'Your profile has been updated');
-    // }
-
 
     public function user_update(Request $request)
     {
-
       $attr = $request->validate([
         'id' => 'exists:users,id',
         'name' => ['string' , 'required','min:3'],
@@ -69,8 +56,8 @@ class UserController extends Controller
        
         $user->image = $filename;
       }
-      $user->save();
 
+      $user->save();
 
       return back()->with('message', 'Your profile has been updated!', compact('user'));
     }
@@ -95,4 +82,35 @@ class UserController extends Controller
 
 
     }
+
+    public function view_upload_certification_page($id)
+    {
+      $user = User::find($id);
+      return view('auth.upload-certification', compact('user'));
+    }
+
+    public function upload_user_certification(Request $request)
+    {
+      $attr = $request->validate([
+        'id' => 'exists:users,id',
+        'certification_document' => 'required|mimes:pdf,jpg|max:5000',
+      ]);
+
+      auth()->user()->update($attr);
+      $user = User::find($request->id);
+      
+      $file = $request->file('certification_document');
+      if($file != null)
+      {
+        $filename = time() . '.' . $file->getClientOriginalExtension();
+        Storage::putFileAs('public/certification-document', $file, $filename);
+        
+        $user -> certification_document = $filename;
+      }
+      $user->save();
+
+      return redirect()->back();
+    }
+
+
 }

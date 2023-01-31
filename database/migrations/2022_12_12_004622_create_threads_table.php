@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('threads', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             // $table->unsignedBigInteger('category_id');
             $table->string('project_title');
             $table->string('description');

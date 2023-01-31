@@ -18,31 +18,11 @@ class AuthController extends Controller
     {
         return view('auth.signUp');
     }
-
     public function signup(Request $request)
     {
-        // $validator = validator($request->all());
-        // if ($validator->fails()) {
-        //     return redirect()
-        //         ->back()
-        //         ->withErrors($validator)
-        //         ->withInput();
-        // }
-        // User::create([
-        //     'name' => $request['name'],
-        //     'email' => $request['email'],
-        //     'password' => Hash::make($request['password']),
-        //     'phone' => $request['phone'],
-        //     'dob' => $request['dob']
-        // ]);
-
-        // session()->flash('success', 'Account has been created. Please login!');
- 
-        // return redirect()->route('signin');
-
         $rules = [
             'name' => 'required|min:3|string|max:50',
-            'dob' => 'required|date',
+            'dob' => 'required|date|before_or_equal:today',
             'phone' => 'required|unique:users,phone|min:8|max:12|regex:/^([0-9\s\-\+\(\)]*)$/',
             'email' => 'required|unique:users,email',
             'password' => 'required|min:8|string'
@@ -62,15 +42,14 @@ class AuthController extends Controller
             'phone' => $request['phone'],
             'dob' => $request['dob']
         ]);
+        
         return redirect()->route('signin');
         
     }
-
     public function view_signIn()
     {
         return view('auth.signIn');
     }
-
     public function signin(Request $request, User $user)
     {
         $credentials = $request->validate([
@@ -99,30 +78,33 @@ class AuthController extends Controller
             {
                 return redirect()->route('learner_home');
             }
+            else if($user->role == "admin")
+            {
+                return redirect()->route('admin_home');
+            }
 
-
-            return redirect()->route('learner_home');
         }
         else{
             return back()->withErrors("Not Registered", "signIn");
         }
     }
-
     public function signout()
     {
         Auth::logout();
         return redirect()->route('signin');
     }
 
-
-
     public function view_learner_home()
     {
         return view('auth.learner-home');
     }
-
     public function view_talent_home()
     {
         return view('auth.talent-home');
+    }
+    public function view_admin_home()
+    {
+        $user = User::all();
+        return view('auth.admin-home',compact('user'));
     }
 }

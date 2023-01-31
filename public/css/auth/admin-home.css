@@ -1,0 +1,76 @@
+.admin-home {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    padding: 10rem 25rem;
+    display: flex;
+    justify-content: center;
+}
+
+.admin-home-wrapper {
+    width: 75%;
+}
+
+/* ============== Title Heading ==================== */
+
+.title-heading h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.title-heading h1 span {
+    color: var(--primarycolor);
+}
+/* ============== Title Heading ==================== */
+
+/* ============== Certification Talent Approval Wrapper ==================== */
+.certification-talent-approval-wrapper {
+    width: 100%;
+    height: fit-content;
+}
+table {
+    width: 100%;
+    margin: 5rem 0;
+}
+table,
+th,
+td {
+    border: 0.1rem solid rgba(0, 0, 0, 0.6);
+}
+th {
+    background-color: var(--primarycolor);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.row-content td h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.user-image-wrapper {
+    width: 8rem;
+    height: 8rem;
+}
+.user-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.certification-document-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certification-document-wrapper a {
+    font-size: 1.6rem;
+}
+
+/* ============== Certification Talent Approval Wrapper ==================== */

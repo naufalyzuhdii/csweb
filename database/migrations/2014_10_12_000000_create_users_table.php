@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image')->default('public/profile/account.png');
+            $table->string('certification_status')->default('none');
+            $table->string('certification_document')->default('-');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

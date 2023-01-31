@@ -43,13 +43,22 @@
 /* ===================== Profile Page Heading ======================= */
 
 /* ===================== Profile Page Content ======================= */
+
+.back-links {
+    font-size: 1.8rem;
+    color: black;
+    font-family: 400;
+}
+.back-links:hover {
+    color: purple;
+}
 .profile-page-content {
+    background-color: var(--light-grey-color2);
+    padding: 5rem 15rem;
+    border-radius: 1rem;
 }
 
 .profile-page-content form {
-    padding: 5rem 15rem;
-    background-color: var(--light-grey-color2);
-    border-radius: 1rem;
 }
 
 /* === Profile Picture === */
@@ -109,8 +118,33 @@
     transition: all 0.3s;
 } */
 
-.file-input [type="file"] + label:hover {
+/* .file-input [type="file"] + label:hover {
     background-color: var(--deepblue);
+} */
+.upload-certification {
+    display: flex;
+    flex-direction: column;
+}
+.upload-certification > h3 {
+    font-size: 1.6rem;
+    color: black;
+    font-weight: 600;
+}
+
+.upload-certification label {
+}
+.upload-certification label span {
+    font-size: 1.4rem;
+    color: red;
+    font-weight: 300;
+}
+.upload-certification label > h3 a {
+    font-size: 1.4rem;
+    color: purple;
+    font-weight: 500;
+}
+.upload-certification label > h3 a:hover {
+    color: rgb(92, 15, 92);
 }
 
 /* === Profile Picture === */

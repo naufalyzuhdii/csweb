@@ -80,6 +80,7 @@
 
                 @foreach ($threads as $thread)
                 <div class="thread-content-learner-wrapper">
+                    {{$user->id}}
                     <!-- THREAD CONTENT LEARNER VALID WRAPPER -->
                     <div class="thread-content-learner-valid-wrapper">
                         <div class="thread-content-learner-valid">
@@ -94,12 +95,11 @@
                         <div class="profile-learner">
                             <div class="profile-learner-image-wrapper">
                                 <div class="profile-learner-image">
-                                    <img src="{{asset('images/thread/jason.jpg')}}" alt="">
                                 </div>
                             </div>
                             <div class="profile-learner-role-wrapper">
                                 <div class="profile-learner-role">
-                                    <h2>Learner</h2>
+                                    <h2></h2>
                                 </div>
                             </div>
                         </div>

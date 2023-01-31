@@ -33,7 +33,7 @@
 
                     <div class="dob auth">
                         <label for="dob">Date Of Birth</label>
-                        <input type="date" name="dob" id="dob">
+                        <input type="date" name="dob" id="dob" max="2040-01-01" min="1950-01-01">
                     </div>
                     @error('dob')
                     <div class="danger">
