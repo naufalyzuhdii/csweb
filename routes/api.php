@@ -3,8 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CourseDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +38,6 @@ Route::delete('/deletethread/{id}', [ThreadController::class, 'delete_thread']);
 Route::post('/addcategory', [CategoryController::class, 'add_category']);
 Route::post('/updatecategory', [CategoryController::class, 'update_category']);
 Route::delete('/deletecategory/{id}', [CategoryController::class, 'delete_category']);
+
+Route::post('/messages', [ChatController::class, 'message']);
+Route::post('/uploadvideo', [CourseDetailController::class, 'upload_video'])->name('uploadvideo');
