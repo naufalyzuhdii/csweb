@@ -17,16 +17,21 @@
         </div>
         @endif
 
+        @if(Auth::user()->role == "admin")
+        <a href="/back" class="back-links">Back</a>
+        @else
+
+        @endif
+
         <!-- Profile Page Content -->
         <div class="profile-page-content">
-            <form action="{{ route('user.update') }}" method="post" enctype="multipart/form-data">
+            <!-- Form User Update -->
+            <form action="{{ route('user.update') }}" method="post" enctype="multipart/form-data" id="form-user-update">
                 @method('put')
                 @csrf
                 <!-- Profile Picture -->
                 <div class="profile-picture">
-
                     <input type="hidden" name="id" value="{{$user->id}}">
-
                     <label>Your Profile Picture : </label>
                     <div class="profile-picture-content">
                         <div class="picture-wrapper">
@@ -40,7 +45,6 @@
                             <input type="file" id="file" name="image">
                             <!-- <label for="file">choose a file</label> -->
                         </div>
-
                     </div>
                     @error('image')
                     <div class="danger">
@@ -97,14 +101,26 @@
                 </div>
                 <!-- Profile Text Content -->
 
-                <!-- Update Btn Wrapper -->
-                <div class="update-btn-wrapper">
-                    <button type="submit" class="update-button">
-                        Update Profile
-                    </button>
+                <div class="upload-certification">
+                    <h3>Upload Certification</h3>
+                    <label>
+                        <span>Uploading certification as a proof that you are competent to be a talent.
+                            Once you upload, you can wait for a day to get the result review.
+                        </span>
+                        <h3><a href="/view/upload-certification-page/{{$user->id}}">Upload certification</a></h3>
+                    </label>
                 </div>
-                <!-- Update Btn Wrapper -->
             </form>
+            <!-- Form User Update -->
+
+            <!-- Update Btn Wrapper -->
+            <div class="update-btn-wrapper">
+                <button type="submit" class="update-button"
+                    onclick="document.getElementById('form-user-update').submit()">
+                    Update Profile
+                </button>
+            </div>
+            <!-- Update Btn Wrapper -->
         </div>
         <!-- Profile Page Content -->
     </div>

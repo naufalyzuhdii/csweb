@@ -325,6 +325,10 @@ ul ul ul {
     text-align: center;
     margin: 0.5rem;
 }
+.switch-roles-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
 
 #switch-roles {
     display: flex;
@@ -341,6 +345,7 @@ ul ul ul {
     display: inline-block;
     width: 60px;
     height: 25px;
+    margin-left: 0.5rem;
 }
 
 .switch input {

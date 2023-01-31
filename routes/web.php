@@ -9,6 +9,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\LearnerController;
 use App\Http\Controllers\TalentController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +33,8 @@ Route::get('/', function () {
 Route::get('/view/learner-home', [AuthController::class, 'view_learner_home'])->name('learner_home');
 //--Talent Home
 Route::get('/view/talent-home', [AuthController::class, 'view_talent_home'])->name('talent_home');
+//-- Admin Home
+Route::get('/view/admin-home', [AuthController::class, 'view_admin_home'])->name('admin_home')->middleware('admin');
 // Auth Guest 
 Route::get('/view/signin_page', [AuthController::class, 'view_signIn']);
 // ==================================== Navigation Landing Page ======================================================
@@ -49,7 +52,16 @@ Route::get('/signout', [AuthController::class, 'signout']);
 Route::get('/profile/{id}', [UserController::class, 'view_profile'])->name('profile.page');
 Route::put('/user_update', [UserController::class, 'user_update'])->name('user.update');
 
+// Admin only
+Route::get('/back', [UserController::class, 'back'])->middleware('admin');
+// Admin only
+
 Route::post('/switch_role', [UserController::class, 'switch_role'])->name('switch-role.update');
+Route::get('/view/edit/{id}', [UserController::class, 'view_edit']);
+
+Route::get('/view/upload-certification-page/{id}', [UserController::class, 'view_upload_certification_page']);
+Route::put('/upload-user-certification',[UserController::class, 'upload_user_certification'])->name('upload.user.certification');
+
 // ==================================== Auth ======================================================
 
 // ==================================== Categories ======================================================

@@ -1,0 +1,74 @@
+.upload-certification {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    padding: 10rem 25rem;
+}
+
+.upload-certification-wrapper {
+    width: 75%;
+    height: fit-content;
+}
+.back-links {
+    width: fit-content;
+    height: 2.5rem;
+    background-color: var(--primarycolor);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+.back-links a {
+    font-size: 1.8rem;
+    color: white;
+    font-family: 400;
+}
+.back-links a:hover {
+    color: purple;
+}
+/* ===================== Certification Talent Form ======================= */
+.upload-certification-content {
+    display: flex;
+    flex-direction: column;
+}
+.upload-certification-content h3 {
+    font-size: 1.6rem;
+    color: black;
+    font-weight: 600;
+}
+.upload-certification-content span {
+    font-size: 1.4rem;
+    color: red;
+}
+.upload-certification-content input {
+    margin: 2rem 0;
+}
+/* ===================== Certification Talent Form ======================= */
+
+.update-btn-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.update-button {
+    font-family: "Baloo 2";
+    width: 30%;
+    height: 3rem;
+    background-color: var(--primarycolor);
+    color: var(--white-color);
+    border-radius: 1rem;
+    border: none;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.update-button:hover {
+    background-color: var(--deepblue);
+}

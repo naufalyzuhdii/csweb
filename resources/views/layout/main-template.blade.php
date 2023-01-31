@@ -14,10 +14,12 @@
         rel="stylesheet">
     <link href="{{ asset('css/general.css') }}" rel="stylesheet">
     @if (Auth::check())
-    @if (Auth::user()->role=='learner')
+    @if (Auth::user()->role=='learner' )
     <link rel="stylesheet" href="{{ asset('css/navigation/learner-template.css') }}">
     @elseif (Auth::user()->role=='talent')
     <link rel="stylesheet" href="{{ asset('css/navigation/talent-template.css') }}">
+    @elseif (Auth::user()->role=='admin')
+    <link rel="stylesheet" href="{{ asset('css/navigation/admin-template.css') }}">
     @endif
     @else
     <link rel="stylesheet" href="{{ asset('css/navigation/guest-template.css') }}">
@@ -30,6 +32,7 @@
     @if (Auth::check())
     @if (Auth::user()->role=='learner') @include('navigation.learner-template')
     @elseif (Auth::user()->role=='talent') @include('navigation.talent-template')
+    @elseif (Auth::user()->role=='admin') @include('navigation.admin-template')
     @endif
     @else @include('navigation.guest-template')
     @endif

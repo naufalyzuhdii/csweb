@@ -6,6 +6,7 @@ use App\Models\Thread;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use App\Models\User;
 
 class ThreadController extends Controller
 {
@@ -17,6 +18,7 @@ class ThreadController extends Controller
     // }
 
     public function view_thread_learner()
+    
     {
          return view('thread.learner.thread-learner');
     }
@@ -48,11 +50,6 @@ class ThreadController extends Controller
 
     // TALENT
 
-    public function view_thread_talent()
-    {
-        return view('thread.talent.thread-talent');
-    }
-
     public function view_create_thread_page_talent()
     {
         return view('thread.talent.create-thread-page-talent');
@@ -81,13 +78,16 @@ class ThreadController extends Controller
 
     public function show_thread(){
         $threads = Thread::latest();
+        
+        
         if(request('search')){
             $threads->where('name', 'like', '%'. request('search'). '%');
         }
         // $products = Product::all();
         return view('thread/learner/thread-learner', [
             "threads" => $threads->paginate(8)
-        ]);
+        ],
+  );
     }
 
     public function post_thread(Request $request)

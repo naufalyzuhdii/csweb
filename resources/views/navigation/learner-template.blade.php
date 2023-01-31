@@ -84,23 +84,35 @@
                       <h2>Hi, {{ old('name', Auth::user()->name) }}</h2>
                       <h3>You signed in as <b>{{ Auth::user()->role }}</b></h3>
                       <li id="switch-roles">
-                          <h3>Switch role</h3>
+
                           <form action="{{ route('switch-role.update') }}" method="post" id="formName">
                               @csrf
                               <input type="hidden" name="id" value="{{ Auth::user()->id }}">
+                              <div class="switch-roles-wrapper">
+                                  <h3 id="switchRole">Switch role</h3>
 
-                              <label class="switch">
-                                  <input type="checkbox" name="switch_role" value="talent"
-                                      onchange="document.getElementById('formName').submit()">
-                                  <span class=" slider round"></span>
-                              </label>
-                              <!-- <button type="submit" value="Submit">DE</button> -->
+                                  @if(Auth::user()->certification == "none")
+                                  <label class="switch">
+                                      <input type="checkbox" name="switch_role" value="talent"
+                                          onchange="document.getElementById('formName').submit()"
+                                          onclick="return false;">
+                                      <span class="slider round"></span>
+                                  </label>
+                                  @else
+                                  <label class="switch" for="switchRoles">
+                                      <input type="checkbox" name="switch_role" value="talent"
+                                          onchange="document.getElementById('formName').submit()"
+                                          onclick="return true;">
+                                      <span class=" slider round"></span>
+                                  </label>
+                                  @endif
+
+                              </div>
                           </form>
                       </li>
                       <li>
-                          <div class="cart-navbar">
-                              <a href="/view/learner/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                          </div>
+                          <a href="/view/learner/cart" class="cart"> My
+                              Cart</a>
                       </li>
                       <li><a href="/profile/{{auth()->user()->id}}">Your profile</a></li>
                       <li>
