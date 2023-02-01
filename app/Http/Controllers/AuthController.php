@@ -43,7 +43,7 @@ class AuthController extends Controller
             'dob' => $request['dob']
         ]);
         
-        return redirect()->route('signin');
+        return redirect()->route('signin')->with('message','Sign Up Successfully. Please Sign In!');
         
     }
     public function view_signIn()
@@ -85,7 +85,7 @@ class AuthController extends Controller
 
         }
         else{
-            return back()->withErrors("Not Registered", "signIn");
+            return back()->withErrors(['msg' => 'Sign In Failed!']);
         }
     }
     public function signout()

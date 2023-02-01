@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('project_title');
             $table->string('description');
             $table->string('skills_requirement');
-            $table->string('offered_duration');
+            $table->string('offered_duration'); 
             $table->bigInteger('min_price');
             $table->bigInteger('max_price');
             // $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');

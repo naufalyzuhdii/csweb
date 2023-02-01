@@ -16,4 +16,18 @@ class Thread extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    protected $fillable = [
+        'skills_requirement',
+    ];
+
+    public function setColumnAttribute($value)
+    {
+        $this->attributes['skills_requirement'] = serialize($value);
+    }
+
+    public function getColumnAttribute($value)
+    {
+        return unserialize($value);
+    }
 }

@@ -7,27 +7,102 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use Illuminate\Validation\Rule;
 
 class ThreadController extends Controller
 {
-    // LEARNER
-
-    // public function view_thread_learner()
-    // {
-    //     return view('thread.learner.thread-learner');
-    // }
-
-    public function view_thread_learner()
-    
-    {
-         return view('thread.learner.thread-learner');
+    public function view_thread_learner(){
+        $threads = Thread::latest();
+        if(request('search')){
+            $threads->where('name', 'like', '%'. request('search'). '%');
+        }
+        // $products = Product::all();
+        return view('thread.learner.thread-learner', 
+        [
+            "threads" => $threads->paginate(8)
+        ]);
     }
-
+    public function view_my_thread()
+    {
+        $threads = Thread::all();
+        
+        return view('thread.learner.mythread-learner',compact('threads'));
+    }
+    public function view_my_appliers ()
+    {
+        return view('thread.learner.mythread-appliers');
+    }
     public function view_create_thread_page_learner()
     {
         return view('thread.learner.create-thread-page-learner');
-        
+    }    
+    public function post_thread(Request $request )
+    {
+        $rules = [
+            'user_id' => 'required',
+            'project_title' => 'required|unique:threads|max:60',
+            'description' => 'required|max:1000',
+            'skills_requirement' => 'required',
+            'offered_duration' => ['required'],
+            'min_price' => 'required',
+            'max_price' => 'required'
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return back()->withErrors($validator);
+        }
+        $user = User::find($request->user_id);
+
+        $thread = new Thread();
+        $thread->user_id = $request->user_id;
+        $thread->project_title = $request->project_title;
+        $thread->description = $request->description;
+        $thread->skills_requirement = $request->skills_requirement;
+        $thread->offered_duration = $request->offered_duration;
+
+        // Convert inputan user (text) menjadi integer dan disimpan secara real integer di database
+        $fix_min_price = (int)str_replace('.', '', $request->min_price);
+        $fix_max_price = (int)str_replace('.', '', $request->max_price);
+
+        $thread->min_price = $fix_min_price;
+        $thread->max_price = $fix_max_price;
+
+        // variable untuk ditampilin di depan
+        $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");
+        $nominal_depan_max = number_format($thread->max_price, 0, ",", ".");
+
+        $thread->save();
+
+        $request->session()->flash('message', 'Thread has been created successfully!');
+        return view('thread.learner.create-thread-page-learner',compact('user','nominal_depan_min','nominal_depan_max'));
     }
+    public function update_thread(Request $request)
+    {
+        $thread = Thread::find($request->id);
+        $thread->title = $request->title != null ? $request->title : $thread->title;
+        $thread->topic = $request->topic != null ? $request->topic : $thread->topic;
+        $thread->description = $request->description != null ? $request->description : $thread->description;
+        $thread->duration = $request->duration != null ? $request->duration : $thread->duration;
+        $thread->price = $request->price != null ? $request->price : $thread->price;
+        $thread->category_id = $request->category != null ? $request->category : $thread->category_id;
+
+        $thread->save();
+        return ["Thread Updated"];
+    }
+    public function delete_thread($id)
+    {
+        $thread = Thread::find($id);
+
+        $thread->delete();
+
+        session()->flash('success-deleted', 'The thread has been deleted successfully');
+
+        return redirect()->route('thread-learner-page');
+    }
+
+
+
+    
     public function view_find_freelancers_talents()
     {
         return view('thread.learner.find-freelancers-talent');
@@ -37,19 +112,10 @@ class ThreadController extends Controller
         return view('thread.learner.thread-talent-detail');
     }
 
-    public function view_my_thread()
-    {
-        return view('thread.learner.mythread-learner');
-    }
 
-    public function view_my_appliers ()
-    {
-        return view('thread.learner.mythread-appliers');
-    }
 
 
     // TALENT
-
     public function view_create_thread_page_talent()
     {
         return view('thread.talent.create-thread-page-talent');
@@ -76,87 +142,18 @@ class ThreadController extends Controller
     }
   
 
-    public function show_thread(){
-        $threads = Thread::latest();
-        
-        
-        if(request('search')){
-            $threads->where('name', 'like', '%'. request('search'). '%');
-        }
-        // $products = Product::all();
-        return view('thread/learner/thread-learner', [
-            "threads" => $threads->paginate(8)
-        ],
-  );
-    }
 
-    public function post_thread(Request $request)
+
+
+
+    // Add Skills Requirements
+    public function add_skills_requirements(Request $request)
     {
-        $rules = [
-            'project_title' => 'required|unique:threads',
-            'description' => 'required',
-            'skills_requirement' => 'required',
-            'offered_duration' => 'required',
-            'min_price' => 'required',
-            'max_price' => 'required'
-        ];
-        $validator = Validator::make($request->all(), $rules);
-        if ($validator->fails()) {
-            return back()->withErrors($validator);
-        }
-        $thread = new Thread();
-        $thread->project_title = $request->project_title;
-        $thread->description = $request->description;
-        $thread->skills_requirement = $request->skills_requirement;
-        $thread->offered_duration = $request->offered_duration;
-
-        // Convert inputan user (text) menjadi integer dan disimpan secara real integer di database
-        $fix_min_price = (int)str_replace('.', '', $request->min_price);
-        $fix_max_price = (int)str_replace('.', '', $request->max_price);
-
-        $thread->min_price = $fix_min_price;
-        $thread->max_price = $fix_max_price;
-
-        // variable untuk ditampilin di depan
-        $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");
-        $nominal_depan_max = number_format($thread->max_price, 0, ",", ".");
-
-        $thread->save();
-
-        session()->flash('success-created', 'The thread was created successfully');
-        
-        return redirect()->route('thread-learner-page',compact('nominal_depan_min','nominal_depan_max'));
+        $model = new Thread;
+        $model->skills_requirement = [1, 2, 3];
+        $model->save();
     }
 
-    
-    // $inputed =  $request->input('item_price');
-    // $item_price = (int)str_replace('.', '', $inputed);
-    // $current_item_price = number_format($item_price, 0, ",", ".");
-
-    public function update_thread(Request $request)
-    {
-        $thread = Thread::find($request->id);
-        $thread->title = $request->title != null ? $request->title : $thread->title;
-        $thread->topic = $request->topic != null ? $request->topic : $thread->topic;
-        $thread->description = $request->description != null ? $request->description : $thread->description;
-        $thread->duration = $request->duration != null ? $request->duration : $thread->duration;
-        $thread->price = $request->price != null ? $request->price : $thread->price;
-        $thread->category_id = $request->category != null ? $request->category : $thread->category_id;
-
-        $thread->save();
-        return ["Thread Updated"];
-    }
-
-    public function delete_thread($id)
-    {
-        $thread = Thread::find($id);
-
-        $thread->delete();
-
-        session()->flash('success-deleted', 'The thread has been deleted successfully');
-
-        return redirect()->route('thread-learner-page');
-    }
 
 
 }

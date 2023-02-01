@@ -20,10 +20,14 @@
             </div>
 
             <!-- Flash message untuk berhasil membuat account -->
-            @if(session()->has('success'))
+            @if(session()->has('message'))
             <div class="success">
-                {{session()->get('success')}}
+                {{session()->get('message')}}
             </div>
+            @endif
+
+            @if($errors->any())
+            <h4 class="danger">{{$errors->first()}}</h4>
             @endif
             <form action="/signin" class="signin-form" method="POST">
                 @csrf
@@ -44,7 +48,7 @@
                 <div class="rememberme-group">
                     <div class="rememberme">
                         <input type="checkbox" name="rememberme" id="remember"
-                            {{ Cookie::get('mycookie') != null ? 'checked' : '' }} checked="checked">
+                            {{ Cookie::get('mycookie') != null ? 'checked' : '' }}>
                         <label for="RememberMe">Remember Me</label>
                     </div>
                     <a href="#" class="forgot-password-link">Forgot Password? </a>

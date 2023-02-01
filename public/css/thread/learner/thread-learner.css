@@ -301,6 +301,10 @@
     border-radius: 1rem;
     color: var(--primarycolor);
 }
+.profile-learner-role h2 {
+    font-size: 1.6rem;
+    text-transform: capitalize;
+}
 
 /* --LEARNER THREAD CONTENT */
 
@@ -623,3 +627,12 @@
 
 /*  --Thread Talent */
 /* THREAD CONTENT */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination h3 {
+    font-size: 1.6rem;
+}

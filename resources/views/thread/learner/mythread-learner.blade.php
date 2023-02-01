@@ -14,37 +14,16 @@
         </div>
         <!-- Thread Content Heading -->
 
+
         <!-- THREAD CONTENT WRAPPER -->
         <div class="thread-content-wrapper">
             @if (count($threads) == 0)
-            <!-- Flash message untuk berhasil menghapus thread -->
-            @if(session()->has('success-deleted'))
-            <div class="success">
-                {{session()->get('success-deleted')}}
+            <div class="danger">
+                <h3>You have no threads</h3>
             </div>
-            @endif
-
-            <div>
-                <h1>No Data</h1>
-            </div>
-
-            @elseif (count($threads) > 0)
-
-            <!-- Flash message untuk berhasil membuat thread -->
-            @if(session()->has('success-created'))
-            <div class="success">
-                {{session()->get('success-created')}}
-            </div>
-            @endif
-
-            <!-- Flash message untuk berhasil menghapus thread -->
-            @if(session()->has('success-deleted'))
-            <div class="success">
-                {{session()->get('success-deleted')}}
-            </div>
-            @endif
-
+            @else
             @foreach ($threads as $thread)
+            @if($thread->user_id == Auth::user()->id)
             <div class="thread-content-learner-wrapper">
                 <!-- THREAD CONTENT LEARNER VALID WRAPPER -->
                 <div class="thread-content-learner-valid-wrapper">
@@ -59,13 +38,19 @@
                     <!-- PROFILE LEARNER -->
                     <div class="profile-learner">
                         <div class="profile-learner-image-wrapper">
+                            @if($thread->user->image == 'no picture')
                             <div class="profile-learner-image">
-                                <img src="{{asset('images/thread/jason.jpg')}}" alt="">
+                                <img src="{{asset('storage/profile/account.png')}}" alt="">
                             </div>
+                            @else
+                            <div class="profile-learner-image">
+                                <img src="{{asset('storage/profile/'.$thread->user->image)}}" alt="">
+                            </div>
+                            @endif
                         </div>
                         <div class="profile-learner-role-wrapper">
                             <div class="profile-learner-role">
-                                <h2>Learner</h2>
+                                <h2>{{$thread->user->role}}</h2>
                             </div>
                         </div>
                     </div>
@@ -74,7 +59,7 @@
                     <!-- LEARNER THREAD CONTENT -->
                     <div class="learner-thread-content">
                         <div class="learner-thread-name">
-                            <h3>{{Auth::user()->name}}</h3>
+                            <h3></h3>
                         </div>
                         <div class="learner-thread-project-title">
                             <div class="title_wrapper">
@@ -113,11 +98,11 @@
                                 <h3>Duration : {{ $thread->offered_duration }}</h3>
                                 <h3>Price range :
                                     <!-- Php disini untuk convert format value dari database menjadi
-                                    format nominal yang benar secara frontend -->
+                                            format nominal yang benar secara frontend -->
                                     <?php
-                                            $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");
-                                            $nominal_depan_max = number_format($thread->max_price, 0, ",", ".");
-                                        ?>
+                                                    $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");
+                                                    $nominal_depan_max = number_format($thread->max_price, 0, ",", ".");
+                                                ?>
                                     <span>Rp {{ $nominal_depan_min }}
                                     </span> - <span>Rp
                                     </span>{{ $nominal_depan_max }}
@@ -141,12 +126,9 @@
                 </div>
                 <!-- THREAD CONTENT LEARNER MAIN -->
             </div>
-            <!-- </a> -->
-            @endforeach
-
             @endif
-            {{-- Thread Learner --}}
-
+            @endforeach
+            @endif
 
         </div>
         <!-- THREAD CONTENT WRAPPER -->
