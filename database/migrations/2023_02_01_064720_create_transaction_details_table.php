@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('order_items', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('order_id');
+        Schema::create('transaction_details', function (Blueprint $table) {
+            $table->id('transaction_detail_id');
             $table->unsignedBigInteger('course_id');
-            $table->tinyInteger('quantity');
-            $table->decimal('amount');
-            $table->foreign('order_id')->references('id')->on('orders')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('transaction_header_id');
             $table->foreign('course_id')->references('id')->on('courses')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('transaction_header_id')->references('transaction_header_id')->on('transaction_headers')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_items');
+        Schema::dropIfExists('transaction_details');
     }
 };

@@ -6,16 +6,25 @@ use Session;
 use App\Models\Store;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use App\Models\TransactionDetail;
+use App\Models\TransactionHeader;
 use App\Http\Controllers\Controller;
 
 class StoreController extends Controller
 {
-    public function add_to_cart(Request $request){
-        session()->put('cart', $request->post('cart'));
+    public function add_to_cart($course_id){
+        $cart = session('cart');
+        $course = Course::get_course($course_id);
+        $cart[$course_id] = [
+            'title' => $course->title,
+            'author' => $course->author,
+            'category' => $course->category,
+            'price' => $course->price,
+            'image' => $course->image
+        ];
 
-        return response()->json([
-            'status' => 'added'
-        ]);
+        session(['cart' => $cart]);
+        return redirect('/view/learner/cart');
         // $course = Course::find($id);
         // $old_cart = Session::has('cart') ? Session::get('cart') : null;
         // $cart = new Store($old_cart);
@@ -25,10 +34,7 @@ class StoreController extends Controller
     }
 
     public function cart(){
-        $cart = session()->get('cart');
-        if ($cart == null)
-            $cart = [];
-
+        $cart = session('cart');
         return view('learner.cart.cart')->with('cart', $cart);
         // if(!Session::has('cart')){
         //     return view('learner.cart.cart');
@@ -38,40 +44,24 @@ class StoreController extends Controller
         // return view('learner.cart.cart', ['courses' => $cart->items, 'total_price' => $cart->total_price]);
     }
 
-    public function checkout(Request $request){
-        $cart = session()->get('cart');
+    public function remove_cart($course_id){
+        $cart = session('cart');
+        unset($cart[$course_id]);
+        session(['cart' => $cart]);
+        return redirect('/view/learner/cart');
+    }
 
-        $totalprice = 0;
-
-        foreach ($$cart as $item) {
-            $totalprice += $item['price'];
+    public function checkout(){
+        $cart = session('cart');
+        $transaction_header_id = TransactionHeader::add_transaction_header();
+        foreach ($cart as $ct => $val){
+            $course_id = $ct;
+            TransactionDetail::add_transaction_detail($course_id, $transaction_header_id);
         }
+        // dd($transaction_header_id);
+        session()->forget('cart');
 
-        $order = new Order();
-        $order->user_id = Auth::user()->id;
-        $order->amount = $totalprice;
-        $order->save();
-
-        $data = [];
-
-        foreach ($cart as $item) {
-            $data['items'] = [
-                [
-                    'title' => $item['title'],
-                    'price' => $item['price'],
-                    'qty' => $item['qty'],
-                ]
-            ];
-
-            $orderItem = new OorderItem();
-            $orderItem->order_id = $order->id;
-            $orderItem->course_id = $item['id'];
-            $orderItem->quantity = $item['qty'];
-            $orderItem->amount = $item['price'];
-            $orderItem->save();
-
-            return redirect('my_learning');
-        }
+        return redirect('/view/learner/cart');
         // if(!Session::has('cart')){
         //     return redirect()->route('checkout');
         // }

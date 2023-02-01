@@ -122,7 +122,8 @@ Route::get('/view/my-progress/find-freelances-talents', [LearnerController::clas
 Route::get('/view/learner/cart', [StoreController::class, 'cart'])->name('view_cart');
 
 Route::get('/addtocart/{id}', [StoreController::class, 'add_to_cart'])->name('addtocart');
-Route::post('/checkout', [StoreController::class, 'checkout'])->name('checkout');
+Route::get('/removecart/{id}', [StoreController::class, 'remove_cart'])->name('removecart');
+Route::get('/checkout', [StoreController::class, 'checkout'])->name('checkout');
 //  =========================================== Navigation Learner ===========================================
 
 
