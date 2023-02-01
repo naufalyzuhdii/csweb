@@ -1,6 +1,8 @@
 @extends('layout.main-template')
 @section('linkCSS')
 <link rel="stylesheet" href="{{asset('css/thread/learner/thread-learner.css')}}">
+
+
 @endsection
 
 @section('content')
@@ -64,14 +66,6 @@
 
                 @elseif (count($threads) > 0)
 
-                <!-- Flash message untuk berhasil membuat thread -->
-                @if(session()->has('success-created'))
-                <div class="success">
-                    {{session()->get('success-created')}}
-                </div>
-                @endif
-
-                <!-- Flash message untuk berhasil menghapus thread -->
                 @if(session()->has('success-deleted'))
                 <div class="success">
                     {{session()->get('success-deleted')}}
@@ -80,7 +74,6 @@
 
                 @foreach ($threads as $thread)
                 <div class="thread-content-learner-wrapper">
-                    {{$user->id}}
                     <!-- THREAD CONTENT LEARNER VALID WRAPPER -->
                     <div class="thread-content-learner-valid-wrapper">
                         <div class="thread-content-learner-valid">
@@ -94,12 +87,19 @@
                         <!-- PROFILE LEARNER -->
                         <div class="profile-learner">
                             <div class="profile-learner-image-wrapper">
+                                @if($thread->user->image == 'no picture')
                                 <div class="profile-learner-image">
+                                    <img src="{{asset('storage/profile/account.png')}}" alt="">
                                 </div>
+                                @else
+                                <div class="profile-learner-image">
+                                    <img src="{{asset('storage/profile/'.$thread->user->image)}}" alt="">
+                                </div>
+                                @endif
                             </div>
                             <div class="profile-learner-role-wrapper">
                                 <div class="profile-learner-role">
-                                    <h2></h2>
+                                    <h2>{{$thread->user->role}}</h2>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                         <!-- LEARNER THREAD CONTENT -->
                         <div class="learner-thread-content">
                             <div class="learner-thread-name">
-                                <h3>{{Auth::user()->name}}</h3>
+                                <h3>{{$thread->user->name}}</h3>
                             </div>
                             <div class="learner-thread-project-title">
                                 <div class="title_wrapper">
@@ -164,11 +164,11 @@
                                 <div class="talents-apply-wrapper">
                                     <h3 class="talents-apply"><span>2 </span>talent(s) has apply this offer</h3>
                                     <h3 class="view-appliers">
-                                        <a href="/view/appliers">View Appliers</a>
+                                        <a href="/view/appliers/{{$thread->id}}">View Appliers</a>
                                     </h3>
                                 </div>
                             </div>
-                            <a href="/delete-thread/{{ $thread->id }}" class="delete-thread"><i
+                            <a href="/delete-thread/{{ $thread->user->id }}" class="delete-thread"><i
                                     class="fa-solid fa-trash"></i></a>
                         </div>
                         <!-- LEARNER THREAD CONTENT -->
@@ -179,9 +179,12 @@
                 @endforeach
 
                 @endif
-                {{-- Thread Learner --}}
 
-
+                <div class="pagination">
+                    <h3>
+                        {{ $threads->links() }}
+                    </h3>
+                </div>
             </div>
             <!-- THREAD CONTENT WRAPPER -->
         </div>
@@ -194,17 +197,7 @@
 
 
 <script>
-// var links_title = document.querySelectorAll(".categories-links-title");
-// links_title.forEach((links_title) =>
-// {
-//     links_title.addEventListener("click", () =>
-//     {
-//             links_title.classList.toggle("change");
-//             const parent = links_title.parentNode;
-//             parent.classList.toggle("active");
 
-//     });
-// });
 </script>
 
 @endsection

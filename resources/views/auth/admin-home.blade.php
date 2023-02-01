@@ -37,7 +37,13 @@
                     <td>
                         <h3>
                             <div class="user-image-wrapper">
-                                <img src="{{ url('storage/profile/'.$user->image) }}" />
+                                @if($user->image == 'no picture')
+                                <h2 class="danger">NO PICTURE</h2>
+                                @else
+                                <div class="picture">
+                                    <img src="{{ url('storage/profile/'.$user->image) }}" />
+                                </div>
+                                @endif
                             </div>
                         </h3>
                     </td>

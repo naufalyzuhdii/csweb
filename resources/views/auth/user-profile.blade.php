@@ -35,7 +35,11 @@
                     <label>Your Profile Picture : </label>
                     <div class="profile-picture-content">
                         <div class="picture-wrapper">
-                            @if($user->image)
+                            @if($user->image == 'no picture')
+                            <div class="picture">
+                                <img src="{{ url('storage/profile/account.png') }}" alt="">
+                            </div>
+                            @else
                             <div class="picture">
                                 <img src="{{ url('storage/profile/'.$user->image) }}" />
                             </div>
@@ -43,7 +47,6 @@
                         </div>
                         <div class="file-input">
                             <input type="file" id="file" name="image">
-                            <!-- <label for="file">choose a file</label> -->
                         </div>
                     </div>
                     @error('image')
