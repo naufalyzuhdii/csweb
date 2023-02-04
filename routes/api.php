@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\StoreController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\CategoryController;
@@ -41,3 +42,4 @@ Route::delete('/deletecategory/{id}', [CategoryController::class, 'delete_catego
 
 Route::post('/messages', [ChatController::class, 'message']);
 Route::post('/uploadvideo', [CourseDetailController::class, 'upload_video'])->name('uploadvideo');
+Route::get('/addtocart/{id}', [StoreController::class, 'add_to_cart'])->name('addtocart');
