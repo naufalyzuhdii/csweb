@@ -133,41 +133,37 @@ ul ul ul {
     display: block;
 }
 
+.thread-navbar {
+    position: relative;
+    width: 33%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .thread-links {
     width: 100%;
     font-weight: 500;
     font-size: 1.8rem;
     color: var(--white-color);
+    text-decoration: none;
     cursor: pointer;
 }
 
-.thread-navbar ul {
-    position: absolute;
-    height: fit-content;
-    bottom: -80%;
-    background-color: var(--secondarycolor);
-    width: fit-content;
-    border-radius: 0.5rem;
-    display: none;
-    z-index: 200;
-}
-
-.thread-navbar ul li {
-    width: 100%;
-    text-align: left;
-}
-
-.thread-navbar ul li a {
+.thread-navbar a {
     width: 100%;
     font-weight: 500;
     font-size: 1.8rem;
-    color: var(--deepblue);
     cursor: pointer;
     border-radius: 0.5rem;
+    color: white;
+    text-decoration: none;
 }
 
-.thread-navbar ul li a:hover {
-    background-color: var(--white-color);
+.thread-navbar a:hover {
+    color: rgb(255, 255, 255, 0.8);
 }
 
 /* THREAD */
@@ -277,9 +273,10 @@ ul ul ul {
     align-items: center;
 }
 
-.profile-navbar-links i {
-    font-size: 1.5rem;
-    color: white;
+.profile-navbar-links img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .profile-navbar ul {

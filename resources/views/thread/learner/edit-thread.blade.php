@@ -1,7 +1,7 @@
 @extends('layout.main-template')
 
 @section('linkCSS')
-<link rel="stylesheet" href="{{asset('/css/thread/learner/create-thread-page-learner.css')}}">
+<link rel="stylesheet" href="{{asset('/css/thread/learner/edit-thread.css')}}">
 @endsection
 
 @section('content')
@@ -9,11 +9,10 @@
 <section class="create-thread-page-learner">
     <div class="wrapper">
         <div class="thread-page-learner-header">
-            <h1>Tell us what you need done</h1>
-            <p>Get in touch with skilled freelancers and talents. You can view their profiles, portfolios and ratings.
-                Pay
-                the freelancer or talent only when
-                you are 100% satisfied with their work.
+            <h1> Thread Edit Page</h1>
+            <p>Edit your own thread if there's any change needed.
+                <br>
+                Here, you can update your project or task's fix price after dealed with talent.
             </p>
         </div>
         @if (session('message'))
@@ -50,13 +49,14 @@
                 <div class="learner-thread-name">
                     <h3>{{ old('name', Auth::user()->name) }}</h3>
                 </div>
-                <form action="/create_thread" enctype="multipart/form-data" method="POST">
+                <form action="/update-thread" enctype="multipart/form-data" method="POST" id="thread-user-update">
+                    @method('put')
                     @csrf
-
-                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                    <input type="hidden" name="thread_id" value="{{$thread->id}}">
                     <div class=" learner-thread-project-title">
                         <h3>Project or Task Title</h3>
-                        <input type="text" name="project_title" placeholder="e.g Build me a website ...">
+                        <input type="text" name="project_title" placeholder="e.g Build me a website ..."
+                            value="{{($thread->project_title)}}">
                     </div>
                     @error('project_title')
                     <div class="danger">
@@ -67,7 +67,7 @@
                     <div class="learner-thread-description">
                         <h3>Description</h3>
                         <textarea name="description" maxlength="500"
-                            placeholder="Describe your project here ..."></textarea>
+                            placeholder="Describe your project here ...">{{($thread->project_title)}}</textarea>
                     </div>
                     @error('description')
                     <div class="danger">
@@ -75,9 +75,11 @@
                     </div>
                     @enderror
 
+
                     <div class="learner-thread-skills-required">
                         <h3>What skills are required?</h3>
-                        <select name="skills_requirement" id="" required>
+                        <select name="skills_requirement" id="" value="{{($thread->skills_requirement)}}">
+                            <option>{{($thread->skills_requirement)}}</option>
                             @foreach($skills as $skills)
                             <option value="{{ $skills->name }}">{{ $skills->name }}</option>
                             @endforeach
@@ -89,7 +91,6 @@
                         </div>
 
                     </div>
-
                     @error('skills_requirement')
                     <div class="danger">
                         {{$message}}
@@ -102,7 +103,8 @@
                                 <span> (estimate)</span>
                             </h3>
                             <select name="offered_duration" id="" required>
-                                <option selected hidden value="">Choose the duration</option>
+                                <option selected value="{{($thread->offered_duration)}}">{{$thread->offered_duration}}
+                                </option>
                                 <option value="less than 1 day">
                                     less than 1 day</option>
                                 <option value="1 day">1 day</option>
@@ -142,15 +144,35 @@
                         <div class="offered-price">
                             <h3>Offered Price</h3>
                             <div class="price">
+                                <?php
+                                            $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");
+                                            $nominal_depan_max = number_format($thread->max_price, 0, ",", ".");
+                                            $nominal_depan_fix = number_format($thread->fix_price, 0, ",", ".");
+                                        ?>
                                 <div class="min-price">
-                                    <span>Rp.</span>
-                                    <input type="number" name="min_price" id="rupiah" maxlength="11"
-                                        placeholder="Min Price">
+                                    <h3>Min Price</h3>
+                                    <div class="price-wrapper">
+                                        <span>Rp.</span>
+                                        <input type="number" name="min_price" id="rupiah" placeholder="Min Price"
+                                            value="{{$thread->min_price}}">
+                                    </div>
                                 </div>
                                 <div class="max-price">
-                                    <span>Rp.</span>
-                                    <input type="number" name="max_price" id="rupiah2" maxlength="11"
-                                        placeholder="Max Price">
+                                    <h3>Max Price</h3>
+                                    <div class="price-wrapper">
+                                        <span>Rp.</span>
+                                        <input type="number" name="max_price" id="rupiah2" placeholder="Max Price"
+                                            value="{{$thread->max_price}}">
+                                    </div>
+
+                                </div>
+                                <div class="fix-price">
+                                    <h3>Fix Price</h3>
+                                    <div class="price-wrapper">
+                                        <span>Rp.</span>
+                                        <input type="number" name="fix_price" id="rupiah3" placeholder="Fix Price"
+                                            value="{{$thread->fix_price}}">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -171,12 +193,16 @@
                     </div>
                     @enderror
 
+                    @error('fix_price')
+                    <div class="danger">
+                        {{$message}}
+                    </div>
+                    @enderror
 
                     <div class="post-thread-btn">
-                        <button type="submit">Post Thread</button>
+                        <button type="submit">Update Thread</button>
                     </div>
                 </form>
-
                 <div class="add-skills-wrapper">
                     <div class="add-skills-form" id="add-skills-form">
                         <form action="/add-new-skills" method="get" enctype="multipart/form-data">
@@ -191,30 +217,19 @@
                         </form>
                     </div>
                 </div>
+
+
+
             </div>
             <!-- Learner Thread Content -->
-
-
-
         </div>
-
-
     </div>
 </section>
 
 <script>
-function myFunction() {
-    var x = document.getElementById("add-skills-form");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
 // var rupiah = document.getElementById("rupiah");
 // rupiah.addEventListener("keyup", function(e) {
-//     // tambahkan 'Rp.' pada saat form di ketik
-//     // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+
 //     rupiah.value = formatRupiah(this.value, "Rp. ");
 // });
 
@@ -259,6 +274,31 @@ function myFunction() {
 
 //     rupiah2 = split[1] != undefined ? rupiah2 + "," + split[1] : rupiah2;
 //     return prefix == undefined ? rupiah2 : rupiah2 ? rupiah2 : "";
+// }
+
+
+// var rupiah3 = document.getElementById("rupiah3");
+// rupiah3.addEventListener("keyup", function(e) {
+
+//     rupiah3.value = formatrupiah3(this.value, "Rp. ");
+// });
+
+
+// function formatrupiah3(angka, prefix) {
+//     var number_string = angka.replace(/[^,\d]/g, "").toString(),
+//         split = number_string.split(","),
+//         sisa = split[0].length % 3,
+//         rupiah3 = split[0].substr(0, sisa),
+//         ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+//     // tambahkan titik jika yang di input sudah menjadi angka ribuan
+//     if (ribuan) {
+//         separator = sisa ? "." : "";
+//         rupiah3 += separator + ribuan.join(".");
+//     }
+
+//     rupiah3 = split[1] != undefined ? rupiah3 + "," + split[1] : rupiah3;
+//     return prefix == undefined ? rupiah3 : rupiah3 ? rupiah3 : "";
 // }
 </script>
 

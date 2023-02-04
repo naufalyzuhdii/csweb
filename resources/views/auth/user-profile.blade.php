@@ -114,7 +114,12 @@
                         </span>
                         <h3><a href="/view/upload-certification-page/{{$user->id}}">Upload certification</a></h3>
                     </label>
-                    @else
+                    @elseif(Auth::user()->certification_document != '-' && Auth::user()->certification_status == 'none')
+                    <label>
+                        <span>Your certification document has been uploaded. Please wait for the review!
+                        </span>
+                    </label>
+                    @elseif(Auth::user()->certification_document != '-' && Auth::user()->certification_status != 'none')
                     <label>
                         <span style="color:green;font-size:1.6rem">Your certification is qualified and approved!
                         </span>

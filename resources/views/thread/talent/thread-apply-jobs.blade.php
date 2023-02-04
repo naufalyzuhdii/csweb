@@ -19,7 +19,9 @@
 
         <!-- THREAD CONTENT WRAPPER -->
         <div class="thread-content-wrapper">
-            <!-- <a href="#/view/thread-learner-detail" class="thread-content-learner-links"> -->
+
+
+            @foreach ($threads as $thread)
             <div class="thread-content-learner-wrapper">
                 <!-- THREAD CONTENT LEARNER VALID WRAPPER -->
                 <div class="thread-content-learner-valid-wrapper">
@@ -34,9 +36,15 @@
                     <!-- PROFILE LEARNER -->
                     <div class="profile-learner">
                         <div class="profile-learner-image-wrapper">
+                            @if($thread->user->image == 'no picture')
                             <div class="profile-learner-image">
-                                <img src="{{asset('images/thread/jason.jpg')}}" alt="">
+                                <img src="{{asset('storage/profile/account.png')}}" alt="">
                             </div>
+                            @else
+                            <div class="profile-learner-image">
+                                <img src="{{asset('storage/profile/'.$thread->user->image)}}" alt="">
+                            </div>
+                            @endif
                         </div>
                         <div class="profile-learner-role-wrapper">
                             <div class="profile-learner-role">
@@ -49,7 +57,7 @@
                     <!-- LEARNER THREAD CONTENT -->
                     <div class="learner-thread-content">
                         <div class="learner-thread-name">
-                            <h3>Jason</h3>
+                            <h3>{{$thread->user->name}}</h3>
                         </div>
                         <div class="learner-thread-project-title">
                             <div class="title_wrapper">
@@ -57,7 +65,7 @@
                                 <h3>:</h3>
                             </div>
                             <div class="content">
-                                <p></p>
+                                <p>{{ $thread->project_title }}</p>
                             </div>
                         </div>
                         <div class="learner-thread-project-description">
@@ -66,7 +74,7 @@
                                 <h3>:</h3>
                             </div>
                             <div class="content">
-                                <p></p>
+                                <p>{{ $thread->description }}</p>
                             </div>
                         </div>
                         <div class="learner-thread-project-required-skills">
@@ -76,42 +84,50 @@
                             </div>
                             <div class="content">
                                 <ul>
-                                    <li>Laravel</li>
-                                    <li>CSS</li>
+                                    <li>{{$thread->skills_requirement}}</li>
                                 </ul>
                             </div>
                         </div>
-
                         <div class="learner-thread-offer">
                             <div class="title_wrapper">
                                 <h3>Offer </h3>
                             </div>
                             <div class="learner-thread-offer-detail">
-                                <h3>Duration : </h3>
-                                <h3>Price range : <span>Rp </span> - <span>Rp
-                                    </span></h3>
+                                <h3>Duration : {{ $thread->offered_duration }}</h3>
+                                <h3>Price range :
+                                    <!-- Php disini untuk convert format value dari database menjadi
+                                    format nominal yang benar secara frontend -->
+                                    <?php
+                                            $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");
+                                            $nominal_depan_max = number_format($thread->max_price, 0, ",", ".");
+                                        ?>
+                                    <span>Rp {{ $nominal_depan_min }}
+                                    </span> - <span>Rp
+                                    </span>{{ $nominal_depan_max }}
+
+                                </h3>
                             </div>
 
                         </div>
                         <div class="learner-thread-bottom-content">
-                            <div class="talents-apply">
-                                <div class="talents-apply-wrapper">
-                                    <h4><span>2 </span>talent(s) has apply this offer</h4>
-
-                                </div>
+                            <div class="talents-apply-wrapper">
+                                <h3 class="talents-apply"><span>2 </span>talent(s) has apply this offer</h3>
                                 <div class="talents-view-btn">
                                     <h3>
-                                        <a href="/view/thread-apply-jobs-learner-detail">View Detail</a>
+                                        <a href="/view/thread-apply-jobs-learner-detail/{{$thread->id}}">View
+                                            Detail</a>
                                     </h3>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <!-- LEARNER THREAD CONTENT -->
                 </div>
                 <!-- THREAD CONTENT LEARNER MAIN -->
             </div>
-            {{-- Thread Learner --}}
+            <!-- </a> -->
+            @endforeach
 
         </div>
         <!-- THREAD CONTENT WRAPPER -->

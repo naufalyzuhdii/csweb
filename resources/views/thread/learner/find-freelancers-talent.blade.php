@@ -14,7 +14,12 @@
                 </p>
             </div>
             <div class="thread-content-wrapper">
-                {{-- Thread Talent --}}
+                @if (count($thread_freelancers_talents) == 0)
+                <div class="warn">
+                    <h3>No Data</h3>
+                </div>
+                @else
+                @foreach ( $thread_freelancers_talents as $thread_ft)
                 <a href="/view/thread-talent-detail" class="thread-content-talent-links">
                     <div class="thread-content-talent-wrapper">
                         <div class="thread-content-talent-main">
@@ -70,9 +75,8 @@
                         </div>
                     </div>
                 </a>
-
-                {{-- End Of Thread Talent --}}
-
+                @endforeach
+                @endif
             </div>
         </div>
 

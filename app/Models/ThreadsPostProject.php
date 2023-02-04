@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Thread extends Model
+class ThreadsPostProject extends Model
 {
     use HasFactory;
+
 
     public function category(){
         return $this->belongsTo(Category::class);
@@ -17,17 +18,10 @@ class Thread extends Model
         return $this->belongsTo(User::class);
     }
 
-    protected $fillable = [
-        'skills_requirement',
-    ];
-
-    public function setColumnAttribute($value)
+    public function skills()
     {
-        $this->attributes['skills_requirement'] = serialize($value);
+        return $this->hasMany(Skills::class);
     }
 
-    public function getColumnAttribute($value)
-    {
-        return unserialize($value);
-    }
+
 }

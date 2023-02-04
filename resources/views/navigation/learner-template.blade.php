@@ -43,13 +43,7 @@
               </div>
 
               <div class="thread-navbar">
-                  <a href="" class="thread-links">
-                      Thread
-                  </a>
-                  <ul>
-                      <li> <a href="/view/thread-learner">Post a Project</a></li>
-                      <li> <a href="/view/find-freelancers-talents">Find Freelancers or Talents</a></li>
-                  </ul>
+                  <a href="/view/threads-post-project/learner">Thread</a>
               </div>
           </div>
 
@@ -62,13 +56,9 @@
 
           <div class="nav-2">
               <div class="progress-navbar">
-                  <a href="" class="progress-navbar-links" id="progress-navbar-links">
+                  <a href="/view/my-progress/dealed-projects" class="progress-navbar-links" id="progress-navbar-links">
                       My Progress
                   </a>
-                  <ul>
-                      <li> <a href="/view/my-progress/dealed-projects">Dealed Projects</a></li>
-                      <li> <a href="/view/my-progress/">My Posted Projects</a></li>
-                  </ul>
               </div>
               <div class="course-navbar">
                   <a href="/view/my-learning" class="course-navbar-links" id="course-navbar-links">
@@ -77,9 +67,16 @@
               </div>
 
               <div class="profile-navbar">
+                  @if(auth()->user()->image == 'no picture')
                   <a href="#profile" class="profile-navbar-links">
-                      <i class="fa-solid fa-user"></i>
+                      <img src="{{asset('storage/profile/account.png')}}" alt="">
                   </a>
+                  @else
+                  <a href="#profile" class="profile-navbar-links">
+                      <img src="{{asset('storage/profile/'.auth()->user()->image)}}" alt="">
+                  </a>
+                  @endif
+
                   <ul>
                       <h2>Hi, {{ old('name', Auth::user()->name) }}</h2>
                       <h3>You signed in as <b>{{ Auth::user()->role }}</b></h3>

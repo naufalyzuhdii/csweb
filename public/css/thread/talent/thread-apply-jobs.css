@@ -208,26 +208,27 @@
     align-items: center;
 }
 
-.talents-apply {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 .talents-apply-wrapper {
     width: 100%;
     height: 100%;
     display: flex;
+    padding-right: 2rem;
     justify-content: space-between;
 }
 
-.talents-apply-wrapper h4 {
+.talents-apply-wrapper h3 span {
+    font-weight: 900;
+}
+.talents-apply {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.7rem;
     font-size: 1.4rem;
     font-weight: 500;
-    color: black;
-}
-.talents-apply-wrapper h4 span {
-    font-weight: 900;
+    padding: 0 0.5rem;
 }
 
 .talents-view-btn {

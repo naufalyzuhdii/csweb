@@ -17,11 +17,12 @@
 
         <!-- THREAD CONTENT WRAPPER -->
         <div class="thread-content-wrapper">
-            @if (count($threads) == 0)
-            <div class="danger">
+
+            @if($count == 0)
+            <div class="warn">
                 <h3>You have no threads</h3>
             </div>
-            @else
+            @elseif( $count > 0)
             @foreach ($threads as $thread)
             @if($thread->user_id == Auth::user()->id)
             <div class="thread-content-learner-wrapper">
@@ -59,7 +60,7 @@
                     <!-- LEARNER THREAD CONTENT -->
                     <div class="learner-thread-content">
                         <div class="learner-thread-name">
-                            <h3></h3>
+                            <h3>{{$thread->user->name}}</h3>
                         </div>
                         <div class="learner-thread-project-title">
                             <div class="title_wrapper">
@@ -98,11 +99,11 @@
                                 <h3>Duration : {{ $thread->offered_duration }}</h3>
                                 <h3>Price range :
                                     <!-- Php disini untuk convert format value dari database menjadi
-                                            format nominal yang benar secara frontend -->
+                                    format nominal yang benar secara frontend -->
                                     <?php
-                                                    $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");
-                                                    $nominal_depan_max = number_format($thread->max_price, 0, ",", ".");
-                                                ?>
+                                            $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");
+                                            $nominal_depan_max = number_format($thread->max_price, 0, ",", ".");
+                                        ?>
                                     <span>Rp {{ $nominal_depan_min }}
                                     </span> - <span>Rp
                                     </span>{{ $nominal_depan_max }}
@@ -115,10 +116,12 @@
                             <div class="talents-apply-wrapper">
                                 <h3 class="talents-apply"><span>2 </span>talent(s) has apply this offer</h3>
                                 <h3 class="view-appliers">
-                                    <a href="/view/appliers">View Appliers</a>
+                                    <a href="/view/appliers/{{$thread->id}}">View Appliers</a>
                                 </h3>
                             </div>
                         </div>
+                        <a href="/edit-thread/{{$thread->id}}" class="edit-thread"><i
+                                class="fa-regular fa-pen-to-square"></i></a>
                         <a href="/delete-thread/{{ $thread->id }}" class="delete-thread"><i
                                 class="fa-solid fa-trash"></i></a>
                     </div>
@@ -129,6 +132,8 @@
             @endif
             @endforeach
             @endif
+
+
 
         </div>
         <!-- THREAD CONTENT WRAPPER -->

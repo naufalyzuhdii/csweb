@@ -2,6 +2,7 @@
 .header {
     width: 100%;
     height: 10vh;
+    font-family: "Baloo 2", cursive;
 }
 
 .navigation {
@@ -56,6 +57,7 @@ ul li {
 
 .main-navigation li ul li:hover {
     background-color: white;
+    text-decoration: none;
     border-radius: 0.5rem;
 }
 
@@ -64,6 +66,7 @@ ul li > a {
     font-weight: 500;
     font-size: 1.8rem;
     color: var(--deepblue);
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -73,6 +76,7 @@ ul li > a {
     justify-content: center;
     align-items: center;
     text-align: center;
+    text-decoration: none;
     color: var(--white-color);
 }
 
@@ -130,45 +134,27 @@ ul ul ul {
     text-align: center;
 }
 
-.thread-navbar:hover ul {
-    display: block;
-}
-
 .thread-links {
     width: 100%;
     font-weight: 500;
     font-size: 1.8rem;
     color: var(--white-color);
+    text-decoration: none;
     cursor: pointer;
 }
 
-.thread-navbar ul {
-    position: absolute;
-    height: fit-content;
-    bottom: -80%;
-    background-color: var(--secondarycolor);
-    width: fit-content;
-    border-radius: 0.5rem;
-    display: none;
-    z-index: 200;
-}
-
-.thread-navbar ul li {
-    width: 100%;
-    text-align: left;
-}
-
-.thread-navbar ul li a {
+.thread-navbar a {
     width: 100%;
     font-weight: 500;
     font-size: 1.8rem;
-    color: var(--deepblue);
     cursor: pointer;
     border-radius: 0.5rem;
+    color: white;
+    text-decoration: none;
 }
 
-.thread-navbar ul li a:hover {
-    background-color: var(--white-color);
+.thread-navbar a:hover {
+    color: rgb(255, 255, 255, 0.8);
 }
 
 /* THREAD */
@@ -235,35 +221,11 @@ ul ul ul {
     font-size: 1.8rem;
     color: var(--white-color);
     cursor: pointer;
+    text-decoration: none;
 }
 
-.progress-navbar ul {
-    position: absolute;
-    height: fit-content;
-    bottom: -50%;
-    background-color: var(--secondarycolor);
-    width: fit-content;
-    border-radius: 0.5rem;
-    display: none;
-    z-index: 200;
-}
-
-.progress-navbar ul li {
-    width: 100%;
-    text-align: left;
-}
-
-.progress-navbar ul li a {
-    width: 100%;
-    font-weight: 500;
-    font-size: 1.8rem;
-    color: var(--deepblue);
-    cursor: pointer;
-    border-radius: 0.5rem;
-}
-
-.progress-navbar ul li a:hover {
-    background-color: var(--white-color);
+.progress-navbar a:hover {
+    color: rgb(255, 255, 255, 0.8);
 }
 
 /* Progress Nav */
@@ -289,6 +251,7 @@ ul ul ul {
     font-size: 1.8rem;
     color: var(--white-color);
     cursor: pointer;
+    text-decoration: none;
 }
 
 /* My Course */
@@ -313,9 +276,10 @@ ul ul ul {
     align-items: center;
 }
 
-.profile-navbar-links i {
-    font-size: 1.5rem;
-    color: white;
+.profile-navbar-links img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
 .profile-navbar ul {

@@ -73,6 +73,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    position: relative;
 }
 
 .learner-thread-name {
@@ -194,6 +195,25 @@
     font-weight: 900;
     color: white;
 }
+
+.chat-btn {
+    position: absolute;
+    width: 15rem;
+    height: 3.5rem;
+    background-color: var(--primarycolor);
+    border-radius: 0.5rem;
+    right: 5%;
+}
+.chat-btn a {
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* ================== FIRST SECTION ===================== */
 
 /* ================== SECOND SECTION ===================== */
@@ -256,11 +276,6 @@
 .job-duration-section > div > h4 {
     font-size: 1.6rem;
     font-weight: 400;
-}
-
-.empty {
-    visibility: none;
-    opacity: 0;
 }
 
 /* ================== SECOND SECTION ===================== */
@@ -405,18 +420,20 @@
     display: flex;
 }
 
-.row_detail h3 {
-    font-size: 1.6rem;
-    font-weight: 400;
-}
+.row_detail h3,
 .row_detail span {
     font-size: 1.6rem;
+    font-weight: 500;
 }
 
 .label_tag {
     width: 60%;
     display: flex;
     justify-content: space-between;
+}
+
+.row_detail:nth-child(3) > div h3 {
+    color: green;
 }
 
 .price_tag {
