@@ -80,7 +80,6 @@ Route::get('/view/talent-profile', [CourseController::class, 'view_talent_profil
 // Route::get('/view/topic-course', [CourseController::class, 'view_topic_course']);
 // Route::get('/view/topic-course-detail', [CourseController::class, 'view_topic_course_detail']);
 // Route::get('/getcourse', [CourseController::class, 'get_all']);
-// Route::post('/postcourse', [CourseController::class, 'post_course']);
 
 
 // =================================================================================================
@@ -166,7 +165,8 @@ Route::get('/view/my-activity-applied-jobs', [TalentController::class, 'view_tal
 
 // =========================================== My Courses ===========================================
 Route::get('/view/create-new-course', [TalentController::class, 'view_create_new_course'])->middleware('talent');
-Route::get('/view/my-courses', [TalentController::class, 'view_my_courses'])->middleware('talent');
+Route::post('/postcourse', [CourseController::class, 'post_course']);
+Route::get('/view/my-courses', [CourseController::class, 'my_courses'])->middleware('auth')->name('mycourse');
 Route::get('/view/my-courses/my-course-detail-chapter', [TalentController::class, 'view_my_course_detail_chapter'])->middleware('talent');
 Route::get('/detail-chapter/id/upload-new-video', [TalentController::class, 'view_my_course_detail_sub_chapter'])->middleware('talent');
 Route::get('/view/video-learning/id/', [TalentController::class, 'view_my_course_detail_video_learning'])->middleware('talent');

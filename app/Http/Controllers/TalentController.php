@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class TalentController extends Controller
 {
@@ -27,7 +30,8 @@ class TalentController extends Controller
     }
     public function view_my_courses()
     {
-        return view('talent.my-courses.my-courses');
+        $my_courses['my_courses'] = Course::where('user_id', Auth::id())->orderBy('title', 'asc')->get();
+        return view('talent.my-courses.my-courses')->with('my_courses', $my_courses);
     }
     public function view_my_course_detail_chapter()
     {
