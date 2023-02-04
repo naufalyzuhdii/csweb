@@ -25,7 +25,7 @@
                             <h2 class="topic-course-title">{{ $course->title }}</h2>
                             <h3 class="topic-course-category">
                                 <ul>
-                                    <li>{{ $course->category->name }}</li>
+                                    {{-- <li>{{ $course->category->name }}</li> --}}
                                 </ul>
                             </h3>
                             <h3 class="topic-course-author">{{ $course->author }}</h3>

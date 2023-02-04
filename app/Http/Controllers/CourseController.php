@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\Models\Course;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -54,12 +55,18 @@ class CourseController extends Controller
         return view('categories.topic-course-detail', ['course' => $course]);
     }
 
+    public function my_courses(){
+        $my_courses = Course::where('user_id',Auth::id())->orderBy('created_at','desc')->simplePaginate(15);
+        return view('talent.my-courses.my-courses')->with('my_courses', $my_courses);
+    }
+
     public function post_course(Request $request)
     {
+        // $course_video = [];
         $rules = [
             'title' => 'required|unique:courses',
             'description' => 'required',
-            'author' => 'required',
+            // 'author' => 'required',
             'price' => 'required',
             'image' => 'required|image'
         ];
@@ -67,12 +74,23 @@ class CourseController extends Controller
         if ($validator->fails()) {
             return back()->withErrors($validator);
         }
+        // $course_video[] = [
+        //     'video' => $video,
+        //     'video_title' => $video_title,
+        // ];
+        // $course = Course::create([
+        //     'title' => request('title'),
+        //     'title' => request('title'),
+        //     'title' => request('title'),
+        //     'title' => request('title'),
+        // ])
         $course = new Course();
+        $course -> user_id = Auth::user()->id;
         $course->title = $request->title;
         $course->description = $request->description;
-        $course->author = $request->author;
+        // $course->author = Auth::id();
         $course->price = $request->price;
-        $course->category_id = $request->category;
+        // $course->category_id = $request->category;
 
         $file = $request->file('image');
         $file_name = time() . $file->getClientOriginalName();
@@ -80,7 +98,7 @@ class CourseController extends Controller
         $course->image = 'images/' . $file_name;
 
         $course->save();
-        return ["Post Course Success!"];
+        return redirect('/view/my-courses');
     }
 
     public function update_course(Request $request)

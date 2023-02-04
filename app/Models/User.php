@@ -45,7 +45,7 @@ class User extends Authenticatable
     ];
 
     public function course(){
-        return $this->hasMany(Course::class);
+        return $this->hasMany(Course::class, 'user_id', 'id');
     }
 
     public function thread(){

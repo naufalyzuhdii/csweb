@@ -16,20 +16,21 @@
 
         <!-- Content Wrapper -->
         <div class="create-new-course-content-wrapper">
-            <form action="/create-new-course" method="get" id="form-create-new-course">
+            <form action="/postcourse" method="POST" id="form-create-new-course" enctype="multipart/form-data">
+                @csrf
                 <div class="course-title-wrapper">
                     <label for="">Course Title</label>
-                    <input type="text" name="course-title">
+                    <input type="text" name="title">
                 </div>
                 <div class="course-description-wrapper">
                     <label for="">Course Description</label>
-                    <textarea name="course-description" cols="30" rows="10"></textarea>
+                    <textarea name="description" cols="30" rows="10"></textarea>
                 </div>
                 <div class="course-price-wrapper">
                     <label for="">Course Price</label>
                     <div class="inputed-price-wrapper">
                         <span>Rp</span>
-                        <input type="text" name="course-price" id="rupiah" maxlength="11">
+                        <input type="text" name="price" id="rupiah" maxlength="11">
                     </div>
                 </div>
                 <div class="course-image-wrapper">
@@ -41,7 +42,7 @@
                             </div>
                         </div>
                         <div class="file-input">
-                            <input type="file" id="file" />
+                            <input type="file" id="file" name="image"/>
                             <label for="file">choose a file</label>
                         </div>
                     </div>
