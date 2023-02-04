@@ -14,23 +14,6 @@
         </div>
         <!-- End Of Title Heading -->
 
-        <!-- Upper Nav Wrapper -->
-        <div class="upper-nav-wrapper">
-            <div class="nav-freelances" id="nav">
-                <a class="" href="/view/my-activity-freelance">
-                    Freelance
-                </a>
-            </div>
-            <div class="nav-applied-jobs" id="nav">
-                <a class="active" href="/view/my-activity-applied-jobs">
-                    Applied Jobs
-                </a>
-            </div>
-        </div>
-        <!-- End Of Upper Nav Wrapper -->
-
-
-
         <!-- My Activity Applied Job Content Wrapper -->
         <div class="my-activity-applied-job-content-wrapper">
             <a href="/view/applied-job-detail/" class="applied-job-content-item">

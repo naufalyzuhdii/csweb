@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('threads', function (Blueprint $table) {
+        Schema::create('threads_post_projects', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('offered_duration'); 
             $table->bigInteger('min_price');
             $table->bigInteger('max_price');
+            $table->bigInteger('fix_price')->default(0);
             // $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
@@ -36,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('threads');
+        Schema::dropIfExists('threads_post_projects');
     }
 };

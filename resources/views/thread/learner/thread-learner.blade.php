@@ -6,7 +6,8 @@
 @endsection
 
 @section('content')
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <section class="thread">
     <div class="thread-wrapper">
         <!-- THREAD CONTENT  -->
@@ -30,7 +31,7 @@
                     <!-- View My Thread -->
                     <div class="view-my-thread-btn-wrapper">
                         <div class="view-my-thread-btn">
-                            <a href="/view/my-thread/{{ Auth::user()->id }}">
+                            <a href="/view/threads-post-project/learner/mythread/{{ Auth::user()->id }}">
                                 My Thread
                             </a>
                         </div>
@@ -40,7 +41,7 @@
                     {{-- Create Thread --}}
                     <div class="create-thread-btn-wrapper">
                         <div class="create-thread-btn">
-                            <a href="/view/create-thread-page-learner">
+                            <a href="/view/threads-post-project/learner/create-thread">
                                 Create Thread
                             </a>
                         </div>
@@ -50,27 +51,19 @@
             </div>
             <!-- THREAD BTN WRAPPER -->
 
+            @if(session()->has('success-deleted'))
+            <div class="success">
+                {{session()->get('success-deleted')}}
+            </div>
+            @endif
+
             <!-- THREAD CONTENT WRAPPER -->
             <div class="thread-content-wrapper">
                 @if (count($threads) == 0)
-                <!-- Flash message untuk berhasil menghapus thread -->
-                @if(session()->has('success-deleted'))
-                <div class="success">
-                    {{session()->get('success-deleted')}}
+                <div class="warn">
+                    <h3>No Data</h3>
                 </div>
-                @endif
-
-                <div>
-                    <h1>No Data</h1>
-                </div>
-
                 @elseif (count($threads) > 0)
-
-                @if(session()->has('success-deleted'))
-                <div class="success">
-                    {{session()->get('success-deleted')}}
-                </div>
-                @endif
 
                 @foreach ($threads as $thread)
                 <div class="thread-content-learner-wrapper">
@@ -99,7 +92,7 @@
                             </div>
                             <div class="profile-learner-role-wrapper">
                                 <div class="profile-learner-role">
-                                    <h2>{{$thread->user->role}}</h2>
+                                    <h2>Learner</h2>
                                 </div>
                             </div>
                         </div>
@@ -168,8 +161,7 @@
                                     </h3>
                                 </div>
                             </div>
-                            <a href="/delete-thread/{{ $thread->user->id }}" class="delete-thread"><i
-                                    class="fa-solid fa-trash"></i></a>
+
                         </div>
                         <!-- LEARNER THREAD CONTENT -->
                     </div>
@@ -181,9 +173,7 @@
                 @endif
 
                 <div class="pagination">
-                    <h3>
-                        {{ $threads->links() }}
-                    </h3>
+                    {{ $threads->links() }}
                 </div>
             </div>
             <!-- THREAD CONTENT WRAPPER -->
@@ -191,13 +181,5 @@
         <!-- THREAD CONTENT  -->
     </div>
 </section>
-
-
-
-
-
-<script>
-
-</script>
 
 @endsection

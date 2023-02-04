@@ -150,6 +150,23 @@
     display: flex;
 }
 
+.learner-thread-project-title .content {
+    width: 70%;
+    height: 100%;
+}
+.learner-thread-project-title .content p {
+    max-width: 200%;
+}
+
+.learner-thread-project-required-skills {
+    width: 100%;
+}
+.learner-thread-project-required-skills .content {
+    width: 70%;
+}
+.learner-thread-project-required-skills .content li {
+}
+
 .title_wrapper {
     width: 25%;
     height: max-content;
@@ -162,14 +179,13 @@
 }
 .content {
     width: 75%;
-    height: fit-content;
 }
 .content p {
+    width: 160%;
     font-size: 1.6rem;
     font-weight: 400;
     margin-left: 1%;
 }
-
 .content ul {
     width: 100%;
     display: flex;
@@ -192,11 +208,6 @@
 }
 
 .learner-thread-project-required-skills {
-    width: 100%;
-    display: flex;
-}
-
-.learner-thread-project-description {
     width: 100%;
     display: flex;
 }
@@ -253,10 +264,17 @@
     padding: 0 0.5rem;
     border-radius: 0.7rem;
 }
-
+.edit-thread {
+    position: absolute;
+    left: 75%;
+    bottom: 2%;
+    color: var(--light-grey-color);
+    font-size: 1.6rem;
+}
 .delete-thread {
     position: absolute;
-    left: 90%;
+    left: 80%;
+    bottom: 2%;
     color: var(--light-grey-color);
     font-size: 1.6rem;
 }

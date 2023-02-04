@@ -6,7 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\ThreadController;
+use App\Http\Controllers\ThreadsPostProjectController;
+use App\Http\Controllers\ThreadsFreelancersTalentsController;
 use App\Http\Controllers\LearnerController;
 use App\Http\Controllers\TalentController;
 use App\Http\Controllers\AdminController;
@@ -88,19 +89,22 @@ Route::get('/view/talent-profile', [CourseController::class, 'view_talent_profil
 // =================================================================================================
 // ==================================== Thread Learner ======================================================
 // --Post a Project
-Route::get('/view/thread-learner', [ThreadController::class, 'view_thread_learner'])->name('thread-learner-page')->middleware('learner');
-Route::get('/view/create-thread-page-learner', [ThreadController::class, 'view_create_thread_page_learner'])->name('create-thread-page-learner')->middleware('learner');
-Route::get('/view/my-thread/{id}', [ThreadController::class, 'view_my_thread'])->name('my-thread')->middleware('learner');
-Route::get('/view/appliers', [ThreadController::class, 'view_my_appliers'])->middleware('learner');
-Route::post('/create_thread', [ThreadController::class, 'post_thread'])->middleware('learner');
+Route::get('/view/threads-post-project/learner', [ThreadsPostProjectController::class, 'view_ThreadsPostProject_learner'])->name('ThreadPostProject.Learner')->middleware('learner');
+Route::get('/view/threads-post-project/learner/create-thread', [ThreadsPostProjectController::class, 'view_ThreadsPostProject_learner_CreateThread'])->name('create-thread-page-learner')->middleware('learner');
+Route::get('/view/threads-post-project/learner/mythread/{id}', [ThreadsPostProjectController::class, 'view_ThreadsPostProject_learner_MyThread'])->name('my-thread')->middleware('learner');
+Route::get('/view/appliers', [ThreadsPostProjectController::class, 'view_my_appliers'])->middleware('learner');
+Route::post('/create_thread', [ThreadsPostProjectController::class, 'post_thread'])->middleware('learner');
 
-Route::get('/delete-thread/{id}', [ThreadController::class, 'delete_thread'])->middleware('learner');
 
+Route::get('/edit-thread/{id}', [ThreadsPostProjectController::class, 'edit_thread'])->middleware('learner');
+Route::put('/update-thread', [ThreadsPostProjectController::class, 'update_thread'])->middleware('learner');
+Route::get('/delete-thread/{id}', [ThreadsPostProjectController::class, 'delete_thread'])->middleware('learner');
+Route::get('/add-new-skills', [ThreadsPostProjectController::class, 'add_new_skills'])->middleware('learner');
 // --Post a Project
 
 // --Find Freelancers or Talents
-Route::get('/view/find-freelancers-talents', [ThreadController::class, 'view_find_freelancers_talents'])->middleware('learner');
-Route::get('/view/thread-talent-detail', [ThreadController::class, 'view_thread_talent_detail'])->middleware('learner');
+Route::get('/view/threads-freelancers-talents/learner', [ThreadsPostProjectController::class, 'view_find_freelancers_talents'])->middleware('learner');
+Route::get('/view/thread-talent-detail', [ThreadsPostProjectController::class, 'view_thread_talent_detail'])->middleware('learner');
 // --Find Freelancers or Talents
 // ==================================== Thread Learner ======================================================
 
@@ -143,10 +147,9 @@ Route::get('/checkout', [StoreController::class, 'checkout'])->name('checkout')-
 // =================================================================================================
 
 // =========================================== Thread Talent ====================================
-Route::get('/view/thread-talent', [ThreadController::class, 'view_thread_talent'])->middleware('talent');
-Route::get('/view/create-thread-page-talent', [ThreadController::class, 'view_create_thread_page_talent'])->middleware('talent');
-Route::get('/view/thread_apply_jobs', [ThreadController::class, 'view_thread_apply_jobs'])->middleware('talent');
-Route::get('/view/thread-apply-jobs-learner-detail', [ThreadController::class, 'view_thread_apply_jobs_learner_detail'])->middleware('talent');
+Route::get('/view/threads-apply-job/talent', [ThreadsFreelancersTalentsController::class, 'view_thread_apply_jobs'])->middleware('talent');
+Route::get('/view/thread-apply-jobs-learner-detail/{id}', [ThreadsFreelancersTalentsController::class, 'view_thread_apply_jobs_learner_detail'])->middleware('talent');
+Route::get('/view/threads-post-freelancers-shop/talent', [ThreadsFreelancersTalentsController::class, 'view_create_thread_page_talent'])->middleware('talent');
 // =========================================== Thread Talent ====================================
 
 // Forum

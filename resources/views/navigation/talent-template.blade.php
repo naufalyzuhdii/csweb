@@ -38,13 +38,7 @@
                 </ul>
             </div>
             <div class="thread-navbar">
-                <a href="#" class="thread-links">
-                    Thread
-                </a>
-                <ul>
-                    <li> <a href="/view/thread-talent">Post your freelance shop</a></li>
-                    <li> <a href="/view/thread_apply_jobs">Apply Jobs</a></li>
-                </ul>
+                <a href="/view/threads-apply-job/talent"> Jobs</a>
             </div>
         </div>
 
@@ -57,7 +51,7 @@
 
         <div class="nav-2">
             <div class="my-activity">
-                <a href="/view/my-activity-freelance">
+                <a href="/view/my-activity-applied-jobs">
                     My Activity
                 </a>
             </div>
@@ -67,9 +61,15 @@
                 </a>
             </div>
             <div class="profile-navbar">
+                @if(auth()->user()->image == 'no picture')
                 <a href="#profile" class="profile-navbar-links">
-                    <i class="fa-solid fa-user"></i>
+                    <img src="{{asset('storage/profile/account.png')}}" alt="">
                 </a>
+                @else
+                <a href="#profile" class="profile-navbar-links">
+                    <img src="{{asset('storage/profile/'.auth()->user()->image)}}" alt="">
+                </a>
+                @endif
                 <ul>
                     <h2>Hi, {{ old('name', Auth::user()->name) }}</h2>
                     <h3>You signed in as <b>{{ Auth::user()->role }}</b></h3>

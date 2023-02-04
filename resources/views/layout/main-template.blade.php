@@ -36,7 +36,9 @@
     @endif
     @else @include('navigation.guest-template')
     @endif
+
     @yield('content')
+
     <section class="footer">
         <div class="footer-wrapper">
             <a href="#" class="logo-footer">
@@ -54,6 +56,7 @@
             </div>
         </div>
     </section>
+
     @yield('script')
 </body>
 
