@@ -220,9 +220,13 @@ th {
     width: 3rem;
     text-align: center;
 }
-#title_input,
-#status_input {
+#title_input {
     width: 20rem;
+    text-align: center;
+}
+
+#status_input {
+    width: 10rem;
     text-align: center;
 }
 
