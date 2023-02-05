@@ -13,8 +13,10 @@ class Skills extends Model
     {
         return $this->belongsTo(ThreadsPostProject::class);
     }
-    public function threadsfreelancerstalents()
-    {
-        return $this->belongsTo(ThreadsFreelancersTalents::class);
-    }
+    // public function user()
+    // {
+    //     return $this->belongsTo(User::class);
+    // }
+
+
 }

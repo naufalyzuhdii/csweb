@@ -26,5 +26,16 @@ class UserSeeder extends Seeder
             'certification_document' => '-'
         ]);
 
+        
+        DB::table('users')->insert([
+            'name' => 'calvin',
+            'email' => 'calvineuy@gmail.com',
+            'password' => bcrypt('calvin13'),
+            'dob' =>  '2000-01-01',
+            'phone' => '08111255516',
+            'role' => 'learner',
+            'certification_document' => '-'
+        ]);
+
     }
 }

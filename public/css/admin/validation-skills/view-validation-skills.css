@@ -1,0 +1,89 @@
+.validation-skills {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+    padding: 10rem 25rem;
+    display: flex;
+    justify-content: center;
+}
+
+.validation-skills-wrapper {
+    width: 75%;
+}
+
+/* ============== Title Heading ==================== */
+
+.title-heading h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.title-heading h1 span {
+    color: var(--primarycolor);
+}
+/* ============== Title Heading ==================== */
+.form-add-skills {
+    width: 20%;
+    height: 8rem;
+    margin: 2rem 0;
+}
+
+.form-add-skills .wrapper {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.form-add-skills .wrapper label {
+    font-size: 1.6rem;
+    font-family: 500;
+    color: black;
+}
+
+.btn {
+    width: 100%;
+}
+.form-add-skills button {
+    width: 80%;
+}
+
+/* ============== Certification Talent Approval Wrapper ==================== */
+.validation-skills-content-wrapper {
+    width: 100%;
+    height: fit-content;
+}
+table {
+    width: 100%;
+    margin: 5redm 0;
+}
+table,
+th,
+td {
+    border: 0.1rem solid rgba(0, 0, 0, 0.6);
+}
+th {
+    background-color: var(--primarycolor);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.row-content td h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+#skills_id_input {
+    width: 5rem;
+    text-align: center;
+}
+#skills_name_input,
+#skills_status_input {
+    width: 20rem;
+    text-align: center;
+}
+
+/* ============== Certification Talent Approval Wrapper ==================== */

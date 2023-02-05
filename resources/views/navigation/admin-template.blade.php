@@ -1,23 +1,23 @@
 <section class="header">
     <div class="navigation">
-
         <a href="/view/admin-home" class="logo">
             <img src="{{asset('images/header/logo-white.png')}}">
         </a>
 
         <div class="nav-2">
             <div class="progress-navbar">
-                <a href="" class="progress-navbar-links" id="progress-navbar-links">
-                    My Progress
+                <a href="/view/admin-home" class="progress-navbar-links" id="progress-navbar-links">
+                    Validation Certification
                 </a>
-                <ul>
-                    <li> <a href="/view/my-progress/dealed-projects">Dealed Projects</a></li>
-                    <li> <a href="/view/my-progress/">My Posted Projects</a></li>
-                </ul>
+            </div>
+            <div class="progress-navbar">
+                <a href="/view/validation-skills" class="progress-navbar-links" id="progress-navbar-links">
+                    Validation Skills
+                </a>
             </div>
             <div class="course-navbar">
-                <a href="/view/my-learning" class="course-navbar-links" id="course-navbar-links">
-                    My Learning
+                <a href="/view/validation-course" class="course-navbar-links" id="course-navbar-links">
+                    Validation Course
                 </a>
             </div>
 
@@ -37,7 +37,6 @@
         </div>
 
     </div>
-
 </section>
 {{-- End Of Section Header --}}
 

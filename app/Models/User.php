@@ -56,4 +56,8 @@ class User extends Authenticatable
         return $this->hasMany(ThreadsFreelancersTalents::class);
     }
 
+    // public function skills(){
+    //     return $this->hasMany(Skills::class);
+    // }
+
 }

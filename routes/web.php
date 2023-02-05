@@ -58,11 +58,27 @@ Route::get('/view/certification-document/{$id}', [AdminController::class, 'view_
 Route::put('/update-certification-status', [AdminController::class, 'update_certification_status'])->name('update.certification-status')->middleware('admin');
 Route::get('/view/edit/{id}', [AdminController::class, 'view_edit'])->middleware('admin');
 
-// Admin only
+Route::get('/view/validation-skills', [AdminController::class, 'view_validation_skills'])->name('validation.skills.page')->middleware('admin');
+Route::post('/add-skills', [AdminController::class, 'add_skills'])->middleware('admin');
+Route::put('/update_skills', [AdminController::class, 'update_skills'])->middleware('admin');
+Route::get('/delete-skills/{id}', [AdminController::class, 'delete_skills'])->middleware('admin');
+
+Route::get('/view/validation-course', [AdminController::class, 'view_validation_course'])->name('view.validation-course')->middleware('admin');
+Route::post('/add-new-course', [AdminController::class, 'add_new_course'])->name('add.new-course')->middleware('admin');
+Route::put('/update_course', [AdminController::class, 'update_course'])->name('update.course')->middleware('admin');
+Route::get('/delete-course/{id}', [AdminController::class, 'delete_course'])->middleware('admin');
+
+// End of Admin only
+
+
+
 Route::post('/switch_role', [UserController::class, 'switch_role'])->name('switch-role.update')->middleware('both');
 
 Route::get('/view/upload-certification-page/{id}', [UserController::class, 'view_upload_certification_page'])->middleware('learner');
 Route::put('/upload-user-certification',[UserController::class, 'upload_user_certification'])->name('upload.user.certification')->middleware('learner');
+
+
+
 
 // ==================================== Auth ======================================================
 

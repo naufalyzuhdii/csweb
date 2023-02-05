@@ -24,31 +24,31 @@
 
         <!-- My Courses Content -->
         @if (count($my_courses) > 0)
-            @foreach ($my_courses as $my_course)
-                <div class="my-courses-content-wrapper">
-                    <a href="/view/my-courses/my-course-detail-chapter" class="course-links">
-                        <!-- Course Image Wrapper -->
-                        <div class="course-image-wrapper">
-                            <div class="course-image">
-                                <img src="{{ Storage::url($my_course->image) }}" alt="">
-                            </div>
-                        </div>
-                        <!-- Course Image Wrapper -->
-
-                        <!-- Course Text Content -->
-                        <div class="course-text-content">
-                            <h2 class="course-title">{{ $my_course->title }}</h2>
-                            <h3 class="course-category">
-                                <ul>
-                                    {{-- <li>Computer</li> --}}
-                                </ul>
-                            </h3>
-                            <h3 class="course-author">{{ $my_course->user->name }}</h3>
-                        </div>
-                        <!-- Course Text Content -->
-                    </a>
+        @foreach ($my_courses as $my_course)
+        <div class="my-courses-content-wrapper">
+            <a href="/view/my-courses/my-course-detail-chapter" class="course-links">
+                <!-- Course Image Wrapper -->
+                <div class="course-image-wrapper">
+                    <div class="course-image">
+                        <img src="{{ Storage::url($my_course->image) }}" alt="">
+                    </div>
                 </div>
-            @endforeach
+                <!-- Course Image Wrapper -->
+
+                <!-- Course Text Content -->
+                <div class="course-text-content">
+                    <h2 class="course-title">{{ $my_course->title }}</h2>
+                    <h3 class="course-category">
+                        <ul>
+                            {{-- <li>Computer</li> --}}
+                        </ul>
+                    </h3>
+                    <h3 class="course-author">{{ $my_course->user->name }}</h3>
+                </div>
+                <!-- Course Text Content -->
+            </a>
+        </div>
+        @endforeach
         @endif
         <!-- My Courses Content -->
 
