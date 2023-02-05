@@ -34,7 +34,7 @@
                 <h3 for="certification_status">Update Certification Status</h3>
                 <select id="certification_status" name="certification_status">
                     <option selected hidden>{{$user->certification_status}}</option>
-                    <option value="none">invalid</option>
+                    <option value="invalid">invalid</option>
                     <option value="valid">valid</option>
                 </select>
             </div>

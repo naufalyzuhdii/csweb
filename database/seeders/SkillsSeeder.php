@@ -15,35 +15,24 @@ class SkillsSeeder extends Seeder
     public function run()
     {
         DB::table('skills')->insert([
-            'id' => '1',
             'name' => 'Bahasa Indonesia'
-
         ]);
         DB::table('skills')->insert([
-            'id' => '2',
             'name' => 'Bahasa Inggris'
-
         ]);
         DB::table('skills')->insert([
-            'id' => '3',
             'name' => 'Laravel'
-
         ]);
         DB::table('skills')->insert([
-            'id' => '4',
             'name' => 'Lorem Ipsum'
-
         ]);        
         DB::table('skills')->insert([
-            'id' => '5',
             'name' => 'Lupa Dah'
         ]);
         DB::table('skills')->insert([
-            'id' => '6',
             'name' => 'UDANG'
         ]);
         DB::table('skills')->insert([
-            'id' => '7',
             'name' => 'LUUna'
         ]);
     }

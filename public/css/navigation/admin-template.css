@@ -11,13 +11,9 @@
     display: flex;
     justify-content: space-evenly;
 }
-.nav-1 {
-    width: 30%;
-    display: flex;
-    justify-content: space-around;
-}
+
 .nav-2 {
-    width: 30%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
 }
