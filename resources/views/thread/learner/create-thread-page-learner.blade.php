@@ -79,7 +79,9 @@
                         <h3>What skills are required?</h3>
                         <select name="skills_requirement" id="" required>
                             @foreach($skills as $skills)
+                            @if($skills->status == 'valid')
                             <option value="{{ $skills->name }}">{{ $skills->name }}</option>
+                            @endif
                             @endforeach
                         </select>
                         <div class="add-skills" onclick="myFunction()">

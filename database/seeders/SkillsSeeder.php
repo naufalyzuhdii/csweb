@@ -24,16 +24,16 @@ class SkillsSeeder extends Seeder
             'name' => 'Laravel'
         ]);
         DB::table('skills')->insert([
-            'name' => 'Lorem Ipsum'
+            'name' => 'ReactJs'
         ]);        
         DB::table('skills')->insert([
-            'name' => 'Lupa Dah'
+            'name' => 'HTML/CSS/Javascript'
         ]);
         DB::table('skills')->insert([
-            'name' => 'UDANG'
+            'name' => 'Operating System'
         ]);
         DB::table('skills')->insert([
-            'name' => 'LUUna'
+            'name' => 'Algebra'
         ]);
     }
 }
