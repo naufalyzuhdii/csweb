@@ -14,13 +14,13 @@
         </div>
         <!-- End Of Title Heading -->
 
-
         <!-- Content Wrapper -->
         <div class="my-course-detail-chapter-content-wrapper">
-            <form action="/upload-detail-chapter" method="get" id="form-upload-detail-chapter">
+            <form action="/addchapter" enctype="multipart/form-data" method="POST" id="form-upload-detail-chapter">
+                @csrf
                 <div class="course-chapter-title-wrapper">
                     <label for="">Course Chapter Title</label>
-                    <input type="text" name="course-chapter-title">
+                    <input type="text" name="chapter">
                 </div>
                 <div class="button-submit-wrapper">
                     <button type="submit" value="submit" class="submit-btn">
@@ -31,6 +31,8 @@
         </div>
         <!-- Content Wrapper -->
 
+
+
         <!-- Posted Titles Chapter -->
         <div class="posted-my-course-detail-chapter-content-wrapper">
             <div class="posted-chapter-heading">
@@ -40,7 +42,7 @@
                 <div class="posted-chapter-links-wrapper">
                     <div class="posted-chapter-links">
                         <div class="posted-chapter-title">
-                            <h3>BAB 1 : Introduction</h3>
+                            <h3>BAB 1 : Intro</h3>
                         </div>
                         <i class="fa-sharp fa-solid fa-play" id="arrow-chapter"></i>
                         <a href="/detail-chapter/id/upload-new-video" class="upload-new-video">Upload new video</a>

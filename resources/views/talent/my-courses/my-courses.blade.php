@@ -26,7 +26,7 @@
         @if (count($my_courses) > 0)
         @foreach ($my_courses as $my_course)
         <div class="my-courses-content-wrapper">
-            <a href="/view/my-courses/my-course-detail-chapter" class="course-links">
+            <a href="/view/my-courses/my-course-detail-chapter/{{ $my_course->id }}" class="course-links">
                 <!-- Course Image Wrapper -->
                 <div class="course-image-wrapper">
                     <div class="course-image">
