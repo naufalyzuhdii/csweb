@@ -18,10 +18,8 @@ return new class extends Migration
             // $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-
             $table->string('title');
             $table->string('description');
-            // $table->string('author');
             $table->bigInteger('price');
             $table->string('image');
             $table->string('status')->default('invalid');

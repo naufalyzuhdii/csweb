@@ -9,8 +9,12 @@ class CourseDetail extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'chapter'
+    ];
+
     public function course(){
-        return $this->belongsTo(Course::class);
+        return $this->belongsTo(Course::class, 'course_id');
     }
 
     public function course_video(){

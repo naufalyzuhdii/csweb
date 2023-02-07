@@ -3,14 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\TalentController;
+use App\Http\Controllers\LearnerController;
+use App\Http\Controllers\MyLearningController;
+use App\Http\Controllers\CourseDetailController;
 use App\Http\Controllers\ThreadsPostProjectController;
 use App\Http\Controllers\ThreadsFreelancersTalentsController;
-use App\Http\Controllers\LearnerController;
-use App\Http\Controllers\TalentController;
-use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -132,7 +134,7 @@ Route::get('/view/details-information/', [LearnerController::class, 'view_my_dea
 //==================================== My Progress ====================================
 
 //==================================== My Learning ====================================
-Route::get('/view/my-learning', [LearnerController::class, 'view_my_learning'])->name('my_learning')->middleware('learner');
+Route::get('/view/my-learning', [MyLearningController::class, 'show_mylearning'])->name('my_learning')->middleware('learner');
 Route::get('/view/my-learning/course-learned-detail', [LearnerController::class, 'view_course_learned_detail'])->middleware('learner');
 //==================================== My Learning ====================================
 
@@ -144,16 +146,6 @@ Route::get('/addtocart/{id}', [StoreController::class, 'add_to_cart'])->name('ad
 Route::get('/removecart/{id}', [StoreController::class, 'remove_cart'])->name('removecart')->middleware('learner');
 Route::get('/checkout', [StoreController::class, 'checkout'])->name('checkout')->middleware('learner');
 //  =========================================== Navigation Learner ===========================================
-
-
-
-
-
-
-
-
-
-
 
 
 // =================================================================================================
@@ -182,7 +174,9 @@ Route::get('/view/my-activity-applied-jobs', [TalentController::class, 'view_tal
 Route::get('/view/create-new-course', [TalentController::class, 'view_create_new_course'])->middleware('talent');
 Route::post('/postcourse', [CourseController::class, 'post_course']);
 Route::get('/view/my-courses', [CourseController::class, 'my_courses'])->middleware('auth')->name('mycourse');
-Route::get('/view/my-courses/my-course-detail-chapter', [TalentController::class, 'view_my_course_detail_chapter'])->middleware('talent');
+Route::get('/view/my-courses/my-course-detail-chapter/{id}', [CourseDetailController::class, 'my_course_detail'])->middleware('talent');
+Route::get('/showmateri/{id}', [CourseDetailController::class, 'show_materi'])->middleware('talent')->name('showmateri');
+Route::post('/addchapter', [CourseDetailController::class, 'add_chapter'])->middleware('talent');
 Route::get('/detail-chapter/id/upload-new-video', [TalentController::class, 'view_my_course_detail_sub_chapter'])->middleware('talent');
 Route::get('/view/video-learning/id/', [TalentController::class, 'view_my_course_detail_video_learning'])->middleware('talent');
 

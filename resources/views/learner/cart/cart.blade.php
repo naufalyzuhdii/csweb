@@ -56,7 +56,7 @@
                                                     {{-- <li>{{ $val[category->name] }}</li> --}}
                                                 </ul>
                                             </h3>
-                                            <h3 class="courses-cart-author">{{ $val['author'] }}</h3>
+                                            {{-- <h3 class="courses-cart-author">{{ $val['user']['name'] }}</h3> --}}
                                             <h3 class="courses-total-hours"> <span>2 </span> total hours</h3>
                                         </div>
                                         <div class="courses-cart-data-price">

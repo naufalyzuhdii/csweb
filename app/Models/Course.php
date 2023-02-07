@@ -20,16 +20,16 @@ class Course extends Model
     }
 
     public function category(){
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Category::class);
     }
 
     public function CourseDetail(){
         return $this->hasMany(CourseDetail::class);
     }
 
-    // public function transaction_detail(){
-    //     return $this->hasMany(TransactionDetail::class);
-    // }
+    public function transaction_detail(){
+        return $this->belongsTo(TransactionDetail::class);
+    }
 
     // public function transaction_header(){
     //     return $this->hasMany(Tra)
