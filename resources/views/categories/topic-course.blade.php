@@ -28,7 +28,7 @@
                                     {{-- <li>{{ $course->category->name }}</li> --}}
                                 </ul>
                             </h3>
-                            <h3 class="topic-course-author">{{ $course->author }}</h3>
+                            <h3 class="topic-course-author">{{ $course->user->name }}</h3>
                             <div class="topic-course-rating">
                                 <i class="fa-sharp fa-solid fa-star">4.5</i>
                                 <h4>( 3.000 reviews )</h4>

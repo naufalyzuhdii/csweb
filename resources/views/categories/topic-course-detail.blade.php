@@ -18,11 +18,11 @@
                     </h2>
                     <h3 class="topic-course-detail-category">
                         <ul>
-                            <li>{{ $course->category->name }}</li>
+                            {{-- <li>{{ $course->category->name }}</li> --}}
 
                         </ul>
                     </h3>
-                    <h3 class="topic-course-detail-author">Publish by <a href="/view/talent-profile">{{ $course->author }}</a></h3>
+                    <h3 class="topic-course-detail-author">Publish by <a href="/view/talent-profile">{{ $course->user->name }}</a></h3>
                     <div class="topic-course-detail-rating">
                         <i class="fa-sharp fa-solid fa-star">4.5</i>
                         <h4>( 3.000 reviews )</h4>

@@ -22,6 +22,12 @@
                     <label for="">Course Title</label>
                     <input type="text" name="title">
                 </div>
+                {{-- <div class="">
+                    <label for="">Category</label>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->name }}"></option> 
+                    @endforeach
+                </div> --}}
                 <div class="course-description-wrapper">
                     <label for="">Course Description</label>
                     <textarea name="description" cols="30" rows="10"></textarea>

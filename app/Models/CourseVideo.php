@@ -10,6 +10,6 @@ class CourseVideo extends Model
     use HasFactory;
 
     public function course_detail(){
-        return $this->belongsTo(CourseDetail::class);
+        return $this->belongsTo(CourseDetail::class, 'course_detail_id');
     }
 }

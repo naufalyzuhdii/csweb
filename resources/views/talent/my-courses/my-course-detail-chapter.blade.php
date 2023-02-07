@@ -39,40 +39,44 @@
                 <h3>Here are your course's content.</h3>
             </div>
             <div class="posted-chapter-wrapper">
-                <div class="posted-chapter-links-wrapper">
-                    <div class="posted-chapter-links">
-                        <div class="posted-chapter-title">
-                            <h3>BAB 1 : Intro</h3>
+                {{-- @dd($chapter) --}}
+                @foreach ($chapter as $cp)
+                
+                    <div class="posted-chapter-links-wrapper" href="/showmateri/{{ $cp->id }}">
+                        <div class="posted-chapter-links">
+                            <div class="posted-chapter-title">
+                                <h3>BAB {{ $cp->id }}: {{ $cp->chapter }}</h3>
+                            </div>
+                            <i class="fa-sharp fa-solid fa-play" id="arrow-chapter"></i>
+                            <a href="/detail-chapter/id/upload-new-video" class="upload-new-video">Upload new video</a>
+                            <a href="/delete-chapter/id/" class="delete-chapter"><i class="fa-solid fa-trash"></i></a>
                         </div>
-                        <i class="fa-sharp fa-solid fa-play" id="arrow-chapter"></i>
-                        <a href="/detail-chapter/id/upload-new-video" class="upload-new-video">Upload new video</a>
-                        <a href="/delete-chapter/id/" class="delete-chapter"><i class="fa-solid fa-trash"></i></a>
+                        <div class="posted-chapter-videos-content-wrapper">
+                            {{-- @dd($materi) --}}
+                            {{-- @if (count($materi) == 0)
+                                No Data
+
+                            @else --}}
+                                @foreach ($video as $vid)
+                                    
+                                    <div class="posted-videos-links">
+                                        <h3>
+                                            <a href="/view/video-learning/id/">1. {{ $vid->video_title }}</a>
+                                        </h3>
+                                        <h3>
+                                            <span>
+                                                1 hour
+                                            </span>
+                                        </h3>
+                                        <a href="/delete-videos/id/" class="delete-videos"><i class="fa-solid fa-trash"></i></a>
+                                    </div>
+
+                                @endforeach
+                            {{-- @endif --}}
+                        </div>
                     </div>
-                    <div class="posted-chapter-videos-content-wrapper">
-                        <div class="posted-videos-links">
-                            <h3>
-                                <a href="/view/video-learning/id/">1. Concept Introduction</a>
-                            </h3>
-                            <h3>
-                                <span>
-                                    1 hour
-                                </span>
-                            </h3>
-                            <a href="/delete-videos/id/" class="delete-videos"><i class="fa-solid fa-trash"></i></a>
-                        </div>
-                        <div class="posted-videos-links">
-                            <h3>
-                                <a href="/view/video-learning/id/">2. Basic of Technology</a>
-                            </h3>
-                            <h3>
-                                <span>
-                                    1 hour
-                                </span>
-                            </h3><a href="/delete-videos/id/" class="delete-videos"><i
-                                    class="fa-solid fa-trash"></i></a>
-                        </div>
-                    </div>
-                </div>
+                
+                @endforeach
 
             </div>
 

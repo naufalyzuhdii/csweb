@@ -8,6 +8,7 @@ use App\Http\Controllers\StoreController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CourseVideoController;
 use App\Http\Controllers\CourseDetailController;
 
 /*
@@ -41,5 +42,6 @@ Route::post('/updatecategory', [CategoryController::class, 'update_category']);
 Route::delete('/deletecategory/{id}', [CategoryController::class, 'delete_category']);
 
 Route::post('/messages', [ChatController::class, 'message']);
-Route::post('/uploadvideo', [CourseDetailController::class, 'upload_video'])->name('uploadvideo');
+Route::post('/addchapter', [CourseDetailController::class, 'add_chapter'])->name('adddchapter');
+Route::post('/uploadvideo', [CourseVideoController::class, 'upload_video'])->name('uploadvideo');
 Route::get('/addtocart/{id}', [StoreController::class, 'add_to_cart'])->name('addtocart');

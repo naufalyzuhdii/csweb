@@ -16,138 +16,44 @@
 
         <!-- Course Content Wrapper -->
         <div class="my-courses-content-wrapper">
-            <a href="/view/my-learning/course-learned-detail" class="course-links">
-                <!-- Course Image Wrapper -->
-                <div class="course-image-wrapper">
-                    <div class="course-image">
-                        <img src="{{asset('images/course/html.png')}}" alt="">
-                    </div>
-                </div>
-                <!-- Course Image Wrapper -->
+            @foreach ($my_learning as $ml)
+            
+            {{-- @foreach ($my_learning as $ml) --}}
+                {{-- @if ($courses->id == $my_learning->id) --}}
+                    {{-- @foreach ($courses as $course)
+                    @if ($course->id == $my_learning) --}}
+                        <a href="/view/my-learning/course-learned-detail" class="course-links">
+                            <!-- Course Image Wrapper -->
+                            <div class="course-image-wrapper">
+                                <div class="course-image">
+                                    <img src="{{ Storage::url($ml->image) }}" alt="">
+                                </div>
+                            </div>
+                            <!-- Course Image Wrapper -->
 
-                <!-- Course Text Content -->
-                <div class="course-text-content">
-                    <h2 class="course-title">HTML Basic</h2>
-                    <h3 class="course-category">
-                        <ul>
-                            <li>Computer</li>
-                            <li>Website</li>
-                        </ul>
-                    </h3>
-                    <h3 class="course-author">Udin Petot</h3>
-                </div>
-                <!-- Course Text Content -->
-            </a>
-            <a href="" class="course-links">
-                <!-- Course Image Wrapper -->
-                <div class="course-image-wrapper">
-                    <div class="course-image">
-                        <img src="{{asset('images/course/html.png')}}" alt="">
-                    </div>
-                </div>
-                <!-- Course Image Wrapper -->
+                            <!-- Course Text Content -->
+                            <div class="course-text-content">
+                                <h2 class="course-title">{{ $ml->title }}</h2>
+                                <h3 class="course-category">
+                                    <ul>
+                                        {{-- <li>Computer</li>
+                                        <li>Website</li> --}}
+                                    </ul>
+                                </h3>
+                                <h3 class="course-author"></h3>
+                            </div>
+                            <!-- Course Text Content -->
+                        </a>        
+                    {{-- @endif --}}
 
-                <!-- Course Text Content -->
-                <div class="course-text-content">
-                    <h2 class="course-title">HTML Basic</h2>
-                    <h3 class="course-category">
-                        <ul>
-                            <li>Computer</li>
-                            <li>Website</li>
-                        </ul>
-                    </h3>
-                    <h3 class="course-author">Udin Petot</h3>
-                </div>
-                <!-- Course Text Content -->
-            </a>
-            <a href="" class="course-links">
-                <!-- Course Image Wrapper -->
-                <div class="course-image-wrapper">
-                    <div class="course-image">
-                        <img src="{{asset('images/course/html.png')}}" alt="">
-                    </div>
-                </div>
-                <!-- Course Image Wrapper -->
+                        
+                    {{-- @endforeach  --}}
+                {{-- @endif --}}
 
-                <!-- Course Text Content -->
-                <div class="course-text-content">
-                    <h2 class="course-title">HTML Basic</h2>
-                    <h3 class="course-category">
-                        <ul>
-                            <li>Computer</li>
-                            <li>Website</li>
-                        </ul>
-                    </h3>
-                    <h3 class="course-author">Udin Petot</h3>
-                </div>
-                <!-- Course Text Content -->
-            </a>
-            <a href="" class="course-links">
-                <!-- Course Image Wrapper -->
-                <div class="course-image-wrapper">
-                    <div class="course-image">
-                        <img src="{{asset('images/course/html.png')}}" alt="">
-                    </div>
-                </div>
-                <!-- Course Image Wrapper -->
-
-                <!-- Course Text Content -->
-                <div class="course-text-content">
-                    <h2 class="course-title">HTML Basic</h2>
-                    <h3 class="course-category">
-                        <ul>
-                            <li>Computer</li>
-                            <li>Website</li>
-                        </ul>
-                    </h3>
-                    <h3 class="course-author">Udin Petot</h3>
-                </div>
-                <!-- Course Text Content -->
-            </a>
-            <a href="" class="course-links">
-                <!-- Course Image Wrapper -->
-                <div class="course-image-wrapper">
-                    <div class="course-image">
-                        <img src="{{asset('images/course/html.png')}}" alt="">
-                    </div>
-                </div>
-                <!-- Course Image Wrapper -->
-
-                <!-- Course Text Content -->
-                <div class="course-text-content">
-                    <h2 class="course-title">HTML Basic</h2>
-                    <h3 class="course-category">
-                        <ul>
-                            <li>Computer</li>
-                            <li>Website</li>
-                        </ul>
-                    </h3>
-                    <h3 class="course-author">Udin Petot</h3>
-                </div>
-                <!-- Course Text Content -->
-            </a>
-            <a href="" class="course-links">
-                <!-- Course Image Wrapper -->
-                <div class="course-image-wrapper">
-                    <div class="course-image">
-                        <img src="{{asset('images/course/html.png')}}" alt="">
-                    </div>
-                </div>
-                <!-- Course Image Wrapper -->
-
-                <!-- Course Text Content -->
-                <div class="course-text-content">
-                    <h2 class="course-title">HTML Basic</h2>
-                    <h3 class="course-category">
-                        <ul>
-                            <li>Computer</li>
-                            <li>Website</li>
-                        </ul>
-                    </h3>
-                    <h3 class="course-author">Udin Petot</h3>
-                </div>
-                <!-- Course Text Content -->
-            </a>
+                {{-- @endforeach --}}
+            @endforeach
+            
+            
         </div>
         <!-- Course Content Wrapper -->
     </div>

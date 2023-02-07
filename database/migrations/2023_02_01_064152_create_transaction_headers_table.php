@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('transaction_headers', function (Blueprint $table) {
             $table->id('transaction_header_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->date('transaction_date');
             $table->timestamps();
         });
