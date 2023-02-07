@@ -41,7 +41,7 @@
                                 <h2 class="danger">NO PICTURE</h2>
                                 @else
                                 <div class="picture">
-                                    <img src="{{ url('storage/profile/'.$user->image) }}" />
+                                    <img src="{{ url('profile/'.$user->image) }}" />
                                 </div>
                                 @endif
                             </div>

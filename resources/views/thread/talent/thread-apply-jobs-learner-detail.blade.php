@@ -12,11 +12,11 @@
                 <div class="profile-learner-image-wrapper">
                     @if($thread->user->image == 'no picture')
                     <div class="profile-learner-image">
-                        <img src="{{asset('storage/profile/account.png')}}" alt="">
+                        <img src="{{asset('profile/account.png')}}" alt="">
                     </div>
                     @else
                     <div class="profile-learner-image">
-                        <img src="{{asset('storage/profile/'.$thread->user->image)}}" alt="">
+                        <img src="{{asset('profile/'.$thread->user->image)}}" alt="">
                     </div>
                     @endif
                 </div>
@@ -123,7 +123,7 @@
                                 <span>:</span>
                             </div>
                             <div class="price_tag">
-                                <h3>Rp. {{$commision_depan_fix}}</h3>
+                                <h3>Rp. {{$commision_depan}}</h3>
                             </div>
                         </div>
                         <div class="row_detail">
@@ -132,7 +132,7 @@
                                 <span>:</span>
                             </div>
                             <div class="price_tag">
-                                <h3>Rp. {{$net_income_depan_fix}}</h3>
+                                <h3>Rp. {{$net_income_depan}}</h3>
                             </div>
                         </div>
                     </div>
@@ -140,7 +140,8 @@
             </div>
 
             <div class="apply-btn">
-                <a href="/apply-this-job/{{$thread->id}}">Apply This Job</a>
+                <!-- <a href="/apply-this-job/{{$thread->id}}">Apply This Job</a> -->
+                <a href="">Apply This Job</a>
             </div>
 
             <!-- <button form="negotiation-form" type="submit">Submit</button> -->

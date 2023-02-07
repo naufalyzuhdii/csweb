@@ -153,7 +153,7 @@
                                 <div class="profile-picture-content-table">
                                     <div class="picture-wrapper-table">
                                         <div class="picture-table">
-                                            <img src="{{ url('storage/validation-course/'.$course->image) }}">
+                                            <img src="{{ url('course/'.$course->image) }}">
                                         </div>
                                     </div>
                                     <div class="file-input-table">

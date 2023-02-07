@@ -41,11 +41,11 @@
                         <div class="profile-learner-image-wrapper">
                             @if($thread->user->image == 'no picture')
                             <div class="profile-learner-image">
-                                <img src="{{asset('storage/profile/account.png')}}" alt="">
+                                <img src="{{asset('profile/account.png')}}" alt="">
                             </div>
                             @else
                             <div class="profile-learner-image">
-                                <img src="{{asset('storage/profile/'.$thread->user->image)}}" alt="">
+                                <img src="{{asset('profile/'.$thread->user->image)}}" alt="">
                             </div>
                             @endif
                         </div>

@@ -51,7 +51,8 @@
 
         <div class="nav-2">
             <div class="my-activity">
-                <a href="/view/my-activity-applied-jobs">
+                <!-- <a href="/view/my-activity-applied-jobs"> -->
+                <a href="">
                     My Activity
                 </a>
             </div>
@@ -63,11 +64,11 @@
             <div class="profile-navbar">
                 @if(auth()->user()->image == 'no picture')
                 <a href="#profile" class="profile-navbar-links">
-                    <img src="{{asset('storage/profile/account.png')}}" alt="">
+                    <img src="{{asset('profile/account.png')}}" alt="">
                 </a>
                 @else
                 <a href="#profile" class="profile-navbar-links">
-                    <img src="{{asset('storage/profile/'.auth()->user()->image)}}" alt="">
+                    <img src="{{url('profile/'.auth()->user()->image)}}" alt="">
                 </a>
                 @endif
                 <ul>

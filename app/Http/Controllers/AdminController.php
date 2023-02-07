@@ -148,9 +148,9 @@ class AdminController extends Controller
           $file = $request->file('image');
           if($file != null)
           {
-              $file_name = time() . '.' . $file->getClientOriginalExtension();
-              Storage::putFileAs('public/validation-course', $file, $file_name);
-              $course->image =  $file_name;
+            $fileName = uniqid(). '.' . $file->getClientOriginalExtension();
+            $path = $file->move('course/',$fileName);
+            $course->image = $fileName;
           }
           $course->save();
           return redirect()->route('view.validation-course',compact('course'))
@@ -185,10 +185,11 @@ class AdminController extends Controller
           
           if($file != null)
           {
-            Storage::delete('public/validation-course/'.$course->image);
-            $file_name = time() . '.' . $file->getClientOriginalExtension();
-            Storage::putFileAs('public/validation-course', $file, $file_name);
-            $course->image =  $file_name;
+            File::delete('course/'.$course->image);
+            $fileName = uniqid(). '.' . $file->getClientOriginalExtension();
+            $path = $file->move('course/',$fileName);
+
+            $course->image =  $fileName;
           }
           $course->save();
 

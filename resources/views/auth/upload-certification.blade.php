@@ -28,7 +28,7 @@
                 <span>Once your document has been approved, you can continue to switch role and become talent. </span>
                 <input type="file" id="file" name="certification_document">
             </div>
-            <embed src="{{ url('storage/certification-document/'.$user->certification_document) }}" height="600px"
+            <embed src="{{ url('certification-document/'.$user->certification_document) }}" height="600px"
                 width="500px" />
             @error('certification_document')
             <div class="danger">

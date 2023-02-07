@@ -19,18 +19,18 @@
             <form action="/postcourse" method="POST" id="form-create-new-course" enctype="multipart/form-data">
                 @csrf
                 <div class="course-title-wrapper">
-                    <label for="">Course Title</label>
-                    <input type="text" name="title">
+                    <label for="CourseTitle">Course Title</label>
+                    <input type="text" name="title" id="CourseTitle">
                 </div>
                 <div class="course-description-wrapper">
-                    <label for="">Course Description</label>
-                    <textarea name="description" cols="30" rows="10"></textarea>
+                    <label for="CourseDescription">Course Description</label>
+                    <textarea name="description" cols="30" rows="10" id="CourseDescription"></textarea>
                 </div>
                 <div class="course-price-wrapper">
-                    <label for="">Course Price</label>
+                    <label for=CoursePrice">Course Price</label>
                     <div class="inputed-price-wrapper">
                         <span>Rp</span>
-                        <input type="text" name="price" id="rupiah" maxlength="11">
+                        <input type="number" name="price" id="CoursePrice">
                     </div>
                 </div>
                 <div class="course-image-wrapper">
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div class="file-input">
-                            <input type="file" id="file" name="image"/>
+                            <input type="file" id="file" name="image" />
                             <label for="file">choose a file</label>
                         </div>
                     </div>
@@ -60,29 +60,29 @@
 
 
 <script>
-var rupiah = document.getElementById("rupiah");
-rupiah.addEventListener("keyup", function(e) {
-    // tambahkan 'Rp.' pada saat form di ketik
-    // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
-    rupiah.value = formatRupiah(this.value, "Rp. ");
-});
+// var rupiah = document.getElementById("rupiah");
+// rupiah.addEventListener("keyup", function(e) {
+//     // tambahkan 'Rp.' pada saat form di ketik
+//     // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
+//     rupiah.value = formatRupiah(this.value, "Rp. ");
+// });
 
-function formatRupiah(angka, prefix) {
-    var number_string = angka.replace(/[^,\d]/g, "").toString(),
-        split = number_string.split(","),
-        sisa = split[0].length % 3,
-        rupiah = split[0].substr(0, sisa),
-        ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+// function formatRupiah(angka, prefix) {
+//     var number_string = angka.replace(/[^,\d]/g, "").toString(),
+//         split = number_string.split(","),
+//         sisa = split[0].length % 3,
+//         rupiah = split[0].substr(0, sisa),
+//         ribuan = split[0].substr(sisa).match(/\d{3}/gi);
 
-    // tambahkan titik jika yang di input sudah menjadi angka ribuan
-    if (ribuan) {
-        separator = sisa ? "." : "";
-        rupiah += separator + ribuan.join(".");
-    }
+//     // tambahkan titik jika yang di input sudah menjadi angka ribuan
+//     if (ribuan) {
+//         separator = sisa ? "." : "";
+//         rupiah += separator + ribuan.join(".");
+//     }
 
-    rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
-    return prefix == undefined ? rupiah : rupiah ? rupiah : "";
-}
+//     rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
+//     return prefix == undefined ? rupiah : rupiah ? rupiah : "";
+// }
 </script>
 
 @endsection

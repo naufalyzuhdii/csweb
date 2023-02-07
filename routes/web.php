@@ -163,9 +163,8 @@ Route::get('/checkout', [StoreController::class, 'checkout'])->name('checkout')-
 // =================================================================================================
 
 // =========================================== Thread Talent ====================================
-Route::get('/view/threads-apply-job/talent', [ThreadsFreelancersTalentsController::class, 'view_thread_apply_jobs'])->middleware('talent');
-Route::get('/view/thread-apply-jobs-learner-detail/{id}', [ThreadsFreelancersTalentsController::class, 'view_thread_apply_jobs_learner_detail'])->middleware('talent');
-Route::get('/view/threads-post-freelancers-shop/talent', [ThreadsFreelancersTalentsController::class, 'view_create_thread_page_talent'])->middleware('talent');
+Route::get('/view/threads-apply-job/talent', [TalentController::class, 'view_thread_apply_jobs'])->middleware('talent');
+Route::get('/view/thread-apply-jobs-learner-detail/{id}', [TalentController::class, 'view_thread_apply_jobs_learner_detail'])->middleware('talent');
 // =========================================== Thread Talent ====================================
 
 // Forum
@@ -183,7 +182,7 @@ Route::get('/view/my-activity-applied-jobs', [TalentController::class, 'view_tal
 Route::get('/view/create-new-course', [TalentController::class, 'view_create_new_course'])->middleware('talent');
 Route::post('/postcourse', [CourseController::class, 'post_course']);
 Route::get('/view/my-courses', [CourseController::class, 'my_courses'])->middleware('auth')->name('mycourse');
-Route::get('/view/my-courses/my-course-detail-chapter/{id}', [TalentController::class, 'view_my_course_detail_chapter'])->middleware('talent');
+Route::get('/view/my-courses/my-course-detail-chapter', [TalentController::class, 'view_my_course_detail_chapter'])->middleware('talent');
 Route::get('/detail-chapter/id/upload-new-video', [TalentController::class, 'view_my_course_detail_sub_chapter'])->middleware('talent');
 Route::get('/view/video-learning/id/', [TalentController::class, 'view_my_course_detail_video_learning'])->middleware('talent');
 

@@ -14,13 +14,14 @@
         </div>
         <!-- End Of Title Heading -->
 
+
         <!-- Content Wrapper -->
         <div class="my-course-detail-chapter-content-wrapper">
-            <form action="/addchapter" enctype="multipart/form-data" method="POST" id="form-upload-detail-chapter">
-                @csrf
+            <!-- <form action="/upload-detail-chapter" method="get" id="form-upload-detail-chapter"> -->
+            <form action="" method="get" id="form-upload-detail-chapter">
                 <div class="course-chapter-title-wrapper">
                     <label for="">Course Chapter Title</label>
-                    <input type="text" name="chapter">
+                    <input type="text" name="course-chapter-title">
                 </div>
                 <div class="button-submit-wrapper">
                     <button type="submit" value="submit" class="submit-btn">
@@ -31,8 +32,6 @@
         </div>
         <!-- Content Wrapper -->
 
-
-
         <!-- Posted Titles Chapter -->
         <div class="posted-my-course-detail-chapter-content-wrapper">
             <div class="posted-chapter-heading">
@@ -42,11 +41,12 @@
                 <div class="posted-chapter-links-wrapper">
                     <div class="posted-chapter-links">
                         <div class="posted-chapter-title">
-                            <h3>BAB 1 : Intro</h3>
+                            <h3>BAB 1 : Introduction</h3>
                         </div>
                         <i class="fa-sharp fa-solid fa-play" id="arrow-chapter"></i>
                         <a href="/detail-chapter/id/upload-new-video" class="upload-new-video">Upload new video</a>
-                        <a href="/delete-chapter/id/" class="delete-chapter"><i class="fa-solid fa-trash"></i></a>
+                        <!-- <a href="/delete-chapter/id/" class="delete-chapter"><i class="fa-solid fa-trash"></i></a> -->
+                        <a href="" class="delete-chapter"><i class="fa-solid fa-trash"></i></a>
                     </div>
                     <div class="posted-chapter-videos-content-wrapper">
                         <div class="posted-videos-links">
@@ -58,7 +58,8 @@
                                     1 hour
                                 </span>
                             </h3>
-                            <a href="/delete-videos/id/" class="delete-videos"><i class="fa-solid fa-trash"></i></a>
+                            <!-- <a href="/delete-videos/id/" class="delete-videos"><i class="fa-solid fa-trash"></i></a> -->
+                            <a href="" class="delete-videos"><i class="fa-solid fa-trash"></i></a>
                         </div>
                         <div class="posted-videos-links">
                             <h3>
@@ -68,8 +69,10 @@
                                 <span>
                                     1 hour
                                 </span>
-                            </h3><a href="/delete-videos/id/" class="delete-videos"><i
-                                    class="fa-solid fa-trash"></i></a>
+                            </h3>
+                            <!-- <a href="/delete-videos/id/" class="delete-videos"><i
+                                    class="fa-solid fa-trash"></i></a> -->
+                            <a href="" class="delete-videos"><i class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>

@@ -19,7 +19,11 @@
 
         <!-- THREAD CONTENT WRAPPER -->
         <div class="thread-content-wrapper">
-
+            @if (count($threads) == 0)
+            <div class="warn">
+                <h3>No Data</h3>
+            </div>
+            @elseif (count($threads) > 0)
 
             @foreach ($threads as $thread)
             <div class="thread-content-learner-wrapper">
@@ -38,11 +42,11 @@
                         <div class="profile-learner-image-wrapper">
                             @if($thread->user->image == 'no picture')
                             <div class="profile-learner-image">
-                                <img src="{{asset('storage/profile/account.png')}}" alt="">
+                                <img src="{{asset('profile/account.png')}}" alt="">
                             </div>
                             @else
                             <div class="profile-learner-image">
-                                <img src="{{asset('storage/profile/'.$thread->user->image)}}" alt="">
+                                <img src="{{asset('profile/'.$thread->user->image)}}" alt="">
                             </div>
                             @endif
                         </div>
@@ -128,6 +132,7 @@
             </div>
             <!-- </a> -->
             @endforeach
+            @endif
 
         </div>
         <!-- THREAD CONTENT WRAPPER -->

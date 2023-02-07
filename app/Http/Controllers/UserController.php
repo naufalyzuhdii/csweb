@@ -45,18 +45,21 @@ class UserController extends Controller
       auth()->user()->update($attr);
 
       $user = User::find($request->id);
-      $file = $request->file('image');
+      $image = $request->file('image');
 
       $id = $request->input('id');
 
-      if($file != null)
+      if($image != null)
       {
-        $current_file = $user->image; 
-        Storage::delete('public/profile/'.$current_file);
-        $filename = time() . '.' . $attr['image']->getClientOriginalExtension();
-        Storage::putFileAs('public/profile', $file, $filename);
-       
-        $user->image = $filename;
+        $current_image = $user->image; 
+        // Storage::delete('public/profile/'.$current_image);
+        // $filename = time() . '.' . $attr['image']->getClientOriginalExtension();
+        // Storage::putFileAs('public/profile', $file, $filename);
+        File::delete('profile/'.$current_image);
+        $fileName = uniqid(). '.' . $image->getClientOriginalExtension();
+        $path = $image->move('profile/',$fileName);
+
+        $user->image = $fileName;
       }
 
       $user->save();
@@ -104,10 +107,12 @@ class UserController extends Controller
       $file = $request->file('certification_document');
       if($file != null)
       {
-        $filename = time() . '.' . $file->getClientOriginalExtension();
-        Storage::putFileAs('public/certification-document', $file, $filename);
+        $current_document = $user->certification_document; 
+        File::delete('certification-document/'.$current_document);
+        $fileName = uniqid(). '.' . $file->getClientOriginalExtension();
+        $path = $file->move('certification-document/',$fileName);
         
-        $user -> certification_document = $filename;
+        $user -> certification_document = $fileName;
       }
       $user->save();
 
