@@ -82,11 +82,11 @@
                             <div class="profile-learner-image-wrapper">
                                 @if($thread->user->image == 'no picture')
                                 <div class="profile-learner-image">
-                                    <img src="{{asset('storage/profile/account.png')}}" alt="">
+                                    <img src="{{asset('profile/account.png')}}" alt="">
                                 </div>
                                 @else
                                 <div class="profile-learner-image">
-                                    <img src="{{asset('storage/profile/'.$thread->user->image)}}" alt="">
+                                    <img src="{{asset('profile/'.$thread->user->image)}}" alt="">
                                 </div>
                                 @endif
                             </div>
@@ -157,7 +157,8 @@
                                 <div class="talents-apply-wrapper">
                                     <h3 class="talents-apply"><span>2 </span>talent(s) has apply this offer</h3>
                                     <h3 class="view-appliers">
-                                        <a href="/view/appliers/{{$thread->id}}">View Appliers</a>
+                                        <!-- <a href="/view/appliers/{{$thread->id}}">View Appliers</a> -->
+                                        <a href="">View Appliers</a>
                                     </h3>
                                 </div>
                             </div>

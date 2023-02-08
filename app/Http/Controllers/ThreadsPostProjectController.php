@@ -15,19 +15,20 @@ use App\Http\Controllers\DB;
 
 class ThreadsPostProjectController extends Controller
 {
-    public function view_ThreadsPostProject_learner(){
+    public function view_ThreadsPostProject_learner()
+    {
+        
         $threads = ThreadsPostProject::latest();
+        
         if(request('search')){
             $threads->where('name', 'like', '%'. request('search'). '%');
         }
         // $products = Product::all();
 
-        
         return view('thread.learner.thread-learner', 
         [
             "threads" => $threads->paginate(5)
-        ],
-  );
+        ],);
     }
     public function view_ThreadsPostProject_learner_MyThread()
     {
@@ -169,14 +170,6 @@ class ThreadsPostProjectController extends Controller
         return view('thread.learner.create-thread-page-learner', compact('skills'));
     }
 
-
-
-    public function view_find_freelancers_talents()
-    {
-        $thread_freelancers_talents = ThreadsFreelancersTalents::all();
-
-        return view('thread.learner.find-freelancers-talent',compact('thread_freelancers_talents'));
-    }
     public function view_thread_talent_detail()
     {
         return view('thread.learner.thread-talent-detail');

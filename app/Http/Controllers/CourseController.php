@@ -57,8 +57,10 @@ class CourseController extends Controller
         return view('categories.topic-course-detail', ['course' => $course]);
     }
 
-    public function my_courses(){
+    public function my_courses()
+    {
         $my_courses = Course::where('user_id',Auth::id())->orderBy('created_at','asc')->simplePaginate(15);
+        
         return view('talent.my-courses.my-courses')->with('my_courses', $my_courses);
     }
 
@@ -66,9 +68,10 @@ class CourseController extends Controller
     {
         $rules = [
             'title' => 'required|unique:courses',
+            'category' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'image' => 'required|image',
+            'image' => 'required|image|mimes:jpg,png'
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
@@ -78,16 +81,25 @@ class CourseController extends Controller
         $course = new Course();
         $course -> user_id = Auth::user()->id;
         $course->title = $request->title;
+        $course->category_id = $request->category;
         $course->description = $request->description;
         $course->price = $request->price;
-        // $course->category_id = $request->category;
 
         $file = $request->file('image');
-        $file_name = time() . $file->getClientOriginalName();
-        Storage::putFileAs('public/images', $file, $file_name);
-        $course->image = 'images/' . $file_name;
+
+        if($file != null)
+        {
+            // $file_name = time() . $file->getClientOriginalName();
+            // Storage::putFileAs('public/images', $file, $file_name);
+            $fileName = uniqid(). '.' . $file->getClientOriginalExtension();
+            $path = $file->move('course/',$fileName);
+    
+            $course->image =  $fileName;
+        }
+
 
         $course->save();
+        
         return redirect('/view/my-courses');
     }
 
@@ -101,10 +113,15 @@ class CourseController extends Controller
         $course->category_id = $request->category!=null?$request->category : $course->category_id;
 
         if (isset($file)) {
-            $file_name = time() . $file->getClientOrOriginalName();
-            Storage::delete('public/' . $course->image);
-            Storage::putFileAs('public/images', $file, $file_name);
-            $course->image = 'public/' . $file_name;
+            // $file_name = time() . $file->getClientOrOriginalName();
+            // Storage::delete('public/' . $course->image);
+            // Storage::putFileAs('public/images', $file, $file_name);
+            // $course->image = 'public/' . $file_name;
+
+            $fileName = uniqid(). '.' . $file->getClientOriginalExtension();
+            $path = $file->move('course/',$fileName);
+
+            $course->image =  $fileName;
         }
 
         $course->save();

@@ -29,13 +29,15 @@
                     <div class="profile-learner-image-wrapper">
                         @if(auth()->user()->image == "no picture")
                         <div class="profile-learner-image">
-                            <img src="{{ url('storage/profile/account.png') }}" alt="">
+                            <img src="{{ url('profile/account.png') }}" alt="">
                         </div>
                         @else
                         <div class="profile-learner-image">
-                            <img src="{{ url('storage/profile/'.auth()->user()->image) }}" />
+                            <img src="{{ url('profile/'.auth()->user()->image) }}" />
                         </div>
                         @endif
+
+
                     </div>
                     <div class="profile-learner-role-wrapper">
                         <div class="profile-learner-role">
@@ -79,7 +81,9 @@
                         <h3>What skills are required?</h3>
                         <select name="skills_requirement" id="" required>
                             @foreach($skills as $skills)
+                            @if($skills->status == 'valid')
                             <option value="{{ $skills->name }}">{{ $skills->name }}</option>
+                            @endif
                             @endforeach
                         </select>
                         <div class="add-skills" onclick="myFunction()">

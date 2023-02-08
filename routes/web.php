@@ -155,9 +155,8 @@ Route::get('/checkout', [StoreController::class, 'checkout'])->name('checkout')-
 // =================================================================================================
 
 // =========================================== Thread Talent ====================================
-Route::get('/view/threads-apply-job/talent', [ThreadsFreelancersTalentsController::class, 'view_thread_apply_jobs'])->middleware('talent');
-Route::get('/view/thread-apply-jobs-learner-detail/{id}', [ThreadsFreelancersTalentsController::class, 'view_thread_apply_jobs_learner_detail'])->middleware('talent');
-Route::get('/view/threads-post-freelancers-shop/talent', [ThreadsFreelancersTalentsController::class, 'view_create_thread_page_talent'])->middleware('talent');
+Route::get('/view/threads-apply-job/talent', [TalentController::class, 'view_thread_apply_jobs'])->middleware('talent');
+Route::get('/view/thread-apply-jobs-learner-detail/{id}', [TalentController::class, 'view_thread_apply_jobs_learner_detail'])->middleware('talent');
 // =========================================== Thread Talent ====================================
 
 // Forum

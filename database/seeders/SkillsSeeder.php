@@ -21,19 +21,22 @@ class SkillsSeeder extends Seeder
             'name' => 'Bahasa Inggris'
         ]);
         DB::table('skills')->insert([
-            'name' => 'Laravel'
+            'name' => 'Laravel',
+            'status' => 'valid'
         ]);
         DB::table('skills')->insert([
-            'name' => 'Lorem Ipsum'
+            'name' => 'ReactJs',
+            'status' => 'valid'
         ]);        
         DB::table('skills')->insert([
-            'name' => 'Lupa Dah'
+            'name' => 'HTML/CSS/Javascript',
+            'status' => 'valid'
         ]);
         DB::table('skills')->insert([
-            'name' => 'UDANG'
+            'name' => 'Operating System'
         ]);
         DB::table('skills')->insert([
-            'name' => 'LUUna'
+            'name' => 'Algebra'
         ]);
     }
 }

@@ -69,11 +69,11 @@
               <div class="profile-navbar">
                   @if(auth()->user()->image == 'no picture')
                   <a href="#profile" class="profile-navbar-links">
-                      <img src="{{asset('storage/profile/account.png')}}" alt="">
+                      <img src="{{asset('profile/account.png')}}" alt="">
                   </a>
                   @else
                   <a href="#profile" class="profile-navbar-links">
-                      <img src="{{asset('storage/profile/'.auth()->user()->image)}}" alt="">
+                      <img src="{{url('profile/'.auth()->user()->image)}}" alt="">
                   </a>
                   @endif
 

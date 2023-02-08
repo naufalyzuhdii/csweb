@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Skills;
 use App\Models\Course;
+use App\Models\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -110,7 +111,8 @@ class AdminController extends Controller
       public function view_validation_course()
       {
         $course = Course::all();
-        return view('admin.validation-course.view-validation-course',compact('course'));
+        $category = Category::all();
+        return view('admin.validation-course.view-validation-course',compact('course','category'));
       }
 
       public function add_new_course(Request $request)
@@ -118,6 +120,7 @@ class AdminController extends Controller
           // $course_video = [];
           $rules = [
               'title' => 'required',
+              'category' => 'required',
               'description' => 'required',
               // 'author' => 'required',
               'price' => 'required',
@@ -140,17 +143,16 @@ class AdminController extends Controller
           $course = new Course();
           $course -> user_id = Auth::user()->id;
           $course->title = $request->title;
+          $course->category_id = $request->category;
           $course->description = $request->description;
-          // $course->author = Auth::id();
           $course->price = $request->price;
-          // $course->category_id = $request->category;
   
           $file = $request->file('image');
           if($file != null)
           {
-              $file_name = time() . '.' . $file->getClientOriginalExtension();
-              Storage::putFileAs('public/validation-course', $file, $file_name);
-              $course->image =  $file_name;
+            $fileName = uniqid(). '.' . $file->getClientOriginalExtension();
+            $path = $file->move('course/',$fileName);
+            $course->image = $fileName;
           }
           $course->save();
           return redirect()->route('view.validation-course',compact('course'))
@@ -161,6 +163,7 @@ class AdminController extends Controller
       {
         $rules = [
             'title_update' => 'required',
+            'category_update' => 'required',
             'description_update' => 'required',
             'price_update' => 'required',
             'image_update' => 'image|file|mimes:jpg,png|max:4024'
@@ -185,10 +188,11 @@ class AdminController extends Controller
           
           if($file != null)
           {
-            Storage::delete('public/validation-course/'.$course->image);
-            $file_name = time() . '.' . $file->getClientOriginalExtension();
-            Storage::putFileAs('public/validation-course', $file, $file_name);
-            $course->image =  $file_name;
+            File::delete('course/'.$course->image);
+            $fileName = uniqid(). '.' . $file->getClientOriginalExtension();
+            $path = $file->move('course/',$fileName);
+
+            $course->image =  $fileName;
           }
           $course->save();
 

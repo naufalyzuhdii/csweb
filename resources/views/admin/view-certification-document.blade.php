@@ -38,7 +38,7 @@
                     <option value="valid">valid</option>
                 </select>
             </div>
-            <embed src="{{ url('storage/certification-document/'.$user->certification_document) }}" height="600px"
+            <embed src="{{ url('certification-document/'.$user->certification_document) }}" height="600px"
                 width="500px" />
 
             @error('certification_status')

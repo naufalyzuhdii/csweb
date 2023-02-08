@@ -37,11 +37,11 @@
                         <div class="picture-wrapper">
                             @if($user->image == 'no picture')
                             <div class="picture">
-                                <img src="{{ url('storage/profile/account.png') }}" alt="">
+                                <img src="{{ url('profile/account.png') }}" alt="">
                             </div>
                             @else
                             <div class="picture">
-                                <img src="{{ url('storage/profile/'.$user->image) }}" />
+                                <img src="{{ url('profile/'.$user->image) }}" />
                             </div>
                             @endif
                         </div>

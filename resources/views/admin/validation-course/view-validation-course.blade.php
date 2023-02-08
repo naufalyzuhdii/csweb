@@ -25,6 +25,19 @@
                     {{$message}}
                 </div>
                 @enderror
+                <div class="course-category-wrapper">
+                    <label for="CourseCategory">Course Category</label>
+                    <select name="category" id="CourseCategory" required>
+                        @foreach($category as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                @error('category')
+                <div class="danger">
+                    {{$message}}
+                </div>
+                @enderror
                 <div class="course-description-wrapper">
                     <label for="">Course Description</label>
                     <textarea name="description" cols="30" rows="10"></textarea>
@@ -83,6 +96,7 @@
                 <tr>
                     <th>Course ID</th>
                     <th>User ID</th>
+                    <th>Category ID</th>
                     <th>Title</th>
                     <th>Description</th>
                     <th>Price</th>
@@ -110,6 +124,16 @@
                             <h3>
                                 <input type="text" name="user_id" value="{{$course->user_id}}" id="id_input">
                                 @error('user_id')
+                                <div class="danger">
+                                    {{$message}}
+                                </div>
+                                @enderror
+                            </h3>
+                        </td>
+                        <td>
+                            <h3>
+                                <input type="text" name="category_id" value="{{$course->category_id}}" id="id_input">
+                                @error('category_id')
                                 <div class="danger">
                                     {{$message}}
                                 </div>
@@ -153,7 +177,7 @@
                                 <div class="profile-picture-content-table">
                                     <div class="picture-wrapper-table">
                                         <div class="picture-table">
-                                            <img src="{{ url('storage/validation-course/'.$course->image) }}">
+                                            <img src="{{ url('course/'.$course->image) }}">
                                         </div>
                                     </div>
                                     <div class="file-input-table">
