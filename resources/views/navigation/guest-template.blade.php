@@ -27,12 +27,6 @@
                                     <li><a href="#3">Engineering</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#B">Mathemathic <i class="fa-sharp fa-solid fa-play"></i></a>
-                                <ul>
-                                    <li><a href="#11">Calculus</a></li>
-                                    <li><a href="#22">Algebra</a></li>
-                                </ul>
-                            </li>
                         </ul>
                     </li>
                 </ul>

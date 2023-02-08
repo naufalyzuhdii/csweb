@@ -19,6 +19,7 @@ class CategoryController extends Controller
         return ["Add Category Success"];
     }
 
+
     // public function on_create_course(){
     //     $categories = Category::all();
     //     return view('talent.my-courses.create-new-course', compact('categories'));

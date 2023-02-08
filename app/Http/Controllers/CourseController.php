@@ -57,18 +57,18 @@ class CourseController extends Controller
         return view('categories.topic-course-detail', ['course' => $course]);
     }
 
-    public function my_courses(){
+    public function my_courses()
+    {
         $my_courses = Course::where('user_id',Auth::id())->orderBy('created_at','asc')->simplePaginate(15);
+        
         return view('talent.my-courses.my-courses')->with('my_courses', $my_courses);
-
-
-
     }
 
     public function post_course(Request $request)
     {
         $rules = [
             'title' => 'required|unique:courses',
+            'category' => 'required',
             'description' => 'required',
             'price' => 'required',
             'image' => 'required|image|mimes:jpg,png'
@@ -81,9 +81,9 @@ class CourseController extends Controller
         $course = new Course();
         $course -> user_id = Auth::user()->id;
         $course->title = $request->title;
+        $course->category_id = $request->category;
         $course->description = $request->description;
         $course->price = $request->price;
-        // $course->category_id = $request->category;
 
         $file = $request->file('image');
 

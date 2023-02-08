@@ -22,16 +22,33 @@
                     <label for="CourseTitle">Course Title</label>
                     <input type="text" name="title" id="CourseTitle">
                 </div>
-                {{-- <div class="">
-                    <label for="">Category</label>
-                    @foreach ($categories as $category)
-                        <option value="{{ $category->name }}"></option> 
-                    @endforeach
-                </div> --}}
+                @error('title')
+                <div class="danger">
+                    {{$message}}
+                </div>
+                @enderror
+                <div class="course-category-wrapper">
+                    <label for="CourseCategory">Course Category</label>
+                    <select name="category" id="CourseCategory" required>
+                        @foreach($category as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                @error('category')
+                <div class="danger">
+                    {{$message}}
+                </div>
+                @enderror
                 <div class="course-description-wrapper">
                     <label for="CourseDescription">Course Description</label>
                     <textarea name="description" cols="30" rows="10" id="CourseDescription"></textarea>
                 </div>
+                @error('description')
+                <div class="danger">
+                    {{$message}}
+                </div>
+                @enderror
                 <div class="course-price-wrapper">
                     <label for=CoursePrice">Course Price</label>
                     <div class="inputed-price-wrapper">
@@ -39,6 +56,11 @@
                         <input type="number" name="price" id="CoursePrice">
                     </div>
                 </div>
+                @error('price')
+                <div class="danger">
+                    {{$message}}
+                </div>
+                @enderror
                 <div class="course-image-wrapper">
                     <label for="">Course Image</label>
                     <div class="profile-picture-content">
@@ -53,6 +75,11 @@
                         </div>
                     </div>
                 </div>
+                @error('image')
+                <div class="danger">
+                    {{$message}}
+                </div>
+                @enderror
                 <div class="button-submit-wrapper">
                     <button type="submit" value="submit" class="submit-btn">
                         Submit

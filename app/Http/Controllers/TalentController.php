@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Category;
 use App\Models\ThreadsPostProject;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -48,7 +49,8 @@ class TalentController extends Controller
 
     public function view_create_new_course()
     {
-        return view('talent.my-courses.create-new-course');
+        $category = Category::all();
+        return view('talent.my-courses.create-new-course',compact('category'));
     }
     public function view_my_courses()
     {
