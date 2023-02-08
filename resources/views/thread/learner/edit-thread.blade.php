@@ -67,7 +67,7 @@
                     <div class="learner-thread-description">
                         <h3>Description</h3>
                         <textarea name="description" maxlength="500"
-                            placeholder="Describe your project here ...">{{($thread->project_title)}}</textarea>
+                            placeholder="Describe your project here ...">{{($thread->description)}}</textarea>
                     </div>
                     @error('description')
                     <div class="danger">

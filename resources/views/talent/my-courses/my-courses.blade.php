@@ -42,11 +42,11 @@
 
                 <!-- Course Text Content -->
                 <div class="course-text-content">
-                    <h3 class="course-title">{{ $my_course->title }}</h2>
-                        <h3 class="course-category">
-                            {{$my_course->category_name}}
-                        </h3>
-                        <h3 class="course-author">{{ $my_course->user->name }}</h3>
+                    <h3 class="course-title">{{ $my_course->title }}</h3>
+                    <h3 class="course-category">
+                        {{$my_course->category->name}}
+                    </h3>
+                    <h3 class="course-author">{{ $my_course->user->name }}</h3>
                 </div>
                 <!-- Course Text Content -->
             </a>
