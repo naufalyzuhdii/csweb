@@ -9,12 +9,12 @@ class Course extends Model
 {
     use HasFactory;
 
-    protected $table = 'courses';
-    protected $primaryKey = 'course_id';
+    // protected $table = 'courses';
+    // protected $primaryKey = 'course_id';
 
-    protected $fillable = [
-        'title', 'description', 'price', 'image'
-    ];
+    // protected $fillable = [
+    //     'title', 'description', 'price', 'image'
+    // ];
     public function user(){
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
