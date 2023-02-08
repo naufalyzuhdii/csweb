@@ -34,6 +34,7 @@ class UserSeeder extends Seeder
             'dob' =>  '2000-01-01',
             'phone' => '0811125522',
             'role' => 'learner',
+            'certification_status' => 'valid',
             'certification_document' => '-'
         ]);
 

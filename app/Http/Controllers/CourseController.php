@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Auth;
 use App\Models\Course;
+use App\Models\Category;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -40,14 +41,16 @@ class CourseController extends Controller
     // CONTROLL FUNCTION
 
     public function show_course(){
-        $courses = Course::latest();
+        $courses = Course::all();
+
         if(request('search')){
             $courses->where('name', 'like', '%'. request('search'). '%');
         }
-        // $products = Product::all();
+        
         return view('categories.topic-course', [
-            "courses" => $courses->paginate(8)
+            "courses" => $courses
         ]);
+        
     }
 
     public function course_detail($id){
@@ -68,7 +71,6 @@ class CourseController extends Controller
     {
         $rules = [
             'title' => 'required|unique:courses',
-            'category' => 'required',
             'description' => 'required',
             'price' => 'required',
             'image' => 'required|image|mimes:jpg,png'
@@ -81,9 +83,9 @@ class CourseController extends Controller
         $course = new Course();
         $course -> user_id = Auth::user()->id;
         $course->title = $request->title;
-        $course->category_id = $request->category;
         $course->description = $request->description;
         $course->price = $request->price;
+        $course->category_id = $request->category;
 
         $file = $request->file('image');
 

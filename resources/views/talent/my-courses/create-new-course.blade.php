@@ -30,8 +30,8 @@
                 <div class="course-category-wrapper">
                     <label for="CourseCategory">Course Category</label>
                     <select name="category" id="CourseCategory" required>
-                        @foreach($category as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        @foreach($category as $ct)
+                        <option value="{{$ct->id}}">{{$ct->name}}</option>
                         @endforeach
                     </select>
                 </div>

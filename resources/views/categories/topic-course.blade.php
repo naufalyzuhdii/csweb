@@ -10,6 +10,8 @@
             <h2>Courses you can learn and started with</h2>
         </div>
         <div class="topic-course-content">
+            {{-- @dd($courses) --}}
+
             @if (count($courses) == 0)
             <div>
                 <h1>No Data</h1>
@@ -17,25 +19,26 @@
 
             @elseif (count($courses) > 0)
             @foreach ($courses as $course)
-            <a href="/view/topic-course-detail/{{ $course->id }}" class="topic-course-item">
-                <div class="topic-course-image">
-                    <img src="{{ Storage::url($course->image) }}" alt="">
-                </div>
-                <div class="topic-course-text-content">
-                    <h2 class="topic-course-title">{{ $course->title }}</h2>
-                    <h3 class="topic-course-category">
-                        <ul>
-                            <!-- <li>{{ $course->category->name }}</li>  -->
-                        </ul>
-                    </h3>
-                    <h3 class="topic-course-author">{{ $course->user->name }}</h3>
-                    <div class="topic-course-rating">
-                        <i class="fa-sharp fa-solid fa-star">4.5</i>
-                        <h4>( 3.000 reviews )</h4>
+            {{-- @dd($course->category->name) --}}
+                <a href="/view/topic-course-detail/{{ $course->id }}" class="topic-course-item">
+                    <div class="topic-course-image">
+                        <img src="{{ Storage::url($course->image) }}" alt="">
                     </div>
-                </div>
-                <h2 class="topic-course-price">Rp {{ $course->price }}</h2>
-            </a>
+                    <div class="topic-course-text-content">
+                        <h2 class="topic-course-title">{{ $course->title }}</h2>
+                        <h3 class="topic-course-category">
+                            <ul>
+                                <li>{{ $course->category->name }}</li>
+                            </ul>
+                        </h3>
+                        <h3 class="topic-course-author">{{ $course->user->name }}</h3>
+                        <div class="topic-course-rating">
+                            <i class="fa-sharp fa-solid fa-star">4.5</i>
+                            <h4>( 3.000 reviews )</h4>
+                        </div>
+                    </div>
+                    <h2 class="topic-course-price">Rp {{ $course->price }}</h2>
+                </a>
             @endforeach
 
             @endif

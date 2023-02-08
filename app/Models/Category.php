@@ -9,12 +9,15 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name', 'parent_id'
-    ];
+    // protected $table = 'categories';
+    // protected $primaryKey = 'category_id';
+
+    // protected $fillable = [
+    //     'name', 'parent_id'
+    // ];
 
     public function course(){
-        return $this->belongsTo(Course::class);
+        return $this->hasMany(Course::class);
     }
 
     public function thread(){
