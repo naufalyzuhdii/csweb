@@ -15,126 +15,27 @@
         <div class="course-content">
             <div class="swiper myCourseSwiper">
                 <div class="swiper-wrapper" id="swiperCourseWrapper">
+                    @foreach($course as $course)
                     <a href="" class="swiper-slide" id="card-slide">
                         <div class="course-card-image">
-                            <img src="{{asset('images/course/html.png')}}" alt="">
+                            <img src="{{asset('course/'.$course->image)}}" alt="">
                         </div>
                         <div class="course-text-content">
                             <h2 class="course-title">HTML Basic</h2>
                             <h3 class="course-category">
                                 <ul>
-                                    <li>Computer</li>
-                                    <li>Website</li>
+                                    <!-- <li>{{$course->category->name}}}</li> -->
                                 </ul>
                             </h3>
-                            <h3 class="course-author">Udin Petot</h3>
+                            <h3 class="course-author">{{$course->user->name}}</h3>
                             <div class="course-rating">
                                 <i class="fa-sharp fa-solid fa-star">4.5</i>
                                 <h4>( 3.000 reviews )</h4>
                             </div>
-                            <h2 class="course-price">Rp 50.000</h2>
+                            <h2 class="course-price">{{$course->price}}</h2>
                         </div>
                     </a>
-                    <a href="" class="swiper-slide" id="card-slide">
-                        <div class="course-card-image">
-                            <img src="{{asset('images/course/html.png')}}" alt="">
-                        </div>
-                        <div class="course-text-content">
-                            <h2 class="course-title">HTML Basic</h2>
-                            <h3 class="course-category">
-                                <ul>
-                                    <li>Computer</li>
-                                    <li>Website</li>
-                                </ul>
-                            </h3>
-                            <h3 class="course-author">Udin Petot</h3>
-                            <div class="course-rating">
-                                <i class="fa-sharp fa-solid fa-star">4.5</i>
-                                <h4>( 3.000 reviews )</h4>
-                            </div>
-                            <h2 class="course-price">Rp 50.000</h2>
-                        </div>
-                    </a>
-                    <a href="#" class="swiper-slide" id="card-slide">
-                        <div class="course-card-image">
-                            <img src="{{asset('images/course/html.png')}}" alt="">
-                        </div>
-                        <div class="course-text-content">
-                            <h2 class="course-title">HTML Basic</h2>
-                            <h3 class="course-category">
-                                <ul>
-                                    <li>Computer</li>
-                                    <li>Website</li>
-                                </ul>
-                            </h3>
-                            <h3 class="course-author">Udin Petot</h3>
-                            <div class="course-rating">
-                                <i class="fa-sharp fa-solid fa-star">4.5</i>
-                                <h4>( 3.000 reviews )</h4>
-                            </div>
-                            <h2 class="course-price">Rp 50.000</h2>
-                        </div>
-                    </a>
-                    <a href="#" class="swiper-slide" id="card-slide">
-                        <div class="course-card-image">
-                            <img src="{{asset('images/course/computer.png')}}" alt="">
-                        </div>
-                        <div class="course-text-content">
-                            <h2 class="course-title">Computer Basic</h2>
-                            <h3 class="course-category">
-                                <ul>
-                                    <li>Computer</li>
-                                    <li>Website</li>
-                                </ul>
-                            </h3>
-                            <h3 class="course-author">Udin Petot</h3>
-                            <div class="course-rating">
-                                <i class="fa-sharp fa-solid fa-star">4.5</i>
-                                <h4>( 3.000 reviews )</h4>
-                            </div>
-                            <h2 class="course-price">Rp 50.000</h2>
-                        </div>
-                    </a>
-                    <a href="#" class="swiper-slide" id="card-slide">
-                        <div class="course-card-image">
-                            <img src="{{asset('images/course/computer.png')}}" alt="">
-                        </div>
-                        <div class="course-text-content">
-                            <h2 class="course-title">Computer Basic</h2>
-                            <h3 class="course-category">
-                                <ul>
-                                    <li>Computer</li>
-                                    <li>Website</li>
-                                </ul>
-                            </h3>
-                            <h3 class="course-author">Udin Petot</h3>
-                            <div class="course-rating">
-                                <i class="fa-sharp fa-solid fa-star">4.5</i>
-                                <h4>( 3.000 reviews )</h4>
-                            </div>
-                            <h2 class="course-price">Rp 50.000</h2>
-                        </div>
-                    </a>
-                    <a href="#" class="swiper-slide" id="card-slide">
-                        <div class="course-card-image">
-                            <img src="{{asset('images/course/computer.png')}}" alt="">
-                        </div>
-                        <div class="course-text-content">
-                            <h2 class="course-title">Computer Basic</h2>
-                            <h3 class="course-category">
-                                <ul>
-                                    <li>Computer</li>
-                                    <li>Website</li>
-                                </ul>
-                            </h3>
-                            <h3 class="course-author">Udin Petot</h3>
-                            <div class="course-rating">
-                                <i class="fa-sharp fa-solid fa-star">4.5</i>
-                                <h4>( 3.000 reviews )</h4>
-                            </div>
-                            <h2 class="course-price">Rp 50.000</h2>
-                        </div>
-                    </a>
+                    @endforeach
 
                 </div>
 

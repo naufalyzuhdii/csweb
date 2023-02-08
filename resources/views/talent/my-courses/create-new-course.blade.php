@@ -31,7 +31,7 @@
                     <label for="CourseCategory">Course Category</label>
                     <select name="category" id="CourseCategory" required>
                         @foreach($category as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        <option value="{{$category->name}}">{{$category->name}}</option>
                         @endforeach
                     </select>
                 </div>

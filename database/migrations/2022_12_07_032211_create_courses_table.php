@@ -22,6 +22,7 @@ return new class extends Migration
             // $table->unsignedBigInteger('category_id');
             // $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
 
+            $table->string('category_name');
             $table->string('title');
             $table->string('description');
             $table->bigInteger('price');

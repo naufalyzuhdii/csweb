@@ -11,12 +11,11 @@ use Illuminate\Support\Facades\Validator;
 
 class CourseController extends Controller
 {
-
     // VIEW FUNCTION
-
     public function view_course()
     {
-        return view('categories.course');
+        $course = Course::all();
+        return view('categories.course','course');
     }
     public function view_sub_course()
     {
@@ -61,6 +60,7 @@ class CourseController extends Controller
     {
         $my_courses = Course::where('user_id',Auth::id())->orderBy('created_at','asc')->simplePaginate(15);
         
+
         return view('talent.my-courses.my-courses')->with('my_courses', $my_courses);
     }
 
@@ -81,7 +81,7 @@ class CourseController extends Controller
         $course = new Course();
         $course -> user_id = Auth::user()->id;
         $course->title = $request->title;
-        $course->category_id = $request->category;
+        $course->category_name = $request->category;
         $course->description = $request->description;
         $course->price = $request->price;
 
