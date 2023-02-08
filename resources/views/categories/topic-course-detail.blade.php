@@ -18,7 +18,7 @@
                     </h2>
                     <h3 class="topic-course-detail-category">
                         <ul>
-                            <li>{{ $course->category->name }}</li>
+                            <!-- <li>{{ $course->category->name }}</li> -->
 
                         </ul>
                     </h3>
