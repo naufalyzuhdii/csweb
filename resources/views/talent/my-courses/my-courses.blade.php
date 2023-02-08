@@ -30,6 +30,7 @@
             </div>
             @else
             @foreach ($my_courses as $my_course)
+            {{-- @dd($my_course->category->name) --}}
             <a href="/view/my-courses/my-course-detail-chapter" class="course-links">
                 <!-- Course Image Wrapper -->
                 <div class="course-image-wrapper">

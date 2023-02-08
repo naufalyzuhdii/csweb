@@ -15,20 +15,15 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('user_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-
-            // $table->unsignedBigInteger('category_id');
-            // $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
-
-            $table->string('category_name');
             $table->string('title');
             $table->string('description');
             $table->bigInteger('price');
             $table->string('image');
             $table->string('status')->default('invalid');
-            // $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
