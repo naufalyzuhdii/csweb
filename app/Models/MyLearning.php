@@ -16,7 +16,7 @@ class MyLearning extends Model
     }
 
     protected $fillable = [
-        'title', 'description', 'image'
+        'title', 'description', 'image', 'user_id'
     ];
 
 }

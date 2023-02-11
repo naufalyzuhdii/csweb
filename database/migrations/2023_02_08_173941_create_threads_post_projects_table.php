@@ -24,6 +24,10 @@ return new class extends Migration
             $table->string('offered_duration'); 
             $table->bigInteger('min_price');
             $table->bigInteger('max_price');
+            $table->tinyInteger('status');
+            // $table->unsignedBigInteger('chat_id');
+            // $table->foreign('chat_id')->references('id')->on('chats')->onUpdate('cascade')->onDelete('cascade');
+            // $table->timestamp('latest_reply_at')->nullable();
             $table->bigInteger('fix_price')->default(0);
             // $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

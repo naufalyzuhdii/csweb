@@ -51,9 +51,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="chat-btn">
-                    <a href="#chatbtn">Chat Talent</a>
-                </div>
+                @if ($thread->status == 0)
+                    
+                @else
+                    <div class="chat-btn">
+                        <form action="/add_chatroom" method="POST">
+                        @csrf
+                            <button type="submit">
+                                <a>Chat Talent</a>
+                            </button>
+                        </form>
+                    </div>
+                @endif
             </div>
             <!-- LEARNER THREAD CONTENT -->
         </div>

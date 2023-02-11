@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\TransactionDetail;
 use App\Models\TransactionHeader;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class StoreController extends Controller
 {
@@ -71,7 +72,8 @@ class StoreController extends Controller
             MyLearning::create([
                 'title' => $val['title'],
                 'description' => $val['description'],
-                'image' => $val['image'], 
+                'image' => $val['image'],
+                'user_id' => Auth::user()->id,
             ]);
         }
         

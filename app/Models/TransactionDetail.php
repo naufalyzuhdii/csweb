@@ -25,14 +25,13 @@ class TransactionDetail extends Model
     protected $primaryKey = 'transaction_detail_id';
 
     protected $fillable = [
-        'transaction_header_id', 'course_id', 'user_id'
+        'transaction_header_id', 'course_id'
     ];
 
     public static function add_transaction_detail($course_id, $transaction_header_id){
         TransactionDetail::create([
             'course_id' => $course_id,
             'transaction_header_id' => $transaction_header_id,
-            'user_id' => Auth::user()->id,
         ]);
     }
 }

@@ -69,7 +69,7 @@
                                         <span>(1000)</span>
                                     </p>
                                 </div>
-                                <a href="#chat" class="chat-btn">
+                                <a href="" class="chat-btn">
                                     <div class="chat-btn-wrapper">
                                         <h3>Chat to talent</h3>
                                     </div>

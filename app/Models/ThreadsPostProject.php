@@ -2,8 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
+use App\Models\Skills;
+use App\Models\Category;
+use App\Models\ChatRoom;
+use App\Models\ThreadAttachment;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class ThreadsPostProject extends Model
 {
@@ -21,6 +26,14 @@ class ThreadsPostProject extends Model
     public function skills()
     {
         return $this->hasMany(Skills::class);
+    }
+
+    public function chat_room(){
+        return $this->hasMany(ChatRoom::class);
+    }
+
+    public function thread_attachment(){
+        return $this->hasMany(ThreadAttachment::class);
     }
 
 

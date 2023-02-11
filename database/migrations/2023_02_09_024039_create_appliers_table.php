@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('my_learnings', function (Blueprint $table) {
+        Schema::create('appliers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('title');
+            $table->string('apply_price');
             $table->string('description');
-            $table->string('image');
+            $table->tinyInteger('status');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('threads_post_projects_id');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('threads_post_projects_id')->references('id')->on('threads_post_projects')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('my_learnings');
+        Schema::dropIfExists('appliers');
     }
 };
