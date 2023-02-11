@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('phone');
             $table->date('dob');
             $table->string('role')->default('learner');
+            $table->bigInteger('balance')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
