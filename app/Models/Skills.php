@@ -11,7 +11,8 @@ class Skills extends Model
 
     public function threadspostproject()
     {
-        return $this->belongsTo(ThreadsPostProject::class);
+        return $this->hasMany(ThreadsPostProject::class);
+
     }
     // public function user()
     // {

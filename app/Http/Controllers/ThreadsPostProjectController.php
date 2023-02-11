@@ -55,7 +55,7 @@ class ThreadsPostProjectController extends Controller
             'user_id' => 'required',
             'project_title' => 'required|max:70',
             'description' => 'required|max:70',
-            'skills_requirement' => 'required|max:70',
+            'skills_requirement' => 'required',
             'offered_duration' => ['required'],
             'min_price' => 'required',
             'max_price' => 'required|gt:min_price',
@@ -72,7 +72,7 @@ class ThreadsPostProjectController extends Controller
         $thread->user_id = $request->user_id;
         $thread->project_title = $request->project_title;
         $thread->description = $request->description;
-        $thread->skills_requirement = $request->skills_requirement;
+        $thread->skills_id = $request->skills_requirement;
         $thread->offered_duration = $request->offered_duration;
         $thread->status = 0;
 
@@ -114,13 +114,12 @@ class ThreadsPostProjectController extends Controller
     public function update_thread(Request $request )
     {
         $attr = $request->validate([
-            'project_title' => 'required|max:70' ,
-            'description' => 'required|max:70',
-            'skills_requirement' => 'required|max:70',
-            'offered_duration' => 'required',
-            'min_price' => 'required',
+            'project_title' => 'max:70' ,
+            'description' => 'max:70',
+            // 'skills_requirement' => 'required',
+            // 'offered_duration' => 'required',
+            // 'min_price' => 'required',
             'max_price' => 'required|gt:min_price',
-            'fix_price' => 'gte:min_price|lte:max_price'
             // $fix_min_price => 'required|max:13',
             // $fix_max_price => 'required|max:13|gt:min_price',
             // $fix_price => 'max:13|gte:min_price|lte:max_price',
@@ -132,8 +131,22 @@ class ThreadsPostProjectController extends Controller
         $thread = ThreadsPostProject::find($request->thread_id);
         $thread->project_title = $request->project_title;
         $thread->description = $request->description;
-        $thread->skills_requirement = $request->skills_requirement;
-        $thread->offered_duration = $request->offered_duration;
+        if($request->skills_requirement == null)
+        {
+            $thread->skills_id = $thread->skills_id;
+        }
+        else{
+            $thread->skills_id = $request->skills_requirement;
+        }
+
+        if($request->offered_duration == null)
+        {
+            $thread->offered_duration = $thread->offered_duration;
+        }
+        else{
+            $thread->offered_duration = $request->offered_duration;
+
+        }
     
         // Convert inputan user (text) menjadi integer dan disimpan secara real integer di database
         // $fix_min_price = (int)str_replace('.', '', $request->min_price);
@@ -142,7 +155,7 @@ class ThreadsPostProjectController extends Controller
 
         $thread->min_price = $request->min_price;
         $thread->max_price = $request->max_price;
-        $thread->fix_price = $request->fix_price;
+        $thread->fix_price = 0;
 
         // variable untuk ditampilin di depan
         $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");

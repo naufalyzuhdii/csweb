@@ -82,7 +82,7 @@
                         <select name="skills_requirement" id="" required>
                             @foreach($skills as $skills)
                             @if($skills->status == 'valid')
-                            <option value="{{ $skills->name }}">{{ $skills->name }}</option>
+                            <option value="{{ $skills->id }}">{{ $skills->name }}</option>
                             @endif
                             @endforeach
                         </select>

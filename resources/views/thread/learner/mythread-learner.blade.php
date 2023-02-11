@@ -87,7 +87,7 @@
                             </div>
                             <div class="content">
                                 <ul>
-                                    <li>{{$thread->skills_requirement}}</li>
+                                    <li>{{$thread->skills->name}}</li>
                                 </ul>
                             </div>
                         </div>

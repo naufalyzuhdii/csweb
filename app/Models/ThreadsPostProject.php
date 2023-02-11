@@ -25,7 +25,7 @@ class ThreadsPostProject extends Model
 
     public function skills()
     {
-        return $this->hasMany(Skills::class);
+        return $this->belongsTo(Skills::class);
     }
 
     public function chat_room(){
@@ -33,7 +33,7 @@ class ThreadsPostProject extends Model
     }
 
     public function thread_attachment(){
-        return $this->hasMany(ThreadAttachment::class);
+        return $this->hasOne(ThreadAttachment::class);
     }
 
 
