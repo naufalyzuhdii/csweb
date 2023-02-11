@@ -7,9 +7,12 @@ use App\Http\Controllers\ChatController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ThreadController;
+use App\Http\Controllers\ApplierController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CourseVideoController;
 use App\Http\Controllers\CourseDetailController;
+use App\Http\Controllers\ThreadAttachmentController;
+use App\Http\Controllers\ThreadsPostProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +48,7 @@ Route::post('/messages', [ChatController::class, 'message']);
 Route::post('/addchapter', [CourseDetailController::class, 'add_chapter'])->name('adddchapter');
 Route::post('/uploadvideo', [CourseVideoController::class, 'upload_video'])->name('uploadvideo');
 Route::get('/addtocart/{id}', [StoreController::class, 'add_to_cart'])->name('addtocart');
+Route::post('/chat', [ChatController::class, 'chat'])->name('chat');
+Route::post('/apply', [ApplierController::class, 'apply'])->name('apply');
+Route::post('/accept', [ApplierController::class, 'accept_applier'])->name('accept');
+Route::post('/upload_attachment', [ThreadsPostProjectController::class, 'upload_attachment'])->name('upload_attachment');

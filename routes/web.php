@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ForumController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\StoreController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\TalentController;
 use App\Http\Controllers\LearnerController;
+use App\Http\Controllers\ChatRoomController;
 use App\Http\Controllers\MyLearningController;
 use App\Http\Controllers\CourseDetailController;
 use App\Http\Controllers\ThreadsPostProjectController;
@@ -182,3 +184,7 @@ Route::get('/view/video-learning/id/', [TalentController::class, 'view_my_course
 
 
 // =========================================== My Courses ===========================================
+
+Route::get('/chatroom', [ChatRoomController::class, 'show_chatroom']);
+Route::post('/add_chatroom', [ChatRoomController::class, 'add_chatroom']);
+Route::post('/upload_attachment', [ThreadAttachmentController::class, 'upload_attachment']);

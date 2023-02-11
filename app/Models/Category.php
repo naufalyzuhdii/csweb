@@ -12,16 +12,16 @@ class Category extends Model
     // protected $table = 'categories';
     // protected $primaryKey = 'category_id';
 
-    // protected $fillable = [
-    //     'name', 'parent_id'
-    // ];
+    protected $fillable = [
+        'name', 'parent_id'
+    ];
 
     public function course(){
         return $this->hasMany(Course::class);
     }
 
     public function thread(){
-        return $this->hasMany(Thread::class);
+        return $this->hasMany(ThreadsPostProject::class);
     }
 
     public function subcategory(){

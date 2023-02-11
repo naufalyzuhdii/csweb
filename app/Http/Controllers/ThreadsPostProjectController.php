@@ -74,6 +74,7 @@ class ThreadsPostProjectController extends Controller
         $thread->description = $request->description;
         $thread->skills_requirement = $request->skills_requirement;
         $thread->offered_duration = $request->offered_duration;
+        $thread->status = 0;
 
     
         
@@ -87,6 +88,16 @@ class ThreadsPostProjectController extends Controller
         // variable untuk ditampilin di depan
         $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");
         $nominal_depan_max = number_format($thread->max_price, 0, ",", ".");
+
+        // if($thread){
+        //     $apply = Applier::create([
+        //         'threads_post_projects_id' => $threads_post_projects->id,
+        //         'status' => 0,
+        //         'apply_price' => $request->apply_price,
+        //         'description' => $request->description,
+        //         'user_id' => Auth::user()->id,
+        //     ]);
+        // }
 
         $thread->save();
 
@@ -173,6 +184,34 @@ class ThreadsPostProjectController extends Controller
     public function view_thread_talent_detail()
     {
         return view('thread.learner.thread-talent-detail');
+    }
+
+    public function upload_attachment(Request $request){
+        $rules = [
+            'user_id' => 'required|integer',
+            'description' => 'required|string|max:255',
+            'threads_post_projects_id' => 'required|integer',
+            // 'file' => 'file|mimes:pdf,docx,xlsx,pptx,png,jpg,jpeg,gif,mp4,zip'
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return back()->withErrors($validator);
+        }
+
+        // $file = $request->file('file');
+        // $file_name = $file->getClientOriginalName();
+        // $file->move('file/', $file_name);
+        
+        $attachment = new ThreadAttachment();
+        $attachment->user_id = $request->user_id;
+        $attachment->description = $request->description;
+        $attachment->threads_post_projects_id = $request->threads_post_projects_id;
+        // $attachment->file = $file_name;
+
+        // dd($attachment);
+
+        $attachment->save();
+        return ['Attachment Added!'];
     }
 
 

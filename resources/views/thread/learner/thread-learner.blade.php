@@ -70,7 +70,13 @@
                     <!-- THREAD CONTENT LEARNER VALID WRAPPER -->
                     <div class="thread-content-learner-valid-wrapper">
                         <div class="thread-content-learner-valid">
-                            <h3>Status Offer : Valid</h3>
+                            <h3>
+                                Status Offer : @if ($thread->status == 0) Valid
+                                               @elseif ($thread->status == 1) On Progress
+                                               @else Finished
+                                
+                                               @endif
+                            </h3>
                         </div>
                     </div>
                     <!-- THREAD CONTENT LEARNER VALID WRAPPER -->

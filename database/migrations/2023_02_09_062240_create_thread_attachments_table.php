@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('my_learnings', function (Blueprint $table) {
+        Schema::create('thread_attachments', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('threads_post_projects_id');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('title');
+            $table->foreign('threads_post_projects_id')->references('id')->on('threads_post_projects')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('description');
-            $table->string('image');
+            // $table->string('file');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('my_learnings');
+        Schema::dropIfExists('thread_attachments');
     }
 };
