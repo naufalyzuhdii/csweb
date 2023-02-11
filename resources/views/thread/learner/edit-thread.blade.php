@@ -78,18 +78,14 @@
 
                     <div class="learner-thread-skills-required">
                         <h3>What skills are required?</h3>
-                        <select name="skills_requirement" id="" value="{{($thread->skills_requirement)}}">
+                        <select name="skills_requirement">
+                            <option value="none" selected disabled hidden>{{$thread->skills->name}}</option>
                             @foreach($skills as $skills)
                             @if($skills->status == 'valid')
-                            <option value="{{ $skills->name }}">{{ $skills->name }}</option>
+                            <option value="{{$skills->id}}">{{ $skills->name }}</option>
                             @endif
                             @endforeach
                         </select>
-                        <div class="add-skills" onclick="myFunction()">
-                            <h3>
-                                Add Skills
-                            </h3>
-                        </div>
 
                     </div>
                     @error('skills_requirement')
@@ -104,7 +100,7 @@
                                 <span> (estimate)</span>
                             </h3>
                             <select name="offered_duration" id="" required>
-                                <option selected value="{{($thread->offered_duration)}}">{{$thread->offered_duration}}
+                                <option selected disabled hidden>{{$thread->offered_duration}}
                                 </option>
                                 <option value="less than 1 day">
                                     less than 1 day</option>
@@ -139,6 +135,7 @@
                                 <option value="29 day">29 day</option>
                                 <option value="30 day">30 day</option>
                             </select>
+
                         </div>
 
 
@@ -169,11 +166,11 @@
                                 </div>
                                 <div class="fix-price">
                                     <h3>Fix Price</h3>
-                                    <div class="price-wrapper">
+                                    <!-- <div class="price-wrapper">
                                         <span>Rp.</span>
                                         <input type="number" name="fix_price" id="rupiah3" placeholder="Fix Price"
                                             value="{{$thread->fix_price}}">
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

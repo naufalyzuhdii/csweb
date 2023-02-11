@@ -20,7 +20,11 @@ return new class extends Migration
             // $table->unsignedBigInteger('category_id');
             $table->string('project_title');
             $table->string('description');
-            $table->string('skills_requirement');
+
+            // $table->string('skills_requirement');
+            $table->unsignedBigInteger('skills_id');
+            $table->foreign('skills_id')->references('id')->on('skills')->onUpdate('cascade')->onDelete('cascade')->nullable();
+
             $table->string('offered_duration'); 
             $table->bigInteger('min_price');
             $table->bigInteger('max_price');

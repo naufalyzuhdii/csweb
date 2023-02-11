@@ -72,10 +72,10 @@
                         <div class="thread-content-learner-valid">
                             <h3>
                                 Status Offer : @if ($thread->status == 0) Valid
-                                               @elseif ($thread->status == 1) On Progress
-                                               @else Finished
-                                
-                                               @endif
+                                @elseif ($thread->status == 1) On Progress
+                                @else Finished
+
+                                @endif
                             </h3>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                                 </div>
                                 <div class="content">
                                     <ul>
-                                        <li>{{$thread->skills_requirement}}</li>
+                                        <li>{{$thread->skills->name}}</li>
                                     </ul>
                                 </div>
                             </div>

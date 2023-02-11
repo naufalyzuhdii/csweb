@@ -336,6 +336,11 @@
     background-color: var(--thirdcolor);
 }
 
+.fix-price {
+    visibility: hidden;
+    opacity: 0;
+}
+
 .learner-offered-wrapper > div:nth-child(3) {
     opacity: 0;
     visibility: hidden;
@@ -350,7 +355,6 @@
 
 .post-thread-btn button {
     position: absolute;
-    right: 0;
     width: 30rem;
     height: 4rem;
     background-color: var(--primarycolor);
