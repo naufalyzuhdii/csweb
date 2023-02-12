@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('appliers', function (Blueprint $table) {
             $table->id();
-            $table->string('apply_price');
+            $table->bigInteger('apply_price');
             $table->string('description');
             $table->tinyInteger('status');
             $table->unsignedBigInteger('user_id');

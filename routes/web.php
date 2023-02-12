@@ -9,10 +9,12 @@ use App\Http\Controllers\ForumController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\TalentController;
+use App\Http\Controllers\ApplierController;
 use App\Http\Controllers\LearnerController;
 use App\Http\Controllers\ChatRoomController;
 use App\Http\Controllers\MyLearningController;
 use App\Http\Controllers\CourseDetailController;
+use App\Http\Controllers\ThreadAttachmentController;
 use App\Http\Controllers\ThreadsPostProjectController;
 use App\Http\Controllers\ThreadsFreelancersTalentsController;
 /*
@@ -112,7 +114,8 @@ Route::get('/view/talent-profile', [CourseController::class, 'view_talent_profil
 Route::get('/view/threads-post-project/learner', [ThreadsPostProjectController::class, 'view_ThreadsPostProject_learner'])->name('ThreadPostProject.Learner')->middleware('learner');
 Route::get('/view/threads-post-project/learner/create-thread', [ThreadsPostProjectController::class, 'view_ThreadsPostProject_learner_CreateThread'])->name('create-thread-page-learner')->middleware('learner');
 Route::get('/view/threads-post-project/learner/mythread/{id}', [ThreadsPostProjectController::class, 'view_ThreadsPostProject_learner_MyThread'])->name('my-thread')->middleware('learner');
-Route::get('/view/appliers', [ThreadsPostProjectController::class, 'view_my_appliers'])->middleware('learner');
+Route::get('/view/appliers/{id}', [ApplierController::class, 'show_applier'])->middleware('learner')->name('viewapplier');
+Route::get('/accept_talent', [ApplierController::class, 'accept_applier'])->middleware('learner')->name('accepttalent');
 Route::post('/create_thread', [ThreadsPostProjectController::class, 'post_thread'])->middleware('learner');
 
 

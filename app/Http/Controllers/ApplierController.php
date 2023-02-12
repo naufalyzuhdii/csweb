@@ -32,20 +32,30 @@ class ApplierController extends Controller
     }
 
     public function show_applier(Request $request){
-        $applier = Applier::where('threads_post_projects_id', $request->id)->orderBy('created_at', 'desc');
+        // $applier = Applier::all();
+        $applier = Applier::where('threads_post_projects_id', $request->id)->orderBy('created_at', 'desc')->get();
 
-        return view('applier');
+        return view('applier', ['applier' => $applier]);
     }
 
     public function accept_applier(Request $request){
         $rules = [
-            'applier_id' => 'required|integer'
+            'applier_id' => 'required|integer',
+            'threads_post_projects_id' => 'required|integer'
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return back()->withErrors($validator);
         }
-        $accept = Applier::where('id', $request->applier_id)->first();
+        // $accepted = Applier::with('threads_post_projects')->where('threads_post_projects_id', $request->threads_post_projects_id)->firstOrFail();
+        // $accepted->threads_post_projects->status = 1;
+        // $accepted->threads_post_projects->update();
+        // $accepted->save();
+
+        $accept = Applier::where('id', $request->applier_id)->with('threads_post_projects')->first();
+        $accept->threads_post_projects->status = 1;
+        // $accept->threads_post_projects->fix_price = $request->apply_price;
+        $accept->threads_post_projects->update();
         $accept->status = 1;
         $accept->update();
 

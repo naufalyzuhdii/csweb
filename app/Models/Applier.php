@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\ThreadsPostProject;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Applier extends Model
 {
@@ -12,7 +13,7 @@ class Applier extends Model
         'apply_price', 'description', 'status', 'user_id', 'threads_post_projects_id'
     ];
 
-    public function threads_post_projects_(){
+    public function threads_post_projects(){
         return $this->belongsTo(ThreadsPostProject::class);
     }
 }
