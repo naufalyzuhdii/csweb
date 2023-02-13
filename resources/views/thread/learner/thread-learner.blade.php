@@ -103,7 +103,7 @@
                             </div>
                         </div>
                         <!-- PROFILE LEARNER -->
-
+                        {{$thread->id}}
                         <!-- LEARNER THREAD CONTENT -->
                         <div class="learner-thread-content">
                             <div class="learner-thread-name">
@@ -161,7 +161,7 @@
                             </div>
                             <div class="learner-thread-bottom-content">
                                 <div class="talents-apply-wrapper">
-                                    <h3 class="talents-apply"><span> 0 </span> talent(s) has apply this
+                                    <h3 class="talents-apply"><span> {{$applier}}</span> talent(s) has apply this
                                         offer</h3>
                                     <h3 class="view-appliers">
                                         <a href="/view/appliers/{{$thread->id}}">View Appliers</a>

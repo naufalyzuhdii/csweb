@@ -18,7 +18,6 @@
             </div>
             <!-- THREAD CONTENT HEADING -->
 
-            @foreach($thread as $thread)
             <!-- THREAD CONTENT WRAPPER -->
             <div class="thread-content-wrapper">
                 <div class="thread-content-learner-wrapper">
@@ -127,10 +126,20 @@
                 </div>
             </div>
             <!-- THREAD CONTENT WRAPPER -->
-            @endforeach
 
             <div class="appliers-content-wrapper">
                 <h3>Appliers</h3>
+
+                @if(count($applier) == 0)
+                <div class="warn" style="margin-left:1rem">
+                    <h3>No appliers yet</h3>
+                </div>
+                @else
+
+                <h3 style="font-weight:500;"> <span style="font-weight:600;color:var(--deepblue)">{{$count}}</span>
+                    appliers
+                    has been apply
+                    this thread</h3>
                 @foreach($applier as $apl)
                 <!-- THREAD CONTENT WRAPPER -->
                 <div class="thread-content-wrapper">
@@ -225,6 +234,8 @@
                 </div>
                 <!-- THREAD CONTENT WRAPPER -->
                 @endforeach
+
+                @endif
 
             </div>
 
