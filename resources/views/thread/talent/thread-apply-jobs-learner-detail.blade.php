@@ -50,10 +50,13 @@
                         </ul>
                     </div>
                 </div>
+                <?php
+                    $count = DB::table('appliers')->where('threads_post_projects_id',$thread->id)->get()->count();
+                ?>
                 <div class="learner-thread-bottom-content">
                     <div class="talents-apply">
                         <div class="talents-apply-wrapper">
-                            <h4><span>2 </span>talent(s) has apply this offer</h4>
+                            <h4><span style="margin-right:.25rem;">{{$count}} </span>talent(s) has apply this offer</h4>
                         </div>
                     </div>
                 </div>
