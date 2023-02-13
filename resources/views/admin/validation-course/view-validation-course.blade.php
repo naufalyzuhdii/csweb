@@ -13,7 +13,7 @@
         </div>
         <!-- End Of Title Heading -->
 
-        <div class="create-new-course-content-wrapper">
+        <!-- <div class="create-new-course-content-wrapper">
             <form action="/add-new-course" method="POST" id="form-create-new-course" enctype="multipart/form-data">
                 @csrf
                 <div class="course-title-wrapper">
@@ -84,7 +84,7 @@
                     </button>
                 </div>
             </form>
-        </div>
+        </div> -->
         @if (session('message'))
         <div class="success">
             {{ session('message') }}

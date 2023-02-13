@@ -26,6 +26,9 @@ return new class extends Migration
             $table->date('dob');
             $table->string('role')->default('learner');
             $table->bigInteger('balance')->default(0);
+            $table->bigInteger('withdraw')->default(0);
+            $table->tinyInteger('withdraw_status')->default(0);
+
             $table->rememberToken();
             $table->timestamps();
         });

@@ -9,7 +9,7 @@
         <div class="topic-course-detail-header">
             <div class="header-left">
                 <div class="topic-course-detail-image">
-                    <img src="{{ Storage::url($course->image) }}" alt="">
+                    <img src="{{ url('course/'. $course->image) }}" alt="">
                 </div>
                 <div class="topic-course-detail-heading-content">
                     <h1 class="topic-course-detail-heading">{{ $course->title }}</h1>
@@ -28,7 +28,10 @@
                         <i class="fa-sharp fa-solid fa-star">4.5</i>
                         <h4>( 3.000 reviews )</h4>
                     </div>
-                    <h2 class="topic-course-detail-price">Rp {{ $course->price }}</h2>
+                    <?php
+                        $course_price = number_format($course->price, 0, ",", ".");
+                                        ?>
+                    <h2 class="topic-course-detail-price">Rp {{ $course_price }}</h2>
                 </div>
             </div>
             <div class="header-right">

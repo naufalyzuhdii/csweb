@@ -89,6 +89,7 @@
                         </form>
                     </li>
                     <li><a href="/profile/{{auth()->user()->id}}">Your profile</a></li>
+                    <li><a href="/balance/{{auth()->user()->id}}">My Balance</a></li>
                     <li>
                         <a href="/signout">Sign Out</a>
                     </li>

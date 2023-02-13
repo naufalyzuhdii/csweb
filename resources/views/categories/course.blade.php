@@ -32,7 +32,11 @@
                                 <i class="fa-sharp fa-solid fa-star">4.5</i>
                                 <h4>( 3.000 reviews )</h4>
                             </div>
-                            <h2 class="course-price">{{$course->price}}</h2>
+                            <?php
+                         $course_price = number_format($course->price, 0, ",", ".");
+                    ?>
+                            <h2 class="course-price">{{$course_price}}</h2>
+
                         </div>
                     </a>
                     @endforeach

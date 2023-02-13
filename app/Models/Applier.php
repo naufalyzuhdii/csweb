@@ -16,4 +16,9 @@ class Applier extends Model
     public function threads_post_projects(){
         return $this->belongsTo(ThreadsPostProject::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -24,13 +24,11 @@ class AdminController extends Controller
         $user = User::all();
         return redirect()->route('admin_home',compact('user')) ;
     }    
-
     public function view_certification_document($id)
     {
         $user = User::find($id);
         return view('admin.view-certification-document',compact('user'));
     }
-
     public function view_edit($id)
     {
         $user = User::find($id);
@@ -79,7 +77,6 @@ class AdminController extends Controller
         return redirect()->route('validation.skills.page',compact('skills'))
         ->with('message','New Skill has been uploaded');
     }
-
     public function update_skills(Request $request){
         $rules = [
             'skills_name' => 'max:20',
@@ -107,109 +104,124 @@ class AdminController extends Controller
 
      // END OF VALIDATION SKILLS
 
-      // VALIDATION COURSE
-      public function view_validation_course()
-      {
-        $course = Course::all();
-        $category = Category::all();
-        return view('admin.validation-course.view-validation-course',compact('course','category'));
-      }
+    // VALIDATION COURSE
+    public function view_validation_course()
+    {
+    $course = Course::all();
+    $category = Category::all();
+    return view('admin.validation-course.view-validation-course',compact('course','category'));
+    }
 
-      public function add_new_course(Request $request)
-      {
-          // $course_video = [];
-          $rules = [
-              'title' => 'required',
-              'category' => 'required',
-              'description' => 'required',
-              // 'author' => 'required',
-              'price' => 'required',
-              'image' => 'required|image'
-          ];
-          $validator = Validator::make($request->all(), $rules);
-          if ($validator->fails()) {
-              return back()->withErrors($validator);
-          }
-          // $course_video[] = [
-          //     'video' => $video,
-          //     'video_title' => $video_title,
-          // ];
-          // $course = Course::create([
-          //     'title' => request('title'),
-          //     'title' => request('title'),
-          //     'title' => request('title'),
-          //     'title' => request('title'),
-          // ])
-          $course = new Course();
-          $course -> user_id = Auth::user()->id;
-          $course->title = $request->title;
-          $course->category_id = $request->category;
-          $course->description = $request->description;
-          $course->price = $request->price;
-  
-          $file = $request->file('image');
-          if($file != null)
-          {
-            $fileName = uniqid(). '.' . $file->getClientOriginalExtension();
-            $path = $file->move('course/',$fileName);
-            $course->image = $fileName;
-          }
-          $course->save();
-          return redirect()->route('view.validation-course',compact('course'))
-          ->with('message','New course has been uploaded!');
-      }
-
-      public function update_course(Request $request)
-      {
+    public function add_new_course(Request $request)
+    {
+        // $course_video = [];
         $rules = [
-            'title_update' => 'required',
-            'category_update' => 'required',
-            'description_update' => 'required',
-            'price_update' => 'required',
-            'image_update' => 'image|file|mimes:jpg,png|max:4024'
-          ];
+            'title' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+            // 'author' => 'required',
+            'price' => 'required',
+            'image' => 'required|image'
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return back()->withErrors($validator);
+        }
+        // $course_video[] = [
+        //     'video' => $video,
+        //     'video_title' => $video_title,
+        // ];
+        // $course = Course::create([
+        //     'title' => request('title'),
+        //     'title' => request('title'),
+        //     'title' => request('title'),
+        //     'title' => request('title'),
+        // ])
+        $course = new Course();
+        $course -> user_id = Auth::user()->id;
+        $course->title = $request->title;
+        $course->category_id = $request->category;
+        $course->description = $request->description;
+        $course->price = $request->price;
 
-          $validator = Validator::make($request->all(),$rules);
+        $file = $request->file('image');
+        if($file != null)
+        {
+        $fileName = uniqid(). '.' . $file->getClientOriginalExtension();
+        $path = $file->move('course/',$fileName);
+        $course->image = $fileName;
+        }
+        $course->save();
+        return redirect()->route('view.validation-course',compact('course'))
+        ->with('message','New course has been uploaded!');
+    }
 
-          if($validator -> fails())
-          {
-              return back()-> withErrors($validator); // secara otomtatsi bkin variabel errrors
-          }
+    public function update_course(Request $request)
+    {
+    $rules = [
+        'title_update' => 'required',
+        'category_update' => 'required',
+        'description_update' => 'required',
+        'price_update' => 'required',
+        'image_update' => 'image|file|mimes:jpg,png|max:4024'
+        ];
 
-          $course = Course::find($request->course_id);
+        $validator = Validator::make($request->all(),$rules);
 
-          $course->user_id = $request->user_id;
-          $course->title = $request->title_update;
-          $course->description = $request->description_update;
-          $course->price = $request->price_update;
-          $course->status = $request->status_update;
+        if($validator -> fails())
+        {
+            return back()-> withErrors($validator); // secara otomtatsi bkin variabel errrors
+        }
 
-          $file = $request->file('image_update');
-          
-          if($file != null)
-          {
-            File::delete('course/'.$course->image);
-            $fileName = uniqid(). '.' . $file->getClientOriginalExtension();
-            $path = $file->move('course/',$fileName);
+        $course = Course::find($request->course_id);
 
-            $course->image =  $fileName;
-          }
-          $course->save();
+        $course->user_id = $request->user_id;
+        $course->title = $request->title_update;
+        $course->description = $request->description_update;
+        $course->price = $request->price_update;
+        $course->status = $request->status_update;
 
-          return redirect()->route('view.validation-course',compact('course'))
-          ->with('message','Course has been updated!');
+        $file = $request->file('image_update');
+        
+        if($file != null)
+        {
+        File::delete('course/'.$course->image);
+        $fileName = uniqid(). '.' . $file->getClientOriginalExtension();
+        $path = $file->move('course/',$fileName);
 
-      }
+        $course->image =  $fileName;
+        }
+        $course->save();
 
-      public function delete_course($id)
-      {
-        $course = Course::find($id);
-        $course->delete();
+        return redirect()->route('view.validation-course',compact('course'))
+        ->with('message','Course has been updated!');
 
-        return redirect()->route('view.validation-course', compact('course'));
-      }
-      // END OF VALIDATION COURSE
+    }
 
+    public function delete_course($id)
+    {
+    $course = Course::find($id);
+    $course->delete();
+
+    return redirect()->route('view.validation-course', compact('course'));
+    }
+    // END OF VALIDATION COURSE
+
+
+    // VALIDATION WITHDRAW
+    public function view_validation_withdraw()
+    {
+        $user = User::orderBy('withdraw_status','asc')->get();
+        return view('admin.validation-withdraw.view-validation-withdraw',compact('user'));
+    }
+
+
+
+
+
+
+
+    // END OF VALIDATION WITHDRAW
 
     
 
