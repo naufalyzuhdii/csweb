@@ -35,17 +35,13 @@ class ApplierController extends Controller
         return redirect()->back()->with('message','Your applied form has been sent!');
     }
 
-    public function show_applier(Request $request){
+    public function show_applier($id)
+    {
         // $applier = Applier::all();
-        $thread = ThreadsPostProject::where('user_id',Auth::user()->id)->get();
-        $applier = Applier::where('threads_post_projects_id', $request->id)->orderBy('created_at', 'desc')->get();
-
-//         return view('applier.applier', ['applier' => $applier,
-//     'thread'=>$thread,
-// 'count'=>$count
-// ]);
-
-        return view('applier.applier',compact('applier','thread'));
+        $thread = ThreadsPostProject::find($id);
+        $applier = Applier::where('threads_post_projects_id', $thread->id)->orderBy('created_at', 'desc')->get();
+        $count = Applier::where('threads_post_projects_id', $thread->id)->orderBy('created_at', 'desc')->count();
+        return view('applier.applier',compact('thread','applier','count'));
     }
 
     public function accept_applier(Request $request){

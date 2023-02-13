@@ -25,20 +25,23 @@ class ThreadsPostProjectController extends Controller
             $threads->where('name', 'like', '%'. request('search'). '%');
         }
         // $products = Product::all();
-
+        $applier = Applier::where('threads_post_projects_id', 1)->orderBy('created_at', 'desc')->count();
         return view('thread.learner.thread-learner', 
         [
             "threads" => $threads->paginate(5)
-        ]);
+        ],compact('applier'));
     }
-    public function view_ThreadsPostProject_learner_MyThread()
+    public function view_ThreadsPostProject_learner_MyThread(Request $request, $id)
     {
-        $threads = ThreadsPostProject::all();
-        $user = Auth::user();
+        $user = User::find($id);
+        $threads = ThreadsPostProject::where('user_id','=',$user->id)->get();
+        $count = ThreadsPostProject::where('user_id','=',$user->id)->count();
 
-        $count = ThreadsPostProject::where('user_id','=',Auth::user()->id)->count();
+        $tpp = ThreadsPostProject::find($request->id);
 
-        return view('thread.learner.mythread-learner',compact('threads','count'));
+        $count_applier = Applier::where('threads_post_projects_id', $tpp->id)->orderBy('created_at', 'desc')->count();
+
+        return view('thread.learner.mythread-learner',compact('threads','count','count_applier'));
     }
     public function view_my_appliers ()
     {
