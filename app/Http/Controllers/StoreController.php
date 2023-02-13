@@ -15,25 +15,6 @@ use Illuminate\Support\Facades\Auth;
 class StoreController extends Controller
 {
     public function add_to_cart($course_id){
-        // $course = Course::find($id);
-        // if(!$course){
-        //     abort(404);
-        // }
-        // $cart = session()->get('cart');
-        // if(!$cart){
-        //     $cart = [
-        //         $id => [
-        //             'title' => $course->title,
-        //             'description' => $course->description,
-        //             'quantity' => 1,
-        //             'price' => $course->price,
-        //             'image' => $course->image
-        //         ]
-        //         ];
-        //         session()->put('cart', $cart);
-
-        //         return redirect()->back()->with('success', 'course added to cart!');
-        // }
         $cart = session('cart');
         $course = Course::get_course($course_id);
         $cart[$course_id] = [
