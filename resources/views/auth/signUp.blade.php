@@ -18,7 +18,7 @@
                 <h3>Sign Up</h3>
             </div>
 
-            <form action="/signup" class="signup-form" method="POST">
+            <form action="/signup" class="signup-form" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="signup-content">
                     <div class="name-signup auth">
@@ -71,6 +71,11 @@
                             <i class="fa-regular fa-eye-slash" id="eye"></i>
                         </div>
                     </div>
+                    @error('password')
+                    <div class="danger">
+                        {{$message}}
+                    </div>
+                    @enderror
 
                     <div class="signup-btn">
                         <button type="submit">Sign Up</button>

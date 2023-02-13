@@ -161,7 +161,8 @@
                             </div>
                             <div class="learner-thread-bottom-content">
                                 <div class="talents-apply-wrapper">
-                                    <h3 class="talents-apply"><span>2 </span>talent(s) has apply this offer</h3>
+                                    <h3 class="talents-apply"><span> 0 </span> talent(s) has apply this
+                                        offer</h3>
                                     <h3 class="view-appliers">
                                         <a href="/view/appliers/{{$thread->id}}">View Appliers</a>
                                     </h3>

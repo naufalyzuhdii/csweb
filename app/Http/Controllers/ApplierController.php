@@ -40,9 +40,12 @@ class ApplierController extends Controller
         $thread = ThreadsPostProject::where('user_id',Auth::user()->id)->get();
         $applier = Applier::where('threads_post_projects_id', $request->id)->orderBy('created_at', 'desc')->get();
 
+//         return view('applier.applier', ['applier' => $applier,
+//     'thread'=>$thread,
+// 'count'=>$count
+// ]);
 
-        return view('applier.applier', ['applier' => $applier,
-    'thread'=>$thread]);
+        return view('applier.applier',compact('applier','thread'));
     }
 
     public function accept_applier(Request $request){
