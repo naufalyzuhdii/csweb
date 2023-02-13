@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Applier;
+use App\Models\ThreadsPostProject;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class ApplierController extends Controller
 {
@@ -13,8 +15,9 @@ class ApplierController extends Controller
         $rules = [
             'apply_price' => 'required',
             'description' => 'required|string|max:255',
-            'threads_post_projects_id' => 'required|integer'
+            // 'threads_post_projects_id' => 'required|integer'
         ];
+
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return back()->withErrors($validator);
@@ -23,19 +26,23 @@ class ApplierController extends Controller
             'status' => 0,
             'apply_price' => $request->apply_price,
             'description' => $request->description,
-            'user_id' => $request->user_id,
+            'user_id' => Auth::user()->id,
             'threads_post_projects_id' => $request->threads_post_projects_id
         ]);
 
+
         $apply->save();
-        return ['Apply Success!'];
+        return redirect()->back()->with('message','Your applied form has been sent!');
     }
 
     public function show_applier(Request $request){
         // $applier = Applier::all();
+        $thread = ThreadsPostProject::where('user_id',Auth::user()->id)->get();
         $applier = Applier::where('threads_post_projects_id', $request->id)->orderBy('created_at', 'desc')->get();
 
-        return view('applier', ['applier' => $applier]);
+
+        return view('applier.applier', ['applier' => $applier,
+    'thread'=>$thread]);
     }
 
     public function accept_applier(Request $request){

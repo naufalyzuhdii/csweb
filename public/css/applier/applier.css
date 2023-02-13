@@ -1,0 +1,341 @@
+.applier {
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    font-family: "Baloo 2", cursive;
+}
+
+.thread-wrapper {
+    padding: 10rem 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.success {
+    width: fit-content;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #49592a;
+    background-color: rgb(177, 203, 166);
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+}
+
+/* THREAD CONTENT */
+.thread-content {
+    width: 75%;
+    height: fit-content;
+}
+
+/* --THREAD CONTENT HEADING */
+
+.thread-content-heading {
+    margin-bottom: 5rem;
+}
+
+.thread-content-heading h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.thread-content-heading h1 span {
+    color: var(--primarycolor);
+}
+.thread-content-heading p {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+/* --THREAD CONTENT HEADING */
+
+/* --THREAD CONTENT WRAPPER */
+.thread-content-wrapper {
+    margin-top: 2.5rem;
+}
+
+.thread-content-learner-wrapper {
+    width: 100%;
+    height: 22rem;
+    background-color: var(--light-grey-color2);
+    margin-bottom: 2rem;
+    border-radius: 1rem 1rem 0 0;
+}
+.appliers-content-wrapper {
+    width: 100%;
+    height: fit-content;
+    padding: 2rem;
+    background-color: var(--light-grey-color2);
+
+    border-radius: 0 0 1rem 1rem;
+}
+.appliers-content-wrapper > h3 {
+    font-size: 1.8rem;
+    margin-left: 1rem;
+}
+
+.thread-content-applier-wrapper {
+    width: 100%;
+    height: 22rem;
+    background-color: var(--primarycolor);
+
+    border-radius: 1rem;
+}
+
+/* --- THREAD CONTENT LEARNER VALID WRAPPER */
+
+.thread-content-learner-valid-wrapper {
+    position: relative;
+}
+
+.thread-content-learner-valid {
+    position: absolute;
+    padding: 0.5rem;
+    right: 0;
+}
+
+.thread-content-learner-valid h3 {
+    font-size: 1.3rem;
+    padding: 1rem;
+    color: black;
+}
+/* --- THREAD CONTENT LEARNER VALID WRAPPER */
+
+/* --- THREAD CONTENT LEARNER MAIN */
+.thread-content-learner-main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.profile-learner {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profile-learner-image-wrapper {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-learner-image {
+    width: 20rem;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile-learner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.profile-learner-role-wrapper {
+    width: 70%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-learner-role {
+    width: 10rem;
+    height: 80%;
+    background-color: white;
+    border-radius: 1rem;
+    color: var(--primarycolor);
+}
+.profile-learner-role h2 {
+    height: 100%;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --LEARNER THREAD CONTENT */
+
+.learner-thread-content {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.learner-thread-name {
+    width: fit-content;
+}
+.learner-thread-name h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+}
+
+.learner-thread-project-title {
+    width: 100%;
+    display: flex;
+}
+
+.learner-thread-project-title .content {
+    width: 70%;
+    height: 100%;
+}
+.learner-thread-project-title .content p {
+    max-width: 200%;
+}
+
+.learner-thread-project-required-skills {
+    width: 100%;
+    align-items: center;
+}
+.learner-thread-project-required-skills .content {
+    width: 70%;
+}
+.learner-thread-project-required-skills .content ul {
+    display: flex;
+    align-items: center;
+    margin-left: -5%;
+}
+
+.title_wrapper {
+    width: 25%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+}
+.title_wrapper h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: "Baloo 2", cursive;
+}
+.content {
+    width: 75%;
+}
+.content p {
+    width: 160%;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-left: 1%;
+    font-family: "Baloo 2", cursive;
+}
+.content ul {
+    width: 100%;
+    height: 100%;
+    font-family: "Baloo 2", cursive;
+}
+.content ul li {
+    width: fit-content;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: var(--primarycolor);
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0 0.5rem;
+    margin-left: -1%;
+}
+
+.learner-thread-project-description {
+    width: 100%;
+    display: flex;
+}
+
+.learner-thread-project-required-skills {
+    width: 100%;
+    display: flex;
+}
+
+.learner-thread-offer-detail {
+    width: 100%;
+    display: flex;
+}
+
+.learner-thread-offer-detail h3 {
+    width: fit-content;
+    font-weight: 100;
+    font-size: 1.5rem;
+    color: black;
+    margin-right: 10%;
+}
+
+.learner-thread-bottom-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.talents-apply-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-right: 2rem;
+    justify-content: space-between;
+}
+
+.talents-apply-wrapper h3 span {
+    font-weight: 900;
+}
+.talents-apply {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.7rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 0 0.5rem;
+}
+
+.view-appliers a {
+    width: fit-content;
+    color: black;
+    background-color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 0 0.5rem;
+    border-radius: 0.7rem;
+    text-decoration: none;
+}
+
+.accept_applier_form {
+    position: absolute;
+    right: 2%;
+}
+
+.accept_btn {
+    width: 10rem;
+    height: 3rem;
+
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    background-color: white;
+    border: none;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+}
+
+.accept_btn:hover {
+    transform: scale(1.05);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}

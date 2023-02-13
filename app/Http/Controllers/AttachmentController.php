@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class AttachmentController extends Controller
 {
     public function attachment($attachment){
-        $file_mimes = array
+        // $file_mimes = array;
     }
 }

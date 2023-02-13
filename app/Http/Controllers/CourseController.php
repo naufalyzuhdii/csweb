@@ -16,7 +16,8 @@ class CourseController extends Controller
     public function view_course()
     {
         $course = Course::all();
-        return view('categories.course','course');
+        
+        return view('categories.course',compact('course'));
     }
     public function view_sub_course()
     {
@@ -46,9 +47,11 @@ class CourseController extends Controller
             $courses->where('name', 'like', '%'. request('search'). '%');
         }
         
-        return view('categories.topic-course', [
-            "courses" => $courses
-        ]);
+        // return view('categories.topic-course', [
+        //     "courses" => $courses,
+        // ]);
+
+        return view('categories.topic-course',compact('courses'));
         
     }
 
@@ -136,6 +139,6 @@ class CourseController extends Controller
         $course = Course::find($id);
 
         $course->delete();
-        return ["Course Deleted"];
+        return redirect()->back()->with('message','Course has been deleted!');
     }
 }

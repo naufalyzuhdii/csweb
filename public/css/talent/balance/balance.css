@@ -1,0 +1,122 @@
+.balance {
+    width: 100%;
+    padding: 10rem 25rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.section-wrapper {
+    width: 75%;
+}
+
+/* ============== Title Heading ==================== */
+
+.title-heading h1 {
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.title-heading h1 span {
+    color: var(--primarycolor);
+}
+.title-heading p {
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
+    line-height: 2.5rem;
+}
+/* ============== Title Heading ==================== */
+
+.balance-content-wrapper {
+    width: 100%;
+    height: 50%;
+    margin: 5rem 0;
+
+    display: flex;
+    flex-direction: column;
+}
+.balance-row {
+    width: 50%;
+    height: 4rem;
+    display: flex;
+}
+
+.balance-row h3,
+.balance-row span {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: black;
+}
+
+.balance-header {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.balance-header h3 {
+    font-size: 1.8rem;
+}
+
+.balance-content {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.withdraw-amount {
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+.withdraw-amount span {
+    width: 15%;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    background-color: rgb(168, 167, 167);
+    border-radius: 1rem 0 0 1rem;
+    font-size: 1.6rem;
+}
+.withdraw-amount input {
+    width: 85%;
+    height: 100%;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.8rem;
+    border-radius: 0 1rem 1rem 0;
+    background-color: var(--thirdcolor);
+}
+
+.balance-content h3 {
+    margin-left: 0.5rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.btn-submit {
+    width: 30%;
+    height: 3.5rem;
+    background: var(--blue2);
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin-top: 5rem;
+    box-shadow: 0.1rem 0.1rem 0.3rem rgb(0, 0, 0, 0.5);
+}
+
+.btn-submit:hover {
+    transform: scale(1.02);
+}

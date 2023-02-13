@@ -13,6 +13,11 @@
             </p>
         </div>
         <!-- End Of Title Heading -->
+        @if(session('message'))
+        <div class="success">
+            {{session('message')}}
+        </div>
+        @endif
 
         <!-- Create Course Btn -->
         <div class="create-new-course-btn">
@@ -25,7 +30,7 @@
         <!-- My Courses Content -->
         <div class="my-courses-content-wrapper">
             @if (count($my_courses) == 0)
-            <div class="warn">
+            <div class="warn" style="margin-top:3rem;margin-left:2rem">
                 <h3>No Data</h3>
             </div>
             @else
@@ -47,8 +52,17 @@
                         {{$my_course->category->name}}
                     </h3>
                     <h3 class="course-author">{{ $my_course->user->name }}</h3>
+
                 </div>
                 <!-- Course Text Content -->
+                <form action="/delete/course/{{$my_course->id}}" class="delete_course" id="delete_course">
+                    <button type=submit>
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </form>
+
+
+
             </a>
             @endforeach
 

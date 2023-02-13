@@ -20,6 +20,11 @@
                     Validation Course
                 </a>
             </div>
+            <div class="course-navbar">
+                <a href="/view/validation-withdraw" class="course-navbar-links" id="course-navbar-links">
+                    Validation Withdraw
+                </a>
+            </div>
 
             <div class="profile-navbar">
                 <a href="#profile" class="profile-navbar-links">

@@ -33,6 +33,7 @@
                                 <i class="fa-sharp fa-solid fa-star">4.5</i>
                                 <h4>( 3.000 reviews )</h4>
                             </div>
+
                             <h2 class="sub-course-price">Rp 50.000</h2>
                         </div>
                     </a>

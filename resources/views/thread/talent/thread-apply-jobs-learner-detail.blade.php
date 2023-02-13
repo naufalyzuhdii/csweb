@@ -5,7 +5,13 @@
 
 @section ('content')
 <section class="thread-apply-jobs-learner-detail">
+
     <div class="section-wrapper">
+        @if (session('message'))
+        <div class="success">
+            {{ session('message') }}
+        </div>
+        @endif
         <div class="first-section">
             <!-- PROFILE LEARNER -->
             <div class="profile-learner">
@@ -40,7 +46,7 @@
                     </div>
                     <div class="content">
                         <ul>
-                            <li>{{$thread->skills_requirement}}</li>
+                            <li>{{$thread->skills->name}}</li>
                         </ul>
                     </div>
                 </div>
@@ -52,16 +58,16 @@
                     </div>
                 </div>
                 @if ($thread->status == 0)
-                    
+
                 @else
-                    <div class="chat-btn">
-                        <form action="/add_chatroom" method="POST">
+                <div class="chat-btn">
+                    <form action="/add_chatroom" method="POST">
                         @csrf
-                            <button type="submit">
-                                <a>Chat Talent</a>
-                            </button>
-                        </form>
-                    </div>
+                        <button type="submit">
+                            <a>Chat Talent</a>
+                        </button>
+                    </form>
+                </div>
                 @endif
             </div>
             <!-- LEARNER THREAD CONTENT -->
@@ -99,7 +105,7 @@
                     <h3>Offered Price Range</h3>
                     <h4>Rp. {{$nominal_depan_min}} - Rp. {{$nominal_depan_max}}</h4>
                 </div>
-                <div class="offer-fix-price">
+                <div class="offer-fix-price" style="visibility: hidden; opacity:0">
                     <h3>Offered Fix Price</h3>
                     <h4>Rp. {{$nominal_depan_fix}}</h4>
                 </div>
@@ -107,7 +113,40 @@
         </div>
 
 
+
         <div class="third-section">
+            <form action="/applier-price" enctype="multipart/form-data" method="POST" id="apply_form">
+                @csrf
+                <div class="offered-price">
+                    <h3>Applier Price</h3>
+                    <div class="price">
+                        <div class="applier-price">
+                            <span>Rp.</span>
+                            <input type="number" name="apply_price" maxlength="11" placeholder="Applier Price"
+                                id="apply_price" onkeyup="calc(this.value);" min="{{$thread->min_price}}"
+                                max="{{$thread->max_price}}">
+                        </div>
+                    </div>
+                </div>
+                @error('apply_price')
+                <div class="danger">
+                    {{$message}}
+                </div>
+                @enderror
+                <div class="offered-description">
+                    <textarea name="description" id=""
+                        placeholder="Type your reason why learner must choose you to be their partner. You can provide yours project's  or work's links."></textarea>
+                </div>
+                @error('description')
+                <div class="danger">
+                    {{$message}}
+                </div>
+                @enderror
+                <input type="text" value="{{$thread->status}}" name="status" hidden>
+                <input type="text" value="{{$thread->id}}" name="threads_post_projects_id" hidden>
+                <input type="text" value="{{$thread->user->id}}" name="user_id" hidden>
+            </form>
+
             <div class="talent-income-details">
                 <h3 class="income-details-heading">
                     Income Details
@@ -119,11 +158,12 @@
                     <div class="current-price-details">
                         <div class="row_detail">
                             <div class="label_tag">
-                                <h3> Offered Fix Price</h3>
+                                <h3> Offered Price</h3>
                                 <span>:</span>
                             </div>
                             <div class="price_tag">
-                                <h3>Rp. {{$nominal_depan_fix}}</h3>
+                                <span>Rp. </span>
+                                <input type="text" disabled id="applier_price">
                             </div>
                         </div>
                         <div class="row_detail">
@@ -132,8 +172,12 @@
                                 <span>:</span>
                             </div>
                             <div class="price_tag">
-                                <h3>Rp. {{$commision_depan}}</h3>
+                                <div class="price_tag">
+                                    <span>Rp. </span>
+                                    <input type="text" disabled id="commision_price">
+                                </div>
                             </div>
+
                         </div>
                         <div class="row_detail">
                             <div class="label_tag">
@@ -141,47 +185,76 @@
                                 <span>:</span>
                             </div>
                             <div class="price_tag">
-                                <h3>Rp. {{$net_income_depan}}</h3>
+                                <span>Rp. </span>
+                                <input type="text" disabled id="net_income">
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <button type="submit" class="apply-btn" form="apply_form">Apply This Job</button>
+
+                <!-- <button form="negotiation-form" type="submit">Submit</button> -->
             </div>
 
-            <div class="apply-btn">
-                <!-- <a href="/apply-this-job/{{$thread->id}}">Apply This Job</a> -->
-                <a href="">Apply This Job</a>
-            </div>
-
-            <!-- <button form="negotiation-form" type="submit">Submit</button> -->
-        </div>
 </section>
 
 
 <script>
-var rupiah = document.getElementById("rupiah");
-rupiah.addEventListener("keyup", function(e) {
+function calc(value) {
+    var inputed_price, commision_p, net_i;
+    inputed_price = 1 * value;
+    commision_p = 0.1 * value;
+    net_i = value - commision_p;
 
-    rupiah.value = formatrupiah(this.value, "Rp. ");
-});
 
 
-function formatrupiah(angka, prefix) {
-    var number_string = angka.replace(/[^,\d]/g, "").toString(),
-        split = number_string.split(","),
-        sisa = split[0].length % 3,
-        rupiah = split[0].substr(0, sisa),
-        ribuan = split[0].substr(sisa).match(/\d{3}/gi);
 
-    // tambahkan titik jika yang di input sudah menjadi angka ribuan
+    var number_string = inputed_price.toString(),
+        sisa = number_string.length % 3,
+        inputed_price = number_string.substr(0, sisa),
+        ribuan = number_string.substr(sisa).match(/\d{3}/g);
+
     if (ribuan) {
-        separator = sisa ? "." : "";
-        rupiah += separator + ribuan.join(".");
+        separator = sisa ? '.' : '';
+        inputed_price += separator + ribuan.join('.');
+    }
+    var number_string = commision_p.toString(),
+        sisa = number_string.length % 3,
+        commision_p = number_string.substr(0, sisa),
+        ribuan = number_string.substr(sisa).match(/\d{3}/g);
+
+    if (ribuan) {
+        separator = sisa ? '.' : '';
+        commision_p += separator + ribuan.join('.');
+    }
+    var number_string = net_i.toString(),
+        sisa = number_string.length % 3,
+        net_i = number_string.substr(0, sisa),
+        ribuan = number_string.substr(sisa).match(/\d{3}/g);
+
+    if (ribuan) {
+        separator = sisa ? '.' : '';
+        net_i += separator + ribuan.join('.');
     }
 
-    rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
-    return prefix == undefined ? rupiah : rupiah ? rupiah : "";
+
+
+
+    document.getElementById('applier_price').value = inputed_price;
+    document.getElementById('commision_price').value = commision_p;
+    document.getElementById('net_income').value = net_i;
+
 }
+
+// function mult(value) {
+//     var x, y;
+//     x = 2 * value;
+//     y = 3 * value;
+//     document.getElementById('out2x').innerText = x;
+//     document.getElementById('out3x').value = y;
+
+// }
 </script>
 
 

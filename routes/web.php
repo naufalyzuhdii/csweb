@@ -54,6 +54,7 @@ Route::get('/view/signup_page', [AuthController::class, 'view_signUp'])->middlew
 Route::post('/signup', [AuthController::class, 'signup'])->middleware('guest');
 
 Route::get('/profile/{id}', [UserController::class, 'view_profile'])->name('profile.page')->middleware('auth');
+Route::get('/balance/{id}', [UserController::class, 'view_balance'])->name('balance.page')->middleware('talent');
 Route::put('/user_update', [UserController::class, 'user_update'])->name('user.update')->middleware('auth');
 Route::get('/signout', [AuthController::class, 'signout'])->middleware('auth');
 
@@ -73,6 +74,8 @@ Route::get('/view/validation-course', [AdminController::class, 'view_validation_
 Route::post('/add-new-course', [AdminController::class, 'add_new_course'])->name('add.new-course')->middleware('admin');
 Route::put('/update_course', [AdminController::class, 'update_course'])->name('update.course')->middleware('admin');
 Route::get('/delete-course/{id}', [AdminController::class, 'delete_course'])->middleware('admin');
+
+Route::get('/view/validation-withdraw', [AdminController::class, 'view_validation_withdraw'])->name('view.validation-withdraw')->middleware('admin');
 
 // End of Admin only
 
@@ -164,6 +167,8 @@ Route::get('/view/threads-apply-job/talent', [TalentController::class, 'view_thr
 Route::get('/view/thread-apply-jobs-learner-detail/{id}', [TalentController::class, 'view_thread_apply_jobs_learner_detail'])->middleware('talent');
 // =========================================== Thread Talent ====================================
 
+Route::post('/applier-price', [ApplierController::class, 'apply'])->middleware('talent');
+
 // Forum
 Route::get('/view/forum-detail-reply', [ForumController::class, 'view_forum_detail_reply']);
 
@@ -177,6 +182,7 @@ Route::get('/view/my-activity-applied-jobs', [TalentController::class, 'view_tal
 
 // =========================================== My Courses ===========================================
 Route::get('/view/create-new-course', [TalentController::class, 'view_create_new_course'])->middleware('talent');
+Route::get('/delete/course/{id}', [CourseController::class, 'delete_course'])->middleware('talent');
 Route::post('/postcourse', [CourseController::class, 'post_course']);
 Route::get('/view/my-courses', [CourseController::class, 'my_courses'])->middleware('auth')->name('mycourse');
 Route::get('/view/my-courses/my-course-detail-chapter/{id}', [CourseDetailController::class, 'my_course_detail'])->middleware('talent');
@@ -184,7 +190,6 @@ Route::get('/showmateri/{id}', [CourseDetailController::class, 'show_materi'])->
 Route::post('/addchapter', [CourseDetailController::class, 'add_chapter'])->middleware('talent');
 Route::get('/detail-chapter/id/upload-new-video', [TalentController::class, 'view_my_course_detail_sub_chapter'])->middleware('talent');
 Route::get('/view/video-learning/id/', [TalentController::class, 'view_my_course_detail_video_learning'])->middleware('talent');
-
 
 // =========================================== My Courses ===========================================
 
