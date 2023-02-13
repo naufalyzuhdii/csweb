@@ -24,6 +24,7 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->string('image');
             $table->string('status')->default('invalid');
+            $table->tinyInteger('finished');
             $table->timestamps();
         });
     }

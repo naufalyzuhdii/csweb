@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ThreadsPostProject;
 use App\Models\ThreadsFreelancersTalents;
 use App\Models\Skills;
+use App\Models\Applier;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +29,7 @@ class ThreadsPostProjectController extends Controller
         return view('thread.learner.thread-learner', 
         [
             "threads" => $threads->paginate(5)
-        ],);
+        ]);
     }
     public function view_ThreadsPostProject_learner_MyThread()
     {

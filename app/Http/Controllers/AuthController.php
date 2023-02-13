@@ -30,6 +30,8 @@ class AuthController extends Controller
 
         $validator = Validator::make($request->all(),$rules);
 
+        // dd($validator);
+
         if($validator -> fails())
         {
             return back()->withErrors($validator);
@@ -40,7 +42,7 @@ class AuthController extends Controller
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
             'phone' => $request['phone'],
-            'dob' => $request['dob']
+            'dob' => $request['dob'],
         ]);
         
         return redirect()->route('signin')->with('message','Sign Up Successfully. Please Sign In!');
