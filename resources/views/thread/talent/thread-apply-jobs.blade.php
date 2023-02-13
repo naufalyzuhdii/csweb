@@ -119,9 +119,13 @@
                             </div>
 
                         </div>
+                        <?php
+                            $count = DB::table('appliers')->where('threads_post_projects_id',$thread->id)->get()->count();
+                        ?>
                         <div class="learner-thread-bottom-content">
                             <div class="talents-apply-wrapper">
-                                <h3 class="talents-apply"><span>2 </span>talent(s) has apply this offer</h3>
+                                <h3 class="talents-apply"><span style="margin-right:.25rem;">{{$count}}</span>talent(s)
+                                    has apply this offer</h3>
                                 <div class="talents-view-btn">
                                     <h3>
                                         <a href="/view/thread-apply-jobs-learner-detail/{{$thread->id}}">View

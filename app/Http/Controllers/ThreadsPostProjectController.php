@@ -34,12 +34,13 @@ class ThreadsPostProjectController extends Controller
     public function view_ThreadsPostProject_learner_MyThread(Request $request, $id)
     {
         $user = User::find($id);
-        $threads = ThreadsPostProject::where('user_id','=',$user->id)->get();
+        $threads = ThreadsPostProject::latest()->where('user_id','=',$user->id)->get();
+        
         $count = ThreadsPostProject::where('user_id','=',$user->id)->count();
 
-        $tpp = ThreadsPostProject::find($request->id);
+        // $count_applier = Applier::where('threads_post_projects_id', 1)->orderBy('created_at', 'desc')->get();
 
-        $count_applier = Applier::where('threads_post_projects_id', $tpp->id)->orderBy('created_at', 'desc')->count();
+        $count_applier = Applier::all();
 
         return view('thread.learner.mythread-learner',compact('threads','count','count_applier'));
     }
