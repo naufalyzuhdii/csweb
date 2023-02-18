@@ -60,7 +60,7 @@ class ApplierController extends Controller
 
         $accept = Applier::where('id', $request->applier_id)->with('threads_post_projects')->first();
         $accept->threads_post_projects->status = 1;
-        // $accept->threads_post_projects->fix_price = $request->apply_price;
+        $accept->threads_post_projects->fix_price = $accept->apply_price;
         $accept->threads_post_projects->update();
         $accept->status = 1;
         $accept->update();
