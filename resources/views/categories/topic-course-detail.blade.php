@@ -14,7 +14,6 @@
                 <div class="topic-course-detail-heading-content">
                     <h1 class="topic-course-detail-heading">{{ $course->title }}</h1>
                     <h2 class="topic-course-detail-description">
-                        {{ $course->description }}
                     </h2>
                     <h3 class="topic-course-detail-category">
                         <ul>
@@ -54,14 +53,10 @@
         <div class="topic-course-detail-content">
             <div class="topic-course-detail-content-description">
                 <h2>Description</h2>
-                <p>Have you ever wanted to learn how to code but didn't know where to start? This is a fantastic course
-                    to
-                    start. Not only is JavaScript easy to learn but it is in demand? If you take this course you will
-                    start
-                    the fantastic process of learning to code which will lead you to a better life. Coding is one of the
-                    most in demand skills if you can code you have a job. </p>
+                <p> {{ $course->description }}
+                </p>
             </div>
-            <div class="topic-course-detail-content-goals">
+            <!-- <div class="topic-course-detail-content-goals">
                 <h2>What will you get</h2>
                 <ul>
                     <li><i class="fa-sharp fa-solid fa-circle"></i> Learn basic of
@@ -77,78 +72,36 @@
                     </li>
                 </ul>
 
-            </div>
+            </div> -->
 
             <div class="topic-course-detail-content-video">
                 <h2>Course content you can learn</h2>
                 <div class="content-video-wrapper">
+                    @foreach($courseDetail as $cd)
                     <div class="content-video-chapter">
                         <div class="content-video-chapter-title">
-                            <h2><i class="fa-sharp fa-solid fa-play" id="arrow-chapter"></i>Basic of HTML</h2>
+                            <h2><i class="fa-sharp fa-solid fa-play" id="arrow-chapter"></i>
+                                {{$cd->chapter}}</h2>
                             <h3>Total course time : 5 hour</h3>
                         </div>
                         <div class="content-video-chapter-list">
                             <ul>
-                                <li><a href="#introcourse"><i class="fa-solid fa-circle-play"></i> Introduction to
-                                        course</a>
-                                    <h3>2 hour</h3>
-                                </li>
-                                <li><a href="#"><i class="fa-solid fa-circle-play"></i> What is HTML?</a>
-                                    <h3>2 hour</h3>
-                                </li>
-                                <li><a href="#"><i class="fa-solid fa-circle-play"></i> HTML Structured</a>
-                                    <h3>1 hour</h3>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="content-video-chapter">
-                        <div class="content-video-chapter-title">
-                            <h2><i class="fa-sharp fa-solid fa-play" id="arrow-chapter"></i>Basic of CSS</h2>
-                            <h3>Total course time : 3 hour</h3>
-                        </div>
-                        <div class="content-video-chapter-list">
-                            <ul>
                                 <li>
-                                    <a href="#"><i class="fa-solid fa-circle-play"></i> Introduction to course</a>
-                                    <h3>1 hour</h3>
-                                </li>
-                                <li><a href="#"><i class="fa-solid fa-circle-play"></i> What is CSS?</a>
-                                    <h3>1 hour</h3>
-                                </li>
-                                <li><a href="#"><i class="fa-solid fa-circle-play"></i> CSS Structured</a>
-                                    <h3>1 hour</h3>
+                                    <a href="#introcourse"><i class="fa-solid fa-circle-play"></i>
+                                    </a>
+                                    <h3>2 hour</h3>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="content-video-chapter">
-                        <div class="content-video-chapter-title">
-                            <h2><i class="fa-sharp fa-solid fa-play" id="arrow-chapter"></i>Implementation HTML</h2>
-                            <h3>Total course time : 2 hour</h3>
-                        </div>
-                        <div class="content-video-chapter-list">
-                            <ul>
-                                <li><a href="#"><i class="fa-solid fa-circle-play"></i> Create Table</a>
-                                    <h3>1 hour</h3>
-                                </li>
-                                <li><a href="#"><i class="fa-solid fa-circle-play"></i> Div Tag</a>
-                                    <h3>30 min</h3>
-                                </li>
-                                <li><a href="#"><i class="fa-solid fa-circle-play"></i> Links</a>
-                                    <h3>30 min</h3>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>
         {{-- TOPIC COURSE DETAIL CONTENT --}}
 
         {{-- TOPIC COURSE DETAIL FORUM --}}
-        <div class="topic-course-detail-forum">
+        <!-- <div class="topic-course-detail-forum">
             <div class="topic-course-detail-forum-wrapper">
                 <div class="forum-header">
                     <h1>Forum</h1>
@@ -295,7 +248,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         {{-- TOPIC COURSE DETAIL FORUM --}}
 
 
@@ -311,66 +264,6 @@
                     </div>
                     <div class="topic-course-text-content">
                         <h2 class="topic-course-title">Simple Course HTML</h2>
-                        <h3 class="topic-course-category">
-                            <ul>
-                                <li>Computer</li>
-                                <li>Website</li>
-                            </ul>
-                        </h3>
-                        <h3 class="topic-course-author">Udin Petot</h3>
-                        <div class="topic-course-rating">
-                            <i class="fa-sharp fa-solid fa-star">4.5</i>
-                            <h4>( 3.000 reviews )</h4>
-                        </div>
-                    </div>
-                    <h2 class="topic-course-price">Rp 50.000</h2>
-                </a>
-                <a href="#d" class="topic-course-item">
-                    <div class="topic-course-image">
-                        <img src="{{asset('images/course/html.png')}}" alt="">
-                    </div>
-                    <div class="topic-course-text-content">
-                        <h2 class="topic-course-title">HTML Basic</h2>
-                        <h3 class="topic-course-category">
-                            <ul>
-                                <li>Computer</li>
-                                <li>Website</li>
-                            </ul>
-                        </h3>
-                        <h3 class="topic-course-author">Udin Petot</h3>
-                        <div class="topic-course-rating">
-                            <i class="fa-sharp fa-solid fa-star">4.5</i>
-                            <h4>( 3.000 reviews )</h4>
-                        </div>
-                    </div>
-                    <h2 class="topic-course-price">Rp 50.000</h2>
-                </a>
-                <a href="#d" class="topic-course-item">
-                    <div class="topic-course-image">
-                        <img src="{{asset('images/course/html.png')}}" alt="">
-                    </div>
-                    <div class="topic-course-text-content">
-                        <h2 class="topic-course-title">HTML Basic Easy Tutorial</h2>
-                        <h3 class="topic-course-category">
-                            <ul>
-                                <li>Computer</li>
-                                <li>Website</li>
-                            </ul>
-                        </h3>
-                        <h3 class="topic-course-author">Udin Petot</h3>
-                        <div class="topic-course-rating">
-                            <i class="fa-sharp fa-solid fa-star">4.5</i>
-                            <h4>( 3.000 reviews )</h4>
-                        </div>
-                    </div>
-                    <h2 class="topic-course-price">Rp 50.000</h2>
-                </a>
-                <a href="#d" class="topic-course-item">
-                    <div class="topic-course-image">
-                        <img src="{{asset('images/course/html.png')}}" alt="">
-                    </div>
-                    <div class="topic-course-text-content">
-                        <h2 class="topic-course-title">Professional HTML</h2>
                         <h3 class="topic-course-category">
                             <ul>
                                 <li>Computer</li>

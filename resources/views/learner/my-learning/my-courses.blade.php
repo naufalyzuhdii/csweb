@@ -16,44 +16,40 @@
 
         <!-- Course Content Wrapper -->
         <div class="my-courses-content-wrapper">
+
             @foreach ($my_learning as $ml)
-            
             {{-- @foreach ($my_learning as $ml) --}}
-                {{-- @if ($courses->id == $my_learning->id) --}}
-                    {{-- @foreach ($courses as $course)
+            {{-- @if ($courses->id == $my_learning->id) --}}
+            {{-- @foreach ($courses as $course)
                     @if ($course->id == $my_learning) --}}
-                        <a href="/view/my-learning/course-learned-detail" class="course-links">
-                            <!-- Course Image Wrapper -->
-                            <div class="course-image-wrapper">
-                                <div class="course-image">
-                                    <img src="{{ Storage::url($ml->image) }}" alt="">
-                                </div>
-                            </div>
-                            <!-- Course Image Wrapper -->
+            <a href="/view/my-learning/course-learned-detail/{{$ml->id}}" class="course-links">
+                <!-- Course Image Wrapper -->
+                <div class="course-image-wrapper">
+                    <div class="course-image">
+                        <img src="{{ url('course/'. $ml->image) }}" alt="">
+                    </div>
+                </div>
+                <!-- Course Image Wrapper -->
 
-                            <!-- Course Text Content -->
-                            <div class="course-text-content">
-                                <h2 class="course-title">{{ $ml->title }}</h2>
-                                <h3 class="course-category">
-                                    <ul>
-                                        {{-- <li>Computer</li>
-                                        <li>Website</li> --}}
-                                    </ul>
-                                </h3>
-                                <h3 class="course-author"></h3>
-                            </div>
-                            <!-- Course Text Content -->
-                        </a>        
-                    {{-- @endif --}}
+                <!-- Course Text Content -->
+                <div class="course-text-content">
+                    <h2 class="course-title">{{ $ml->title }}</h2>
+                    <h3 class="course-category">
+                    </h3>
+                    <h3 class="course-author"></h3>
+                </div>
+                <!-- Course Text Content -->
+            </a>
+            {{-- @endif --}}
 
-                        
-                    {{-- @endforeach  --}}
-                {{-- @endif --}}
 
-                {{-- @endforeach --}}
+            {{-- @endforeach  --}}
+            {{-- @endif --}}
+
+            {{-- @endforeach --}}
             @endforeach
-            
-            
+
+
         </div>
         <!-- Course Content Wrapper -->
     </div>

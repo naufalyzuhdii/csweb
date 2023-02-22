@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\MyLearning;
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 
 class MyLearningController extends Controller
 {
-    public function show_mylearning(){
-        $my_learning = MyLearning::all();
-        // dd($my_learning);
+    public function show_mylearning($id){
+        // $my_learning = MyLearning::all();
+        $user = User::find($id);
+        $my_learning = MyLearning::
+        where('user_id', $user->id)->get();
 
         return view('learner.my-learning.my-courses', ['my_learning' => $my_learning]);
     }

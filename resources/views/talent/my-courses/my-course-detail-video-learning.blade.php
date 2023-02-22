@@ -18,16 +18,13 @@
                     href="/my_course/{{$my_course->id}}/detail-chapter/{{$detail_chapter->id}}/upload-new-video">
                     < Back</a>
                         <h2 class="video-learning-chapter-title">
-                            {{$video->course_detail->chapter}} <span> - </span> <span> {{$video->video_title}} </span>
+                            {{$video->course_detail->chapter}} <span> - </span> {{$video->video_title}}
                         </h2>
                         <div class="video-learning-chapter-description">
-
                         </div>
             </div>
         </div>
         <!-- Video Learning Wrapper -->
-
-
     </div>
 </section>
 

@@ -17,12 +17,22 @@ class CourseVideoController extends Controller
         $coursevideo = new CourseVideo();
         $coursevideo->video_title = $request->video_title;
         $coursevideo->course_detail_id = $request->course_detail_id;
+
+        $file = $request->file('video');
+        
         if ($request->hasFile('video')){
-            $path = $request->file('video')->store('videos', ['disk' => 'my_files']);
-            $coursevideo->video = $path;
+            // $path = $request->file('video')->store('videos', ['disk' => 'my_files']);
+            // $coursevideo->video = $path;
+
+            $fileName = uniqid(). '.' . $file->getClientOriginalExtension();
+            $path = $file->move('videos/',$fileName);
+
+    
+            $coursevideo->video = $fileName;
         }
 
         $coursevideo->save();
+        
         return back()
         ->with('message','Course video has been uploaded successfully');
     }
