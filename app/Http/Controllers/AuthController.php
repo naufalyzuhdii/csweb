@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;   
-use Illuminate\Validation\Rules;
 
 class AuthController extends Controller
 {
@@ -98,7 +99,9 @@ class AuthController extends Controller
 
     public function view_learner_home()
     {
-        return view('auth.learner-home');
+        $parentcategories = Category::whereNull('parent_id')->get();
+
+        return view('auth.learner-home', compact('parentcategories'));
     }
     public function view_talent_home()
     {

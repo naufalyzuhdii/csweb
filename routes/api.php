@@ -52,3 +52,6 @@ Route::post('/chat', [ChatController::class, 'chat'])->name('chat');
 Route::post('/apply', [ApplierController::class, 'apply'])->name('apply');
 Route::post('/accept', [ApplierController::class, 'accept_applier'])->name('accept');
 Route::post('/upload_attachment', [ThreadsPostProjectController::class, 'upload_attachment'])->name('upload_attachment');
+Route::post('/finish_thread', [ThreadsPostProjectController::class, 'thread_finished'])->name('thread_finished');
+
+Route::get('/view_course_by_category/{id}', [CourseController::class, 'show_course']);

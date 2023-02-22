@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Course;
+use App\Models\ThreadsPostProject;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Category extends Model
 {
@@ -25,6 +27,6 @@ class Category extends Model
     }
 
     public function subcategory(){
-        return $this->hasMany('Category', 'parent_id');
+        return $this->hasMany( Category::class, 'parent_id');
     }
 }

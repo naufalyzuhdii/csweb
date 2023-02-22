@@ -22,6 +22,7 @@
             {{-- @if ($courses->id == $my_learning->id) --}}
             {{-- @foreach ($courses as $course)
                     @if ($course->id == $my_learning) --}}
+
             <a href="/view/my-learning/course-learned-detail/{{$ml->id}}" class="course-links">
                 <!-- Course Image Wrapper -->
                 <div class="course-image-wrapper">
@@ -36,7 +37,7 @@
                     <h2 class="course-title">{{ $ml->title }}</h2>
                     <h3 class="course-category">
                     </h3>
-                    <h3 class="course-author"></h3>
+                    <h3 class="course-author">{{ $ml->user->name }}</h3>
                 </div>
                 <!-- Course Text Content -->
             </a>
@@ -47,6 +48,7 @@
             {{-- @endif --}}
 
             {{-- @endforeach --}}
+
             @endforeach
 
 

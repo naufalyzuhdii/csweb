@@ -37,6 +37,13 @@ class CourseController extends Controller
         
     }
 
+    public function show_course_by_category($id){
+        $category = Category::find($id);
+        $courses = Course::where('category_id', $category->id)->orderBy('created_at', 'desc')->get();
+
+        return view('categories.topic-course',compact('category','courses'));
+    }
+
     public function course_detail($id){
         $course = Course::find($id);
 
@@ -128,7 +135,6 @@ class CourseController extends Controller
         $course = Course::find($request->id);
         $course->title = $request->title != null ? $request->title : $course->title;
         $course->description = $request->description != null ? $request->description : $course->description;
-        $course->author = $request->author != null ? $request->author : $course->author;
         $course->price = $request->price != null ? $request->price : $course->price;
         $course->category_id = $request->category!=null?$request->category : $course->category_id;
 
@@ -155,4 +161,15 @@ class CourseController extends Controller
         $course->delete();
         return redirect()->back()->with('message','Course has been deleted!');
     }
+
+    // public function course_finished(Request $request){
+    //     $rules = [
+    //         'user_id' => 'required|integer',
+    //         'course_id' => 'required|integer'
+    //     ];
+    //     $validator = Validator::make($request->all(), $rules);
+    //     if ($validator->fails()) {
+    //         return back()->withErrors($validator);
+    //     }
+    // }
 }

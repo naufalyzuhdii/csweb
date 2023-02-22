@@ -232,7 +232,29 @@ class ThreadsPostProjectController extends Controller
         return ['Attachment Added!'];
     }
     
+    public function thread_finished(Request $request){
+        $rules = [
+            'user_id' => 'required|integer',
+            'threads_post_projects_id' => 'required|integer'
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return back()->withErrors($validator);
+        }
+        $finished = ThreadsPostProject::where('id', $request->threads_post_projects_id)->with('user')->first();
+        $finished->user->balance = $finished->fix_price;
+        $finished->user->update();
+        $finished->status = 2;
+        $finished->update();
+        // $accept = Applier::where('id', $request->applier_id)->with('threads_post_projects')->first();
+        // $accept->threads_post_projects->status = 1;
+        // $accept->threads_post_projects->fix_price = $accept->apply_price;
+        // $accept->threads_post_projects->update();
+        // $accept->status = 1;
+        // $accept->update();
 
+        return ['Thread Finished!'];
+    }
 
 
 
