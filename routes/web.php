@@ -14,6 +14,7 @@ use App\Http\Controllers\LearnerController;
 use App\Http\Controllers\ChatRoomController;
 use App\Http\Controllers\MyLearningController;
 use App\Http\Controllers\CourseDetailController;
+use App\Http\Controllers\CourseVideoController;
 use App\Http\Controllers\ThreadAttachmentController;
 use App\Http\Controllers\ThreadsPostProjectController;
 use App\Http\Controllers\ThreadsFreelancersTalentsController;
@@ -185,10 +186,18 @@ Route::get('/view/create-new-course', [TalentController::class, 'view_create_new
 Route::get('/delete/course/{id}', [CourseController::class, 'delete_course'])->middleware('talent');
 Route::post('/postcourse', [CourseController::class, 'post_course']);
 Route::get('/view/my-courses', [CourseController::class, 'my_courses'])->middleware('auth')->name('mycourse');
+
 Route::get('/view/my-courses/my-course-detail-chapter/{id}', [CourseDetailController::class, 'my_course_detail'])->middleware('talent');
-Route::get('/showmateri/{id}', [CourseDetailController::class, 'show_materi'])->middleware('talent')->name('showmateri');
+Route::post('/upload-detail-chapter', [CourseDetailController::class, 'upload_course_detail_chapter'])->middleware('talent');
+Route::get('/delete-chapter/{id}', [CourseDetailController::class, 'delete_course_detail_chapter'])->middleware('talent');
+Route::get('/my_course/{cid}/detail-chapter/{id}/upload-new-video', [CourseDetailController::class, 'course_detail_chapter_upload_page'])->middleware('talent');
+Route::post('/upload-new-video', [CourseDetailController::class, 'upload_new_video_sub_chapter'])->middleware('talent');
+
+Route::get('/my_course/{cid}/course_detail/{did}/showmateri/{id}', [CourseDetailController::class, 'show_materi'])->middleware('talent')->name('showmateri');
 Route::post('/addchapter', [CourseDetailController::class, 'add_chapter'])->middleware('talent');
 Route::get('/detail-chapter/id/upload-new-video', [TalentController::class, 'view_my_course_detail_sub_chapter'])->middleware('talent');
+Route::post('/upload-new-video', [CourseVideoController::class, 'upload_video'])->middleware('talent');
+Route::get('/delete-video/{id}', [CourseVideoController::class, 'delete_course_video'])->middleware('talent');
 Route::get('/view/video-learning/id/', [TalentController::class, 'view_my_course_detail_video_learning'])->middleware('talent');
 
 // =========================================== My Courses ===========================================

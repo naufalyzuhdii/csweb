@@ -19,26 +19,6 @@ class CourseController extends Controller
         
         return view('categories.course',compact('course'));
     }
-    public function view_sub_course()
-    {
-        return view('categories.sub-course');
-    }
-    public function view_topic_course()
-    {
-        return view('categories.topic-course');
-    }
-
-    public function view_topic_course_detail()
-    {
-        return view('categories.topic-course-detail');
-    }
-
-    public function view_talent_profile()
-    {
-        return view('course.talent-profile-course');
-    }
-
-    // CONTROLL FUNCTION
 
     public function show_course(){
         $courses = Course::all();
@@ -61,6 +41,28 @@ class CourseController extends Controller
         // dd($getall);
         return view('categories.topic-course-detail', ['course' => $course]);
     }
+    public function view_sub_course()
+    {
+        return view('categories.sub-course');
+    }
+    public function view_topic_course()
+    {
+        return view('categories.topic-course');
+    }
+
+    public function view_topic_course_detail()
+    {
+        return view('categories.topic-course-detail');
+    }
+
+    public function view_talent_profile()
+    {
+        return view('course.talent-profile-course');
+    }
+
+    // CONTROLL FUNCTION
+
+
 
     public function my_courses()
     {
@@ -90,6 +92,8 @@ class CourseController extends Controller
         $course->description = $request->description;
         $course->price = $request->price;
         $course->category_id = $request->category;
+
+        $course->finished =  0;
 
         $file = $request->file('image');
 

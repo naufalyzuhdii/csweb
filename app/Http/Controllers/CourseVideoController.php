@@ -11,22 +11,30 @@ class CourseVideoController extends Controller
     public function upload_video(Request $request){
         $this->validate($request, [
             'video_title' => 'required|string|max:255',
-            'video' => 'required|file|mimetypes:video/mp4',
+            'video' => 'required|file|mimetypes:video/mp4|max:20000',
         ]);
 
         $coursevideo = new CourseVideo();
         $coursevideo->video_title = $request->video_title;
-        $coursevideo->course_detail_id = $request->course_detail;
+        $coursevideo->course_detail_id = $request->course_detail_id;
         if ($request->hasFile('video')){
             $path = $request->file('video')->store('videos', ['disk' => 'my_files']);
             $coursevideo->video = $path;
         }
 
         $coursevideo->save();
-        return ["Add Video Success!"];
+        return back()
+        ->with('message','Course video has been uploaded successfully');
     }
 
-    // public function show_video(){
+    public function delete_course_video($id)
+    {
+        $video = CourseVideo::find($id);
+        $video->delete();
+        
+        return redirect()->back()
+        ->with('message','Course Video has been deleted successfully');
+    }
 
-    // }
+
 }

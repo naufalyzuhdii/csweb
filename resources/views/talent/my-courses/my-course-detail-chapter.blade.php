@@ -6,6 +6,12 @@
 @section('content')
 <section class="my-course-detail-chapter">
     <div class="my-course-detail-chapter-wrapper">
+        <div class="links">
+            <h3>
+                <a href="/view/my-courses">My Courses</a>
+            </h3>
+        </div>
+
         <!-- Title Heading -->
         <div class="title-heading">
             <h1> <span>My Courses</span> - Course Detail Chapter </h1>
@@ -17,12 +23,20 @@
 
         <!-- Content Wrapper -->
         <div class="my-course-detail-chapter-content-wrapper">
-            <!-- <form action="/upload-detail-chapter" method="get" id="form-upload-detail-chapter"> -->
-            <form action="" method="get" id="form-upload-detail-chapter">
+            <form action="/upload-detail-chapter" method="post" id="form-upload-detail-chapter"
+                enctype="multipart/form-data">
+                @csrf
+                <input type="text" name="course_id" value="{{$my_course->id}}" hidden>
                 <div class="course-chapter-title-wrapper">
-                    <label for="">Course Chapter Title</label>
-                    <input type="text" name="course-chapter-title">
+                    <label for="chapter">Course Detail Chapter - Title</label>
+                    <input type="text" name="course_chapter_title" id="chapter"
+                        placeholder="example: BAB 1 Pendahuluan">
                 </div>
+                @error('course_chapter_title')
+                <div class="danger">
+                    {{$message}}
+                </div>
+                @enderror
                 <div class="button-submit-wrapper">
                     <button type="submit" value="submit" class="submit-btn">
                         Submit
@@ -37,48 +51,28 @@
             <div class="posted-chapter-heading">
                 <h3>Here are your course's content.</h3>
             </div>
+            @if(session('message'))
+            <div class="success">
+                {{session('message')}}
+            </div>
+            @endif
             <div class="posted-chapter-wrapper">
                 {{-- @dd($chapter) --}}
                 @foreach ($chapter as $cp)
-
                 <div class="posted-chapter-links-wrapper" href="/showmateri/{{ $cp->id }}">
                     <div class="posted-chapter-links">
                         <div class="posted-chapter-title">
-                            <h3>BAB {{ $cp->id }}: {{ $cp->chapter }}</h3>
+                            <h3>{{ $cp->chapter }}</h3>
                         </div>
-                        <i class="fa-sharp fa-solid fa-play" id="arrow-chapter"></i>
-                        <a href="/detail-chapter/id/upload-new-video" class="upload-new-video">Upload new video</a>
-                        <a href="/delete-chapter/id/" class="delete-chapter"><i class="fa-solid fa-trash"></i></a>
-                    </div>
-                    <div class="posted-chapter-videos-content-wrapper">
-                        {{-- @dd($materi) --}}
-                        {{-- @if (count($materi) == 0)
-                                No Data
-
-                            @else --}}
-                        @foreach ($video as $vid)
-
-                        <div class="posted-videos-links">
-                            <h3>
-                                <a href="/view/video-learning/id/">1. {{ $vid->video_title }}</a>
-                            </h3>
-                            <h3>
-                                <span>
-                                    1 hour
-                                </span>
-                            </h3>
-                            <a href="/delete-videos/id/" class="delete-videos"><i class="fa-solid fa-trash"></i></a>
-                        </div>
-
-                        @endforeach
-                        {{-- @endif --}}
+                        <a href="/my_course/{{$my_course->id}}/detail-chapter/{{$cp->id}}/upload-new-video"
+                            class="upload-new-video">Upload new
+                            video</a>
+                        <a href="/delete-chapter/{{$cp->id}}" class="delete-chapter"><i
+                                class="fa-solid fa-trash"></i></a>
                     </div>
                 </div>
-
                 @endforeach
-
             </div>
-
         </div>
         <!-- Posted Titles Chapter -->
     </div>
