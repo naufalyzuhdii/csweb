@@ -61,13 +61,12 @@
                     </div>
                 </div>
                 @if ($thread->status == 0)
-
                 @else
                 <div class="chat-btn">
                     <form action="/add_chatroom" method="POST">
                         @csrf
                         <button type="submit">
-                            <a>Chat Talent</a>
+                            Chat Learner
                         </button>
                     </form>
                 </div>

@@ -35,12 +35,16 @@
                 </div>
             </div>
             <div class="header-right">
+                @if(auth()->user()->role == 'learner')
                 <a href="{{ route('addtocart', ['id' => $course->id]) }}" class="add-to-cart-btn">
                     <h2>Add to cart</h2>
                 </a>
                 <a href="#" class="buy-btn">
                     <h2>Buy Course Now</h2>
                 </a>
+                @else
+
+                @endif
             </div>
 
         </div>

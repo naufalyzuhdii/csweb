@@ -9,6 +9,16 @@
 .my-course-detail-chapter-wrapper {
     width: 75%;
 }
+.links {
+    margin-bottom: 3rem;
+}
+.links h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.links h3 a {
+    color: var(--deepblue);
+}
 /* ============== Title Heading ==================== */
 
 .title-heading h1 {

@@ -210,7 +210,7 @@
 
 
                                 </div>
-                                <form action="#acceptApplier" form="accept_applier_form" class="accept_applier_form">
+                                <form action="/accept_talent" form="accept_applier_form" class="accept_applier_form">
                                     <input type="text" name="applier_id" value="{{$apl->id}}" hidden>
                                     <input type="text" name="threads_post_projects_id"
                                         value="{{$apl->threads_post_projects_id}}" hidden>
