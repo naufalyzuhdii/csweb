@@ -20,7 +20,7 @@
             @elseif (count($courses) > 0)
             @foreach ($courses as $course)
             {{-- @dd($course->category->name) --}}
-            <a href="/view/topic-course-detail/{{ $course->id }}" class="topic-course-item">
+            <a href="/view/course/{{ $course->id }}/topic-course-detail" class="topic-course-item">
                 <div class="topic-course-image">
                     <img src="{{ url('course/'. $course->image) }}" alt="">
                 </div>

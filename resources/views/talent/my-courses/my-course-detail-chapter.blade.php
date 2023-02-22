@@ -30,7 +30,7 @@
                 <div class="course-chapter-title-wrapper">
                     <label for="chapter">Course Detail Chapter - Title</label>
                     <input type="text" name="course_chapter_title" id="chapter"
-                        placeholder="example: BAB 1 Pendahuluan">
+                        placeholder="example: BAB 1 Introduction">
                 </div>
                 @error('course_chapter_title')
                 <div class="danger">
@@ -39,7 +39,7 @@
                 @enderror
                 <div class="button-submit-wrapper">
                     <button type="submit" value="submit" class="submit-btn">
-                        Submit
+                        Upload
                     </button>
                 </div>
             </form>
@@ -58,6 +58,11 @@
             @endif
             <div class="posted-chapter-wrapper">
                 {{-- @dd($chapter) --}}
+                @if(count($chapter) == 0)
+                <div class="warn">
+                    <h3>Your course has not course detail chapter yet. Please upload one.</h3>
+                </div>
+                @else
                 @foreach ($chapter as $cp)
                 <div class="posted-chapter-links-wrapper" href="/showmateri/{{ $cp->id }}">
                     <div class="posted-chapter-links">
@@ -72,6 +77,8 @@
                     </div>
                 </div>
                 @endforeach
+                @endif
+
             </div>
         </div>
         <!-- Posted Titles Chapter -->

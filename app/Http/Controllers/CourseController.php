@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Models\Course;
+use App\Models\CourseDetail;
+use App\Models\CourseVideo;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -44,9 +46,15 @@ class CourseController extends Controller
 
     public function course_detail($id){
         $course = Course::find($id);
+
+        $courseDetail = CourseDetail::where('course_id', $id)->get();
+
+        $video = CourseVideo::where('course_detail_id', $id)->get();
         // $getall = Course::all();
         // dd($getall);
-        return view('categories.topic-course-detail', ['course' => $course]);
+        return view('categories.topic-course-detail', 
+        ['course' => $course],
+        compact('courseDetail','video'));
     }
     public function view_sub_course()
     {
@@ -54,6 +62,8 @@ class CourseController extends Controller
     }
     public function view_topic_course()
     {
+
+
         return view('categories.topic-course');
     }
 

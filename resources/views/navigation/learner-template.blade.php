@@ -47,7 +47,7 @@
                 </a>
             </div>
             <div class="course-navbar">
-                <a href="/view/my-learning" class="course-navbar-links" id="course-navbar-links">
+                <a href="/view/my-learning/{{Auth::user()->id}}" class="course-navbar-links" id="course-navbar-links">
                     My Learning
                 </a>
             </div>

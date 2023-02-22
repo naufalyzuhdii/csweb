@@ -63,6 +63,11 @@
         <!-- Content Form Wrapper -->
 
         <div class="posted-video-links-wrapper">
+            @if(count($video) == 0)
+            <div class="warn">
+                <h3>Your course has not course detail sub chapter yet. Please upload one.</h3>
+            </div>
+            @else
             @foreach($video as $vid)
             <a href="/my_course/{{$my_course->id}}/course_detail/{{$detail_chapter->id}}/showmateri/{{$vid->id}}"
                 class="links-materi">
@@ -74,6 +79,7 @@
                 </div>
             </a>
             @endforeach
+            @endif
         </div>
 
 

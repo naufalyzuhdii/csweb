@@ -97,7 +97,7 @@ Route::get('/show_course_by_category/{id}', [CourseController::class, 'show_cour
 Route::get('/view/course', [CourseController::class, 'view_course']);
 Route::get('/view/sub-course', [CourseController::class, 'view_sub_course']);
 Route::get('/view/topic-course', [CourseController::class, 'show_course']);
-Route::get('/view/topic-course-detail/{id}', [CourseController::class, 'course_detail']);
+Route::get('/view/course/{id}/topic-course-detail', [CourseController::class, 'course_detail']);
 Route::get('/view/talent-profile', [CourseController::class, 'view_talent_profile']);
 // ================== Categories ========================================================================
 
@@ -144,8 +144,8 @@ Route::get('/view/details-information/', [LearnerController::class, 'view_my_dea
 //==================================== My Progress ====================================
 
 //==================================== My Learning ====================================
-Route::get('/view/my-learning', [MyLearningController::class, 'show_mylearning'])->name('my_learning')->middleware('learner');
-Route::get('/view/my-learning/course-learned-detail', [LearnerController::class, 'view_course_learned_detail'])->middleware('learner');
+Route::get('/view/my-learning/{id}', [MyLearningController::class, 'show_mylearning'])->name('my_learning')->middleware('learner');
+Route::get('/view/my-learning/course-learned-detail/{id}', [LearnerController::class, 'view_course_learned_detail'])->middleware('learner');
 //==================================== My Learning ====================================
 
 //  =========================================== Navigation Learner ===========================================
