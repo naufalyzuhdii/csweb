@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+{{-- @dd($parentcategories) --}}
 {{-- Section Home Guest --}}
 <section class="home-guest">
     <div class="home-wrapper">

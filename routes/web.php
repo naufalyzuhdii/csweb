@@ -93,6 +93,7 @@ Route::put('/upload-user-certification',[UserController::class, 'upload_user_cer
 // ==================================== Auth ======================================================
 
 // ==================================== Categories ======================================================
+Route::get('/show_course_by_category/{id}', [CourseController::class, 'show_course_by_category']);
 Route::get('/view/course', [CourseController::class, 'view_course']);
 Route::get('/view/sub-course', [CourseController::class, 'view_sub_course']);
 Route::get('/view/topic-course', [CourseController::class, 'show_course']);

@@ -19,6 +19,12 @@ class CategoryController extends Controller
         return ["Add Category Success"];
     }
 
+    public function show_categories(){
+        $parentcategories = Category::whereNull('parent_id')->get();
+
+        return view('navigation.learner-template', compact('parentcategories'));
+    }
+
 
     // public function on_create_course(){
     //     $categories = Category::all();

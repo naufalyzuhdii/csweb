@@ -40,7 +40,7 @@
                                         <li>Website</li> --}}
                                     </ul>
                                 </h3>
-                                <h3 class="course-author"></h3>
+                                <h3 class="course-author">{{ $ml->user->name }}</h3>
                             </div>
                             <!-- Course Text Content -->
                         </a>        
