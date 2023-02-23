@@ -16,12 +16,20 @@
 
         <!-- My Activity Applied Job Content Wrapper -->
         <div class="my-activity-applied-job-content-wrapper">
-            <a href="/view/applied-job-detail/" class="applied-job-content-item">
+            @foreach($applier as $apl)
+            @if( $apl->threads_post_projects->status != 0 )
+            <div class="applied-job-content-item">
                 <div class="profile-learner">
                     <div class="profile-learner-image-wrapper">
+                        @if($apl->user->image == 'no picture')
                         <div class="profile-learner-image">
-                            <img src="{{asset('images/course/talent-1.jpg')}}" alt="">
+                            <img src="{{asset('profile/account.png')}}" alt="">
                         </div>
+                        @else
+                        <div class="profile-learner-image">
+                            <img src="{{asset('profile/'.$apl->user->image)}}" alt="">
+                        </div>
+                        @endif
                     </div>
                     <div class="profile-learner-role-wrapper">
                         <div class="profile-learner-role">
@@ -30,7 +38,7 @@
                     </div>
                 </div>
                 <div class="content-wrapper">
-                    <h3 class="learner-name">Jaenal</h3>
+                    <h3 class="learner-name">{{$apl->user->name}}</h3>
                     <div class="package-wrapper">
                         <div class="project-title">
                             <div class="title_wrapper">
@@ -38,7 +46,8 @@
                                 <h3>:</h3>
                             </div>
                             <div class="content">
-                                <p> Project Title
+                                <p>
+                                    {{ $apl->threads_post_projects->project_title }}
                                 </p>
                             </div>
                         </div>
@@ -48,7 +57,8 @@
                                 <h3>:</h3>
                             </div>
                             <div class="content">
-                                <p> Membuat website simpel dengan Laravel
+                                <p>
+                                    {{ $apl->threads_post_projects->description }}
                                 </p>
                             </div>
                         </div>
@@ -60,17 +70,22 @@
                                     <h3>:</h3>
                                 </div>
                                 <div class="content">
-                                    <p> 2 days
+                                    <p>
+                                        {{ $apl->threads_post_projects->offered_duration }}
                                     </p>
                                 </div>
                             </div>
                             <div class="price-range">
                                 <div class="title_wrapper">
-                                    <h3>Price range </h3>
+                                    <h3>Dealed Price </h3>
                                     <h3>:</h3>
                                 </div>
                                 <div class="content">
-                                    <p> Rp 300.000
+                                    <?php
+                                        $fix_price = number_format($apl->threads_post_projects->fix_price, 0, ",", ".");
+                                    ?>
+                                    <p>
+                                        Rp. {{ $fix_price }}
                                     </p>
                                 </div>
                             </div>
@@ -80,9 +95,20 @@
                     </div>
                 </div>
                 <div class="progress-status">
+                    @if($apl->threads_post_projects->status == 1)
                     <h3>Progress Status : <span>On working</span></h3>
+                    @elseif($apl->threads_post_projects->status == 2)
+                    <h3>Progress Status : <span>Finished</span></h3>
+                    @endif
                 </div>
-            </a>
+                <div class="chat-btn">
+                    <a href="">
+                        Chat Learner
+                    </a>
+                </div>
+            </div>
+            @endif
+            @endforeach
         </div>
         <!-- End Of My Activity Applied Job Content Wrapper -->
     </div>

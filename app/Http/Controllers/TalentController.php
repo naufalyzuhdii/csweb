@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Applier;
 use App\Models\Category;
-use App\Models\ThreadsPostProject;
 use Illuminate\Http\Request;
+use App\Models\ThreadsPostProject;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,7 +44,6 @@ class TalentController extends Controller
             'nominal_depan_min', 'nominal_depan_max','nominal_depan_fix',
         'commision_depan','net_income_depan'));
     }
-
      // END OF THREAD JOBS
 
     public function view_create_new_course()
@@ -71,6 +71,13 @@ class TalentController extends Controller
 
     public function view_talent_activity_applied_jobs()
     {
-        return view('talent.my-activity.talent-activity-applied-jobs');
+        $applier = Applier::
+        join('threads_post_projects','appliers.threads_post_projects_id','=','threads_post_projects.id')
+        ->where('appliers.user_id', Auth::id())
+        ->select('appliers.*')
+        ->get();
+
+
+        return view('talent.my-activity.talent-activity-applied-jobs',compact('applier'));
     }
 }
