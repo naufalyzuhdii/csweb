@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreign('threads_post_projects_id')->references('id')->on('threads_post_projects')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('description');
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

@@ -19,7 +19,6 @@ class TalentController extends Controller
         if(request('search')){
             $threads->where('name', 'like', '%'. request('search'). '%');
         }
-        // $products = Product::all();
 
         return view('thread.talent.thread-apply-jobs', 
         [
