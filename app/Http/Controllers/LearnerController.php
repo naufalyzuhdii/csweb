@@ -14,9 +14,9 @@ class LearnerController extends Controller
 {
     public function view_my_dealed_projects(Request $request)
     {
-        $progress = ThreadsPostProject::where('user_id', Auth::id())->orderBy('created_at', 'asc')->get();
+        $progress = ThreadsPostProject::where('user_id', Auth::id())->where('status', 1)->orderBy('created_at', 'asc')->get();
         // dd($progress);
-        // $talent = Applier::where('threads_post_project_id', $request->id)->where('status', 1)->get();
+        // $talent = Applier::where('status', 1)->get();
         
         return view('learner.my-progress.dealed-projects.dealed-projects', compact('progress'));
     }   
