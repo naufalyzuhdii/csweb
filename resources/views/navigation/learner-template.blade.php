@@ -11,7 +11,7 @@
             <div class="categories-navbar">
                 <ul class="main-navigation">
                     <li>
-                        <a href="#" class="categories-links">Categories</a>
+                        <a href="/view/topic-course" class="categories-links">Categories</a>
                         {{-- @dd($parentcategories) --}}
 
                         {{-- <ul>

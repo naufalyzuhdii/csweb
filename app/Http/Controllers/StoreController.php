@@ -27,6 +27,7 @@ class StoreController extends Controller
         ];
 
         session(['cart' => $cart]);
+        dd($cart);
         return redirect('/view/learner/cart');
     }
 
