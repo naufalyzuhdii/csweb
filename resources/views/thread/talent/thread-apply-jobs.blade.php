@@ -26,6 +26,8 @@
             @elseif (count($threads) > 0)
 
             @foreach ($threads as $thread)
+
+            @if($thread->status == 0)
             <div class="thread-content-learner-wrapper">
                 <!-- THREAD CONTENT LEARNER VALID WRAPPER -->
                 <div class="thread-content-learner-valid-wrapper">
@@ -140,6 +142,7 @@
                 </div>
                 <!-- THREAD CONTENT LEARNER MAIN -->
             </div>
+            @endif
             <!-- </a> -->
             @endforeach
             @endif

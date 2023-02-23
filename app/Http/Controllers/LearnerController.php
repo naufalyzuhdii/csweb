@@ -7,6 +7,7 @@ use App\Models\Applier;
 use Illuminate\Http\Request;
 use App\Models\TransactionDetail;
 use App\Models\ThreadsPostProject;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,11 +15,21 @@ class LearnerController extends Controller
 {
     public function view_my_dealed_projects(Request $request)
     {
-        $progress = ThreadsPostProject::where('user_id', Auth::id())->where('status', 1)->orderBy('created_at', 'asc')->get();
+        $progress = ThreadsPostProject::
+        // join('appliers','threads_post_projects.id' ,'=','appliers.threads_post_projects_id')
+        where('user_id', Auth::id())->where('status', 1)
+        ->orderBy('created_at', 'asc')->get();
         // dd($progress);
         // $talent = Applier::where('status', 1)->get();
+
+        $applier = Applier::
+        join('threads_post_projects','appliers.threads_post_projects_id','=','threads_post_projects.id')
+        ->where('threads_post_projects.user_id', Auth::id())
+        ->select('appliers.*')
+        ->get();
+
         
-        return view('learner.my-progress.dealed-projects.dealed-projects', compact('progress'));
+        return view('learner.my-progress.dealed-projects.dealed-projects', compact('progress','applier'));
     }   
      public function view_my_dealed_projects_details()
     {

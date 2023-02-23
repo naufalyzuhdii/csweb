@@ -17,6 +17,11 @@
                 </p>
             </div>
             <!-- THREAD CONTENT HEADING -->
+            @if(session('message'))
+            <div class="success">
+                {{session('message')}}
+            </div>
+            @endif
 
             <!-- THREAD CONTENT WRAPPER -->
             <div class="thread-content-wrapper">
@@ -135,7 +140,6 @@
                     <h3>No appliers yet</h3>
                 </div>
                 @else
-
                 <h3 style="font-weight:500;"> <span style="font-weight:600;color:var(--deepblue)">{{$count}}</span>
                     appliers
                     has been apply
@@ -163,13 +167,13 @@
                             <!-- PROFILE LEARNER -->
                             <div class="profile-learner">
                                 <div class="profile-learner-image-wrapper">
-                                    @if($apl->threads_post_projects->user->image == 'no picture')
+                                    @if($apl->user->image == 'no picture')
                                     <div class="profile-learner-image">
                                         <img src="{{asset('profile/account.png')}}" alt="">
                                     </div>
                                     @else
                                     <div class="profile-learner-image">
-                                        <img src="{{asset('profile/'.$apl->user->image)}}" alt="">
+                                        <img src="{{asset('profile/'. $apl->user->image)}}" alt="">
                                     </div>
                                     @endif
                                 </div>
@@ -238,14 +242,6 @@
                 @endif
 
             </div>
-
-
-
-
-
-
-
-
         </div>
         <!-- THREAD CONTENT  -->
     </div>

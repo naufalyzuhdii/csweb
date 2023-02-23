@@ -25,11 +25,18 @@
             @elseif( $count > 0)
             @foreach ($threads as $thread)
             @if($thread->user_id == Auth::user()->id)
+            @if($thread->status == 0)
             <div class="thread-content-learner-wrapper">
                 <!-- THREAD CONTENT LEARNER VALID WRAPPER -->
                 <div class="thread-content-learner-valid-wrapper">
                     <div class="thread-content-learner-valid">
-                        <h3>Status Offer : Valid</h3>
+                        @if($thread->status == 0)
+                        <h3>Status : Valid</h3>
+                        @elseif ($thread->status == 1)
+                        <h3>Status : On Progress</h3>
+                        @else
+                        <h3>Status : Finish</h3>
+                        @endif
                     </div>
                 </div>
                 <!-- THREAD CONTENT LEARNER VALID WRAPPER -->
@@ -137,6 +144,8 @@
                 </div>
                 <!-- THREAD CONTENT LEARNER MAIN -->
             </div>
+            @else
+            @endif
             @endif
             @endforeach
             @endif
