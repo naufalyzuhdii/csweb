@@ -14,17 +14,16 @@
                         <a href="#" class="categories-links">Categories</a>
                         {{-- @dd($parentcategories) --}}
                         <ul>
-                            @foreach ($parentcategories as $category) 
-                                
-                                    <li><a href="/show_course_by_category/{{$category->id}}">{{ $category->name }}<i class="fa-sharp fa-solid fa-play"></i></a>
-                                        @if (count($category->subcategory))
-                                            @include('navigation.subcategory', ['subcategories' => $category->subcategory])
-                                        @endif
-                                    </li>
-                                
-                            @endforeach
-                        </ul>
+                            {{-- @foreach ($parentcategories as $category)
+                            <li><a href="/show_course_by_category/{{$category->id}}">{{ $category->name }}<i
+                                class="fa-sharp fa-solid fa-play"></i></a>
+                            @if (count($category->subcategory))
+                            @include('navigation.subcategory', ['subcategories' => $category->subcategory])
+                            @endif
                     </li>
+                    @endforeach--}}
+                </ul>
+                </li>
                 </ul>
             </div>
 
