@@ -97,16 +97,27 @@ class AuthController extends Controller
         return redirect()->route('signin');
     }
 
+    public function view_guest_home()
+    {
+        $parentcategories = Category::whereNull('parent_id')->get();
+
+        return view('auth.guest-home', compact('parentcategories'));
+    }
+    
     public function view_learner_home()
     {
         $parentcategories = Category::whereNull('parent_id')->get();
 
         return view('auth.learner-home', compact('parentcategories'));
     }
+
     public function view_talent_home()
     {
-        return view('auth.talent-home');
+        $parentcategories = Category::whereNull('parent_id')->get();
+
+        return view('auth.talent-home', compact('parentcategories'));
     }
+
     public function view_admin_home()
     {
         $user = User::all();

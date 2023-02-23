@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Applier;
 use Illuminate\Http\Request;
 use App\Models\TransactionDetail;
+use App\Models\ThreadsPostProject;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class LearnerController extends Controller
 {
-    public function view_my_dealed_projects()
+    public function view_my_dealed_projects(Request $request)
     {
-        return view('learner.my-progress.dealed-projects.dealed-projects');
+        $progress = ThreadsPostProject::where('user_id', Auth::id())->orderBy('created_at', 'asc')->get();
+        // dd($progress);
+        // $talent = Applier::where('threads_post_project_id', $request->id)->where('status', 1)->get();
+        
+        return view('learner.my-progress.dealed-projects.dealed-projects', compact('progress'));
     }   
      public function view_my_dealed_projects_details()
     {
@@ -39,7 +45,6 @@ class LearnerController extends Controller
     {
         return view('learner.my-learning.course-learned-detail');
     }
-
     
     public function view_my_progress_find_freelances_talents()
     {

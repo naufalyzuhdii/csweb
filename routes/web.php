@@ -31,10 +31,7 @@ use App\Http\Controllers\ThreadsFreelancersTalentsController;
 
 // Home Page Landing
 //--Guest Home
-Route::get('/', function () {
-    return view('auth.guest-home
-    ');
-})->middleware('guest');
+Route::get('/', [AuthController::class, 'view_guest_home'])->middleware('guest');
 
 // ==================================== Navigation Landing Page ======================================================
 //--Learner Home

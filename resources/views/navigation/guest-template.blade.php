@@ -10,23 +10,15 @@
                     <li>
                         <div class="categories-links">Categories</div>
                         <ul>
-                            <li><a href="/view/course">Technology <i class="fa-sharp fa-solid fa-play"></i></a>
-                                <ul>
-                                    <li><a href="/view/sub-course">Wesbite<i class="fa-sharp fa-solid fa-play"></i></a>
-                                        <ul>
-                                            <li><a href="/view/topic-course">HTML</a></li>
-                                            <li><a href="#3">CSS</a></li>
-                                        </ul>
+                            {{-- @foreach ($parentcategories as $category) 
+                                
+                                    <li><a href="/show_course_by_category/{{$category->id}}">{{ $category->name }}<i class="fa-sharp fa-solid fa-play"></i></a>
+                                        @if (count($category->subcategory))
+                                            @include('navigation.subcategory', ['subcategories' => $category->subcategory])
+                                        @endif
                                     </li>
-                                    <li><a href="#2">Mobile Application <i class="fa-sharp fa-solid fa-play"></i></a>
-                                        <ul>
-                                            <li><a href="">Android Studio</a></li>
-                                            <li><a href="#3">Java</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#3">Engineering</a></li>
-                                </ul>
-                            </li>
+                                
+                            @endforeach --}}
                         </ul>
                     </li>
                 </ul>
