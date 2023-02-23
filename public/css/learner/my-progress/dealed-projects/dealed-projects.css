@@ -47,7 +47,6 @@
 
 .project-links {
     width: 100%;
-    height: 100%;
     margin-bottom: 2rem;
 }
 .active {
@@ -57,7 +56,7 @@
 .your-project {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 23rem;
     flex-direction: column;
     padding: 1rem;
     position: relative;
@@ -81,6 +80,16 @@
 }
 .details-links:hover {
     color: var(--deepblue);
+}
+.thread-content-learner-valid {
+    position: absolute;
+    right: 10%;
+    top: 5%;
+}
+
+.thread-content-learner-valid h3 {
+    font-size: 1.3rem;
+    color: black;
 }
 
 .project-title {
@@ -323,7 +332,7 @@
 
 .accepted-freelances-talents {
     width: 95%;
-    height: 100%;
+    height: 20rem;
     background-color: var(--primarycolor);
     float: right;
     box-shadow: 0.2rem 0.3rem 1rem rgb(0, 0, 0, 0.5);

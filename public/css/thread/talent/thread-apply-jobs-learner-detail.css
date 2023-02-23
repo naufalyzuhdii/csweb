@@ -313,6 +313,7 @@
 }
 
 .price > div {
+    width: 20rem;
     display: flex;
     align-items: center;
 }
