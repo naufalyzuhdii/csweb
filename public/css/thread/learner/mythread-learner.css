@@ -64,6 +64,14 @@
     padding: 1rem;
     color: black;
 }
+.thread-content-learner-valid h3 span {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--primarycolor);
+    color: white;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+}
 /* === THREAD CONTENT LEARNER VALID WRAPPER */
 
 /* === THREAD CONTENT LEARNER MAIN */

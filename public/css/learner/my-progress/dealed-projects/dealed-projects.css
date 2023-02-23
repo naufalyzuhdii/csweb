@@ -91,6 +91,14 @@
     font-size: 1.3rem;
     color: black;
 }
+.thread-content-learner-valid span {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--primarycolor);
+    color: white;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+}
 
 .project-title {
     width: 90%;

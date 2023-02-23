@@ -4,9 +4,9 @@
 @endsection
 
 @section('content')
-    {{-- @foreach ($chats as $chat)
+{{-- @foreach ($chats as $chat)
     
         <p>{{ $chat->user_id }}</p>
-        <p>{{ $chat->description }}</p>
-    @endforeach --}}
+<p>{{ $chat->description }}</p>
+@endforeach --}}
 @endsection

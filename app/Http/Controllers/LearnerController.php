@@ -15,10 +15,9 @@ class LearnerController extends Controller
 {
     public function view_my_dealed_projects(Request $request)
     {
-        $progress = ThreadsPostProject::
-        // join('appliers','threads_post_projects.id' ,'=','appliers.threads_post_projects_id')
-        where('user_id', Auth::id())->where('status', 1)
-        ->orderBy('created_at', 'asc')->get();
+        // $progress = ThreadsPostProject::
+        // where('user_id', Auth::id())->where('status', 1)
+        // ->orderBy('created_at', 'asc')->get();
         // dd($progress);
         // $talent = Applier::where('status', 1)->get();
 
@@ -28,10 +27,9 @@ class LearnerController extends Controller
         ->select('appliers.*')
         ->get();
 
-        
-        return view('learner.my-progress.dealed-projects.dealed-projects', compact('progress','applier'));
+        return view('learner.my-progress.dealed-projects.dealed-projects', compact('applier'));
     }   
-     public function view_my_dealed_projects_details()
+    public function view_my_dealed_projects_details()
     {
         return view('learner.my-progress.dealed-projects.dealed-projects-details');
     }
@@ -39,7 +37,6 @@ class LearnerController extends Controller
     {
         return view('learner.my-progress.dealed-projects.dealed-projects-details-information');
     }
-
 
     public function view_my_learning()
     {

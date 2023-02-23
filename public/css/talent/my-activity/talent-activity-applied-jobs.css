@@ -88,12 +88,14 @@
 .applied-job-content-item {
     position: relative;
     width: 100%;
-    height: 16rem;
+    height: 20rem;
     display: flex;
     background-color: var(--light-grey-color2);
     border-radius: 0.5rem;
     box-shadow: 0.3rem 0.4rem 0.8rem rgb(0, 0, 0, 0.5);
     color: black;
+
+    margin-bottom: 2rem;
 }
 .profile-learner {
     width: 25%;
@@ -213,3 +215,26 @@
     border-radius: 0.5rem;
 }
 /* ============== My Activity Applied Job Content Wrapper ==================== */
+.chat-btn {
+    position: absolute;
+    width: 10rem;
+    height: 4rem;
+
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    border-radius: 1rem;
+}
+.chat-btn a {
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primarycolor);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

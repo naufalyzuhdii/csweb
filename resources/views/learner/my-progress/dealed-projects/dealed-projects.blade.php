@@ -17,7 +17,7 @@
         {{-- @dd($progress) --}}
 
         <!-- Dealed Projects Content -->
-        @if(count($progress) == 0)
+        @if(count($applier) == 0)
         <div class="warn">
             <h3>
                 You have no dealed projects with any appliers yet.
@@ -25,7 +25,7 @@
         </div>
         @else
         @foreach($applier as $apl)
-        @if( $apl->threads_post_projects->status != 0 )
+        @if( $apl->threads_post_projects->status != 0 && $apl->status != 0 )
         <div class="dealed-projects-content">
             <div class="dealed-projects-content-wrapper">
                 <div class="project-links">
@@ -34,13 +34,9 @@
                         <a href="/view/my-progress/dealed-projects/project-details/" class="details-links">Details</a>
                         <div class="thread-content-learner-valid">
                             @if($apl->threads_post_projects->status == 1)
-                            <h3>
-                                Status Project : On progress
-                            </h3>
+                            <h3> Status : <span>On working</span></h3>
                             @elseif($apl->threads_post_projects->status == 2)
-                            <h3>
-                                Status Project : Finished
-                            </h3>
+                            <h3> Status : <span>Finished</span></h3>
                             @endif
                         </div>
                         <!-- THREAD CONTENT LEARNER MAIN -->
@@ -133,9 +129,15 @@
                     <div class="accepted-freelances-talents">
                         <div class="freelances-talents-data">
                             <div class="appliers-picture">
+                                @if($apl->user->image == 'no picture')
+                                <div class="appliers-picture-wrapper">
+                                    <img src="{{asset('profile/account.png')}}" alt="">
+                                </div>
+                                @else
                                 <div class="appliers-picture-wrapper">
                                     <img src="{{asset('profile/'.$apl->user->image)}}" alt="">
                                 </div>
+                                @endif
                             </div>
                             <div class="appliers-data">
                                 <div class="appliers-name">

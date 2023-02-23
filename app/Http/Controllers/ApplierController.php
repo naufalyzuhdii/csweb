@@ -65,7 +65,7 @@ class ApplierController extends Controller
         $accept->status = 1;
         $accept->update();
 
-        return view('applier.applier')
+        return redirect()->back()
         ->with('message','An applier has been accepted to work on this project.');
     }
 }
