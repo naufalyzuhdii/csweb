@@ -37,8 +37,7 @@
 
         <div class="nav-2">
             <div class="my-activity">
-                <!-- <a href="/view/my-activity-applied-jobs"> -->
-                <a href="">
+                <a href="/view/my-activity-applied-jobs">
                     My Activity
                 </a>
             </div>

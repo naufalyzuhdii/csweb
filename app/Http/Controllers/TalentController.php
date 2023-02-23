@@ -69,4 +69,9 @@ class TalentController extends Controller
     {
         return view('talent.my-courses.my-course-detail-video-learning');
     }
+
+    public function view_talent_activity_applied_jobs()
+    {
+        return view('talent.my-activity.talent-activity-applied-jobs');
+    }
 }

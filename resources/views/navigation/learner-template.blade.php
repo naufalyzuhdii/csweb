@@ -13,6 +13,7 @@
                     <li>
                         <a href="#" class="categories-links">Categories</a>
                         {{-- @dd($parentcategories) --}}
+
                         {{-- <ul>
                             @foreach ($parentcategories as $category) 
                                 
@@ -24,7 +25,11 @@
                                 
                             @endforeach
                         </ul> --}}
+                        
                     </li>
+                    @endforeach--}}
+                </ul>
+                </li>
                 </ul>
             </div>
 

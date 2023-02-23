@@ -1,6 +1,7 @@
 .topic-course {
     width: 100%;
     padding: 5rem 30rem;
+    min-height: 100vh;
     height: fit-content;
 }
 
