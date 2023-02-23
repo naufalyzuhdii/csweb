@@ -20,8 +20,14 @@ class CategoryController extends Controller
     }
 
     public function show_categories(){
-        $parentcategories = Category::whereNull('parent_id')->get();
+        $categories = Category::all();
 
+        return view('talent.my-courses.create-new-course', compact('categories'));
+    }
+
+    public function show_categories_navbar(){
+        $parentcategories = Category::whereNull('parent_id')->get();
+        
         return view('navigation.learner-template', compact('parentcategories'));
     }
 

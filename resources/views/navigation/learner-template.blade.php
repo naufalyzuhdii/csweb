@@ -13,7 +13,7 @@
                     <li>
                         <a href="#" class="categories-links">Categories</a>
                         {{-- @dd($parentcategories) --}}
-                        <ul>
+                        {{-- <ul>
                             @foreach ($parentcategories as $category) 
                                 
                                     <li><a href="/show_course_by_category/{{$category->id}}">{{ $category->name }}<i class="fa-sharp fa-solid fa-play"></i></a>
@@ -23,7 +23,7 @@
                                     </li>
                                 
                             @endforeach
-                        </ul>
+                        </ul> --}}
                     </li>
                 </ul>
             </div>
