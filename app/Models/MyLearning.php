@@ -15,6 +15,11 @@ class MyLearning extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function course()
+    {
+        return $this->hasMany(Course::class);
+    }
+
     protected $fillable = [
         'title', 'description', 'image', 'user_id'
     ];

@@ -15,6 +15,11 @@
             <p>Do transaction once you already added your choosen courses in cart.</p>
         </div>
         <!-- Learner Cart Header -->
+        @if(session('message'))
+        <div class="success">
+            {{session('message')}}
+        </div>
+        @endif
 
         <!-- Learner Cart Content -->
         @if (empty($cart) || count($cart) == 0)

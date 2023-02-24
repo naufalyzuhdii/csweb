@@ -218,10 +218,11 @@
                                     <input type="text" name="applier_id" value="{{$apl->id}}" hidden>
                                     <input type="text" name="threads_post_projects_id"
                                         value="{{$apl->threads_post_projects_id}}" hidden>
-
+                                    @if(Auth::user()->id == $apl->threads_post_projects->user->id)
                                     <button type="submit" class="accept_btn">
                                         Accept
                                     </button>
+                                    @endif
                                 </form>
                             </div>
                             <!-- LEARNER THREAD CONTENT -->

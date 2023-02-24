@@ -142,7 +142,7 @@ Route::get('/view/details-information/', [LearnerController::class, 'view_my_dea
 
 //==================================== My Learning ====================================
 Route::get('/view/my-learning/{id}', [MyLearningController::class, 'show_mylearning'])->name('my_learning')->middleware('learner');
-Route::get('/view/my-learning/course-learned-detail/{id}', [LearnerController::class, 'view_course_learned_detail'])->middleware('learner');
+Route::get('/view/my-learning/course-learned-detail/{id}', [MyLearningController::class, 'view_course_learned_detail'])->middleware('learner');
 //==================================== My Learning ====================================
 
 //  =========================================== Navigation Learner ===========================================

@@ -51,6 +51,9 @@ class LearnerController extends Controller
     }
     public function view_course_learned_detail()
     {
+        
+
+
         return view('learner.my-learning.course-learned-detail');
     }
     

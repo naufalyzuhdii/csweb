@@ -16,7 +16,7 @@
             <div class="swiper myCourseSwiper">
                 <div class="swiper-wrapper" id="swiperCourseWrapper">
                     @foreach($course as $course)
-                    <a href="" class="swiper-slide" id="card-slide">
+                    <a href="/view/course/{{$course->id}}/topic-course-detail" class="swiper-slide" id="card-slide">
                         <div class="course-card-image">
                             <img src="{{asset('course/'.$course->image)}}" alt="">
                         </div>

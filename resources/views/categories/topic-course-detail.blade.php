@@ -29,7 +29,7 @@
                     </div>
                     <?php
                         $course_price = number_format($course->price, 0, ",", ".");
-                                        ?>
+                    ?>
                     <h2 class="topic-course-detail-price">Rp {{ $course_price }}</h2>
                 </div>
             </div>
@@ -77,22 +77,27 @@
             <div class="topic-course-detail-content-video">
                 <h2>Course content you can learn</h2>
                 <div class="content-video-wrapper">
-                    @foreach($courseDetail as $cd)
+                    @foreach($courseDetail as $courseDetail)
                     <div class="content-video-chapter">
                         <div class="content-video-chapter-title">
                             <h2><i class="fa-sharp fa-solid fa-play" id="arrow-chapter"></i>
-                                {{$cd->chapter}}</h2>
-                            <h3>Total course time : 5 hour</h3>
+                                {{$courseDetail->chapter}}
+                            </h2>
+                            <h3>-</h3>
                         </div>
+                        @foreach($courseDetail->course_video as $video)
                         <div class="content-video-chapter-list">
                             <ul>
                                 <li>
-                                    <a href="#introcourse"><i class="fa-solid fa-circle-play"></i>
+                                    <a href="#"><i class="fa-solid fa-circle-play"></i>
+                                        {{$video->video_title}}
                                     </a>
-                                    <h3>2 hour</h3>
+                                    <h3>-</h3>
                                 </li>
+
                             </ul>
                         </div>
+                        @endforeach
                     </div>
                     @endforeach
                 </div>
@@ -258,26 +263,30 @@
                 <h2>Another topic you can learn</h2>
             </div>
             <div class="topic-course-content">
-                <a href="/view/topic-course-detail" class="topic-course-item">
+                @foreach($courses as $courses)
+                <a href="/view/topic-course-detail/" class="topic-course-item">
                     <div class="topic-course-image">
-                        <img src="{{asset('images/course/html.png')}}" alt="">
+                        <img src="{{asset('course/'.$courses->image)}}" alt="">
                     </div>
                     <div class="topic-course-text-content">
-                        <h2 class="topic-course-title">Simple Course HTML</h2>
+                        <h2 class="topic-course-title">{{$courses->title}}</h2>
                         <h3 class="topic-course-category">
                             <ul>
-                                <li>Computer</li>
-                                <li>Website</li>
+                                <li>{{$courses->category->name}}</li>
                             </ul>
                         </h3>
-                        <h3 class="topic-course-author">Udin Petot</h3>
+                        <h3 class="topic-course-author">{{$courses->user->name}}</h3>
                         <div class="topic-course-rating">
                             <i class="fa-sharp fa-solid fa-star">4.5</i>
                             <h4>( 3.000 reviews )</h4>
                         </div>
                     </div>
-                    <h2 class="topic-course-price">Rp 50.000</h2>
+                    <?php
+                        $courses_price = number_format($courses->price, 0, ",", ".");
+                                        ?>
+                    <h2 class="topic-course-price">Rp {{$courses_price}}</h2>
                 </a>
+                @endforeach
             </div>
         </div>
         {{-- ANOTHER TOPIC COURSE --}}

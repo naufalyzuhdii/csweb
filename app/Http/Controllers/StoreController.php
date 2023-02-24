@@ -60,6 +60,7 @@ class StoreController extends Controller
         
         session()->forget('cart');
 
-        return redirect('/view/learner/cart');
+        return redirect('/view/learner/cart')
+        ->with('message','Course has been purchased successfully');
     }
 }

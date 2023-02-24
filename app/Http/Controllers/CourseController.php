@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Models\Course;
-use App\Models\CourseDetail;
-use App\Models\CourseVideo;
 use App\Models\Category;
+use App\Models\CourseVideo;
+use App\Models\CourseDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -45,16 +46,24 @@ class CourseController extends Controller
     }
 
     public function course_detail($id){
+        $courses = Course::all();
         $course = Course::find($id);
 
-        $courseDetail = CourseDetail::where('course_id', $id)->get();
+        // $courseDetail = CourseDetail::where('course_id', $id)->get();
+        // $video = DB::table('course_videos')
+        // join('course_details', 'course_videos.course_detail_id','=','course_details.id')
+        // ->select('course_videos.*')
+        // ->where('course_videos.course_detail_id','course_details.id')
+        // ->get();
 
-        $video = CourseVideo::where('course_detail_id', $id)->get();
-        // $getall = Course::all();
-        // dd($getall);
+        $courseDetail = CourseDetail::
+        with('course_video')
+        ->where('course_id',$id)
+        ->get();
+
+
         return view('categories.topic-course-detail', 
-        ['course' => $course],
-        compact('courseDetail','video'));
+        compact('courseDetail','courses','course'));
     }
     public function view_sub_course()
     {
@@ -91,7 +100,7 @@ class CourseController extends Controller
     public function post_course(Request $request)
     {
         $rules = [
-            'title' => 'required|max:30',
+            'title' => 'required|max:50',
             'category' => 'required',
             'description' => 'required|max:50',
             'price' => 'required',
