@@ -43,6 +43,7 @@
                     <?php $totalprice  = 0; ?>
 
                     @foreach ($cart as $ct => $val)
+                    {{-- @dd($val['title']) --}}
 
                     <?php $price = $val['price']; ?>
 
@@ -50,7 +51,7 @@
                         <!-- Courses Cart Image-->
                         <div class="courses-cart-image-wrapper">
                             <div class="courses-cart-image">
-                                <img src="{{ Storage::url($val['image']) }}" alt="">
+                                <img src="{{ url('course/'. $val['image']) }}" alt="">
                             </div>
                         </div>
                         <!-- End Of Courses Cart Image-->

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 class ThreadAttachmentController extends Controller
 {
-    public function upload_attachment(Request $request){
+    public function followup(Request $request){
         $rules = [
             'user_id' => 'required|integer',
             'description' => 'required|string|max:255',

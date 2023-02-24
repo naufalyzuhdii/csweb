@@ -19,6 +19,7 @@
 
             @elseif (count($courses) > 0)
             @foreach ($courses as $course)
+            {{-- @dd($course->image) --}}
             {{-- @dd($course->category->name) --}}
             <a href="/view/course/{{ $course->id }}/topic-course-detail" class="topic-course-item">
                 <div class="topic-course-image">
