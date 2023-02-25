@@ -17,4 +17,13 @@ class MyLearningController extends Controller
 
         return view('learner.my-learning.my-courses', ['my_learning' => $my_learning]);
     }
+
+    public function view_course_learned_detail()
+    {
+        
+
+
+        return 
+        view('learner.my-learning.course-learned-detail');
+    }
 }

@@ -37,9 +37,10 @@
                         <i class="fa-sharp fa-solid fa-star">4.5</i>
                         <h4>( 3.000 reviews )</h4>
                     </div>
-                </div> <?php
-                         $course_price = number_format($course->price, 0, ",", ".");
-                    ?>
+                </div>
+                <?php
+                    $course_price = number_format($course->price, 0, ",", ".");
+                ?>
                 <h2 class="topic-course-price">Rp {{ $course_price }}</h2>
             </a>
             @endforeach
