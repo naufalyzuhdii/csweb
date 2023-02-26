@@ -23,11 +23,12 @@ class StoreController extends Controller
             // 'category' => $course->category,
             'description' => $course->description,
             'price' => $course->price,
-            'image' => $course->image
+            'image' => $course->image,
+            'course_id' => $course->id,
         ];
 
         session(['cart' => $cart]);
-        dd($cart);
+        // dd($cart);
         return redirect('/view/learner/cart');
     }
 
@@ -56,6 +57,7 @@ class StoreController extends Controller
                 'description' => $val['description'],
                 'image' => $val['image'],
                 'user_id' => Auth::user()->id,
+                'course_id' => $ct,
             ]);
         }
         

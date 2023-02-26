@@ -22,6 +22,7 @@
         @endif
 
         <!-- Learner Cart Content -->
+        {{-- @dd($cart) --}}
         @if (empty($cart) || count($cart) == 0)
         <div class="warn">
             <h3>No Data</h3>
