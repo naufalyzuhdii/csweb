@@ -49,24 +49,19 @@
                     <?php $price = $val['price']; ?>
 
                     <div class="courses-cart">
-                        <!-- Courses Cart Image-->
                         <div class="courses-cart-image-wrapper">
                             <div class="courses-cart-image">
                                 <img src="{{ url('course/'. $val['image']) }}" alt="">
                             </div>
                         </div>
-                        <!-- End Of Courses Cart Image-->
-                        <!-- Courses Cart Data -->
                         <div class="courses-cart-data">
                             <div class="courses-cart-data-wrapper">
                                 <h2 class="courses-cart-title">{{ $val['title'] }}</h2>
                                 <h3 class="courses-cart-category">
-                                    <ul>
-                                        {{-- <li>{{ $val[category->name] }}</li> --}}
-                                    </ul>
+                                    {{--  {{ $val[course] }} --}}
                                 </h3>
                                 {{-- <h3 class="courses-cart-author">{{ $val['user']['name'] }}</h3> --}}
-                                <h3 class="courses-total-hours"> <span>2 </span> total hours</h3>
+                                <!-- <h3 class="courses-total-hours"> <span>2 </span> total hours</h3> -->
                             </div>
                             <div class="courses-cart-data-price">
                                 <h2>Rp {{ $val['price'] }}</h2>
@@ -75,7 +70,6 @@
                                 <a href={{ route('removecart', $ct) }}>Remove</a>
                             </div>
                         </div>
-                        <!-- End Of Courses Cart Data -->
                         <a href="/view/topic-course-detail" class="courses-links"></a>
                     </div>
 

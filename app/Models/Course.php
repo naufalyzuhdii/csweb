@@ -33,7 +33,7 @@ class Course extends Model
 
     
     public function mylearning(){
-        return $this->belongsTo(MyLearning::class);
+        return $this->hasMany(MyLearning::class);
     }
 
     // public function transaction_header(){

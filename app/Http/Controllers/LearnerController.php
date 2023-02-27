@@ -49,13 +49,7 @@ class LearnerController extends Controller
         // dd($course);
         return view('learner.my-learning.my-courses',);
     }
-    public function view_course_learned_detail()
-    {
-        
 
-
-        return view('learner.my-learning.course-learned-detail');
-    }
     
     public function view_my_progress_find_freelances_talents()
     {

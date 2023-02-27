@@ -21,8 +21,7 @@
 
                         </ul>
                     </h3>
-                    <h3 class="topic-course-detail-author">Publish by <a
-                            href="/view/talent-profile">{{ $course->user->name }}</a></h3>
+                    <h3 class="topic-course-detail-author">Publish by {{ $course->user->name }}</h3>
                     <div class="topic-course-detail-rating">
                         <i class="fa-sharp fa-solid fa-star">4.5</i>
                         <h4>( 3.000 reviews )</h4>
@@ -38,9 +37,9 @@
                 <a href="{{ route('addtocart', ['id' => $course->id]) }}" class="add-to-cart-btn">
                     <h2>Add to cart</h2>
                 </a>
-                <a href="#" class="buy-btn">
+                <!-- <a href="#" class="buy-btn">
                     <h2>Buy Course Now</h2>
-                </a>
+                </a> -->
                 @else
 
                 @endif

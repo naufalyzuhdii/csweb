@@ -23,21 +23,24 @@
             {{-- @foreach ($courses as $course)
                     @if ($course->id == $my_learning) --}}
 
-            <a href="/view/my-learning/course-learned-detail/{{$ml->id}}" class="course-links">
+            <a href="/view/my-learning/course-learned-detail/{{$ml->course_id}}" class="course-links">
                 <!-- Course Image Wrapper -->
                 <div class="course-image-wrapper">
                     <div class="course-image">
-                        <img src="{{ url('course/'. $ml->image) }}" alt="">
+                        <img src="{{ url('course/'. $ml->course->image)}}" alt="">
                     </div>
                 </div>
                 <!-- Course Image Wrapper -->
 
                 <!-- Course Text Content -->
                 <div class="course-text-content">
-                    <h2 class="course-title">{{ $ml->title }}</h2>
+                    <h2 class="course-title">{{$ml->course->title}}</h2>
                     <h3 class="course-category">
+                        {{$ml->course->category->name}}
                     </h3>
-                    <h3 class="course-author">{{ $ml->user->name }}</h3>
+                    <h3 class="course-author">
+                        {{$ml->course->user->name}}
+                    </h3>
                 </div>
                 <!-- Course Text Content -->
             </a>
