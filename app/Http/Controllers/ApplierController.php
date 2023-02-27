@@ -32,7 +32,8 @@ class ApplierController extends Controller
 
 
         $apply->save();
-        return redirect()->back()->with('message','Your applied form has been sent!');
+        return view('/view/my-progress/dealed-projects')
+        ->with('message','Your applied form has been sent!');
     }
 
     public function show_applier($id)

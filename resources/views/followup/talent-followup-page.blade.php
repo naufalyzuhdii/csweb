@@ -32,16 +32,26 @@
                 @foreach($followup as $chat)
                 @if($chat->user_id == auth()->user()->id)
                 <div class="sender">
+                    <h4>
+                        {{ $chat->created_at->setTimezone('Asia/Bangkok')->format('d-M-Y H:i:s') }}
+                    </h4>
+                    @if($chat->description != null)
                     <h3 class="from-sender">{{$chat->description}}</h3>
+                    @endif
                     @if($chat->file != null)
-                    <embed src="{{asset('file/'. $chat->file)}}" type="image/png">
+                    <embed src="{{asset('file/'. $chat->file)}}" type="application/pdf">
                     @endif
                 </div>
                 @else
                 <div class="receiver">
+                    <h4>
+                        {{ $chat->created_at->setTimezone('Asia/Bangkok')->format('d-M-Y H:i:s') }}
+                    </h4>
+                    @if($chat->description != null)
                     <h3 class="from-receiver">{{$chat->description}}</h3>
+                    @endif
                     @if($chat->file != null)
-                    <embed src="{{asset('file/'. $chat->file)}}" type="image/png">
+                    <embed src="{{asset('file/'. $chat->file)}}" type="application/pdf">
                     @endif
                 </div>
                 @endif
@@ -53,7 +63,7 @@
                     <input type="text" name="user_id" value="{{auth()->user()->id}}" hidden>
                     <input type="text" name="threads_post_projects_id" value="{{$applier->threads_post_projects_id}}"
                         hidden>
-                    <textarea name="description" placeholder="Chat with your talent"></textarea>
+                    <textarea name="description" placeholder="Chat with your learner"></textarea>
                     <div class="form-group">
                         <label for="file-input">
                             <i class="fa fa-upload"></i>
@@ -62,23 +72,22 @@
                         <input id="file-input" type="file" name="file" style="display:none">
                     </div>
                 </form>
-
                 <div class="button-send">
                     <button type="submit" form="reply-form">
                         Send
                     </button>
                 </div>
             </div>
-            @error('file')
+            @if ($errors->any())
             <div class="danger">
-                {{$message}}
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
-            @enderror
-            @error('description')
-            <div class="danger">
-                {{$message}}
-            </div>
-            @enderror
+            @endif
+
         </div>
 
     </div>

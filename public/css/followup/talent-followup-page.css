@@ -106,11 +106,16 @@
     justify-content: flex-end;
     align-items: flex-end;
 }
-
+.sender > h4,
+.receiver > h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--light-grey-color);
+}
 .sender embed,
 .receiver embed {
     width: 50%;
-    height: 50rem;
+    height: fit-content;
     object-fit: contain;
 }
 .from-sender {

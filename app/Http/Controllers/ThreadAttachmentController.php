@@ -14,13 +14,18 @@ class ThreadAttachmentController extends Controller
     public function followup(Request $request){
         $rules = [
             'user_id' => 'required|integer',
-            'description' => 'string|max:255',
+            'description' => 'max:255',
             'threads_post_projects_id' => 'required|integer',
-            'file' => 'mimes:pdf,docx,xlsx,pptx,png,jpg,jpeg,gif,mp4,zip'
+            'file' => 'mimes:pdf,png,jpg,jpeg,gif'
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return back()->withErrors($validator);
+        }
+
+        if($request->description == null && $request->file('file') == null )
+        {
+            return redirect()->back()->withErrors($validator);
         }
 
         $followup = new ThreadAttachment();
