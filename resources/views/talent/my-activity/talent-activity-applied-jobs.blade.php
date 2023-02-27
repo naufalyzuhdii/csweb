@@ -27,7 +27,7 @@
                         </div>
                         @else
                         <div class="profile-learner-image">
-                            <img src="{{asset('profile/'.$apl->user->image)}}" alt="">
+                            <img src="{{asset('profile/'.$apl->threads_post_projects->user->image)}}" alt="">
                         </div>
                         @endif
                     </div>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="content-wrapper">
-                    <h3 class="learner-name">{{$apl->user->name}}</h3>
+                    <h3 class="learner-name">{{$apl->threads_post_projects->user->name}}</h3>
                     <div class="package-wrapper">
                         <div class="project-title">
                             <div class="title_wrapper">
