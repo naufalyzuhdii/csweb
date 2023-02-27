@@ -14,27 +14,28 @@ class ThreadAttachmentController extends Controller
             'user_id' => 'required|integer',
             'description' => 'required|string|max:255',
             'threads_post_projects_id' => 'required|integer',
-            // 'file' => 'file|mimes:pdf,docx,xlsx,pptx,png,jpg,jpeg,gif,mp4,zip'
+            'file' => 'mimes:pdf,docx,xlsx,pptx,png,jpg,jpeg,gif,mp4,zip'
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return back()->withErrors($validator);
         }
 
-        // $file = $request->file('file');
-        // $file_name = $file->getClientOriginalName();
-        // $file->move('file/', $file_name);
+        $file = $request->file('file');
+        $file_name = $request->file('file')->getClientOriginalName();
+        $file->move('file/', $file_name);
         
-        $attachment = new ThreadAttachment();
-        $attachment->user_id = $request->user_id;
-        $attachment->description = $request->description;
-        $attachment->threads_post_projects_id = $request->threads_post_projects_id;
-        // $attachment->file = $file_name;
+        $followup = new ThreadAttachment();
+        $followup->user_id = $request->user_id;
+        $followup->description = $request->description;
+        $followup->threads_post_projects_id = $request->threads_post_projects_id;
+        $followup->file = $file_name;
 
         // dd($attachment);
 
-        $attachment->save();
-        return ['Attachment Added!'];
+        $followup->save();
+        // dd($followup);
+        return ['Follow Up Success!'];
 
     }
     // public function upload_attachment(Request $request){
