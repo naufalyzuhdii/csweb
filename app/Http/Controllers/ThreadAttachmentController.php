@@ -16,7 +16,7 @@ class ThreadAttachmentController extends Controller
             'user_id' => 'required|integer',
             'description' => 'string|max:255',
             'threads_post_projects_id' => 'required|integer',
-            'file' => 'mimes:pdf,docx,xlsx,pptx,png,jpg,jpeg,gif,mp4,zip|max:5000'
+            'file' => 'mimes:pdf,docx,xlsx,pptx,png,jpg,jpeg,gif,mp4,zip'
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
@@ -25,14 +25,7 @@ class ThreadAttachmentController extends Controller
 
         $followup = new ThreadAttachment();
         $followup->user_id = $request->user_id;
-        if($request->description == null )
-        {
-            $followup->description = "null";
-        }
-        else{
-            $followup->description = $request->description;
-        }
-        
+        $followup->description = $request->description;
         $followup->threads_post_projects_id = $request->threads_post_projects_id;
 
         $file = $request->file('file');
