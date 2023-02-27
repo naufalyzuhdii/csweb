@@ -38,11 +38,9 @@
                         <h3>
                             <div class="user-image-wrapper">
                                 @if($user->image == 'no picture')
-                                <h2 class="danger">NO PICTURE</h2>
+                                <img src="{{ url('profile/account.png') }}" />
                                 @else
-                                <div class="picture">
-                                    <img src="{{ url('profile/'.$user->image) }}" />
-                                </div>
+                                <img src="{{ url('profile/'.$user->image) }}" />
                                 @endif
                             </div>
                         </h3>

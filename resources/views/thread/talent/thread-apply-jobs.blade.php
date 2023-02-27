@@ -30,16 +30,14 @@
             @if($thread->status == 0)
             <div class="thread-content-learner-wrapper">
                 <!-- THREAD CONTENT LEARNER VALID WRAPPER -->
-                <div class="thread-content-learner-valid-wrapper">
-                    <div class="thread-content-learner-valid">
-                        <h3>
-                            Status Offer : @if ($thread->status == 0) Valid
-                            @elseif ($thread->status == 1) On Progress
-                            @else Finished
-
-                            @endif
-                        </h3>
-                    </div>
+                <div class="thread-content-learner-valid">
+                    @if ($thread->status == 0)
+                    <h3> Status Offer : <span>Valid</span></h3>
+                    @elseif ($thread->status == 1)
+                    <h3> Status Offer : <span>On Progress</span></h3>
+                    @else
+                    <h3> Status Offer : <span>Finished</span></h3>
+                    @endif
                 </div>
                 <!-- THREAD CONTENT LEARNER VALID WRAPPER -->
 

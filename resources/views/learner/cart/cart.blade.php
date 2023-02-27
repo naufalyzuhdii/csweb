@@ -64,16 +64,25 @@
                                 <!-- <h3 class="courses-total-hours"> <span>2 </span> total hours</h3> -->
                             </div>
                             <div class="courses-cart-data-price">
-                                <h2>Rp {{ $val['price'] }}</h2>
+
+                                <?php
+                                    $p = number_format($val['price'], 0, ",", ".");
+                                ?>
+                                <h2>Rp {{ $p }}</h2>
                             </div>
                             <div class="courses-cart-data-navigation">
                                 <a href={{ route('removecart', $ct) }}>Remove</a>
                             </div>
                         </div>
-                        <a href="/view/topic-course-detail" class="courses-links"></a>
+                        <a href="/view/course/{{ $val['course_id'] }}/topic-course-detail" class="courses-links"></a>
                     </div>
 
-                    <?php $totalprice += $price; ?>
+                    <?php 
+                    $totalprice += $price; 
+
+                    $tp = number_format($totalprice, 0, ",", ".");
+
+                    ?>
                     @endforeach
                     <!-- End Of Courses Cart -->
                 </div>
@@ -84,7 +93,7 @@
             <!-- Cart Checkouts -->
             <div class="cart-checkouts-wrapper">
                 <h2>Total:</h2>
-                <h3>Rp<span>{{ $totalprice }}</span></h3>
+                <h3>Rp<span>{{ $tp }}</span></h3>
 
                 <div class="checkout-btn">
                     <a href="{{ route('checkout') }}">checkout</a>
