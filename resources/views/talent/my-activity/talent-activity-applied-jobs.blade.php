@@ -62,7 +62,6 @@
                                 </p>
                             </div>
                         </div>
-
                         <div class="offer-wrapper">
                             <div class="duration">
                                 <div class="title_wrapper">
@@ -91,7 +90,6 @@
                             </div>
 
                         </div>
-
                     </div>
                 </div>
                 <div class="progress-status">
@@ -102,7 +100,7 @@
                     @endif
                 </div>
                 <div class="chat-btn">
-                    <a href="">
+                    <a href="/talent/followup/applier/{{$apl->id}}/thread/{{$apl->threads_post_projects_id}}">
                         Chat Learner
                     </a>
                 </div>

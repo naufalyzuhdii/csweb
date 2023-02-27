@@ -203,4 +203,9 @@ Route::get('/view/video-learning/id/', [TalentController::class, 'view_my_course
 
 Route::get('/chatroom', [ChatRoomController::class, 'show_chatroom']);
 Route::post('/add_chatroom', [ChatRoomController::class, 'add_chatroom']);
-Route::post('/upload_attachment', [ThreadAttachmentController::class, 'upload_attachment']);
+
+
+Route::get('/learner/followup/applier/{aid}/thread/{tid}', [ThreadAttachmentController::class, 'learner_followup_page'])->middleware('learner');
+Route::get('/talent/followup/applier/{aid}/thread/{tid}', [ThreadAttachmentController::class, 'talent_followup_page'])->middleware('talent');
+Route::post('/upload_attachment_learner', [ThreadAttachmentController::class, 'followup'])->middleware('learner');
+Route::post('/upload_attachment_talent', [ThreadAttachmentController::class, 'followup'])->middleware('talent');

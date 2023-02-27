@@ -167,7 +167,8 @@
                                 </div>
                             </div>
                             <div class="chat-btn">
-                                <a href="">
+                                <a
+                                    href="/learner/followup/applier/{{$apl->id}}/thread/{{$apl->threads_post_projects_id}}">
                                     Chat Talent
                                 </a>
                             </div>
