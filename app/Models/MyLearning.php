@@ -17,7 +17,7 @@ class MyLearning extends Model
 
     public function course()
     {
-        return $this->hasMany(Course::class);
+        return $this->belongsTo(Course::class);
     }
 
     protected $fillable = [

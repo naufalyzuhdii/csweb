@@ -7,59 +7,44 @@
 @section('content')
 
 <section class="course-learned-detail">
-    @foreach ($coursedetail as $cd)
-       
-            
-            
-            <div class="course-learned-detail-wrapper">
-                <!-- Video Learning Wrapper -->
-                <div class="video-learning-wrapper">
-                    @foreach ($cd->course_video as $val)
-                        <video width="320" height="240" controls>
-                            <source src="{{ asset('videos/'.$val->video) }}" type="video/mp4">
-                        </video>
-                        <div class="video-learning-text">
-                            <h2 class="video-learning-chapter-title">
-                                {{ $cd->chapter }} <span> - </span> <span> {{ $val->video_title }} </span>
-                            </h2>
-                            <div class="video-learning-chapter-description">
-                                <h2>Description : </h2>
-                                <p>This course materi talks about introduction of HTML Lorem ipsum dolor sit amet consectetur,
-                                    adipisicing elit. Dolore beatae dolorem ducimus itaque iste quia aliquam ea quisquam iure unde
-                                    laudantium, asperiores corrupti animi provident id libero laborum numquam modi?</p>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-                <!-- Video Learning Wrapper -->
-
-                <!-- Video Chapters Wrapper -->
-                <div class="video-chapters-wrapper">
-                    <h3 class="video-chapters-title">
-                        Your course content
-                    </h3>
-                    <div class="videos-chapters">
-                        <div class="chapter">
-                            <div class="chapter-title">
-                                <h2>{{ $cd->chapter }}</h2>
-                                <i class='fas fa-angle-right' id="arrow"></i>
-                            </div>
-                            @foreach ($cd->course_video as $val)
-                                <div class="chapter-links">
-                                    <a href="" class="video-links">
-                                        <h2>{{ $val->video_title }}</h2>
-                                        <h3>3 min</h3>
-                                    </a>
-                                </div>
-                            @endforeach
-
-                        </div>
+    <div class="course-learned-detail-wrapper">
+        <div class="video-chapters-heading">
+            <h1> <span>My Learning</span> </h1>
+            <h3>
+                Course Name : {{$course->title}}
+            </h3>
+        </div>
+        <div class="back-btn">
+            <a href="/view/my-learning/{{auth()->user()->id}}">
+                &#8592; Back
+            </a>
+        </div>
+        <!-- Video Chapters Wrapper -->
+        <div class="videos-chapter-wrapper">
+            <div class="videos-chapters">
+                @foreach($courseDetail as $courseDetail)
+                <div class="chapter">
+                    <div class="chapter-title">
+                        <h2>{{$courseDetail->chapter}}</h2>
+                        <i class='fas fa-angle-right' id="arrow"></i>
+                    </div>
+                    <div class="chapter-links">
+                        @foreach($courseDetail->course_video as $video)
+                        <a href="/course/{{$course->id}}/chapter/{{$video->course_detail_id}}/video/{{$video->id}}"
+                            class="video-links">
+                            <h2>{{$video->video_title}}</h2>
+                        </a>
+                        @endforeach
                     </div>
                 </div>
-                <!-- Video Chapters Wrapper -->
-
+                @endforeach
             </div>
-    @endforeach
+        </div>
+        <!-- Video Chapters Wrapper -->
+
+
+    </div>
+
 </section>
 
 <script>
