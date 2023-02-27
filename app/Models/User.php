@@ -61,6 +61,11 @@ class User extends Authenticatable
         return $this->hasMany(Applier::class);
     }
 
+    public function threadattachment()
+    {
+        return $this->hasMany(ThreadAttachment::class);
+    }
+
     // public function skills(){
     //     return $this->hasMany(Skills::class);
     // }

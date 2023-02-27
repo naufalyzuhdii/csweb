@@ -18,4 +18,9 @@ class ThreadAttachment extends Model
     public function attachment(){
         return $this->hasMany(Attachment::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

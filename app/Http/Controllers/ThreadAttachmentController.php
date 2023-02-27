@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Applier;
 use Illuminate\Http\Request;
 use App\Models\ThreadAttachment;
+use App\Models\ThreadsPostProject;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
@@ -12,7 +14,7 @@ class ThreadAttachmentController extends Controller
     public function followup(Request $request){
         $rules = [
             'user_id' => 'required|integer',
-            'description' => 'required|string|max:255',
+            'description' => 'string|max:255',
             'threads_post_projects_id' => 'required|integer',
             'file' => 'mimes:pdf,docx,xlsx,pptx,png,jpg,jpeg,gif,mp4,zip'
         ];
@@ -21,21 +23,31 @@ class ThreadAttachmentController extends Controller
             return back()->withErrors($validator);
         }
 
-        $file = $request->file('file');
-        $file_name = $request->file('file')->getClientOriginalName();
-        $file->move('file/', $file_name);
-        
         $followup = new ThreadAttachment();
         $followup->user_id = $request->user_id;
         $followup->description = $request->description;
         $followup->threads_post_projects_id = $request->threads_post_projects_id;
-        $followup->file = $file_name;
+
+        $file = $request->file('file');
+        
+        // dd($file);
+
+        if($file != null)
+        {
+            // $file_name = $file->getClientOriginalName();
+            $file_name = uniqid(). '.' . $file->getClientOriginalExtension();
+            $file->move('file/', $file_name);
+
+            $followup->file = $file_name;
+        }   
+        
 
         // dd($attachment);
 
         $followup->save();
         // dd($followup);
-        return ['Follow Up Success!'];
+        return redirect()->back();
+        
 
     }
     // public function upload_attachment(Request $request){
@@ -74,4 +86,28 @@ class ThreadAttachmentController extends Controller
         
     //     return redirect('/view/my-courses');
     // }
+
+    public function learner_followup_page($aid,$tid)
+    {
+        $applier = Applier::find($aid);
+
+        $followup = ThreadAttachment::
+        where('threads_post_projects_id',$tid)
+        ->get();
+
+        return view('followup.learner-followup-page',
+        compact('applier','followup'));
+    }
+
+    public function talent_followup_page($aid,$tid)
+    {
+        $applier = Applier::find($aid);
+
+        $followup = ThreadAttachment::
+        where('threads_post_projects_id',$tid)
+        ->get();
+
+        return view('followup.talent-followup-page',
+        compact('applier','followup'));
+    }
 }

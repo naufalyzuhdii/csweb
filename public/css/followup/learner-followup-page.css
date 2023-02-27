@@ -1,0 +1,266 @@
+.learner-followup-page {
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content;
+
+    padding: 10rem 25rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.learner-followup-page-wrapper {
+    width: 70%;
+    height: fit-content;
+}
+
+.heading {
+}
+
+.heading h2 {
+    font-size: 2rem;
+    color: var(--primarycolor);
+}
+.heading h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    color: var(--light-grey-color);
+}
+.heading h3 span {
+    text-transform: capitalize;
+}
+
+.content-wrapper {
+    height: 60vh;
+    margin-top: 5rem;
+
+    border: 2px solid rgb(209, 209, 209, 0.9);
+    border-radius: 0.5rem;
+
+    position: relative;
+}
+
+.heading-followup {
+    width: 100%;
+    height: 15%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 2px solid rgb(209, 209, 209, 0.9);
+}
+
+.profile-image {
+    width: 10%;
+    height: 70%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image img {
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-name {
+    width: 90%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.profile-name h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.profile-name h3 span {
+    background: var(--primarycolor);
+    color: white;
+
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+
+.followup-content {
+    width: 100%;
+    height: 75%;
+    overflow: auto;
+
+    padding: 5rem;
+    clear: both;
+}
+
+.sender {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.sender embed,
+.receiver embed {
+    width: 50%;
+    height: 50rem;
+    object-fit: contain;
+}
+.from-sender {
+    font-size: 1.6rem;
+    font-weight: 500;
+
+    width: fit-content;
+    height: fit-content;
+    background-color: #f1f0f0;
+    color: black;
+
+    border-radius: 0.5rem;
+    text-align: justify;
+
+    padding: 1rem;
+    margin-bottom: 5rem;
+}
+
+/* .from-sender::before {
+    content: "";
+    border-style: solid;
+    border-width: 15px 15px 0 0;
+    border-color: #f1f0f0 transparent transparent transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: -1.5rem;
+} */
+
+.receiver {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.from-receiver {
+    font-size: 1.6rem;
+    font-weight: 500;
+
+    width: fit-content;
+    height: fit-content;
+    background: var(--primarycolor);
+    color: white;
+
+    border-radius: 0.5rem;
+    text-align: justify;
+
+    padding: 1rem;
+    margin-bottom: 5rem;
+}
+
+/* .from-receiver::before {
+    content: "";
+    border-style: solid;
+    border-width: 25px 0 0 25px;
+    border-color: var(--primarycolor) transparent transparent transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: 0;
+    bottom: -1.5rem;
+} */
+
+.reply-bar {
+    width: 100%;
+    height: 10%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    bottom: 0;
+
+    border-top: 1px solid rgb(209, 209, 209, 0.9);
+}
+
+.reply-bar form {
+    width: 90%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+.reply-bar form textarea {
+    max-width: 85%;
+    min-width: 85%;
+    min-height: 100%;
+    max-height: 100%;
+
+    border: 1px solid rgb(209, 209, 209, 0.9);
+    border-bottom: none;
+    border-left: none;
+
+    padding: 1rem;
+}
+
+.form-group {
+    width: 15%;
+    height: 100%;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    display: inline-block;
+    background-color: var(--light-grey-color2);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    padding: 0.5rem;
+
+    cursor: pointer;
+}
+
+label i {
+    margin-right: 0.5rem;
+}
+
+input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.button-send {
+    width: 10%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-send button {
+    width: 70%;
+    height: 60%;
+
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--deepblue);
+    color: white;
+
+    cursor: pointer;
+}

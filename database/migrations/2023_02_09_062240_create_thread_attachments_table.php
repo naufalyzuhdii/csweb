@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('threads_post_projects_id')->references('id')->on('threads_post_projects')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();
         });
