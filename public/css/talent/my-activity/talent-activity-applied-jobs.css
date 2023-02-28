@@ -88,6 +88,7 @@
 
 .applied-job-content-item {
     position: relative;
+
     width: 100%;
     height: fit-content;
 
@@ -96,13 +97,12 @@
     box-shadow: 0.3rem 0.4rem 0.8rem rgb(0, 0, 0, 0.5);
     color: black;
 
-    padding: 1rem 0;=
+    padding: 1rem 0;
     margin-bottom: 2rem;
 
     display: flex;
-    justify-content:center;
-    align-items:center;
-
+    justify-content: space-between;
+    align-items: center;
 }
 .profile-learner {
     width: 25%;
@@ -155,13 +155,12 @@
 
 .content-wrapper {
     width: 75%;
-    height:10%;
+    height: fit-content;
+
     display: flex;
     flex-direction: column;
-    justify-content:space-between;
-    align-items:center;
-
-
+    justify-content: space-between;
+    align-items: center;
 }
 
 .learner-name {

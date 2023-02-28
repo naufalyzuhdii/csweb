@@ -32,16 +32,26 @@
                 @foreach($followup as $chat)
                 @if($chat->user_id == auth()->user()->id)
                 <div class="sender">
+                    <h4>
+                        {{ $chat->created_at->setTimezone('Asia/Bangkok')->format('d-M-Y H:i:s') }}
+                    </h4>
+                    @if($chat->description != null)
                     <h3 class="from-sender">{{$chat->description}}</h3>
+                    @endif
                     @if($chat->file != null)
-                    <embed src="{{asset('file/'. $chat->file)}}" type="image/png">
+                    <embed src="{{asset('file/'. $chat->file)}}" type="application/pdf">
                     @endif
                 </div>
                 @else
                 <div class="receiver">
+                    <h4>
+                        {{ $chat->created_at->setTimezone('Asia/Bangkok')->format('d-M-Y H:i:s') }}
+                    </h4>
+                    @if($chat->description != null)
                     <h3 class="from-receiver">{{$chat->description}}</h3>
+                    @endif
                     @if($chat->file != null)
-                    <embed src="{{asset('file/'. $chat->file)}}" type="image/png">
+                    <embed src="{{asset('file/'. $chat->file)}}" type="application/pdf">
                     @endif
                 </div>
                 @endif
@@ -69,12 +79,16 @@
                     </button>
                 </div>
             </div>
-            @error('file')
-            <div class="danger">
-                {{$message}}
-            </div>
-            @enderror
         </div>
+        @if ($errors->any())
+        <div class="danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
 
     </div>
 </section>
