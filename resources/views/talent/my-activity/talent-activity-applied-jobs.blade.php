@@ -16,6 +16,11 @@
 
         <!-- My Activity Applied Job Content Wrapper -->
         <div class="my-activity-applied-job-content-wrapper">
+            @if(session('message'))
+            <div class="success">
+                {{session('message')}}
+            </div>
+            @endif
             @foreach($applier as $apl)
             @if( $apl->threads_post_projects->status != 0 )
             <div class="applied-job-content-item">
@@ -92,17 +97,34 @@
                         </div>
                     </div>
                 </div>
-                <div class="progress-status">
+                <div class="learner-status-order">
                     @if($apl->threads_post_projects->status == 1)
-                    <h3>Progress Status : <span>On working</span></h3>
+                    <h3>Status order : <span>Not accepted yet</span></h3>
                     @elseif($apl->threads_post_projects->status == 2)
-                    <h3>Progress Status : <span>Finished</span></h3>
+                    <h3>Status order : <span>Order accepted</span></h3>
+                    @endif
+                </div>
+                <div class="progress-status">
+                    @if($apl->status == 1)
+                    <h3>Project Status : <span>On working</span></h3>
+                    @elseif($apl->status == 2)
+                    <h3>Project Status : <span>Finished</span></h3>
                     @endif
                 </div>
                 <div class="chat-btn">
                     <a href="/talent/followup/applier/{{$apl->id}}/thread/{{$apl->threads_post_projects_id}}">
                         Chat Learner
                     </a>
+                </div>
+                <div class="finish-btn">
+                    <form action="/finish-project" method="post">
+                        @csrf
+                        <input type="text" value="{{$apl->id}}" name="applier_id" hidden>
+                        <input type="text" value="{{$apl->threads_post_projects_id}}" name="threads_post_projects_id"
+                            hidden>
+
+                        <button type="submit">Finish Project</button>
+                    </form>
                 </div>
             </div>
             @endif

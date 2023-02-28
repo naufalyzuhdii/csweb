@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Applier;
-use App\Models\ThreadsPostProject;
 use Illuminate\Http\Request;
+use App\Models\ThreadsPostProject;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class ApplierController extends Controller
 {
@@ -15,24 +16,41 @@ class ApplierController extends Controller
         $rules = [
             'apply_price' => 'required',
             'description' => 'required|string|max:255',
-            // 'threads_post_projects_id' => 'required|integer'
+            'threads_post_projects_id' => 'required|integer'
         ];
 
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return back()->withErrors($validator);
         }
+
+
+        $exists = DB::table('appliers')
+        ->where('user_id', $request->user_id)
+        ->where('threads_post_projects_id', $request->threads_post_projects_id)
+        ->exists();
+
+        if($exists)
+        {
+            return redirect()->back()
+            ->with('error',"You only allowed to apply 
+            once for a thread's jobs.");
+        }
+
+
         $apply = Applier::create([
             'status' => 0,
             'apply_price' => $request->apply_price,
             'description' => $request->description,
-            'user_id' => Auth::user()->id,
+            'user_id' => $request->user_id,
             'threads_post_projects_id' => $request->threads_post_projects_id
         ]);
 
 
         $apply->save();
-        return view('/view/my-progress/dealed-projects')
+        // return view('talent.my-activity.talent-activity-applied-jobs')
+        // ->with('message','Your applied form has been sent!');
+        return redirect()->back()
         ->with('message','Your applied form has been sent!');
     }
 
@@ -66,7 +84,7 @@ class ApplierController extends Controller
         $accept->status = 1;
         $accept->update();
 
-        return redirect()->back()
+        return redirect()->route('dealed_projects')
         ->with('message','An applier has been accepted to work on this project.');
     }
 }

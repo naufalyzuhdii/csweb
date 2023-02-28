@@ -24,6 +24,11 @@
             </h3>
         </div>
         @else
+        @if(session('message'))
+        <div class="success">
+            {{session('message')}}
+        </div>
+        @endif
         @foreach($applier as $apl)
         @if( $apl->threads_post_projects->status != 0 && $apl->status != 0 )
         <div class="dealed-projects-content">
@@ -32,11 +37,18 @@
                     <!-- Your Project -->
                     <div class="your-project">
                         <a href="/view/my-progress/dealed-projects/project-details/" class="details-links">Details</a>
-                        <div class="thread-content-learner-valid">
+                        <div class="learner-status-order">
                             @if($apl->threads_post_projects->status == 1)
-                            <h3> Status : <span>On working</span></h3>
+                            <h3>Status order : <span>Not accepted yet</span></h3>
                             @elseif($apl->threads_post_projects->status == 2)
-                            <h3> Status : <span>Finished</span></h3>
+                            <h3>Status order : <span>Order accepted</span></h3>
+                            @endif
+                        </div>
+                        <div class="progress-status">
+                            @if($apl->status == 1)
+                            <h3>Project Status : <span>On working</span></h3>
+                            @elseif($apl->status == 2)
+                            <h3>Project Status : <span>Finished</span></h3>
                             @endif
                         </div>
                         <!-- THREAD CONTENT LEARNER MAIN -->
@@ -120,6 +132,17 @@
                             </div>
                             <!-- LEARNER THREAD CONTENT -->
                         </div>
+
+                        <div class="accept-order-btn">
+                            <form action="/accept-order" method="post">
+                                @csrf
+                                <input type="text" value="{{$apl->id}}" name="applier_id" hidden>
+                                <input type="text" value="{{$apl->threads_post_projects_id}}"
+                                    name="threads_post_projects_id" hidden>
+
+                                <button type="submit">Accept Order</button>
+                            </form>
+                        </div>
                     </div>
                     <!-- Your Project -->
 
@@ -145,7 +168,7 @@
                                 </div>
                                 <div class="appliers-offered-price">
                                     <div class="title_wrapper_applier">
-                                        <h3>Offered Price</h3>
+                                        <h3>Dealed Price</h3>
                                         <h3>:</h3>
                                     </div>
                                     <div class="content_applier">
@@ -173,7 +196,19 @@
                                 </a>
                             </div>
                         </div>
+                        <!-- <div class="data-payment">
+                            <h3>You already accept the applier. Please do payment to our system to confirm that you
+                                are
+                                deal with this project.
+                                <br>
+                                Manual transfer to :
+                            </h3>
+                            <p>
+                                BCA : <span> Course And Service - 250604201</span>
+                            </p>
+                        </div> -->
                     </div>
+
                     <!-- Accepted Freelances Talents -->
                 </div>
             </div>

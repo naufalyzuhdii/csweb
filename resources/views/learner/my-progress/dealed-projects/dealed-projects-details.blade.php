@@ -36,25 +36,6 @@
                     <embed src="/images/course/talent-1.jpg" type="application/pdf" width="300" height="200">
                 </div>
             </div>
-            <div class="activity-day-wrapper">
-                <div class="activity-wrapper">
-                    <h3><span>Udin Petot</span> has finished the projects.</h3>
-                    <h4>23 February 2023 | <span>17:00</span></h4>
-                </div>
-                <div class="uploaded-wrapper">
-                    <embed src="/images/course/talent-1.jpg" type="application/pdf" width="300" height="200">
-                </div>
-            </div>
-            <div class="activity-day-wrapper">
-                <div class="activity-wrapper">
-                    <h3><span>Udin Petot</span> deliver your finished project.</h3>
-                    <h4>25 February 2023 | <span>19:00</span></h4>
-                </div>
-                <div class="uploaded-wrapper">
-                    <embed src="/images/course/talent-1.jpg" type="application/pdf" width="300" height="200">
-                </div>
-            </div>
-
         </div>
     </div>
 </section>

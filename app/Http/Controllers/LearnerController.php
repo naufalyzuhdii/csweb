@@ -10,6 +10,7 @@ use App\Models\ThreadsPostProject;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class LearnerController extends Controller
 {
@@ -58,6 +59,25 @@ class LearnerController extends Controller
     public function view_learner_cart()
     {
         return view('learner.cart.cart');
+    }
+
+    public function accept_order(Request $request)
+    {
+        $rules = [
+            'applier_id' => 'required|integer',
+            'threads_post_projects_id' => 'required|integer'
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return back()->withErrors($validator);
+        }
+
+        $accept = Applier::where('id', $request->applier_id)->with('threads_post_projects')->first();
+        $accept->threads_post_projects->status = 2;
+        $accept->threads_post_projects->update();
+        
+        return redirect()->back()
+        ->with('message','You have accept the order!');
     }
 
 

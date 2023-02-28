@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\ThreadsPostProject;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class TalentController extends Controller
 {
@@ -79,5 +80,24 @@ class TalentController extends Controller
 
 
         return view('talent.my-activity.talent-activity-applied-jobs',compact('applier'));
+    }
+
+    public function finish_project(Request $request)
+    {
+        $rules = [
+            'applier_id' => 'required|integer',
+            'threads_post_projects_id' => 'required|integer'
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return back()->withErrors($validator);
+        }
+
+        $accept = Applier::where('id', $request->applier_id)->with('threads_post_projects')->first();
+        $accept->status = 2;
+        $accept->update();
+
+        return redirect()->back()
+        ->with('message','You have finished the project!');
     }
 }

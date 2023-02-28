@@ -12,6 +12,12 @@
             {{ session('message') }}
         </div>
         @endif
+
+        @if(session()->has('error'))
+        <div class="danger" style="font-size:1.8rem;">
+            {{session()->get('error')}}
+        </div>
+        @endif
         <div class="first-section">
             <!-- PROFILE LEARNER -->
             <div class="profile-learner">
@@ -146,7 +152,7 @@
                 @enderror
                 <input type="text" value="{{$thread->status}}" name="status" hidden>
                 <input type="text" value="{{$thread->id}}" name="threads_post_projects_id" hidden>
-                <input type="text" value="{{$thread->user->id}}" name="user_id" hidden>
+                <input type="text" value="{{auth()->user()->id}}" name="user_id" hidden>
             </form>
 
             <div class="talent-income-details">
