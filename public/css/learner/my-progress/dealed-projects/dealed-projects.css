@@ -72,7 +72,7 @@
 .details-links {
     position: absolute;
     right: 2%;
-    top: 5%;
+    bottom: 2%;
     z-index: 200;
     color: var(--light-grey-color);
     font-size: 1.6rem;
@@ -81,17 +81,36 @@
 .details-links:hover {
     color: var(--deepblue);
 }
-.thread-content-learner-valid {
+.learner-status-order {
     position: absolute;
-    right: 10%;
+    right: 20%;
     top: 5%;
 }
 
-.thread-content-learner-valid h3 {
-    font-size: 1.3rem;
-    color: black;
+.learner-status-order h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
 }
-.thread-content-learner-valid span {
+.learner-status-order span {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--primarycolor);
+    color: white;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+}
+
+.progress-status {
+    position: absolute;
+    right: 2%;
+    top: 5%;
+}
+
+.progress-status h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.progress-status span {
     width: fit-content;
     height: fit-content;
     background-color: var(--primarycolor);
@@ -334,6 +353,28 @@
     padding: 0 0.5rem;
     border-radius: 0.7rem;
 }
+
+.accept-order-btn {
+    position:absolute;
+    with:10rem:
+    height:4rem;
+
+    right:10%;
+    bottom : 0%;
+}
+
+.accept-order-btn form button {
+    width:100%;
+    height:100%;
+    padding:.5rem;
+
+    border-radius: .5rem;
+    border:none;
+    cursor:pointer;
+
+    background:green;
+    color:white;
+}
 /* === Your project */
 
 /* === Accepted Freelances Talents */
@@ -501,4 +542,21 @@
 }
 
 /* === Accepted Freelances Talents */
+
+.data-payment {
+    width: 100%;
+
+    padding: 2rem 0;
+    background: transparent;
+}
+
+.data-payment h3,
+.data-payment p {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.data-payment p span {
+    font-weight: 600;
+}
 /* ===================== Find Freelances Talents Content ====================== */

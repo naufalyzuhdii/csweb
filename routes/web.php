@@ -135,9 +135,11 @@ Route::get('/view/thread-talent-detail', [ThreadsPostProjectController::class, '
 
 
 //==================================== My Progress ====================================
-Route::get('/view/my-progress/dealed-projects', [LearnerController::class, 'view_my_dealed_projects'])->middleware('learner');
+Route::get('/view/my-progress/dealed-projects', [LearnerController::class, 'view_my_dealed_projects'])->name('dealed_projects')->middleware('learner');
 Route::get('/view/my-progress/dealed-projects/project-details/', [LearnerController::class, 'view_my_dealed_projects_details'])->middleware('learner');
 Route::get('/view/details-information/', [LearnerController::class, 'view_my_dealed_projects_details_information'])->middleware('learner');
+
+Route::post('/accept-order', [LearnerController::class, 'accept_order'])->middleware('learner');
 //==================================== My Progress ====================================
 
 //==================================== My Learning ====================================
@@ -178,6 +180,9 @@ Route::get('/view/forum-detail-reply', [ForumController::class, 'view_forum_deta
 Route::get('/view/my-activity-freelance', [TalentController::class, 'view_talent_activity_freelance'])->middleware('talent');
 Route::get('/view/freelance-detail/', [TalentController::class, 'view_freelance_detail'])->middleware('talent');
 Route::get('/view/my-activity-applied-jobs', [TalentController::class, 'view_talent_activity_applied_jobs'])->middleware('talent');
+
+Route::post('/finish-project', [TalentController::class, 'finish_project'])->middleware('talent');
+
 // =========================================== My Activity ===========================================
 
 // =========================================== My Courses ===========================================
