@@ -22,6 +22,7 @@
         </div>
         @endif
 
+
         <div class="create-thread-page-learner-wrapper">
             <!-- Profile Learner -->
             <div class="profile-learner">
@@ -87,10 +88,16 @@
                             @endforeach
                         </select>
                         <div class="add-skills" onclick="myFunction()">
+
                             <h3>
                                 Add Skills
                             </h3>
                         </div>
+                        @if(session('error'))
+                        <div class="danger">
+                            {{session('error')}}
+                        </div>
+                        @endif
 
                     </div>
 

@@ -226,6 +226,13 @@
     top: 15%;
     right: 2%;
 }
+
+.danger {
+    top: 15%;
+    right: 15%;
+
+    position: absolute;
+}
 .add-skills h3 {
     font-size: 1.4rem;
     font-weight: 500;

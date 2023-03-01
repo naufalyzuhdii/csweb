@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
-use App\Http\Controllers\DB;
+use Illuminate\Support\Facades\DB;
 
 class ThreadsPostProjectController extends Controller
 {
@@ -112,7 +112,7 @@ class ThreadsPostProjectController extends Controller
     public function edit_thread($id)
     {
         $thread = ThreadsPostProject::find($id);
-        $skills = Skills::all();
+        $skills = Skills::orderBy('name','asc')->get();
         
         return view('thread.learner.edit-thread',compact('thread','skills'));
     }
@@ -184,19 +184,31 @@ class ThreadsPostProjectController extends Controller
     public function add_new_skills(Request $request)
     {
         $rules = [
-            'new_skills' => 'max:20',
+            'new_skills' => 'max:20'
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
             return back()->withErrors($validator);
         }
 
+        $exists = DB::table('skills')
+        ->where('name', $request->new_skills)
+        ->exists();
+
+        if($exists)
+        {
+            return redirect()->back()
+            ->with('error',"Skills already exist");
+        }
+
+
         $skills = new Skills();
         $skills->name = $request->new_skills;
 
         $skills->save();
 
-        return view('thread.learner.create-thread-page-learner', compact('skills'));
+        return redirect()->back()
+        ->with('message','Your added new skill has been requested.',compact('skills'));
     }
 
     public function view_thread_talent_detail()
