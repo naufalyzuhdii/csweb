@@ -23,8 +23,10 @@ class CourseController extends Controller
         return view('categories.course',compact('course'));
     }
 
-    public function show_course(){
+    public function show_course($id)
+    {
         $courses = Course::all();
+        $categories = Category::find($id);
 
         if(request('search')){
             $courses->where('name', 'like', '%'. request('search'). '%');
@@ -34,7 +36,7 @@ class CourseController extends Controller
         //     "courses" => $courses,
         // ]);
 
-        return view('categories.topic-course',compact('courses'));
+        return view('categories.topic-course',compact('courses','categories'));
         
     }
 
@@ -65,13 +67,10 @@ class CourseController extends Controller
         return view('categories.topic-course-detail', 
         compact('courseDetail','courses','course'));
     }
-    public function view_sub_course()
-    {
-        return view('categories.sub-course');
-    }
+
     public function view_topic_course()
     {
-
+        
 
         return view('categories.topic-course');
     }
@@ -102,7 +101,7 @@ class CourseController extends Controller
         $rules = [
             'title' => 'required|max:50',
             'category' => 'required',
-            'description' => 'required|max:50',
+            'description' => 'required|max:120',
             'price' => 'required',
             'image' => 'required|image|mimes:jpg,png'
         ];

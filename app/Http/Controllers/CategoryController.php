@@ -25,6 +25,8 @@ class CategoryController extends Controller
         return view('talent.my-courses.create-new-course', compact('categories'));
     }
 
+
+
     public function show_categories_navbar(){
         $parentcategories = Category::whereNull('parent_id')->get();
         

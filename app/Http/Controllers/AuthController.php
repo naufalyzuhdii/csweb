@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Course;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
@@ -106,21 +107,36 @@ class AuthController extends Controller
     
     public function view_learner_home()
     {
-        $parentcategories = Category::whereNull('parent_id')->get();
+        // $parentcategories = Category::whereNull('parent_id')->get();
 
-        return view('auth.learner-home', compact('parentcategories'));
+        // return view('auth.learner-home', compact('parentcategories'));
+
+        $course = Course::all();
+        $categories = Category::orderBy('name','asc')->get();
+
+        return view('auth.learner-home', compact('course','categories'));
     }
 
     public function view_talent_home()
     {
-        $parentcategories = Category::whereNull('parent_id')->get();
+        // $parentcategories = Category::whereNull('parent_id')->get();
+        $course = Course::all();
+        $categories = Category::orderBy('name','asc')->get();
 
-        return view('auth.talent-home', compact('parentcategories'));
+        return view('auth.talent-home', compact('course','categories'));
+        // return view('auth.talent-home', compact('parentcategories'));
     }
 
     public function view_admin_home()
     {
         $user = User::all();
         return view('auth.admin-home',compact('user'));
+    }
+
+    public function learner_template()
+    {
+        $categories = Category::all()->get();
+
+        return view('navigation.learner-template',compact('categories'));
     }
 }

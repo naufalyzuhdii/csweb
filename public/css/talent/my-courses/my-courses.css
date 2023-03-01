@@ -61,7 +61,7 @@
 
 .course-links {
     width: 30rem;
-    height: 30rem;
+    height: 35rem;
     display: flex;
     flex-direction: column;
     box-shadow: 0.3rem 0.4rem 0.8rem rgb(0, 0, 0, 0.5);
@@ -84,7 +84,7 @@
 .course-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 /* ==== Course Image wrapper */
 
@@ -97,32 +97,54 @@
 
 .course-title {
     width: 100%;
-    height: 50%;
-    font-size: 1.8rem;
+    height: 20%;
+    font-size: 1.7rem;
     font-weight: 600;
+    text-align: left;
+    color: black;
+
+    display: flex;
+    align-items: center;
+}
+
+.course-description {
+    width: 100%;
+    height: 35%;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: 1.4rem;
     text-align: left;
     color: black;
 }
 
 .course-category {
-    width: max-content;
-    height: max-content;
-    color: #df9627;
-    background-color: transparent;
+    width: fit-content;
+    height: 15%;
+
     border: 1px solid #df9627;
     margin: 0.5rem 0;
     border-radius: 10rem;
-    font-size: 1.4rem;
     padding: 0 0.5rem;
+}
+.course-category h3 {
+    width: 100%;
+    color: #df9627;
+    background-color: transparent;
+    font-size: 1.4rem;
 }
 
 .course-author {
     width: 100%;
-    height: 20%;
+    height: 15%;
+
     display: flex;
     align-items: center;
+
     font-size: 1.6rem;
     font-weight: 500;
+
     color: var(--light-grey-color);
     text-transform: capitalize;
 }

@@ -1,34 +1,26 @@
 {{-- Section Header --}}
 <section class="header">
     <div class="navigation">
-
-
         <div class="nav-1">
             <a href="/view/learner-home" class="logo">
                 <img src="{{asset('images/header/logo-white.png')}}">
             </a>
 
             <div class="categories-navbar">
-                <ul class="main-navigation">
+                <a href="" class="categories-links">Categories</a>
+                <?php
+                    $categories = DB::table('categories')->
+                    orderBy('name','asc')
+                    ->get();
+                ?>
+                <ul>
+                    @foreach($categories as $c)
                     <li>
-                        <a href="/view/topic-course" class="categories-links">Categories</a>
-                        {{-- @dd($parentcategories) --}}
-
-                        {{-- <ul>
-                            @foreach ($parentcategories as $category) 
-                                
-                                    <li><a href="/show_course_by_category/{{$category->id}}">{{ $category->name }}<i class="fa-sharp fa-solid fa-play"></i></a>
-                                        @if (count($category->subcategory))
-                                            @include('navigation.subcategory', ['subcategories' => $category->subcategory])
-                                        @endif
-                                    </li>
-                                
-                            @endforeach
-                        </ul> --}}
-                        
+                        <a href="/categories/{{$c->id}}">
+                            {{$c->name}}
+                        </a>
                     </li>
-                </ul>
-                </li>
+                    @endforeach
                 </ul>
             </div>
 
@@ -71,7 +63,6 @@
                     <h2>Hi, {{ old('name', Auth::user()->name) }}</h2>
                     <h3>You signed in as <b>{{ Auth::user()->role }}</b></h3>
                     <li id="switch-roles">
-
                         <form action="{{ route('switch-role.update') }}" method="post" id="formName">
                             @csrf
                             <input type="hidden" name="id" value="{{ Auth::user()->id }}">
@@ -91,8 +82,6 @@
                                     <span class="slider round"></span>
                                 </label>
                                 @endif
-
-
                             </div>
                         </form>
                     </li>

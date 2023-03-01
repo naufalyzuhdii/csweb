@@ -15,10 +15,14 @@ class CategorySeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name' => 'Technology'
+            ['name' => 'Website Development'],
+            ['name' => 'Graphic Design'],
+            ['name' => 'Interior Design'],
+            ['name' => 'Music'],
+            ['name' => 'Marketing'],
+            ['name' => 'Social Media'],
+            ['name' => 'Mathematics'],
         ]);
-        DB::table('categories')->insert([
-            'name' => 'Mathematics'
-        ]);
+
     }
 }
