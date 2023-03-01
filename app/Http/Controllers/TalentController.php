@@ -49,7 +49,7 @@ class TalentController extends Controller
 
     public function view_create_new_course()
     {
-        $category = Category::all();
+        $category = Category::orderBy('name','asc')->get();
         return view('talent.my-courses.create-new-course',compact('category'));
     }
     public function view_my_courses()

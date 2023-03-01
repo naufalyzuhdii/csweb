@@ -27,166 +27,61 @@
     <div class="course-wrapper">
         <div class="coure-guest-header">
             <h1 class="course-guest-heading">
-                Gain income from your passion by selling course and do freelances job!
+                Get your passion and knowledge here!
             </h1>
             <p class="course-guest-paragraph">
-                Let's work together!
+                Let's learn with us!
             </p>
         </div>
         <div class="course-content">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper" id="swiperWrapper">
-                    <a href="#" class="swiper-slide" id="card-slide">
+                    @foreach($course as $course)
+                    <a href="/view/course/{{$course->id}}/topic-course-detail" class="swiper-slide" id="card-slide">
                         <div class="course-card-image">
-                            <img src="{{asset('images/course/html.png')}}" alt="">
+                            <img src="{{asset('course/'.$course->image)}}" alt="">
                         </div>
                         <div class="course-text-content">
-                            <h2 class="course-title">HTML Basic</h2>
-                            <h3 class="course-category">Computer</h3>
-                            <div class="course-author">Udin Petot</div>
+                            <h2 class="course-title">{{$course->title}}</h2>
+                            <h3 class="course-category">{{$course->category->name}}</h3>
+                            <div class="course-author">{{$course->user->name}}</div>
                             <div class="course-rating">
                                 <i class="fa-sharp fa-solid fa-star">4.5</i>
                                 <h4>( 3.000 reviews )</h4>
                             </div>
-                            <h2 class="course-price">Rp 50.000</h2>
+                            <?php
+                                $course_price = number_format($course->price, 0, ",", ".");
+                            ?>
+                            <h2 class="course-price">Rp {{$course_price}}</h2>
                         </div>
                     </a>
-                    <a href="#" class="swiper-slide" id="card-slide">
-                        <div class="course-card-image">
-                            <img src="{{asset('images/course/computer.png')}}" alt="">
-                        </div>
-                        <div class="course-text-content">
-                            <h2 class="course-title">Computer Basic</h2>
-                            <h3 class="course-category">Computer</h3>
-                            <div class="course-author">Udin Petot</div>
-                            <div class="course-rating">
-                                <i class="fa-sharp fa-solid fa-star">4.5</i>
-                                <h4>( 3.000 reviews )</h4>
-                            </div>
-                            <h2 class="course-price">Rp 50.000</h2>
-                        </div>
-                    </a>
-                    <a href="#" class="swiper-slide" id="card-slide">
-                        <div class="course-card-image">
-                            <img src="{{asset('images/course/html.png')}}" alt="">
-                        </div>
-                        <div class="course-text-content">
-                            <h2 class="course-title">HTML Basic</h2>
-                            <h3 class="course-category">Computer</h3>
-                            <div class="course-author">Udin Petot</div>
-                            <div class="course-rating">
-                                <i class="fa-sharp fa-solid fa-star">4.5</i>
-                                <h4>( 3.000 reviews )</h4>
-                            </div>
-                            <h2 class="course-price">Rp 50.000</h2>
-                        </div>
-                    </a>
-                    <a href="#" class="swiper-slide" id="card-slide">
-                        <div class="course-card-image">
-                            <img src="{{asset('images/course/html.png')}}" alt="">
-                        </div>
-                        <div class="course-text-content">
-                            <h2 class="course-title">HTML Basic</h2>
-                            <h3 class="course-category">Computer</h3>
-                            <div class="course-author">Udin Petot</div>
-                            <div class="course-rating">
-                                <i class="fa-sharp fa-solid fa-star">4.5</i>
-                                <h4>( 3.000 reviews )</h4>
-                            </div>
-                            <h2 class="course-price">Rp 50.000</h2>
-                        </div>
-                    </a>
-                    <a href="#" class="swiper-slide" id="card-slide">
-                        <div class="course-card-image">
-                            <img src="{{asset('images/course/computer.png')}}" alt="">
-                        </div>
-                        <div class="course-text-content">
-                            <h2 class="course-title">Computer Basic</h2>
-                            <h3 class="course-category">Computer</h3>
-                            <div class="course-author">Udin Petot</div>
-                            <div class="course-rating">
-                                <i class="fa-sharp fa-solid fa-star">4.5</i>
-                                <h4>( 3.000 reviews )</h4>
-                            </div>
-                            <h2 class="course-price">Rp 50.000</h2>
-                        </div>
-                    </a>
-                    <a href="#" class="swiper-slide" id="card-slide">
-                        <div class="course-card-image">
-                            <img src="{{asset('images/course/computer.png')}}" alt="">
-                        </div>
-                        <div class="course-text-content">
-                            <h2 class="course-title">Computer Basic</h2>
-                            <h3 class="course-category">Computer</h3>
-                            <div class="course-author">Udin Petot</div>
-                            <div class="course-rating">
-                                <i class="fa-sharp fa-solid fa-star">4.5</i>
-                                <h4>( 3.000 reviews )</h4>
-                            </div>
-                            <h2 class="course-price">Rp 50.000</h2>
-                        </div>
-                    </a>
-
+                    @endforeach
                 </div>
-
             </div>
             <div class="swiper-button-next btn-arrow" id="swiper-btn-next"></div>
             <div class="swiper-button-prev btn-arrow" id="swiper-btn-prev"></div>
         </div>
     </div>
-
-
 </section>
 {{-- End Of Section Course Guest --}}
 
 {{-- POPULAR SUB COURSE WRAPPER --}}
-<div class="popular-sub-course-wrapper">
+<section class="popular-sub-course-wrapper">
     <div class="popular-sub-course-heading">
         <h1 class="popular-sub-course">
-            Popular Sub Courses
+            Popular Categories
         </h1>
     </div>
     <div class="popular-sub-course-content">
         <div class="popular-sub-course-item">
-            <a href="#" class="popular-sub-course-links">
-                Website
+            @foreach($categories as $c)
+            <a href="/categories/{{$c->id}}" class="popular-sub-course-links">
+                {{$c->name}}
             </a>
-            <a href="#" class="popular-sub-course-links">
-                Mobile Application
-            </a>
-            <a href="#" class="popular-sub-course-links">
-                Engineering
-            </a>
-            <a href="#" class="popular-sub-course-links">
-                Artificiall Intelegenet
-            </a>
-            <a href="#" class="popular-sub-course-links">
-                Trading
-            </a>
-            <a href="#" class="popular-sub-course-links">
-                Robotic
-            </a>
-            <a href="#" class="popular-sub-course-links">
-                Artificiall Intelegenet
-            </a>
-            <a href="#" class="popular-sub-course-links">
-                Trading
-            </a>
-            <a href="#" class="popular-sub-course-links">
-                Robotic
-            </a>
-            <a href="#" class="popular-sub-course-links">
-                Artificiall Intelegenet
-            </a>
-            <a href="#" class="popular-sub-course-links">
-                Trading
-            </a>
-            <a href="#" class="popular-sub-course-links">
-                Robotic
-            </a>
+            @endforeach
         </div>
     </div>
-</div>
+</section>
 {{-- POPULAR SUB COURSE WRAPPER --}}
 
 

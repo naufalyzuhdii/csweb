@@ -91,9 +91,14 @@ Route::put('/upload-user-certification',[UserController::class, 'upload_user_cer
 
 // ==================================== Categories ======================================================
 Route::get('/show_course_by_category/{id}', [CourseController::class, 'show_course_by_category']);
+
+
+Route::get('/categories', [CategoryController::class, 'view_categories'])->middleware('learner');
+
+
 Route::get('/view/course', [CourseController::class, 'view_course']);
 Route::get('/view/sub-course', [CourseController::class, 'view_sub_course']);
-Route::get('/view/topic-course', [CourseController::class, 'show_course']);
+Route::get('/categories/{id}', [CourseController::class, 'show_course']);
 Route::get('/view/course/{id}/topic-course-detail', [CourseController::class, 'course_detail']);
 Route::get('/view/talent-profile', [CourseController::class, 'view_talent_profile']);
 // ================== Categories ========================================================================

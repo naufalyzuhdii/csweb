@@ -38,83 +38,81 @@
 .categories-navbar {
     width: 33%;
     height: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    flex-direction: column;
+
     position: relative;
 }
 
 /* DROPDOWN */
-ul {
+.categories-navbar > ul {
+    display: none;
+    position: absolute;
+
     width: 100%;
+    height: fit-content;
+    z-index: 100;
+
+    background: var(--secondarycolor);
+    border-radius: 0.5rem;
+
+    top: 80%;
 }
 
-ul li {
-    display: block;
-    position: relative;
+.categories-navbar > ul > li {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+
+    /* margin: 0.5rem 0; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.main-navigation li ul li:hover {
-    background-color: white;
+.categories-navbar > ul > li:hover {
+    background: white;
     border-radius: 0.5rem;
 }
 
-ul li > a {
+.categories-navbar > ul li a {
     width: 100%;
-    font-weight: 500;
-    font-size: 1.8rem;
+
+    padding: 0 1rem;
+
+    font-size: 1.6rem;
     color: var(--deepblue);
-    cursor: pointer;
+    text-align: justify;
+}
+
+.categories-navbar:hover > ul {
+    display: inline-block;
 }
 
 .categories-links {
+    width: 100%;
     font-size: 1.8rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    font-weight: 500;
+    font-size: 1.8rem;
+
+    text-decoration: none;
     color: var(--white-color);
 }
 
 .categories-links:hover,
 .thread-links:hover {
     color: var(--secondarycolor);
-}
-
-li ul {
-    display: none;
-    background-color: var(--secondarycolor);
-    border-radius: 0.5rem;
-}
-
-ul li ul li {
-    width: 100%;
-    height: 10%;
-    height: max-content;
-    z-index: 200;
-}
-
-ul li ul li a i {
-    position: absolute;
-    font-size: 0.8rem;
-    right: 5%;
-    top: 25%;
-}
-
-ul li a {
-    display: block;
-    padding: 0.5rem;
-}
-
-li:hover > ul {
-    display: block;
-    position: absolute;
-}
-
-ul ul ul {
-    left: 100%;
-    top: 0;
-    margin: 0 0.1rem;
 }
 
 /* END OF  DROPDOWN */

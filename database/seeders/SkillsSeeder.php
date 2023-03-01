@@ -15,28 +15,31 @@ class SkillsSeeder extends Seeder
     public function run()
     {
         DB::table('skills')->insert([
-            'name' => 'Bahasa Indonesia'
+            ['name' => 'Bahasa Indonesia',
+                'status' => 'valid'],
+            ['name' => 'Laravel',
+            'status' => 'valid'],
+            ['name' => 'Graphic Design',
+            'status' => 'valid'],
+            ['name' => 'HTML & CSS',
+                'status' => 'valid'],
+            ['name' => 'Javascript',
+                'status' => 'valid'],
+            ['name' => 'ReactJs',
+                'status' => 'valid'],
+            ['name' => 'Vue Js/Node Js',
+                'status' => 'valid'],
+            ['name' => 'PHP',
+                'status' => 'valid'],
+            ['name' => 'Flutter',
+                'status' => 'valid'],
+            ['name' => 'Guitar Music',
+                'status' => 'valid'],
+            ['name' => 'Cooking',
+                'status' => 'valid'],
+            ['name' => 'Teaching/Leading',
+                'status' => 'valid'],
         ]);
-        DB::table('skills')->insert([
-            'name' => 'Bahasa Inggris'
-        ]);
-        DB::table('skills')->insert([
-            'name' => 'Laravel',
-            'status' => 'valid'
-        ]);
-        DB::table('skills')->insert([
-            'name' => 'ReactJs',
-            'status' => 'valid'
-        ]);        
-        DB::table('skills')->insert([
-            'name' => 'HTML/CSS/Javascript',
-            'status' => 'valid'
-        ]);
-        DB::table('skills')->insert([
-            'name' => 'Operating System'
-        ]);
-        DB::table('skills')->insert([
-            'name' => 'Algebra'
-        ]);
+
     }
 }

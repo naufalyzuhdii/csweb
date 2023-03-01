@@ -75,7 +75,6 @@
                     </div>
                     @enderror
 
-
                     <div class="learner-thread-skills-required">
                         <h3>What skills are required?</h3>
                         <select name="skills_requirement">
@@ -143,10 +142,10 @@
                             <h3>Offered Price</h3>
                             <div class="price">
                                 <?php
-                                            $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");
-                                            $nominal_depan_max = number_format($thread->max_price, 0, ",", ".");
-                                            $nominal_depan_fix = number_format($thread->fix_price, 0, ",", ".");
-                                        ?>
+                                    $nominal_depan_min = number_format($thread->min_price, 0, ",", ".");
+                                    $nominal_depan_max = number_format($thread->max_price, 0, ",", ".");
+                                    $nominal_depan_fix = number_format($thread->fix_price, 0, ",", ".");
+                                ?>
                                 <div class="min-price">
                                     <h3>Min Price</h3>
                                     <div class="price-wrapper">
@@ -201,7 +200,7 @@
                         <button type="submit">Update Thread</button>
                     </div>
                 </form>
-                <div class="add-skills-wrapper">
+                <!-- <div class="add-skills-wrapper">
                     <div class="add-skills-form" id="add-skills-form">
                         <form action="/add-new-skills" method="get" enctype="multipart/form-data">
                             @csrf
@@ -214,7 +213,7 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> -->
 
 
 

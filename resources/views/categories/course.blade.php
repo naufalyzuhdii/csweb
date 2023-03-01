@@ -21,7 +21,7 @@
                             <img src="{{asset('course/'.$course->image)}}" alt="">
                         </div>
                         <div class="course-text-content">
-                            <h2 class="course-title">HTML Basic</h2>
+                            <h2 class="course-title">{{$course->title}}</h2>
                             <h3 class="course-category">
                                 <ul>
                                     <!-- <li>{{$course->category->name}}}</li> -->
@@ -52,52 +52,21 @@
     <div class="popular-sub-course-wrapper">
         <div class="popular-sub-course-heading">
             <h1 class="popular-sub-course">
-                Popular Sub Courses
+                Popular Categories
             </h1>
         </div>
         <div class="popular-sub-course-content">
+            @foreach($categories as $c)
             <div class="popular-sub-course-item">
                 <a href="#" class="popular-sub-course-links">
-                    Website
-                </a>
-                <a href="#" class="popular-sub-course-links">
-                    Mobile Application
-                </a>
-                <a href="#" class="popular-sub-course-links">
-                    Engineering
-                </a>
-                <a href="#" class="popular-sub-course-links">
-                    Artificiall Intelegenet
-                </a>
-                <a href="#" class="popular-sub-course-links">
-                    Trading
-                </a>
-                <a href="#" class="popular-sub-course-links">
-                    Robotic
-                </a>
-                <a href="#" class="popular-sub-course-links">
-                    Artificiall Intelegenet
-                </a>
-                <a href="#" class="popular-sub-course-links">
-                    Trading
-                </a>
-                <a href="#" class="popular-sub-course-links">
-                    Robotic
-                </a>
-                <a href="#" class="popular-sub-course-links">
-                    Artificiall Intelegenet
-                </a>
-                <a href="#" class="popular-sub-course-links">
-                    Trading
-                </a>
-                <a href="#" class="popular-sub-course-links">
-                    Robotic
+                    {{$c->name}}
                 </a>
             </div>
+            @endforeach
         </div>
     </div>
 
-    <div class="popular-talent-wrapper">
+    <!-- <div class="popular-talent-wrapper">
         <div class="popular-talent-heading">
             <h1 class="popular-talent">
                 Popular Talents
@@ -327,7 +296,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </section>
 
 

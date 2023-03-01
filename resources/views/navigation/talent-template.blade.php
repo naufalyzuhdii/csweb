@@ -6,21 +6,20 @@
                 <img src="{{asset('images/header/logo-white.png')}}">
             </a>
             <div class="categories-navbar">
-                <ul class="main-navigation">
+                <a href="" class="categories-links">Categories</a>
+                <?php
+                    $categories = DB::table('categories')->
+                    orderBy('name','asc')
+                    ->get();
+                ?>
+                <ul>
+                    @foreach($categories as $c)
                     <li>
-                        <a href="#" class="categories-links">Categories</a>
-                        {{-- <ul>
-                            @foreach ($parentcategories as $category) 
-                                
-                                <li><a href="/show_course_by_category/{{$category->id}}">{{ $category->name }}<i class="fa-sharp fa-solid fa-play"></i></a>
-                                    @if (count($category->subcategory))
-                                        @include('navigation.subcategory', ['subcategories' => $category->subcategory])
-                                    @endif
-                                </li>
-                                
-                            @endforeach
-                        </ul> --}}
+                        <a href="/categories/{{$c->id}}">
+                            {{$c->name}}
+                        </a>
                     </li>
+                    @endforeach
                 </ul>
             </div>
             <div class="thread-navbar">
