@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Course;
 use App\Models\Applier;
 use App\Models\Category;
@@ -86,7 +87,7 @@ class TalentController extends Controller
     {
         $rules = [
             'applier_id' => 'required|integer',
-            'threads_post_projects_id' => 'required|integer'
+            'threads_post_projects_id' => 'required|integer',
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
@@ -97,7 +98,31 @@ class TalentController extends Controller
         $accept->status = 2;
         $accept->update();
 
+
         return redirect()->back()
         ->with('message','You have finished the project!');
+    }
+
+    public function withdraw(Request $request)
+    {
+        $rules = [
+            'user_id' => 'required|integer',
+            'withdraw_amount' => 'required|integer',
+        ];
+        $validator = Validator::make($request->all(), $rules);
+        if ($validator->fails()) {
+            return back()->withErrors($validator);
+        }
+
+        $user = User::where('id',$request->user_id)->first();
+        $user->balance = $user->balance - $request->withdraw_amount;
+        $user->update();
+
+
+        return redirect()->back()
+    ->with('message','Withdraw successfully');
+
+
+        
     }
 }

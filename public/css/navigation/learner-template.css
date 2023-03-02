@@ -308,6 +308,8 @@
     font-size: 1.6rem;
     color: var(--deepblue);
     text-align: justify;
+
+    text-decoration: none;
 }
 
 .profile-navbar:hover > ul {

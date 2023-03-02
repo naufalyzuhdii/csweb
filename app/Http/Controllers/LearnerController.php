@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Course;
 use App\Models\Applier;
 use Illuminate\Http\Request;
@@ -65,7 +66,9 @@ class LearnerController extends Controller
     {
         $rules = [
             'applier_id' => 'required|integer',
-            'threads_post_projects_id' => 'required|integer'
+            'user_id' => 'required|integer',
+            'threads_post_projects_id' => 'required|integer',
+            'applier_price' => 'required|integer',
         ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
@@ -76,6 +79,16 @@ class LearnerController extends Controller
         $accept->threads_post_projects->status = 2;
         $accept->threads_post_projects->update();
         
+        $user = User::where('id',$request->user_id)->first();
+        if($user->balance == 0)
+        {
+            $user->balance = $request->applier_price;
+        }
+        else {
+            $user->balance = $user->balance + $request->applier_price;
+        }
+        
+        $user->update();
         return redirect()->back()
         ->with('message','You have accept the order!');
     }
