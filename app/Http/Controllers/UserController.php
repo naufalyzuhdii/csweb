@@ -31,12 +31,7 @@ class UserController extends Controller
         return view('auth.user-profile',compact('user')); 
     }
 
-    public function view_balance($id)
-    {
-      $user = User::find($id);
 
-      return view('talent.balance.balance',compact('user'));
-    }
 
     public function user_update(Request $request)
     {

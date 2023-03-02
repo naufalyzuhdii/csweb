@@ -11,6 +11,9 @@ use App\Models\ThreadsPostProject;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
+
 
 class TalentController extends Controller
 {
@@ -103,6 +106,13 @@ class TalentController extends Controller
         ->with('message','You have finished the project!');
     }
 
+    public function view_balance($id)
+    {
+    $user = User::find($id);
+
+    return view('talent.balance.balance',compact('user'));
+    }
+
     public function withdraw(Request $request)
     {
         $rules = [
@@ -115,12 +125,21 @@ class TalentController extends Controller
         }
 
         $user = User::where('id',$request->user_id)->first();
-        $user->balance = $user->balance - $request->withdraw_amount;
-        $user->update();
 
+
+        if($user->balance == 0)
+        {
+            return redirect()->back()
+            ->with('error','Balance insufficient');
+        }
+        elseif($user->balance > 0) {
+            $user->balance = $user->balance - $request->withdraw_amount ;
+            $user->update();
+        }
+    
 
         return redirect()->back()
-    ->with('message','Withdraw successfully');
+        ->with('message','Withdraw successfully');
 
 
         

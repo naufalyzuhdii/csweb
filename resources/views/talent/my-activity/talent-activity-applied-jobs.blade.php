@@ -116,6 +116,7 @@
                         Chat Learner
                     </a>
                 </div>
+                @if($apl->threads_post_projects->status == 2 && $apl->status == 2)
                 <div class="finish-btn">
                     <form action="/finish-project" method="post">
                         @csrf
@@ -126,6 +127,18 @@
                         <button type="submit">Finish Project</button>
                     </form>
                 </div>
+                @elseif($apl->threads_post_projects->status == 2 && $apl->status == 2)
+                <div class="finish-btn">
+                    <form action="/finish-project" method="post">
+                        @csrf
+                        <input type="text" value="{{$apl->id}}" name="applier_id" hidden disabled>
+                        <input type="text" value="{{$apl->threads_post_projects_id}}" name="threads_post_projects_id"
+                            hidden disabled>
+
+                        <button type="submit" disabled>Finish Project</button>
+                    </form>
+                </div>
+                @endif
             </div>
             @endif
             @endforeach

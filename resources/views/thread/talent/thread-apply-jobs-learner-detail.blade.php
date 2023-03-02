@@ -133,6 +133,8 @@
                             <input type="number" name="apply_price" maxlength="11" placeholder="Applier Price"
                                 id="apply_price" onkeyup="calc(this.value);" min="{{$thread->min_price}}"
                                 max="{{$thread->max_price}}">
+
+                            <!-- <input type="number" name="net_income" maxlength="11" id="net_income_input"> -->
                         </div>
                     </div>
                 </div>
@@ -214,6 +216,7 @@ function calc(value) {
     inputed_price = 1 * value;
     commision_p = 0.1 * value;
     net_i = value - commision_p;
+    net_input = value - commision_p;
 
 
 
@@ -252,6 +255,7 @@ function calc(value) {
     document.getElementById('applier_price').value = inputed_price;
     document.getElementById('commision_price').value = commision_p;
     document.getElementById('net_income').value = net_i;
+    document.getElementById('net_income_input').value = net_input;
 
 }
 

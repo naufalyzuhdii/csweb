@@ -89,6 +89,7 @@ class LearnerController extends Controller
         }
         
         $user->update();
+        
         return redirect()->back()
         ->with('message','You have accept the order!');
     }
