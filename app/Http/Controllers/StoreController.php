@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Session;
+use App\Models\User;
 use App\Models\Store;
 use App\Models\Course;
 use App\Models\MyLearning;
@@ -19,7 +20,7 @@ class StoreController extends Controller
         $course = Course::get_course($course_id);
         $cart[$course_id] = [
             'title' => $course->title,
-            // 'author' => $course->author,
+            'user_id' => $course->user_id,
             // 'category' => $course->category,
             'description' => $course->description,
             'price' => $course->price,
@@ -34,7 +35,23 @@ class StoreController extends Controller
 
     public function cart(){
         $cart = session('cart');
-        return view('learner.cart.cart')->with('cart', $cart);
+        $user_array = array();
+        foreach ($cart as $ct => $val) {
+            // dd($cart);
+
+            $user_id = $val['user_id'];
+
+            // dd($user_id);
+
+            $user = User::where('id', $user_id)->first();
+
+            // dd($user);
+
+            array_push($user_array, $user);
+            // dd($user_array);
+        }
+        // dd($user_array);
+        return view('learner.cart.cart', compact('user_array'))->with('cart', $cart);
     }
 
     public function remove_cart($course_id){

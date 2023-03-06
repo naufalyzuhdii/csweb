@@ -7,6 +7,11 @@
 @section('content')
 
 <section class="learner-cart">
+    {{-- <?php
+$a=array();
+array_push($a,"test","test1");
+print_r($a[1]);
+?> --}}
     {{-- @if (Session::has('cart')) --}}
     <div class="learner-cart-wrapper">
         <!-- learner Cart Header -->
@@ -43,7 +48,10 @@
 
                     <?php $totalprice  = 0; ?>
 
+                    {{-- @dd($cart) --}}
                     @foreach ($cart as $ct => $val)
+                    @dd($user_array)
+                    {{-- @dd($user_array[0]->name) --}}
                     {{-- @dd($val['title']) --}}
 
                     <?php $price = $val['price']; ?>
@@ -60,7 +68,7 @@
                                 <h3 class="courses-cart-category">
                                     {{--  {{ $val[course] }} --}}
                                 </h3>
-                                {{-- <h3 class="courses-cart-author">{{ $val['user']['name'] }}</h3> --}}
+                                {{-- <h3 class="courses-cart-author">{{ $user_array[0]->name }}</h3> --}}
                                 <!-- <h3 class="courses-total-hours"> <span>2 </span> total hours</h3> -->
                             </div>
                             <div class="courses-cart-data-price">
