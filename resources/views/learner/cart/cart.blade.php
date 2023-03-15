@@ -50,7 +50,7 @@ print_r($a[1]);
 
                     {{-- @dd($cart) --}}
                     @foreach ($cart as $ct => $val)
-                    @dd($user_array)
+                    {{-- @dd($user_array) --}}
                     {{-- @dd($user_array[0]->name) --}}
                     {{-- @dd($val['title']) --}}
 

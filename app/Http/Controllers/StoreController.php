@@ -35,23 +35,23 @@ class StoreController extends Controller
 
     public function cart(){
         $cart = session('cart');
-        $user_array = array();
-        foreach ($cart as $ct => $val) {
-            // dd($cart);
+        // $user_array = array();
+        // foreach ($cart as $ct => $val) {
+        //     // dd($cart);
 
-            $user_id = $val['user_id'];
+        //     $user_id = $val['user_id'];
 
-            // dd($user_id);
+        //     // dd($user_id);
 
-            $user = User::where('id', $user_id)->first();
+        //     $user = User::where('id', $user_id)->first();
 
-            // dd($user);
+        //     // dd($user);
 
-            array_push($user_array, $user);
-            // dd($user_array);
-        }
+        //     array_push($user_array, $user);
+        //     // dd($user_array);
+        // }
         // dd($user_array);
-        return view('learner.cart.cart', compact('user_array'))->with('cart', $cart);
+        return view('learner.cart.cart')->with('cart', $cart);
     }
 
     public function remove_cart($course_id){
