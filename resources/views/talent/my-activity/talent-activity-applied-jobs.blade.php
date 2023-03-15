@@ -116,7 +116,7 @@
                         Chat Learner
                     </a>
                 </div>
-                @if($apl->threads_post_projects->status == 2 && $apl->status == 2)
+                @if($apl->threads_post_projects->status == 1 && $apl->status == 1)
                 <div class="finish-btn">
                     <form action="/finish-project" method="post">
                         @csrf

@@ -36,7 +36,7 @@
                 <div class="project-links">
                     <!-- Your Project -->
                     <div class="your-project">
-                        <a href="/view/my-progress/dealed-projects/project-details/" class="details-links">Details</a>
+                        <!-- <a href="/view/my-progress/dealed-projects/project-details/" class="details-links">Details</a> -->
                         <div class="learner-status-order">
                             @if($apl->threads_post_projects->status == 1)
                             <h3>Status order : <span>Not accepted yet</span></h3>

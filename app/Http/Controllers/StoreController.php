@@ -76,7 +76,18 @@ class StoreController extends Controller
                 'user_id' => Auth::user()->id,
                 'course_id' => $ct,
             ]);
+
+            $course = Course::find($course_id);
+            $user = User::where('id' , $course->user->id)->first();
+
+
+            $course_price = $course->price;
+            $user_balance = $user->balance;
+
+            $user->balance = $user->balance += $course_price;
+            $user->update();
         }
+
         
         session()->forget('cart');
 
