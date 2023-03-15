@@ -50,9 +50,11 @@ print_r($a[1]);
 
                     {{-- @dd($cart) --}}
                     @foreach ($cart as $ct => $val)
+                
+                    {{-- @dd($ct) --}}
                     {{-- @dd($user_array) --}}
                     {{-- @dd($user_array[0]->name) --}}
-                    {{-- @dd($val['title']) --}}
+                    {{-- @dd($val['user_id']) --}}
 
                     <?php $price = $val['price']; ?>
 

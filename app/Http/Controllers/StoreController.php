@@ -65,6 +65,7 @@ class StoreController extends Controller
         $cart = session('cart');
         $transaction_header_id = TransactionHeader::add_transaction_header();
         foreach ($cart as $ct => $val){
+            // dd($cart);
             // dd($ct);
             // dd($val);
             $course_id = $ct;
