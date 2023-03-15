@@ -36,7 +36,7 @@
                 <div class="project-links">
                     <!-- Your Project -->
                     <div class="your-project">
-                        <a href="/view/my-progress/dealed-projects/project-details/" class="details-links">Details</a>
+                        <!-- <a href="/view/my-progress/dealed-projects/project-details/" class="details-links">Details</a> -->
                         <div class="learner-status-order">
                             @if($apl->threads_post_projects->status == 1)
                             <h3>Status order : <span>Not accepted yet</span></h3>
@@ -115,13 +115,11 @@
                                     </div>
                                     <div class="learner-thread-offer-detail">
                                         <?php
-                                            $min_price = number_format($apl->threads_post_projects->min_price, 0, ",", ".");
-                                            $max_price = number_format($apl->threads_post_projects->max_price, 0, ",", ".");
+                                            $applier_price = number_format($apl->apply_price, 0, ",", ".");
                                         ?>
-                                        <h3>Duration : </h3>
-                                        <h3>Price range : <span>Rp {{ $min_price }}</span> -
-                                            <span>Rp {{ $max_price }}
-                                            </span>
+                                        <h3>Duration : {{$apl->threads_post_projects->offered_duration}}</h3>
+                                        <h3>Fix Price :
+                                            Rp {{ $applier_price }}
                                         </h3>
                                     </div>
                                 </div>
@@ -133,21 +131,39 @@
                             <!-- LEARNER THREAD CONTENT -->
                         </div>
 
+                        @if($apl->status == 2 && $apl->threads_post_projects->status != 2)
                         <div class="accept-order-btn">
                             <form action="/accept-order" method="post">
                                 @csrf
                                 <input type="text" value="{{$apl->id}}" name="applier_id" hidden>
+                                <input type="text" value="{{$apl->user_id}}" name="user_id" hidden>
                                 <input type="text" value="{{$apl->threads_post_projects_id}}"
                                     name="threads_post_projects_id" hidden>
+
+                                <input type="number" name="applier_price" value="{{$apl->apply_price}}" hidden>
 
                                 <button type="submit">Accept Order</button>
                             </form>
                         </div>
+                        @elseif($apl->status == 2 && $apl->threads_post_projects->status == 2)
+                        <div class="accept-order-btn">
+                            <form action="/accept-order" method="post">
+                                @csrf
+                                <input type="text" value="{{$apl->id}}" name="applier_id" hidden disabled>
+                                <input type="text" value="{{$apl->user_id}}" name="user_id" hidden disabled>
+                                <input type="text" value="{{$apl->threads_post_projects_id}}"
+                                    name="threads_post_projects_id" hidden disabled>
+
+                                <input type="number" name="applier_price" value="{{$apl->apply_price}}" hidden disabled>
+
+                                <button type="submit" disabled>Accept Order</button>
+                            </form>
+                        </div>
+                        @endif
                     </div>
                     <!-- Your Project -->
 
                     <!-- Accepted Freelances Talents -->
-                    {{-- @dd($talent) --}}
 
                     <div class="accepted-freelances-talents">
                         <div class="freelances-talents-data">

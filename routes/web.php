@@ -52,7 +52,6 @@ Route::get('/view/signup_page', [AuthController::class, 'view_signUp'])->middlew
 Route::post('/signup', [AuthController::class, 'signup'])->middleware('guest');
 
 Route::get('/profile/{id}', [UserController::class, 'view_profile'])->name('profile.page')->middleware('auth');
-Route::get('/balance/{id}', [UserController::class, 'view_balance'])->name('balance.page')->middleware('talent');
 Route::put('/user_update', [UserController::class, 'user_update'])->name('user.update')->middleware('auth');
 Route::get('/signout', [AuthController::class, 'signout'])->middleware('auth');
 
@@ -214,6 +213,8 @@ Route::get('/view/video-learning/id/', [TalentController::class, 'view_my_course
 Route::get('/chatroom', [ChatRoomController::class, 'show_chatroom']);
 Route::post('/add_chatroom', [ChatRoomController::class, 'add_chatroom']);
 
+Route::get('/balance/{id}', [TalentController::class, 'view_balance'])->name('balance.page')->middleware('talent');
+Route::post('/withdraw', [TalentController::class, 'withdraw'])->middleware('talent');
 
 Route::get('/learner/followup/applier/{aid}/thread/{tid}', [ThreadAttachmentController::class, 'learner_followup_page'])->middleware('learner');
 Route::get('/talent/followup/applier/{aid}/thread/{tid}', [ThreadAttachmentController::class, 'talent_followup_page'])->middleware('talent');

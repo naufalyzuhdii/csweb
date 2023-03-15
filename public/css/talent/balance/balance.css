@@ -8,6 +8,10 @@
 
 .section-wrapper {
     width: 75%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
 }
 
 /* ============== Title Heading ==================== */
@@ -71,7 +75,12 @@
     align-items: center;
 }
 
+.balance-content form {
+    width: 70%;
+}
+
 .withdraw-amount {
+    width: 100%;
     display: flex;
     align-items: center;
     margin-left: 0.5rem;
@@ -119,4 +128,18 @@
 
 .btn-submit:hover {
     transform: scale(1.02);
+}
+
+.net-income {
+    width: 100%;
+}
+
+.net-income .heading h3 {
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+.net-income > h3 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: green;
 }

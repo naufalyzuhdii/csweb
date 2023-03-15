@@ -64,8 +64,6 @@
                     </button>
                 </form>
 
-
-
             </a>
             @endforeach
 
