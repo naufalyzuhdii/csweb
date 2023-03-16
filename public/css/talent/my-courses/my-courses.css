@@ -72,6 +72,16 @@
     position: relative;
 }
 
+.links {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: transparent;
+    user-select: none;
+}
+
 .course-image-wrapper {
     width: 100%;
     height: 50%;
@@ -147,6 +157,20 @@
 
     color: var(--light-grey-color);
     text-transform: capitalize;
+}
+.edit-course {
+    position: absolute;
+
+    font-size: 1.6rem;
+    right: 10%;
+    bottom: 2%;
+
+    z-index: 1000;
+    color: black;
+}
+
+.edit-course:hover {
+    color: red;
 }
 
 .delete_course {

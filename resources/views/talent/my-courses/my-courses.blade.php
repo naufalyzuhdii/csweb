@@ -36,7 +36,9 @@
             @else
             @foreach ($my_courses as $my_course)
             {{-- @dd($my_course->category->name) --}}
-            <a href="/view/my-courses/my-course-detail-chapter/{{$my_course->id}}" class="course-links">
+            <div class="course-links">
+                <a href="/view/my-courses/my-course-detail-chapter/{{$my_course->id}}" class="links">
+                </a>
                 <!-- Course Image Wrapper -->
                 <div class="course-image-wrapper">
                     <div class="course-image">
@@ -57,17 +59,17 @@
                     <h3 class="course-author">{{ $my_course->user->name }}</h3>
 
                 </div>
+                <a href="/edit/course/{{$my_course->id}}" class="edit-course">Edit</a>
                 <!-- Course Text Content -->
                 <form action="/delete/course/{{$my_course->id}}" class="delete_course" id="delete_course">
                     <button type=submit>
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </form>
+                @endforeach
 
-            </a>
-            @endforeach
-
-            @endif
+                @endif
+            </div>
         </div>
 
         <!-- My Courses Content -->

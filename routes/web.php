@@ -192,6 +192,8 @@ Route::post('/finish-project', [TalentController::class, 'finish_project'])->mid
 // =========================================== My Courses ===========================================
 Route::get('/view/create-new-course', [TalentController::class, 'view_create_new_course'])->middleware('talent');
 Route::get('/delete/course/{id}', [CourseController::class, 'delete_course'])->middleware('talent');
+Route::get('/edit/course/{id}', [CourseController::class, 'edit_course_page'])->middleware('talent');
+Route::post('/update_course', [CourseController::class, 'update_course']);
 Route::post('/postcourse', [CourseController::class, 'post_course']);
 Route::get('/view/my-courses', [CourseController::class, 'my_courses'])->middleware('auth')->name('mycourse');
 
