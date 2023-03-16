@@ -70,8 +70,6 @@ class CourseController extends Controller
 
     public function view_topic_course()
     {
-        
-
         return view('categories.topic-course');
     }
 
@@ -86,8 +84,6 @@ class CourseController extends Controller
     }
 
     // CONTROLL FUNCTION
-
-
 
     public function my_courses()
     {
@@ -138,13 +134,23 @@ class CourseController extends Controller
         return redirect('/view/my-courses');
     }
 
+    public function edit_course_page($id)
+    {
+        $course = Course::find($id)->first();
+        $category = Category::all();
+
+        return view('talent.my-courses.my-course-edit',compact('course','category'));
+    }
+
     public function update_course(Request $request)
     {
         $course = Course::find($request->id);
         $course->title = $request->title != null ? $request->title : $course->title;
         $course->description = $request->description != null ? $request->description : $course->description;
         $course->price = $request->price != null ? $request->price : $course->price;
-        $course->category_id = $request->category!=null?$request->category : $course->category_id;
+        $course->category_id = $request->category!=null ? $request->category : $course->category_id;
+
+        $file = $request->file('image');
 
         if (isset($file)) {
             // $file_name = time() . $file->getClientOrOriginalName();
@@ -159,7 +165,9 @@ class CourseController extends Controller
         }
 
         $course->save();
-        return ["Course Updated"];
+        
+        return redirect()->back()
+        ->with('message','Course has been updated succesfully!');
     }
 
     public function delete_course($id)
