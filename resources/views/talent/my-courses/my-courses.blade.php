@@ -51,6 +51,12 @@
                 <div class="course-text-content">
                     <h3 class="course-title">{{ $my_course->title }}</h3>
                     <p class="course-description"> {{$my_course->description}}</p>
+                    <h3 class="course-price">
+                        <?php
+                            $course_price = number_format($my_course->price, 0, ",", ".");
+                        ?>
+                        Rp. {{ $course_price }}
+                    </h3>
                     <div class="course-category">
                         <h3>
                             {{$my_course->category->name}}

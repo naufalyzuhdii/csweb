@@ -27,37 +27,37 @@ class UserSeeder extends Seeder
         ]);
 
         
-        DB::table('users')->insert([
-            'name' => 'nopal',
-            'email' => 'test1@gmail.com',
-            'password' => bcrypt('test1'),
-            'dob' =>  '2000-01-01',
-            'phone' => '0811125522',
-            'role' => 'learner',
-            'certification_status' => 'valid',
-            'certification_document' => '-'
-        ]);
+        // DB::table('users')->insert([
+        //     'name' => 'nopal',
+        //     'email' => 'test1@gmail.com',
+        //     'password' => bcrypt('test1'),
+        //     'dob' =>  '2000-01-01',
+        //     'phone' => '0811125522',
+        //     'role' => 'learner',
+        //     'certification_status' => 'valid',
+        //     'certification_document' => '-'
+        // ]);
 
-        DB::table('users')->insert([
-            'name' => 'calvin',
-            'email' => 'calvin@gmail.com',
-            'password' => bcrypt('calvin'),
-            'dob' =>  '2000-01-01',
-            'phone' => '08111255512',
-            'role' => 'learner',
-            'certification_status'=> 'valid',
-            'certification_document' => '-'
-        ]);
-        DB::table('users')->insert([
-            'name' => 'jeje',
-            'email' => 'jeje@gmail.com',
-            'password' => bcrypt('jeje'),
-            'dob' =>  '2000-01-01',
-            'phone' => '08111255516',
-            'role' => 'learner',
-            'certification_status'=> 'valid',
-            'certification_document' => '-'
-        ]);
+        // DB::table('users')->insert([
+        //     'name' => 'calvin',
+        //     'email' => 'calvin@gmail.com',
+        //     'password' => bcrypt('calvin'),
+        //     'dob' =>  '2000-01-01',
+        //     'phone' => '08111255512',
+        //     'role' => 'learner',
+        //     'certification_status'=> 'valid',
+        //     'certification_document' => '-'
+        // ]);
+        // DB::table('users')->insert([
+        //     'name' => 'jeje',
+        //     'email' => 'jeje@gmail.com',
+        //     'password' => bcrypt('jeje'),
+        //     'dob' =>  '2000-01-01',
+        //     'phone' => '08111255516',
+        //     'role' => 'learner',
+        //     'certification_status'=> 'valid',
+        //     'certification_document' => '-'
+        // ]);
 
     }
 }

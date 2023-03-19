@@ -40,15 +40,15 @@ class AdminController extends Controller
         $attr = $request->validate([
             'id' => 'exists:users,id',
             'certification_status' => 'required',
-          ]);
-    
-          auth()->user()->update($attr);
+        ]);
 
-          $user = User::find($request->id);
-          
-          $user->certification_status = $request->certification_status;
+        auth()->user()->update($attr);
 
-          $user->save();
+        $user = User::find($request->id);
+        
+        $user->certification_status = $request->certification_status;
+
+        $user->save();
 
         return redirect()->back()->with('message','Status has been updated!');
     }
@@ -56,7 +56,7 @@ class AdminController extends Controller
     // VALIDATION SKILLS
     public function view_validation_skills()
     {   
-        $skills = Skills::all();
+        $skills = Skills::orderBy('status','desc')->get();
         
         return view('admin.validation-skills.view-validation-skills',compact('skills'));
     }

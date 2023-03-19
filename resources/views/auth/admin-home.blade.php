@@ -27,6 +27,7 @@
                 </tr>
 
                 @foreach($user as $user)
+                @if($user->role != 'admin')
                 <tr class="row-content">
                     <td>
                         <h3>{{$user->id}}</h3>
@@ -65,6 +66,7 @@
                         </h3>
                     </td>
                 </tr>
+                @endif
                 @endforeach
             </table>
         </div>
