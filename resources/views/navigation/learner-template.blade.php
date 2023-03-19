@@ -30,8 +30,8 @@
         </div>
 
         <div class="search-navbar">
-            <form class="search-bar" action="#" method="get">
-                <input type="search" name="keyword" placeholder="Search">
+            <form class="search-bar" action="/view/course" method="get">
+                <input type="search" name="search" placeholder="Search">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </form>
         </div>

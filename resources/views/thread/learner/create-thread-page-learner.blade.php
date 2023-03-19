@@ -190,7 +190,7 @@
 
                 <div class="add-skills-wrapper">
                     <div class="add-skills-form" id="add-skills-form">
-                        <form action="/add-new-skills" method="get" enctype="multipart/form-data">
+                        <form action="/add-new-skills" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="input-new-skills-wrapper">
                                 <label for="skillsName">Skills Name</label>

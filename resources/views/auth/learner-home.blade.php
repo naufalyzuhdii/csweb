@@ -39,6 +39,7 @@
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper" id="swiperWrapper">
                     @foreach($course as $course)
+                    @if($course->status == 'valid')
                     <a href="/view/course/{{$course->id}}/topic-course-detail" class="swiper-slide" id="card-slide">
                         <div class="course-card-image">
                             <img src="{{asset('course/'.$course->image)}}" alt="">
@@ -57,6 +58,7 @@
                             <h2 class="course-price">Rp {{$course_price}}</h2>
                         </div>
                     </a>
+                    @endif
                     @endforeach
                 </div>
             </div>

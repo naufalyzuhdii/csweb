@@ -6,12 +6,13 @@
 <section class="topic-course">
     <div class="topic-course-wrapper">
         <div class="topic-course-heading">
-            <h1> <a href="">{{$categories->name}} Courses</a></h1>
-            <h2>Related courses you can learn and started with</h2>
+            <h2>Search results for <span>{{$search}}</span> </h2>
         </div>
         <div class="topic-course-content">
+            @if(count($courses) == 0)
+            <h2>Course not found</h2>
+            @elseif(count($courses) > 0)
             @foreach ($courses as $course)
-            @if($course->category->name == $categories->name)
             <a href="/view/course/{{ $course->id }}/topic-course-detail" class="topic-course-item">
                 <div class="topic-course-image">
                     <img src="{{ url('course/'. $course->image) }}" alt="">
@@ -35,9 +36,8 @@
                 ?>
                 <h2 class="topic-course-price">Rp {{ $course_price }}</h2>
             </a>
-            @else
-            @endif
             @endforeach
+            @endif
         </div>
 
     </div>

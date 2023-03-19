@@ -25,6 +25,16 @@ class UserSeeder extends Seeder
             'role' => 'admin',
             'certification_document' => '-'
         ]);
+        DB::table('users')->insert([
+            'name' => 'talent',
+            'email' => 'talent@gmail.com',
+            'password' => bcrypt('talent'),
+            'dob' =>  '2000-01-01',
+            'phone' => '08111255518',
+            'role' => 'learner',
+            'certification_status'=> 'valid',
+            'certification_document' => '-'
+        ]);
 
         
         // DB::table('users')->insert([

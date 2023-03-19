@@ -45,6 +45,7 @@ Route::get('/view/signin_page', [AuthController::class, 'view_signIn'])->middlew
 // ==================================== Navigation Landing Page ======================================================
 
 
+
 // ==================================== Auth ======================================================
 Route::get('/view/signin_page', [AuthController::class, 'view_signIn'])->name('signin')->middleware('guest');
 Route::post('/signin', [AuthController::class, 'signin'])->middleware('guest');
@@ -69,7 +70,7 @@ Route::get('/delete-skills/{id}', [AdminController::class, 'delete_skills'])->mi
 
 Route::get('/view/validation-course', [AdminController::class, 'view_validation_course'])->name('view.validation-course')->middleware('admin');
 Route::post('/add-new-course', [AdminController::class, 'add_new_course'])->name('add.new-course')->middleware('admin');
-Route::put('/update_course', [AdminController::class, 'update_course'])->name('update.course')->middleware('admin');
+Route::put('/validate_course', [AdminController::class, 'validate_course'])->name('update.course')->middleware('admin');
 Route::get('/delete-course/{id}', [AdminController::class, 'delete_course'])->middleware('admin');
 
 Route::get('/view/validation-withdraw', [AdminController::class, 'view_validation_withdraw'])->name('view.validation-withdraw')->middleware('admin');
@@ -95,7 +96,7 @@ Route::get('/show_course_by_category/{id}', [CourseController::class, 'show_cour
 Route::get('/categories', [CategoryController::class, 'view_categories'])->middleware('learner');
 
 
-Route::get('/view/course', [CourseController::class, 'view_course']);
+Route::get('/view/course', [CourseController::class, 'search_course']);
 Route::get('/view/sub-course', [CourseController::class, 'view_sub_course']);
 Route::get('/categories/{id}', [CourseController::class, 'show_course']);
 Route::get('/view/course/{id}/topic-course-detail', [CourseController::class, 'course_detail']);
@@ -128,7 +129,7 @@ Route::post('/create_thread', [ThreadsPostProjectController::class, 'post_thread
 Route::get('/edit-thread/{id}', [ThreadsPostProjectController::class, 'edit_thread'])->middleware('learner');
 Route::put('/update-thread', [ThreadsPostProjectController::class, 'update_thread'])->middleware('learner');
 Route::get('/delete-thread/{id}', [ThreadsPostProjectController::class, 'delete_thread'])->middleware('learner');
-Route::get('/add-new-skills', [ThreadsPostProjectController::class, 'add_new_skills'])->middleware('learner');
+Route::post('/add-new-skills', [ThreadsPostProjectController::class, 'add_new_skills'])->middleware('learner');
 // --Post a Project
 
 // --Find Freelancers or Talents

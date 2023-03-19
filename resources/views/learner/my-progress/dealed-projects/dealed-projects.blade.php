@@ -212,7 +212,7 @@
                                 </a>
                             </div>
                         </div>
-                        <!-- <div class="data-payment">
+                        <div class="data-payment">
                             <h3>You already accept the applier. Please do payment to our system to confirm that you
                                 are
                                 deal with this project.
@@ -222,7 +222,7 @@
                             <p>
                                 BCA : <span> Course And Service - 250604201</span>
                             </p>
-                        </div> -->
+                        </div>
                     </div>
 
                     <!-- Accepted Freelances Talents -->

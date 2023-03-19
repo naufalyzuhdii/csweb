@@ -36,6 +36,10 @@
     margin-top: 2rem;
 }
 
+.topic-course-heading h2 span {
+    font-style: italic;
+}
+
 .topic-course-content {
     width: 100%;
     height: 80%;

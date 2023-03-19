@@ -35,7 +35,6 @@
             </div>
             @else
             @foreach ($my_courses as $my_course)
-            {{-- @dd($my_course->category->name) --}}
             <div class="course-links">
                 <a href="/view/my-courses/my-course-detail-chapter/{{$my_course->id}}" class="links">
                 </a>
@@ -72,10 +71,11 @@
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </form>
-                @endforeach
-
-                @endif
             </div>
+            @endforeach
+            @endif
+
+
         </div>
 
         <!-- My Courses Content -->
