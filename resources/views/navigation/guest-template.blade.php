@@ -6,21 +6,20 @@
                 <img src="{{asset('images/header/logo-white.png')}}">
             </a>
             <div class="categories-navbar">
-                <ul class="main-navigation">
+                <a href="" class="categories-links">Categories</a>
+                <?php
+                    $categories = DB::table('categories')->
+                    orderBy('name','asc')
+                    ->get();
+                ?>
+                <ul>
+                    @foreach($categories as $c)
                     <li>
-                        <div class="categories-links">Categories</div>
-                        <ul>
-                            {{-- @foreach ($parentcategories as $category) 
-                                
-                                    <li><a href="/show_course_by_category/{{$category->id}}">{{ $category->name }}<i class="fa-sharp fa-solid fa-play"></i></a>
-                                        @if (count($category->subcategory))
-                                            @include('navigation.subcategory', ['subcategories' => $category->subcategory])
-                                        @endif
-                                    </li>
-                                
-                            @endforeach --}}
-                        </ul>
+                        <a href="/categories/{{$c->id}}">
+                            {{$c->name}}
+                        </a>
                     </li>
+                    @endforeach
                 </ul>
             </div>
 
@@ -29,8 +28,8 @@
             </div>
         </div>
         <div class="search-navbar">
-            <form class="search-bar" action="#" method="get">
-                <input type="search" name="keyword" placeholder="Search">
+            <form class="search-bar" action="/view/course" method="get">
+                <input type="search" name="search" placeholder="Search">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </form>
         </div>

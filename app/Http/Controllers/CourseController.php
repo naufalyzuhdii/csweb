@@ -27,17 +27,22 @@ class CourseController extends Controller
     {
         $courses = Course::all();
         $categories = Category::find($id);
-
-        if(request('search')){
-            $courses->where('name', 'like', '%'. request('search'). '%');
-        }
         
         // return view('categories.topic-course', [
         //     "courses" => $courses,
         // ]);
 
         return view('categories.topic-course',compact('courses','categories'));
-        
+    }
+
+    public function search_course(){
+        $courses = Course::all();
+
+        if(request('search')){
+            $courses->where('name', 'like', '%'. request('search'). '%');
+        }
+
+        return view('', compact('courses'));
     }
 
     public function show_course_by_category($id){
