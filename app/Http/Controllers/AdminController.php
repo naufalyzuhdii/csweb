@@ -156,30 +156,16 @@ class AdminController extends Controller
         ->with('message','New course has been uploaded!');
     }
 
-    public function update_course(Request $request)
+    public function validate_course(Request $request)
     {
-    $rules = [
-        'title_update' => 'required',
-        'category_update' => 'required',
-        'description_update' => 'required',
-        'price_update' => 'required',
-        'image_update' => 'image|file|mimes:jpg,png|max:4024'
-        ];
-
-        $validator = Validator::make($request->all(),$rules);
-
-        if($validator -> fails())
-        {
-            return back()-> withErrors($validator); // secara otomtatsi bkin variabel errrors
-        }
 
         $course = Course::find($request->course_id);
 
-        $course->user_id = $request->user_id;
-        $course->title = $request->title_update;
-        $course->description = $request->description_update;
-        $course->price = $request->price_update;
-        $course->status = $request->status_update;
+        $course->user_id = $request->user_id != null ? $request->user_id : $course->user_id;
+        $course->title = $request->title_update != null ? $request->title_update : $course->title;
+        $course->description = $request->description_update != null ? $request->description_update : $course->description;
+        $course->price = $request->price_update != null ? $request->price_update : $course->price;
+        $course->status = $request->status_update != null ? $request->status_update : $course->status;
 
         $file = $request->file('image_update');
         

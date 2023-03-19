@@ -263,6 +263,7 @@
             </div>
             <div class="topic-course-content">
                 @foreach($courses as $courses)
+                @if($course->status == 'valid')
                 <a href="/view/topic-course-detail/" class="topic-course-item">
                     <div class="topic-course-image">
                         <img src="{{asset('course/'.$courses->image)}}" alt="">
@@ -285,6 +286,7 @@
                                         ?>
                     <h2 class="topic-course-price">Rp {{$courses_price}}</h2>
                 </a>
+                @endif
                 @endforeach
             </div>
         </div>

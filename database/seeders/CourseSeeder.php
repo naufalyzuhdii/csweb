@@ -14,14 +14,8 @@ class CourseSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('courses')->insert([
-        //     'name' => 'admin',
-        //     'email' => 'admin@gmail.com',
-        //     'password' => bcrypt('admin'),
-        //     'dob' =>  '2000-01-01',
-        //     'phone' => '08111255517',
-        //     'role' => 'admin',
-        //     'certification_document' => '-'
-        // ]);
+        DB::table('courses')->insert([
+            
+        ]);
     }
 }

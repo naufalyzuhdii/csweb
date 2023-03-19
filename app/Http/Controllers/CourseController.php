@@ -18,7 +18,7 @@ class CourseController extends Controller
     // VIEW FUNCTION
     public function view_course()
     {
-        $course = Course::all();
+        $course = Course::where('status','valid')->get();
         
         return view('categories.course',compact('course'));
     }
@@ -35,14 +35,14 @@ class CourseController extends Controller
         return view('categories.topic-course',compact('courses','categories'));
     }
 
-    public function search_course(){
-        $courses = Course::all();
+    public function search_course(Request $request){
+        $search = $request->input('search');
+        $courses = Course::query()->where('title', 'like', '%'. $search. '%')
+        ->where('status','valid')->get();
 
-        if(request('search')){
-            $courses->where('name', 'like', '%'. request('search'). '%');
-        }
 
-        return view('', compact('courses'));
+        return view('search.search-page',
+        compact('courses','search'));
     }
 
     public function show_course_by_category($id){
@@ -141,7 +141,7 @@ class CourseController extends Controller
 
     public function edit_course_page($id)
     {
-        $course = Course::find($id)->first();
+        $course = Course::find($id);
         $category = Category::all();
 
         return view('talent.my-courses.my-course-edit',compact('course','category'));

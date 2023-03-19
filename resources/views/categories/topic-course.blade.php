@@ -11,7 +11,7 @@
         </div>
         <div class="topic-course-content">
             @foreach ($courses as $course)
-            @if($course->category->name == $categories->name)
+            @if($course->category->name == $categories->name && $course->status == 'valid')
             <a href="/view/course/{{ $course->id }}/topic-course-detail" class="topic-course-item">
                 <div class="topic-course-image">
                     <img src="{{ url('course/'. $course->image) }}" alt="">
@@ -39,7 +39,6 @@
             @endif
             @endforeach
         </div>
-
     </div>
 </section>
 

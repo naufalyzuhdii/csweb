@@ -106,7 +106,7 @@
                 </tr>
 
                 @foreach($course as $course)
-                <form action="/update_course" method="post" enctype="multipart/form-data">
+                <form action="/validate_course" method="post" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <tr class="row-content">
